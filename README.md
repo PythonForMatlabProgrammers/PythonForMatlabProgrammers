@@ -7,6 +7,5 @@ to numeric Python for programmers who already know MATLAB.
 This document was originally produced by [Mike Patterson](https://github.com/mike-patt)
 and Andrew Janke, experienced MATLAB coders who have recently adopted Python, too.
 
-You can find the document here in Word or PDF format:
-  * PDF: [Python for MATLAB Programmers.pdf]("Python for MATLAB Programmers.pdf")
-  * Word: [Python for MATLAB Programmers.docx]("Python for MATLAB Programmers.docx")
+
+See the live website at <https://apjanke.github.io/PythonForMatlabCoders/>.
