@@ -3,7 +3,7 @@ email: andrew@apjanke.net
 description: >- 
   An introduction to numeric Python programming for experienced
   MATLAB developers.
-baseurl: "" 
+baseurl: "/PythonForMatlabCoders"
 url: "" 
 #twitter_username: jekyllrb
 github_username:  apjanke
