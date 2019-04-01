@@ -2305,6 +2305,8 @@ To begin, install SciPy.
 C:> pip install scipy # Enter from a Windows terminal
 ```
 
+Let's solve linear system [A]{x} = {b}, where [A] and {b} are given as:
+
 ![](media/equation1.png)
 
 ```
