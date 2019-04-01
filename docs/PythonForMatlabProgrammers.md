@@ -560,10 +560,10 @@ is not included in the range
 'Abc'
 ```
 
-> The immutability property of strings may be disconcerting to a MATLAB
-> programmer who is used to changing strings with several of MATLAB's
-> built-in string processing facilities. Rest assured that Python
-> provides similar facilities via add-on modules.
+The immutability property of strings may be disconcerting to a MATLAB
+programmer who is used to changing strings with several of MATLAB's
+built-in string processing facilities. Rest assured that Python
+provides similar facilities via add-on modules.
 
 -   Python provides several techniques for variable substitution and
     formatting in strings, but these differing methods appear to be
