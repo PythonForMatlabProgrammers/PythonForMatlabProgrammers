@@ -2445,7 +2445,7 @@ Finally, let's clean up the column labels and plot the data:
 ![](media/image4.png)
 
 Plotting the data provides the figure above. Several comments are
-warranted here. First, the pandas' library was able to successfully
+warranted here. First, the pandas library was able to successfully
 load a remotely-hosted data set that we did not even bother to
 pre-inspect. Pandas placed the data into its DataFrame object,
 automatically included labels and inserted a row index. Using pandas'
@@ -2570,7 +2570,7 @@ double-clicking on that variable in the explorer window.
 Spyder is written in the Python language, is open source and is free of
 charge.
 
-Anaconda
+## Anaconda
 
 Spyder is a core component of a Python distribution called
 [Anaconda](https://www.anaconda.com/). The Anaconda distribution mimics
@@ -2596,7 +2596,7 @@ private collaborations.
 With more than six million users, Anaconda is a popular distribution
 worthy of your attention.
 
-Closing
+# Closing
 
 If you have read this far, you must be interested in Python. There's
 more to learn, of course, but if you have absorbed the concepts you've
@@ -2642,7 +2642,7 @@ incorrect statements, important omissions, or if you have suggestions
 for improving this document, we'd like to hear from you. Our
 biographies and contact information are listed below.
 
-Author Biographies
+# Author Biographies
 
 Andrew Janke is a software developer with over a decade of experience
 building MATLAB-based systems for financial analysis applications. He
