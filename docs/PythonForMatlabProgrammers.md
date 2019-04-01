@@ -10,8 +10,7 @@ Learning and Leveraging Python When You Know MATLAB
 
 ![](media/image1.png)
 
-* Andrew Janke 
-* Michael Patterson 
+by Andrew Janke and Michael Patterson 
 
 ******************************************************
 
