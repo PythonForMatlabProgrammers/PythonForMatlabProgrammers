@@ -1353,8 +1353,8 @@ warnings can also be very simple:
 
 ```
 >>> import warnings
->>> warnings.warning('Something seems wrong')
-UserWarning: Something seems odd
+>>> warnings.warn('Something seems wrong')
+__main__:1: UserWarning: Something seems wrong
 ```
 
 ## Exceptions
