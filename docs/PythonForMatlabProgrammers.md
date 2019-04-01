@@ -1160,21 +1160,20 @@ memory-efficient
     not covered such objects yet, but once we do, you'll see that their
     contents can be converted into list objects.
 
-Functions
+## Functions
 
 Python functions are similar to MATLAB functions, although Python
 signatures are more versatile. Also, there are some interesting ways to
 use and reuse functions in Python.
 
 -   The basic structure of a function is:
-    
-    def fun(arg1,arg2):
-       """doc string""" # A doc string is roughly equivalent to a
-    MATLAB H1 line.
-    # Blank line before code begins
-     code
-    # Blank line to end the function
-
+```
+def fun(arg1,arg2):
+  """doc string""" # A doc string is roughly equivalent to a MATLAB H1 line.
+  # Blank line before code begins
+  code
+  # Blank line to end the function
+```
 -   Function arguments are always *call by reference*. Python does not
     support *call by value*.[^2]
 
@@ -1186,43 +1185,42 @@ use and reuse functions in Python.
     returned by default. The value None has a type of NoneType.
 
 -   Function args can be given default values. E.g.,
-    
-    def whats_your_name (prompt, retries=4, reminder='Please try
-    again!'):
-    """ doc string """
-    # we'll skip the function's code for now
-    
-    Default values are evaluated only once, and only at the point of the
-    function definition. As in the above, the arguments with default
-    values must follow any positional arguments. When defaults are
-    given, those arguments become optional for the caller.
+
+```
+def whats_your_name (prompt, retries=4, reminder='Please try again!'):
+  """ doc string """
+  # we'll skip the function's code for now
+```
+Default values are evaluated only once, and only at the point of the
+function definition. As in the above, the arguments with default
+values must follow any positional arguments. When defaults are
+given, those arguments become optional for the caller.
 
 -   Functions can be called with keyword arguments. E.g., to call the
     function just defined we could type:
-    
-    >>> whats_your_name(prompt='Tell me your name', retries=10,
-    reminder='Try again')
-    
+```
+    >>> whats_your_name(prompt='Tell me your name', retries=10, reminder='Try again')
+``` 
     Once a keyword argument is provided, all remaining arguments (if
     provided) must also be keyword arguments.
 
 -   Function signatures are quite robust. Following positional arguments
     and arguments with defaults, one can pass an arbitrary number of
     arguments with the following construct:
-    
+```
     def fun(arg1, arg2='test', *args):
-    
+```
     This is similar to MATLAB's vararg input. In the caller, following
     the positional and keyword arguments, one can pass an arbitrary set
-    of comma-separated values. Inside the called function, the *args
-    inputs will automatically be packed into a tuple named arg (in this
+    of comma-separated values. Inside the called function, the `*args`
+    inputs will automatically be packed into a tuple named `arg` (in this
     example).
 
 -   Expanding upon the above signature, one can also specify that a
     function is to receive an arbitrary number of keyword arguments:
-    
-    def fun(arg1, arg2='test', *args, **keywords):
-    
+```
+def fun(arg1, arg2='test', *args, **keywords):
+```
     The above listed order is required. If provided, the trailing
     keyword arguments will automatically be packed into a dictionary
     inside the function.
@@ -1230,15 +1228,15 @@ use and reuse functions in Python.
 -   If a function signature requires individual args but the calling
     workspace has a list or tuple, the latter can be unpacked on the fly
     with a star ('*') syntax. For example:
-    
-    >>> list(range(0, 3))
-    [0, 1, 2]
-    
+```
+>>> list(range(0, 3))
+[0, 1, 2]
+```
     The above is equivalent to
-    
-    >>> x = [0, 3]
-    >>> list(range(*x))
-    
+```
+>>> x = [0, 3]
+>>> list(range(*x))
+```
     Dictionaries can also be unpacked, and that syntax uses a double
     star.
 
@@ -1252,67 +1250,68 @@ use and reuse functions in Python.
     internally as an object. That means you can do some interesting
     things with functions, like pass them into other functions. Consider
     the following simple example:
-    
-    >>> def f(x): # Trivial function
-    ... return x+1
-    
+```
+>>> def f(x): # Trivial function
+...   return x+1
+``` 
     The function f(x) is not just a function sitting in memory waiting
     to be invoked; it is an object in the workspace that can be passed
     around.
-    
-    >>> f?
-    Signature: f(x)
-    Docstring: <no docstring>
-    File: c:usersownerdocumentspython...
-    Type: function
-    
+```
+>>> f?
+Signature: f(x)
+Docstring: <no docstring>
+File: c:usersownerdocumentspython...
+Type: function
+```
     Define a second function, which accepts the first function (or any
     function) as an argument:
-    
-    >>> def g(fun, x): # Pass a function into a function
-    ... return 2*fun(x)
-    
+```
+>>> def g(fun, x): # Pass a function into a function
+...   return 2*fun(x)
+```
     It's a trivial example, but here's how the two functions work
     together:
-    
-    >>> f(5)
-    6
-    >>> g(f,5)
-    12
+```
+>>> f(5)
+6
+>>> g(f,5)
+12
+```
 
 -   Anonymous (unnamed) functions are created with the *lambda* keyword.
     E.g.,
-    
-    >>> f = lambda x,y: x/y
-    >>> f(x=10, y=2)
-    5
-    >>> f(1000, 10)
-    100
-    
+```
+>>> f = lambda x,y: x/y
+>>> f(x=10, y=2)
+5
+>>> f(1000, 10)
+100
+```
     Such functions are commonly referred to as *lambda functions* or
     *lambda expressions*. As with nested functions, lambda functions can
     reference variables of the containing scope:
-    
-    >>> def divideby(x):
-    ... return lambda y: x/y
-    
+```
+>>> def divideby(x):
+...   return lambda y: x/y
+```
     The above function returns a lambda object:
-    
-    >>> divide10by = divideby(x=10)
-    >>> divide10by(5)
-    2
-
+```
+>>> divide10by = divideby(x=10)
+>>> divide10by(5)
+2
+```
 -   As mentioned earlier, functions are objects and can be passed around
     like data. This is powerful, and it will take some getting used to.
     Consider the following example, where we have a list of strings and
     we want to sort them, ascending order, by the number of unique
     characters in each string.
-    
-    >>> str = ['cook', 'zoo', 'ohnoooh']
-    >>> str.sort(key=lambda x: len(set(x)))
-    >>> str
-    ['zoo', 'cook', 'ohnoooh']
-    
+```
+>>> str = ['cook', 'zoo', 'ohnoooh']
+>>> str.sort(key=lambda x: len(set(x)))
+>>> str
+['zoo', 'cook', 'ohnoooh']
+```    
     How did the above work? First, strings are a class, and that class
     has a *sort()* method associated with it. The sort() method allows a
     key argument, and we passed a lambda function as the value of that
@@ -1325,14 +1324,14 @@ use and reuse functions in Python.
     strings.
     
     The above is equivalent to:
-    
-    >>> [str[i] for I in [1, 0, 2]]
-    
+```
+>>> [str[i] for I in [1, 0, 2]]
+```
     This is equivalent, but assumes that we somehow know the sort order.
     Using the sort method and a lambda function in the first example, we
     were able to determine the sort order on the fly.
 
-Warnings
+## Warnings
 
 As with MATLAB, Python has facilities for warnings and exceptions
 (errors). In fact, Python has sophisticated facilities for these.
@@ -1347,11 +1346,13 @@ that is found with specific actions. The filter can suppress a warning,
 escalate it to an exception, or print it. For all the sophistication,
 warnings can also be very simple:
 
+```
 >>> import warnings
 >>> warnings.warning('Something seems wrong')
 UserWarning: Something seems odd
+```
 
-Exceptions
+## Exceptions
 
 Python's exceptions are a lot like MATLAB's error facility, but more
 powerful. The syntax is similar, and we'll point out the differences.
@@ -1362,8 +1363,10 @@ standard deviation of a list of values, but you want to enforce a
 minimum length to the list, e.g., ten data points. Your code would look
 something like:
 
+```
 if len(x) <= 10:
-raise Exception('Too few data points')
+  raise Exception('Too few data points')
+```
 
 The above block would raise (throw, in MATLAB terms) an exception.
 
@@ -1381,35 +1384,40 @@ Here's a quick summary:
 -   Try-except blocks have added functionality compared to MATLAB. The
     outline of a try-except block looks like:
     
-    try:
-    # code
-    except NameError:
-    raise Exception('Name is not defined.')
-    except ValueError:
-    raise Exception('Value is not valid.')
-    else:
-    # Code that is always executed if no exception is raised.
-    # Useful for code that should not be part of the try-block.
-    finally:
-    # Cleanup code that is always executed, regardless of whether an
-    exception was encountered.
-
+```
+try:
+  # code
+except NameError:
+  raise Exception('Name is not defined.')
+except ValueError:
+  raise Exception('Value is not valid.')
+else:
+  # Code that is always executed if no exception is raised.
+  # Useful for code that should not be part of the try-block.
+finally:
+  # Cleanup code that is always executed, regardless of whether an 
+  # exception was encountered.
+```
 -   As in MATLAB, it is not necessary to specify the class of error.
     E.g., the following is permissible:
     
-    try:
-    x = y / z
-    except:
-    raise Exception('Looks like z was equal to zero')
-    
-    However, when you are monitoring for and handling specific types of
-    errors, use of a built-in or user-defined exception class is
-    recommended. E.g.,
+```
+try:
+  x = y / z
+except:
+  raise Exception('Looks like z was equal to zero')
+```    
 
--   try:
-    x = y / z
-    except ArithmeticError:
-    raise Exception('Looks like z was equal to zero')
+However, when you are monitoring for and handling specific types of
+errors, use of a built-in or user-defined exception class is
+recommended. E.g.,
+
+```
+try:
+  x = y / z
+except ArithmeticError:
+  raise Exception('Looks like z was equal to zero')
+```
 
 -   As with MATLAB's throw() function, use Python's raise() function
     to issue an exception. Any associated arguments are available to the
@@ -1418,12 +1426,14 @@ Here's a quick summary:
 -   If you desire a stack trace and/or logging into a log file, use
     Python's logging module. E.g.,
     
-    import logging
-    
-    try:
-    y = 5 / 0
-    except:
-    logging.exception('Division by zero')
+```
+import logging
+
+try:
+  y = 5 / 0
+except:
+  logging.exception('Division by zero')
+```
 
 -   Some objects have pre-defined clean-up actions that can occur
     regardless of any exception thrown (or not). An example is the
@@ -1432,45 +1442,46 @@ Here's a quick summary:
     will ensure that pre-defined actions occur even if not explicitly
     requested. For example:
     
-    with open('some_file.csv') as file:
-    for line in file:
+```
+with open('some_file.csv') as file:
+  for line in file:
     print(line)
-    
-    Following execution of this block of code, the opened file will be
-    closed regardless of whether an exception was raised. The *with*
-    statement is just shorthand notation for a try-except block, but
-    useful and convenient.
+```    
+Following execution of this block of code, the opened file will be
+closed regardless of whether an exception was raised. The *with*
+statement is just shorthand notation for a try-except block, but
+useful and convenient.
 
-Listing the Python Version
+## Listing the Python Version
 
 You'll need, from time to time, to know the version of Python that you
 are using.
 
--   Here's how to get the version number from Python itself:
-    
-    >>> import sys
-    >>> sys.version
-    3.7.0 (v3.7.0:1bf9cc5093, Aug 27 2018, 04:59:51) [MSC v.1914 64 bit
-    (AMD64)]
+Here's how to get the version number from Python itself:
+```
+>>> import sys
+>>> sys.version
+3.7.0 (v3.7.0:1bf9cc5093, Aug 27 2018, 04:59:51) [MSC v.1914 64 bit (AMD64)]
+```
 
-<!-- -->
+And from a shell window, simply enter `python -V`.
 
--   And from a shell window, simply enter python -V.
-
-Interacting with the Operating System
+## Interacting with the Operating System
 
 Eventually you'll want to interact with the host computer's operating
 system. Here's a sample of what you can do:
 
+```
 >>> import os
 >>> os.getcwd()
 >>> os.listdir()
+```
 
 You can change environment variables this way, change to a new
 directory, etc. To see a list of all of the methods in the os module,
 use dir(os).
 
-Miscellaneous
+## Miscellaneous
 
 If you have been entering the above commands into a Python console
 window, you might be wondering how to perform a few basic maintenance
@@ -1482,20 +1493,25 @@ commands](https://ipython.readthedocs.io/en/stable/interactive/magics.html),
 commands that will be familiar to you except that they are prefixed by a
 '%'. Try the following:
 
+```
 >>> %who
 >>> %whos
 >>> %reset # Equivalent to MATLAB's *clear* command
+```
 
 There are a *lot* of magic commands, so you'll eventually want to
 review those at the above link. You can also get magic command help from
 the Python console with the following command:
 
+```
 >>> %magic
+```
 
 In addition to the magic commands, the IPython console (we're assuming
 you'll eventually use this) provides an introspection facility that
 helps you quickly examine any variable you have defined. For example,
 
+```
 >>> x = list(range(5))
 >>> x? # Can also use >>> ?x
 
@@ -1504,11 +1520,12 @@ String form: [0, 1, 2, 3, 4]
 Length: 5
 Docstring:
 Built-in mutable sequence.
+```
 
 Introspection works with objects, built-in functions and user-defined
 functions.
 
-Plotting
+# Plotting
 
 As you might expect, Python offers numerous libraries with which to
 create graphical output. You'll want to have a look at
@@ -1519,38 +1536,41 @@ One of the most popular libraries is, naturally,
 [Matplotlib](https://matplotlib.org/), a library that tries to reproduce
 MATLAB's charting capabilities.
 
--   ![](media/image2.png){width="2.2104166666666667in"
-    height="1.875in"}Let's look at an example
+Let's look at an example.
     
-    C:> pip install matplotlib # from a Windows terminal
-    
-    >>> import matplotlib.pyplot as plt
-    >>> x = list(range(-100,101)
-    >>> y = [x**2 for x in x]
-    >>> plt.plot(x,y)
+```
+C:> pip install matplotlib # from a Windows terminal
 
--   ![](media/image3.png){width="2.225in"
-    height="1.926388888888889in"}Matplotlilb provides 2-d charts, but
-    other packages built upon Matplotlib provide 3-d charts, as per the
-    following example.
-    
-    >>> from mpl_toolkits.mplot3d import Axes3D
-    >>> import matplotlib.pyplot as plt
-    >>> from matplotlib import cm
-    >>> from matplotlib.ticker import LinearLocator,
-    FormatStrFormatter
-    >>> import numpy as np
+>>> import matplotlib.pyplot as plt
+>>> x = list(range(-100,101)
+>>> y = [x**2 for x in x]
+>>> plt.plot(x,y)
+```
 
-> >>> fig = plt.figure()
-> >>> ax = fig.gca(projection='3d')
-> >>> X = np.arange(-5, 5, 0.25)
-> >>> Y = np.arange(-5, 5, 0.25)
-> >>> X, Y = np.meshgrid(X, Y)
-> >>> R = np.sqrt(X**2 + Y**2)
-> >>> Z = np.sin(R)
->
-> >>> surf = ax.plot_surface(X, Y, Z, cmap=cm.coolwarm, linewidth=0,
-> antialiased=False)
+![](media/image2.png)
+
+
+Matplotlilb provides 2-d charts, but
+other packages built upon Matplotlib provide 3-d charts, as per the
+following example.
+    
+```
+>>> from mpl_toolkits.mplot3d import Axes3D
+>>> import matplotlib.pyplot as plt
+>>> from matplotlib import cm
+>>> from matplotlib.ticker import LinearLocator, FormatStrFormatter
+>>> import numpy as np
+>>> fig = plt.figure()
+>>> ax = fig.gca(projection='3d')
+>>> X = np.arange(-5, 5, 0.25)
+>>> Y = np.arange(-5, 5, 0.25)
+>>> X, Y = np.meshgrid(X, Y)
+>>> R = np.sqrt(X**2 + Y**2)
+>>> Z = np.sin(R)
+
+>>> surf = ax.plot_surface(X, Y, Z, cmap=cm.coolwarm, linewidth=0, antialiased=False)
+```
+![](media/image3.png)
 
 -   There are many examples on the web that illustrate Python's
     graphing capabilities. Rest assured that you can create all the
@@ -1571,7 +1591,7 @@ MATLAB's charting capabilities.
     [Python Graph Gallery](https://python-graph-gallery.com/) for an
     overview of the chart types available in Python.
 
-Namespaces and Scopes
+# Namespaces and Scopes
 
 At this point of the article we'll dive a bit deeper into the
 programming language. We'll discuss namespaces, scopes, and then
@@ -1615,7 +1635,6 @@ concepts are important prerequisites for understanding classes.
     4.  The outermost scope (searched last) is the namespace containing
         built-in names.
 
-<!-- -->
 
 -   Variables can be declared *global*, in which case they will reside
     in the middle scope and will not be shared across modules.
@@ -1624,7 +1643,7 @@ concepts are important prerequisites for understanding classes.
     *nonlocal*, whereby they will pass by reference into any innermost
     scope.
 
-Classes
+# Classes
 
 For programming projects of non-trivial size, the use of classes is
 considered standard practice. MATLAB provides a sophisticated class
@@ -1632,113 +1651,131 @@ model that, while offering programmers tremendous capabilities, is
 difficult to learn. Python's class model is much simpler, offers fewer
 capabilities, but is easier to learn. Let's have a look.
 
--   In the following, we'll make no attempt to explain object-oriented
-    programming; we are instead assuming you have covered this topic
-    elsewhere. We'll provide an outline of what Python offers, from as
-    usual, the perspective of a MATLAB programmer.
+In the following, we'll make no attempt to explain object-oriented
+programming; we are instead assuming you have covered this topic
+elsewhere. We'll provide an outline of what Python offers, from as
+usual, the perspective of a MATLAB programmer.
 
--   In Python *everything* is an object; in MATLAB most but not all
-    things are objects.
+In Python *everything* is an object; in MATLAB most but not all
+things are objects.
 
--   Let's look at a few simple Python examples of variables. Consider
-    the following:
+Let's look at a few simple Python examples of variables. Consider
+the following:
+   
+```
+>>> x = []
+>>> x?
+Type: list
+String form: []
+Length: 0
+Docstring: Built-in mutable sequence.
+```
     
-    >>> x = []
-    >>> x?
-    Type: list
-    String form: []
-    Length: 0
-    Docstring: Built-in mutable sequence.
-    
-    As the above shows, even the [] construct creates an object.  In
-    this case, variable x is a list object. Or consider how a variable
-    containing an integer has a class attribute:
-    
-    >>> x = 5
-    >>> x.__class__
-    <class 'int'>
+As the above shows, even the [] construct creates an object.  In
+this case, variable x is a list object. Or consider how a variable
+containing an integer has a class attribute:
+
+```
+>>> x = 5
+>>> x.__class__
+<class 'int'>
+```
 
 -   Classes are defined with a straightforward syntax. In the following
     example code, we define a class, a docstring, an initiation method,
     and then two class methods:
-    
-    def MyClass:
-    """A sample class definition""" # Like MATLAB's H1 line
-    
-    def __init__(self): # A constructor
+
+```
+def MyClass:
+  """A sample class definition""" # Like MATLAB's H1 line
+
+  def __init__(self): # A constructor
     self.mydata = []
-    
-    def method1(self):
+
+  def method1(self):
     self.mydata = 3.14159
-    
-    def method2(self):
+
+  def method2(self):
     self.mydata = 3.14159 / 2
+```
 
--   Class objects support only two kinds of operations: attribute
-    references and instantiation. Let's look first at attribute
-    references. Consider the following class definition which defines
-    one attribute and one method:
-    
-    class MyClass:
-    """Doc String"""
-    x = 3.140
-    
-    def f(self,StringToPrint):
+Class objects support only two kinds of operations: attribute
+references and instantiation. Let's look first at attribute
+references. Consider the following class definition which defines
+one attribute and one method:
+  
+```  
+class MyClass:
+  """Doc String"""
+  x = 3.140
+
+  def f(self,StringToPrint):
     print(StringToPrint)
-    
-    
-    Back in the Python console window, we can type the following:
-    
-    >>> import MyClass as mod
-    >>> obj = mod.MyClass()
-    >>> obj.x
-    3.14
-    >>> obj.f # This produces a function object
-    <bound method>
-    
-    >>> obj.f('test')
-    'test'
-    
-    Both the attribute and the method are referenced with the same
-    notation. Use of the variable 'self' as the first argument to the
-    above method is only a convention; this is, however, the standard
-    convention.
+```
 
--   Now let's look at an instantiation operation. Python uses a
-    specifically named method for instantiation, called
-    '__init__', as per the following example:
-    
-    def __init__(self, day, activity):
+Back in the Python console window, we can type the following:
+
+```    
+>>> import MyClass as mod
+>>> obj = mod.MyClass()
+>>> obj.x
+3.14
+>>> obj.f # This produces a function object
+<bound method>
+
+>>> obj.f('test')
+'test'
+```
+
+Both the attribute and the method are referenced with the same
+notation. Use of the variable 'self' as the first argument to the
+above method is only a convention; this is, however, the standard
+convention.
+
+Now let's look at an instantiation operation. Python uses a
+specifically named method for instantiation, called
+`__init__`, as per the following example:
+
+```
+  def __init__(self, day, activity):
     self.weekday = day
     self.activity = activity
-    
-    When a __init__ method is placed into a class definition, it is
-    automatically invoked when the class is first instantiated.
+```
+
+When a `__init__` method is placed into a class definition, it is
+automatically invoked when the class is first instantiated.
 
 -   Python supports class inheritance. The syntax is simply
     
-    class SubClassName(BaseClassName):
+```
+class SubClassName(BaseClassName):
+```
     
-    In the above, BaseClassName must be in scope. If it is not, one can
-    instead use
-    class SubClassName(modname.BaseClassName):
-    
-    Subclass methods may either override or extend base class methods of
-    the same name. To call a super-class method from a subclass, use
-    super(). For example, if a parent class has a method called
-    invite(), the subclass can reference the method with
-    super().invite().
+In the above, BaseClassName must be in scope. If it is not, one can
+instead use
+
+```
+class SubClassName(modname.BaseClassName):
+```
+
+Subclass methods may either override or extend base class methods of
+the same name. To call a super-class method from a subclass, use
+super(). For example, if a parent class has a method called
+invite(), the subclass can reference the method with
+super().invite().
 
 -   Python supports both class (static) and instance variables. The
     location where variables are defined in a class, rather than the use
     of keywords, dictates whether a variable is a class variable or
     instance variable. E.g.,
-    
-    def MyClass:
-    ClassVar = 3.14 # Class, or static variable
-    
-    def __init__(self):
+
+```
+def MyClass:
+  ClassVar = 3.14 # Class, or static variable
+
+  def __init__(self):
     self.InstanceVar = 3.14159 # Instance variable
+```
 
 -   Python also supports static methods. This introduces the topic of
     Python's *class decorators*, which we consider to be an advanced
@@ -1775,7 +1812,7 @@ capabilities, but is easier to learn. Let's have a look.
     sophistication; vice-versa for MATLAB. Which model is the best
     choice will depend upon your programming needs.
 
-Mutability
+## Mutability
 
 Python considers everything to be an object. Once initiated, some
 objects allow their state to be changed, meaning they are mutable. Other
@@ -1793,7 +1830,7 @@ beyond the primitive data types (bool, complex, float and int) only
 three classes are immutable. And of those three, the tuple class allows
 its contents to contain mutable objects.
 
-Copy That
+## Copy That
 
 To close out this chapter, let's discuss an interesting, and likely
 unexpected, feature of Python: the language provides *three* mechanisms
@@ -1807,11 +1844,13 @@ the list. This is an important concept to master as it effects all
 Python data types. On assignment, Python will *bind* two objects
 together rather than make a copy. Consider the following:
 
+```
 >>> x = [0, 1, 2, 3]
 >>> y = x
 >>> x[0] = 99
 >>> y
 [99, 1, 2, 3]
+```
 
 By updating x we also updated y, because y was *bound* to x. From the
 MATLAB perspective, x and y are similar to handle objects; unlike
@@ -1823,12 +1862,14 @@ copy](https://docs.python.org/3/library/copy.html). For simple objects
 like a list that don't contain nested objects, the shallow copy is all
 you need.
 
+```
 >>> import copy
 >>> x = [0, 1, 2, 3]
 >>> y = x.copy()
 >>> x[0] = 99
 >>> y
 [0, 1, 2, 3]
+```
 
 When you are trying to copy more complex objects, such as a user-defined
 object whose attributes reference other objects, you will need a [deep
@@ -1839,6 +1880,7 @@ An important exception to binding is in making array slices. When an
 array is sliced, the returned object is a new object, not a view into
 the original object. E.g.,
 
+```
 >>> a = list(range(5))
 >>> b = a[2] # A slice, which is not bound to variable 'a'.
 >>> b
@@ -1846,8 +1888,9 @@ the original object. E.g.,
 >>> b = 99 # Change the value of b.
 >>> a
 [0, 1, 2, 3, 4] # Variable a is unaffected.
+```
 
-Biggest Differences
+## Biggest Differences
 
 Now that you've seen Python's primary data types and control
 structures, let's catalog the major differences between the Python and
@@ -1875,7 +1918,7 @@ We have now covered the primary Python data types and control
 structures. In the third and last chapter of this article, we'll look
 at the expansive Python ecosystem.
 
-The Python Ecosystem
+# The Python Ecosystem
 
 As a MATLAB programmer, you may be a little nervous about Python at this
 point. We covered the primary data types and built-in functionality, but
@@ -1902,7 +1945,7 @@ you. We cannot cover everything that might be of interest to you, but
 we'll start the conversation and provide you with links to additional
 material.
 
-Integration with Source Code Control
+## Integration with Source Code Control
 
 Python itself does not integrate with source control systems, but many
 of its IDEs do. PyCharm, for example, has a very intuitive interface
@@ -1913,7 +1956,7 @@ VCS menu on the PyCharm toolbar. It's that easy. Note that file names
 within the project listing (left side of the PyCharm window) are color
 coded to reflect their SCC state.
 
-Back to Modules and Packages
+## Back to Modules and Packages
 
 As mentioned earlier, a searchable list of 150,000 Python packages
 is available at the [Python Package Index](https://pypi.org/). Before
@@ -1951,62 +1994,72 @@ modules and packages into your Python workspace.
 
 -   Modules are imported with the *import* command.
     
-    >>> import statistics as stat
+```
+>>> import statistics as stat
+```
+
+The above will import (register) the statistics module, abbreviated
+as stat. This does not actually load the statistics functions into
+the current workspace. Rather, the command registers the names of
+the functions in the module, and makes them available with, e.g.,
     
-    The above will import (register) the statistics module, abbreviated
-    as stat. This does not actually load the statistics functions into
-    the current workspace. Rather, the command registers the names of
-    the functions in the module, and makes them available with, e.g.,
-    
+```
     >>> avg = stat.mean(x)
+``` 
+
+When you import a module, *all* of the functions it contains will
+be registered. This means that a .py file can contain multiple
+functions, and all will register.
+
+Specific functions in a module can be imported with, e.g.,
+    
+```
+>>> from statistics import mean
+```
+    
+The above will register the mean() function but will not register
+the module name.
     
 
--   When you import a module, *all* of the functions it contains will
-    be registered. This means that a .py file can contain multiple
-    functions, and all will register.
+On startup, Python loads the modules of its standard library. The
+following list comprehension will print the set of currently
+imported modules:
 
--   Specific functions in a module can be imported with, e.g.,
-    
-    >>> from statistics import mean
-    
-    The above will register the mean() function but will not register
-    the module name.
-    
+```
+>>> import sys
+>>> [str(m) for m in sys.modules]
+```
 
--   On startup, Python loads the modules of its standard library. The
-    following list comprehension will print the set of currently
-    imported modules:
-    
-    >>> import sys
-    >>> [str(m) for m in sys.modules]
-    
+To determine which functions are defined in module, use the built-in
+dir() function. For example:
 
--   To determine which functions are defined in module, use the built-in
-    dir() function. For example:
-    
-    >>> import sys
-    >>> dir(sys)
-    
-    We'll skip the output here, as it is lengthy.
+```
+>>> import sys
+>>> dir(sys)
+```
 
--   To install packages, a utility called 'pip' is recommended.
-    Here's how to run it to install the matplotlib package.
-    
-    Find pip.exe on your computer; this executable should have installed
-    as part of the Python install. Add that directory to Windows' path
-    variable. Just type in 'Edit Environment' and in the Windows task
-    bar and you'll find the variable editor. See the following link for
-    [instructions](https://pip.pypa.io/en/stable/).
-    
-    In a command prompt window (Windows, not Python), enter the
-    following:
-    
-    pip install matplotlib
-    pip freeze
+We'll skip the output here, as it is lengthy.
+
+To install packages, a utility called 'pip' is recommended.
+Here's how to run it to install the matplotlib package.
+
+Find pip.exe on your computer; this executable should have installed
+as part of the Python install. Add that directory to Windows' path
+variable. Just type in 'Edit Environment' and in the Windows task
+bar and you'll find the variable editor. See the following link for
+[instructions](https://pip.pypa.io/en/stable/).
+
+In a command prompt window (Windows, not Python), enter the
+following:
+
+```
+pip install matplotlib
+pip freeze
+```
 
 -   Occasionally you'll want to upgrade the installed version of pip.
-    To do so, enter (in a command prompt window): python -m pip install
-    --upgrade pip
+    To do so, enter (in a command prompt window): `python -m pip install
+    --upgrade pip`
     
 
 With thousands of available packages, one might expect that updates to
@@ -2030,7 +2083,7 @@ Virtual environments are very useful and provide a feature missing in
 MATLAB: an ability to switch between different module and package
 versions for testing or debugging.
 
-Path Management
+## Path Management
 
 You may have noticed that we've not mentioned path management yet. No
 doubt you are aware that path management is important to MATLAB:
@@ -2044,10 +2097,11 @@ that you install with the pip utility will reside in folder
 LibSite-packages relative to the Python installation folder. To list
 your specific site folder(), perform the following command:
 
->>> import site; site.getsitepackages() # A semicolon separates
-commands on a single line
+```
+>>> import site; site.getsitepackages() # A semicolon separates commands on a single line
+```
 
-If you are using a virtual environment, the venv tool or your IDE will
+If you are using a virtual environment, the `venv` tool or your IDE will
 create its necessary virtual environment folders and update the path
 variable automatically.
 
@@ -2059,14 +2113,17 @@ path.
 -   To view the directories currently on the path, you can use the
     following:
     
-    >>> import sys; print(sys.path)
-    
+```
+>>> import sys; print(sys.path)
+```    
 
 -   To append the system path, use, e.g.,
-    
-    >>> sys.path.append('C:Temp')
 
-NumPy
+```    
+>>> sys.path.append('C:Temp')
+```
+
+## NumPy
 
 We promised several times to show you how Python supports matrices,
 higher-dimensional arrays, and associated numeric and scientific
@@ -2083,114 +2140,128 @@ features are available in Python. But for a full discussion of NumPy,
 you'll want to visit the official [NumPy
 website](http://www.numpy.org/).
 
--   To begin, install NumPy.
+To begin, install NumPy.
     
-    C:> pip install numpy # Enter from a Windows terminal
+```
+C:> pip install numpy # Enter from a Windows terminal
+```
 
--   We'll focus on the a NumPy-specific data type called *ndarray*,
-    which has an alias called just *array*. This data type provides
-    storage for a multi-dimensional array of homogeneous elements.
-    Let's first create and print a 1-d array of integers:
-    
-    >>> import numpy as np
-    >>> a = np.array([1,2,3]) # Note that we input a list.
-    Omitting the brackets generates an error.
-    >>> print(a)
-    [1 2 3]
+We'll focus on the a NumPy-specific data type called *ndarray*,
+which has an alias called just *array*. This data type provides
+storage for a multi-dimensional array of homogeneous elements.
+Let's first create and print a 1-d array of integers:
 
--   Create and print a 2-d array of integers. There are numerous ways to
-    create arrays in NumPy, and we'll explore a few of those.
-    
-    >>> a = np.array([ (0, 1, 2, 3),
-    ... (4, 5, 6, 7) ])
-    >>> print(a)
-    [[0 1 2 3]
-    [4 5 6 7]]
-    
-    >>> a = np.arange(8).reshape(2,4) # Equivalent to the above
-    
-    >>> a[0,0] # Single brackets now; different from core Python
-    1
-    
-    >>> a[0,1] = 99
-    >>> print(a)
-    [[1 99 3]
-    [4 5 6]]
+```
+>>> import numpy as np
+>>> a = np.array([1,2,3]) # Note that we input a list.
+      # Omitting the brackets generates an error.
+>>> print(a)
+[1 2 3]
+```
 
--   The array() function transforms sequences of sequences into
-    two-dimensional arrays, sequences of sequences of sequences into
-    three-dimensional arrays, and so on.
+Create and print a 2-d array of integers. There are numerous ways to
+create arrays in NumPy, and we'll explore a few of those.
 
--   NumPy provides several functions that will immediately be familiar,
-    for example: zeros(), ones(), and linspace().
+```
+>>> a = np.array([ (0, 1, 2, 3),
+... (4, 5, 6, 7) ])
+>>> print(a)
+[[0 1 2 3]
+[4 5 6 7]]
 
--   Regarding operations on arrays, NumPy performs elementwise
-    computations by default; linear algebra operations are obtained
-    through special functions.
-    
-    >>> a = np.array([ (1,2,3), (4,5,6) ])
-    >>> a += 1 # An in-place operation, equivalent to a = a+1
-    >>> print(a)
-    [[2 3 4]
-    [5 6 7]]
-    
-    >>> a *= a # Element-wise multiplication, equivalent to a =
-    a*a
-    >>> print(a)
-    [[4 9 16]
-    [25 36 49]]
+>>> a = np.arange(8).reshape(2,4) # Equivalent to the above
 
--   Recall from earlier that Python uses the '+' symbol to concatenate
-    arrays, even numeric ones. NumPy overrides that behavior, giving you
-    elementwise operations. E.g.,
-    
-    >>> a + a
-    array([[ 8, 18, 32],
-    [50, 72, 98]])
+>>> a[0,0] # Single brackets now; different from core Python
+1
 
--   Now let's look a matrix product, using the @ operator. Rather than
-    print() the result, we'll not save the result and allow Python to
-    print to the screen.
-    
-    >>> a = np.array( [[1,2]
-    [3,4]])
-    >>> b = np.array( [[2,3]
-    [4,5]])
-    >>> a @ b
-    array([10, 13],
-    [22, 29])
+>>> a[0,1] = 99
+>>> print(a)
+[[1 99 3]
+[4 5 6]]
+```
 
--   NumPy has dozens of functions to perform the usual array operations
-    you might expect. You can query an array size, reshape an array,
-    extract elements or slices, compute statistics such as cov, mean,
-    std and var. With NumPy you can perform linear algebra operations
-    such as transpose, inverse and multiplication. You can compute
-    eigenvalues. You can sort and filter arrays. Logical operations
-    include the familiar any(), all() and where() operations.
+The array() function transforms sequences of sequences into
+two-dimensional arrays, sequences of sequences of sequences into
+three-dimensional arrays, and so on.
 
--   By default, NumPy will operate on arrays element-wise. This is a
-    departure from MATLAB's vectorized operations. However, NumPy
-    provides a vectorization feature via its *vectorize* class. As a
-    simple example, suppose you have a function called add.py which
-    inputs two numbers, adds them and returns the result. Below is the
-    function, and how you would vectorize it.
-    
-    >>> import numpy as np
-    >>> def add(a, b):
-    ... return a+b
-    
-    >>> add_v = np.vectorize(add) # Returns a function
-    >>> add_v([1, 2, 3], [4, 5, 6]) # Add two vectors
-    array([5, 7, 9])
+NumPy provides several functions that will immediately be familiar,
+for example: zeros(), ones(), and linspace().
 
--   NumPy has much more to offer; we simply cannot cover all of its
-    capabilities here. But a bit of good news for you: with a MATLAB
-    background you'll find that the [NumPy
-    documentation](http://www.numpy.org/) is familiar, and once you read
-    through its documentation you'll feel much more at ease with
-    Python.
+Regarding operations on arrays, NumPy performs elementwise
+computations by default; linear algebra operations are obtained
+through special functions.
 
-SciPy
+```
+>>> a = np.array([ (1,2,3), (4,5,6) ])
+>>> a += 1 # An in-place operation, equivalent to a = a+1
+>>> print(a)
+[[2 3 4]
+[5 6 7]]
+
+>>> a *= a # Element-wise multiplication, equivalent to a =
+a*a
+>>> print(a)
+[[4 9 16]
+[25 36 49]]
+```
+
+Recall from earlier that Python uses the '+' symbol to concatenate
+arrays, even numeric ones. NumPy overrides that behavior, giving you
+elementwise operations. E.g.,
+
+```
+>>> a + a
+array([[ 8, 18, 32],
+[50, 72, 98]])
+```
+
+Now let's look a matrix product, using the `@` operator. Rather than
+print() the result, we'll not save the result and allow Python to
+print to the screen.
+
+```
+>>> a = np.array( [[1,2]
+[3,4]])
+>>> b = np.array( [[2,3]
+[4,5]])
+>>> a @ b
+array([10, 13],
+[22, 29])
+```
+
+NumPy has dozens of functions to perform the usual array operations
+you might expect. You can query an array size, reshape an array,
+extract elements or slices, compute statistics such as cov, mean,
+std and var. With NumPy you can perform linear algebra operations
+such as transpose, inverse and multiplication. You can compute
+eigenvalues. You can sort and filter arrays. Logical operations
+include the familiar any(), all() and where() operations.
+
+By default, NumPy will operate on arrays element-wise. This is a
+departure from MATLAB's vectorized operations. However, NumPy
+provides a vectorization feature via its *vectorize* class. As a
+simple example, suppose you have a function called add.py which
+inputs two numbers, adds them and returns the result. Below is the
+function, and how you would vectorize it.
+
+```
+>>> import numpy as np
+>>> def add(a, b):
+... return a+b
+
+>>> add_v = np.vectorize(add) # Returns a function
+>>> add_v([1, 2, 3], [4, 5, 6]) # Add two vectors
+array([5, 7, 9])
+```
+
+NumPy has much more to offer; we simply cannot cover all of its
+capabilities here. But a bit of good news for you: with a MATLAB
+background you'll find that the [NumPy
+documentation](http://www.numpy.org/) is familiar, and once you read
+through its documentation you'll feel much more at ease with
+Python.
+
+## SciPy
 
 The NumPy package is built upon the core Python language and provides an
 N-dimensional array type. The [SciPy package](https://www.scipy.org/) is
@@ -2223,9 +2294,13 @@ by scientific discipline and computational topic. We encourage you to
 browse through the offerings. But first, let's take a quick look at
 SciPY.
 
--   To begin, install SciPy.
+To begin, install SciPy.
     
-    C:> pip install scipy # Enter from a Windows terminal
+```
+C:> pip install scipy # Enter from a Windows terminal
+```
+
+**TODO: Fix this equation display:**
 
 $$begin{bmatrix}
 1 2 
@@ -2239,30 +2314,34 @@ end{Bmatrix} = begin{Bmatrix}
 end{Bmatrix}
 $$
 
--   >>> import numpy as np
-    >>> from scipy import linalg
-    
-    >>> A = np.array([[1, 2], [3, 4]])
-    >>> b = np.array([[5], [6]])
-    >>> x = np.linalg.solve(A, b)
-    >>> print(x)
-    [[-4, ],
-    [ 4.5]]
+```
+>>> import numpy as np
+>>> from scipy import linalg
 
--   Check that the solution is correct. Compare the multiplication of
-    [A]{x} to {b}.
-    
-    >>> Ax = np.dot(A,x)
-    >>> tf = all(np.equal(Ax, b))
-    >>> print('Solution matches:', tf)
-    Solution matches: True
+>>> A = np.array([[1, 2], [3, 4]])
+>>> b = np.array([[5], [6]])
+>>> x = np.linalg.solve(A, b)
+>>> print(x)
+[[-4, ],
+[ 4.5]]
+```
+
+Check that the solution is correct. Compare the multiplication of
+`[A]{x}` to `{b}`.
+
+```
+>>> Ax = np.dot(A,x)
+>>> tf = all(np.equal(Ax, b))
+>>> print('Solution matches:', tf)
+Solution matches: True
+```
 
 The SciPy package has extensive functionality, and extensive
 documentation. The online [documentation](https://docs.scipy.org) at
 scipy.org is excellent, and you'll eventually find yourself spending
 time there.
 
-Pandas
+## Pandas
 
 Building on NumPy and SciPy is the [Pandas
 package](https://pandas.pydata.org). Pandas is all about data analysis
@@ -2309,54 +2388,63 @@ Labor Statistics](https://www.bls.gov/) and to a set of csv files on
 their website. In the following code, we'll read the CPI data, explore
 it, reduce its frequency from monthly to annual, and then chart it.
 
--   To begin, install pandas.
-    
-    C:> pip install pandas # Enter from a Windows terminal
+To begin, install pandas.
 
--   Next, let's read the online data, and take a quick look at the
-    contents:
+```
+C:> pip install pandas # Enter from a Windows terminal
+```
 
-> >>> import pandas as pd
->
-> >>> URL =
-> 'https://download.bls.gov/pub/time.series/cu/cu.data.12.USHousing'
-> >>> df = pd.read_csv(URL, sep='t') # df is short for
-> DataFrame
-> >>> df.head()
-> 
-> series_id year period value
->
-> 0 CUSR0000SAH 1967 M01 30.5
-> 1 CUSR0000SAH 1967 M02 30.5
-> 2 CUSR0000SAH 1967 M03 30.5
-> 3 CUSR0000SAH 1967 M04 30.6
-> 4 CUSR0000SAH 1967 M05 30.7
+Next, let's read the online data, and take a quick look at the
+contents:
 
--   ![](media/image4.png){width="2.7395833333333335in"
-    height="2.345097331583552in"}Pandas was able to read the csv file
-    and place it directly into a DataFrame. Note that Pandas added the
-    first column (a row index) automatically. We won't need the
-    series_id column, so let's drop it. Also, it turns out that the
-    CPI data is rather sparse before 1940, so let's keep only years
-    1940 and later:
-    
-    >>> df = df.drop('series_id', axis='columns')
-    >>> df = df[df.year >= 1940]
+```
+>>> import pandas as pd
 
--   The column labeled 'period' denotes a month. E.g., M01 is January,
-    M02 is February, etc. Let's use some of panda's built-in SQL
-    functionality to group the CPI indices by year, taking the mean CPI
-    across the months of each year. Note how we are chaining operations
-    together:
+>>> URL =
+'https://download.bls.gov/pub/time.series/cu/cu.data.12.USHousing'
+>>> df = pd.read_csv(URL, sep='t') # df is short for
+DataFrame
+>>> df.head()
+ 
+series_id year period value
 
-> >>> df = df.groupby(['year']).mean()
->
-> Finally, let's clean up the column labels and plot the data:
->
-> >>> df = df.rename({'value':'Mean CPI'}, axis='columns')
-> >>> df.plot()
+0 CUSR0000SAH 1967 M01 30.5
+1 CUSR0000SAH 1967 M02 30.5
+2 CUSR0000SAH 1967 M03 30.5
+3 CUSR0000SAH 1967 M04 30.6
+4 CUSR0000SAH 1967 M05 30.7
+```
 
-Plotting the data provides the figure to the right. Several comments are
+Pandas was able to read the csv file
+and place it directly into a DataFrame. Note that Pandas added the
+first column (a row index) automatically. We won't need the
+series_id column, so let's drop it. Also, it turns out that the
+CPI data is rather sparse before 1940, so let's keep only years
+1940 and later:
+
+```
+>>> df = df.drop('series_id', axis='columns')
+>>> df = df[df.year >= 1940]
+```
+
+The column labeled 'period' denotes a month. E.g., M01 is January,
+M02 is February, etc. Let's use some of panda's built-in SQL
+functionality to group the CPI indices by year, taking the mean CPI
+across the months of each year. Note how we are chaining operations
+together:
+
+```
+>>> df = df.groupby(['year']).mean()
+
+Finally, let's clean up the column labels and plot the data:
+
+>>> df = df.rename({'value':'Mean CPI'}, axis='columns')
+>>> df.plot()
+```
+
+![](media/image4.png)
+
+Plotting the data provides the figure above. Several comments are
 warranted here. First, the pandas' library was able to successfully
 load a remotely-hosted data set that we did not even bother to
 pre-inspect. Pandas placed the data into its DataFrame object,
@@ -2371,7 +2459,7 @@ amount of functionality that we've not touched upon, but hopefully
 we've demonstrated that the combination of Python/NumPy/SciPy/pandas
 provides an analysis environment similar to what you use with MATLAB
 
-MATLAB and Python, Together
+## MATLAB and Python, Together
 
 The next item in the Python ecosystem that we'd like to introduce is
 one that will be familiar to you: MATLAB. It may seem odd to include
@@ -2419,7 +2507,7 @@ possibilities here are unlimited and depend upon your specific needs. As
 we stated in the beginning of this article, knowing both languages will
 provide you with opportunities not previously imagined.
 
-Integrated Development Environments (IDEs)
+## Integrated Development Environments (IDEs)
 
 Let's return to a topic that we first discussed at the very beginning
 of the article: IDEs. There are at least [twenty
@@ -2477,7 +2565,7 @@ integrated graphics. At the top-right is the variable explorer;
 superimposed upon it is the output DataFrame which we obtained by
 double-clicking on that variable in the explorer window.
 
-![](media/image5.png){width="6.5in" height="3.4409722222222223in"}
+![](media/image5.png)
 
 Spyder is written in the Python language, is open source and is free of
 charge.
