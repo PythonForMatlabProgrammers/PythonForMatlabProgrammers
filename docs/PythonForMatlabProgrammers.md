@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 Python for MATLAB® Programmers  
 ==============================
 
