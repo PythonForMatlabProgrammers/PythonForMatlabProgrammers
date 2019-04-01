@@ -2305,19 +2305,7 @@ To begin, install SciPy.
 C:> pip install scipy # Enter from a Windows terminal
 ```
 
-**TODO: Fix this equation display:**
-
-$$begin{bmatrix}
-1 2 
-3 4 
-end{bmatrix}begin{Bmatrix}
-x_{1} 
-x_{2} 
-end{Bmatrix} = begin{Bmatrix}
-5 
-6 
-end{Bmatrix}
-$$
+![](media/equation1.png)
 
 ```
 >>> import numpy as np
