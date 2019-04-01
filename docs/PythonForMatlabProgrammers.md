@@ -1145,6 +1145,7 @@ in multiple ways:
     range(4)).
 
 -   Using a constructor. E.g.,
+
 ```
 >>> list('abc') # Strings are iterables
 ['a', 'b', 'c']
@@ -1156,9 +1157,10 @@ in multiple ways:
 memory-efficient
 [1, 4, 9, 16]
 ```
-    Keep in mind that user-defined objects can be made iterable. We have
-    not covered such objects yet, but once we do, you'll see that their
-    contents can be converted into list objects.
+
+Keep in mind that user-defined objects can be made iterable. We have
+not covered such objects yet, but once we do, you'll see that their
+contents can be converted into list objects.
 
 ## Functions
 
