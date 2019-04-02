@@ -2083,7 +2083,7 @@ directory tree containing a Python installation, along with a set of
 version-specific packages.
 
 Python itself can create virtual environments, using the command
-*venv*. Likewise, many IDE's can create such environments. If you are
+*venv*. Likewise, many IDEs can create such environments. If you are
 using a VE, be aware that pip installs packages and modules local only
 to that VE. That is, if you download a package specific to a VE, that
 package will not be included with, or available to, the next VE that you
