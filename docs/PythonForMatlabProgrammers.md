@@ -388,7 +388,7 @@ notice.
 
 -   Most Python implementations represent the float data type as a
     64-bit number. The maximum value allowed is approximately 1.8 X
-    10^308^. Larger values are represented by the string *inf*.
+    10^308. Larger values are represented by the string *inf*.
 
 -   Python also provides numeric subtypes, meaning types derived from
     the primary types. Notable are Booleans, fractions, and decimal
@@ -451,17 +451,17 @@ and later we'll return to the topics of vectors and arrays.
     its members one at a time. As an example, a for-statement iterates
     over the items of a sequence. You can do the following:
 ```
->>> var = 'abc' # Strings are iterable objects.
+>>> var = 'abc'   # Strings are iterable objects.
 >>> for v in var: # Blocks of code are terminated with a blank line.
-    ... print(v) # There are no end statements in Python. Nor do lines
-    end with semicolons.
+...   print(v)    # There are no end statements in Python. Nor do lines
+                  # end with semicolons.
 ```
 
     The above lines of code will produce:
 ```
-    a
-    b
-    c
+a
+b
+c
 ```
 
     In the above code, several coding conventions become apparent. The
@@ -536,27 +536,25 @@ MATLAB provides.
     is simply to enclose the string in parentheses. E.g.,
 ```    
 >>> str = ('abc'
-... 'def')
+...        'def')
 >>> str
 'abcdef'
 ```    
     You can also continue a line with a backslash. E.g.,
 ```
->>> str = 'abc' 
+>>> str = 'abc' \
 ... 'def'
 ```
 -   Index reference a string with zero-based indexing, e.g.,
 ```    
->>> str[0] # All sequence data types employ zero-based
-indexing.
+>>> str[0] # All sequence data types employ zero-based indexing.
 'a'
 ```
 
 -   Multi-element indexing is called *slicing*, e.g., str[0:2].
 ```    
 >>> str = 'ThisIsATest'
->>> str[0:4] # The upper bound is not included in the returned
-substring.
+>>> str[0:4] # The upper bound is not included in the returned substring.
 This
 ```
 -   Strings are an [immutable](https://docs.python.org/3/glossary.html)
@@ -570,8 +568,7 @@ TypeError: 'str' object does not support item assignment
 ```    
     However, the following will work:
 ```  
->>> str = 'A' + str[1:3] # Note again that the upper bound
-is not included in the range
+>>> str = 'A' + str[1:3] # Note again that the upper bound is not included in the range
 >>> str
 'Abc'
 ```
@@ -589,17 +586,15 @@ provides similar facilities via add-on modules.
     f-string:
     
 ```
->>> today = '01-Jan-2018' # There are date/time facilities for 
-           obtaining the current date
->>> print(f'The current date is {today}') # Note the prefix 'f' 
-           and the variable substitution
+>>> today = '01-Jan-2018' # There are date/time facilities for obtaining the current date
+>>> print(f'The current date is {today}') # Note the prefix 'f' and the variable substitution
 The current date is 01-Jan-2018
 ```
     
-    And here's an example of substitution and formatting within
-    f-strings:
+And here's an example of substitution and formatting within
+f-strings:
     
-```python
+```
 >>> import math
 >>> t = f'Pi = {math.pi:{4.3}}' # A string of length 4 with 2 significant digits
 >>> t
@@ -644,10 +639,10 @@ and arrays.
     You will sometimes see a list defined across multiple lines, e.g.,
 ```    
 >>> x = [1, 2, 3,
-... 4, 5, 6,
-... ]
+...      4, 5, 6,
+...      ]
 ```    
-    In the above, the IDE being used automatically added the '...'
+    In the above, the IDE being used automatically added the `...`
     continuation marks, and also automatically indented the continuation
     lines. Note that we've included a trailing comma (after the six).
     Python allows this, as it makes it easier to add more lines of data
@@ -687,8 +682,8 @@ and arrays.
     y.append(9). Note that the list type is a class and append() is a
     method rather than a function.
 
--   If a numeric sequence is desired, the equivalent of MATLAB's y =
-    1:10 in Python is y = list(range(1,11)). This is one of the few
+-   If a numeric sequence is desired, the equivalent of MATLAB's `y =
+    1:10` in Python is `y = list(range(1,11))`. This is one of the few
     instances where Python is not particularly terse. One can also
     employ a *list comprehension* to create a sequence. We'll cover
     list comprehensions in a later section.
@@ -699,8 +694,8 @@ and arrays.
 
 ```
 >>> x = [ [ 1,2,3],
-[4,5,6],
-[7,8,9] ]
+   [4,5,6],
+   [7,8,9] ]
 >>> x
 [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
@@ -768,12 +763,12 @@ pronounced to rhyme with *supple*.
 -   Although tuples are immutable, their elements can be mutable objects
     such as lists.
 
--   Tuple assignment is also called tuple packing: t = 1, 2, 3.
+-   Tuple assignment is also called tuple packing: `t = 1, 2, 3`.
 
--   The reverse is called tuple unpacking: x, y, z = t.
+-   The reverse is called tuple unpacking: `x, y, z = t`.
 
 -   Multiple assignments on a single line is a special case of tuple
-    unpacking: x, y = 1, 5/3. This is called, more generally, sequence
+    unpacking: `x, y = 1, 5/3`. This is called, more generally, sequence
     unpacking, as the right-hand side of the assignment can be any
     sequence.
 
@@ -818,8 +813,7 @@ things to know about dictionaries:
 
 -   A few examples:
 ```
->>> phonebook = {'Joe': 1234, 'Bob': 5678} # Note the curly
-braces on assignment, like sets.
+>>> phonebook = {'Joe': 1234, 'Bob': 5678} # Note the curly braces on assignment, like sets.
 ```
 -   To insert or update an item, use square brackets for indexing,
     e.g.,
@@ -897,15 +891,15 @@ else:
 Here's a for-statement. Python will iterate over the items of any
 sequence, as discussed earlier.
 ```
-    >>> for x in 'abcd':
-    ...   print(x)
+>>> for x in 'abcd':
+...   print(x)
 ```
 The above will print 'a', 'b', 'c', 'd' on separate lines.
 The same construct works with lists:
 ```
-    >>> names = ['Dave', 'John', 'Mark']
-    >>> for x in names:
-    ...   print(x)
+>>> names = ['Dave', 'John', 'Mark']
+>>> for x in names:
+...   print(x)
 ```
 The above will print 'Dave', 'John', 'Mark' on separate
 lines.
@@ -919,13 +913,12 @@ Wondering how to use indices in a for-loop? There are several ways,
 and here is one example:
     
 ```
-    >>> N = len(names)
-    >>> for i in range(0,N): # range(0,N) produces the sequence 0,
-    1, 2, ..., N-1
-    ... print(i, names[i])
-    0 Dave
-    1 John
-    2 Mark
+>>> N = len(names)
+>>> for i in range(0,N): # range(0,N) produces the sequence 0, 1, 2, ..., N-1
+...   print(i, names[i])
+0 Dave
+1 John
+2 Mark
 ```
 
 The range() function will return the sequence of values 0, 1, ...,
@@ -936,7 +929,7 @@ obtain the loop counter:
 
 ```
 >> for i, v in enumerate(names):
-... print(i,v)
+...  print(i,v)
 ```
 
 When the list to print is instead a dictionary, an items() method
@@ -945,7 +938,7 @@ performs much the same role as the enumerate() function:
 ```
 >>> names = {1: 'Dave', 2: 'John', 3: 'Mark'}
 >>> for key, val in names.items():
-... print(key,val)
+...   print(key,val)
 ```
 
 -   Within looping constructs, Python supports the usual *break* and
@@ -977,10 +970,8 @@ one list from another, or from an iterable.
 
 ```    
 >>> Index = [i for i in range(10)] # Produces 0, 1, 2, ..., 9
->>> Squares = [x**2 for x in range(10)] # Produces 0, 1, 4,
-..., 81
->>> Squares = [x**2 for x in range(10) if x != 5] # Skips
-x=5
+>>> Squares = [x**2 for x in range(10)] # Produces 0, 1, 4, ..., 81
+>>> Squares = [x**2 for x in range(10) if x != 5] # Skips x=5
 ```
 
 -   The expression in a listcomp can be any expression, including
@@ -988,8 +979,8 @@ x=5
     
 ```
 >>> x = [[0, 1, 2],
-... [3, 4, 5],
-... [6, 7, 8]]
+...      [3, 4, 5],
+...      [6, 7, 8]]
 
 >>> [row for row in x]
 [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
@@ -1002,8 +993,8 @@ The above is equivalent to the following:
 ```
 >>> out = []
 >>> for row in range(3):
-... for i in range(3):
-... out.append(x[row][i])
+...   for i in range(3):
+...     out.append(x[row][i])
 ```
 
 The following comprehension will transpose x. Note that the order of
@@ -1082,7 +1073,7 @@ Traceback (most recent call last):
     example, creates an iterable. We saw this earlier when discussing
     for-loops.
 
--   The function call range(0,5) creates an iterable object that will
+-   The function call `range(0,5)` creates an iterable object that will
     return [0, 1, 2, 3, 4] one element at a time.
     
 ```
@@ -1101,9 +1092,9 @@ iterator
     element of each tuple will be a counter, and the second the value
     obtained from the iterable. E.g.,
 ```
-    >>> x = ['a', 'b', 'c']
-    >>> list(enumerate(x))
-    [(0, 'a'), (1, 'b'), (2, 'c')]
+>>> x = ['a', 'b', 'c']
+>>> list(enumerate(x))
+[(0, 'a'), (1, 'b'), (2, 'c')]
 ```
 -   Iterables and iterators are pervasive in the Python language, as
     they provide memory efficient lists. You might not use them
@@ -1129,21 +1120,19 @@ creating iteration-enabled objects. There are two types of generators.
     employ list comprehensions and iterables to create an expression
     which can later be executed.
 ```
->>> squares = (x*x for x in range(1,5)) # This produces, but
-does not execute, a generator object.
->>> list(squares) # This executes the object, saving the results
-as a list.
+>>> squares = (x*x for x in range(1,5)) # This produces, but does not execute, a generator object.
+>>> list(squares) # This executes the object, saving the results as a list.
 [1, 4, 9, 16]
 ```
     The first line of the above code looks like a listcomp, but it uses
     () rather than [], and that tells Python to create a generator. As
     before with iterators, we can iterate through a generator:
 ```
-    >>> squares = (x*x for x in range(1,3))
-    >>> next(squares)
-    1
-    >>> next(squares)
-    4
+>>> squares = (x*x for x in range(1,3))
+>>> next(squares)
+1
+>>> next(squares)
+4
 ```
 Generators are essentially lists that are awaiting completion. They are
 memory efficient, and they are easy to store and to pass to methods and
@@ -1156,14 +1145,15 @@ the language, we need to revisit earlier topics. Now that you know about
 iterables, we should revisit list construction. Lists can be constructed
 in multiple ways:
 
--   Using square brackets as discussed before. E.g., x = [1, ,2, 3].
+-   Using square brackets as discussed before. E.g., `x = [1, ,2, 3]`.
 
--   Using a list comprehension. E.g., y = [x for x in range(4)].
+-   Using a list comprehension. E.g., `y = [x for x in range(4)]`.
 
--   Deferring construction with a generator. E.g., gen = (x for x in
-    range(4)).
+-   Deferring construction with a generator. E.g., `gen = (x for x in
+    range(4))`.
 
--   Using a constructor. E.g.,
+<!-- TODO: add example here -->
+-   Using a constructor.
 
 ```
 >>> list('abc') # Strings are iterables
@@ -1172,8 +1162,7 @@ in multiple ways:
 >>> list( (1, 2, 3) ) # Tuples are iterables
 [1, 2, 3]
 
->>> list( (x*x for x in range(1,5)) ) # Generators are
-memory-efficient
+>>> list( (x*x for x in range(1,5)) ) # Generators are memory-efficient
 [1, 4, 9, 16]
 ```
 
@@ -1198,8 +1187,8 @@ def fun(arg1,arg2):
 -   Function arguments are always *call by reference*. Python does not
     support *call by value*.[^2]
 
--   To return a value(s), Python does not support an out = fun()
-    construct.  Instead, Python uses 'return var' at the end of the
+-   To return a value(s), Python does not support an `out = fun()`
+    construct.  Instead, Python uses `return var` at the end of the
     function.
 
 -   If a function returns no value, the built-in value 'None' is
@@ -1220,7 +1209,7 @@ given, those arguments become optional for the caller.
 -   Functions can be called with keyword arguments. E.g., to call the
     function just defined we could type:
 ```
-    >>> whats_your_name(prompt='Tell me your name', retries=10, reminder='Try again')
+>>> whats_your_name(prompt='Tell me your name', retries=10, reminder='Try again')
 ``` 
     Once a keyword argument is provided, all remaining arguments (if
     provided) must also be keyword arguments.
@@ -1229,7 +1218,7 @@ given, those arguments become optional for the caller.
     and arguments with defaults, one can pass an arbitrary number of
     arguments with the following construct:
 ```
-    def fun(arg1, arg2='test', *args):
+def fun(arg1, arg2='test', *args):
 ```
     This is similar to MATLAB's vararg input. In the caller, following
     the positional and keyword arguments, one can pass an arbitrary set
@@ -2185,7 +2174,7 @@ create arrays in NumPy, and we'll explore a few of those.
 
 ```
 >>> a = np.array([ (0, 1, 2, 3),
-... (4, 5, 6, 7) ])
+...                (4, 5, 6, 7) ])
 >>> print(a)
 [[0 1 2 3]
 [4 5 6 7]]
