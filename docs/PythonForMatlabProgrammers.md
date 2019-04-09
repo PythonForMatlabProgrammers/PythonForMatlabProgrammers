@@ -2082,11 +2082,11 @@ allows for *virtual environments*. A virtual environment is just a
 directory tree containing a Python installation, along with a set of
 version-specific packages.
 
-Python itself can create virtual environments, using the command
+Python itself can create virtual environments (AKA "venvs"), using the command
 *venv*. Likewise, many IDEs can create such environments. If you are
-using a VE, be aware that pip installs packages and modules local only
-to that VE. That is, if you download a package specific to a VE, that
-package will not be included with, or available to, the next VE that you
+using a venv, be aware that pip installs packages and modules local only
+to that venv. That is, if you download a package specific to a venv, that
+package will not be included with, or available to, the next venv that you
 create.
 
 Virtual environments are very useful and provide a feature missing in
