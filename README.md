@@ -9,7 +9,7 @@ and [Andrew Janke](https://apjanke.net), experienced MATLAB coders who have rece
 
 See the live website at <https://apjanke.github.io/PythonForMatlabCoders/>.
 
-For info about developing this site, see [doc-project/DeveloperNotes.md].
+For info about developing this site, see the [Developer Notes](doc-project/DeveloperNotes.md).
 
 # License
 
