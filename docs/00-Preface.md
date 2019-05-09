@@ -1,7 +1,3 @@
----
-layout: default
----
-
 Python for MATLAB® Programmers  
 ==============================
 
@@ -31,18 +27,3 @@ on March 31, 2019 under a Creative Commons Attribution ShareAlike 4.0 Internatio
 
 
 ******************************************************
-
-# Sections
-
-1. [Introduction](01-Introduction.md)
-1. [Python Types](02-Python-Types.md)
-1. [Control Structures](03-Control-Structures.md)
-1. [Plotting](04-Plotting.md)
-1. [Classes](05-Classes.md)
-1. [The Python Ecosystem](06-Ecosystem.md)
-1. [Conclusion](07-Conclusion.md)
-
-******************************************************
-
-
-
