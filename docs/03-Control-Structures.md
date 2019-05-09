@@ -59,7 +59,7 @@ cell array.
 
 Wondering how to use indices in a for-loop? There are several ways,
 and here is one example:
-    
+
 ```
 >>> N = len(names)
 >>> for i in range(0,N): # range(0,N) produces the sequence 0, 1, 2, ..., N-1
@@ -124,7 +124,7 @@ one list from another, or from an iterable.
 
 -   The expression in a listcomp can be any expression, including
     another listcomp. Consider the following examples.
-    
+
 ```
 >>> x = [[0, 1, 2],
 ...      [3, 4, 5],
@@ -153,7 +153,7 @@ inside a listcomp.
 ```
 >>> [[row[i] for row in x] for i in range(3)]
 [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
-``` 
+```
 
 -   Dictionaries can also be assigned with list comprehensions:
 
@@ -168,7 +168,7 @@ inside a listcomp.
     an expression which takes the form:
 ```
 >>> x if C else y # C is a conditional expression
-``` 
+```
     For example, suppose you have a dictionary d with a mix of integers,
     doubles and strings. If you want to convert all of the numeric types
     to type double, but leave the strings alone, the following will
@@ -223,7 +223,7 @@ Traceback (most recent call last):
 
 -   The function call `range(0,5)` creates an iterable object that will
     return [0, 1, 2, 3, 4] one element at a time.
-    
+
 ```
 >>> range(5) # This returns the object, an iterable
 range(0, 5)
@@ -342,7 +342,7 @@ def fun(arg1,arg2):
 -   If a function returns no value, the built-in value 'None' is
     returned by default. The value None has a type of NoneType.
 
--   Function args can be given default values. E.g.,
+-   Function arguments can be given default values. E.g.,
 
 ```
 def whats_your_name (prompt, retries=4, reminder='Please try again!'):
@@ -358,7 +358,7 @@ given, those arguments become optional for the caller.
     function just defined we could type:
 ```
 >>> whats_your_name(prompt='Tell me your name', retries=10, reminder='Try again')
-``` 
+```
     Once a keyword argument is provided, all remaining arguments (if
     provided) must also be keyword arguments.
 
@@ -371,7 +371,7 @@ def fun(arg1, arg2='test', *args):
     This is similar to MATLAB's vararg input. In the caller, following
     the positional and keyword arguments, one can pass an arbitrary set
     of comma-separated values. Inside the called function, the `*args`
-    inputs will automatically be packed into a tuple named `arg` (in this
+    inputs will automatically be packed into a tuple named `args` (in this
     example).
 
 -   Expanding upon the above signature, one can also specify that a
@@ -379,11 +379,9 @@ def fun(arg1, arg2='test', *args):
 ```
 def fun(arg1, arg2='test', *args, **keywords):
 ```
-    The above listed order is required. If provided, the trailing
-    keyword arguments will automatically be packed into a dictionary
-    inside the function.
+  The above listed order is required.  If provided, the trailing keyword arguments will automatically be packed into a dictionary inside the function.  As an example of calling the above function, regardless of what the function might do, one could enter:
 
--   If a function signature requires individual args but the calling
+-   If a function signature requires individual arguments but the calling
     workspace has a list or tuple, the latter can be unpacked on the fly
     with a star ('*') syntax. For example:
 ```
@@ -411,7 +409,7 @@ def fun(arg1, arg2='test', *args, **keywords):
 ```
 >>> def f(x): # Trivial function
 ...   return x+1
-``` 
+```
     The function f(x) is not just a function sitting in memory waiting
     to be invoked; it is an object in the workspace that can be passed
     around.
@@ -480,7 +478,7 @@ Type: function
     the remaining characters. The length of the unique characters in
     each string then became the key by which to sort the list of
     strings.
-    
+
     The above is equivalent to:
 ```
 >>> [str[i] for I in [1, 0, 2]]
@@ -541,7 +539,7 @@ Here's a quick summary:
 
 -   Try-except blocks have added functionality compared to MATLAB. The
     outline of a try-except block looks like:
-    
+
 ```
 try:
   # code
@@ -553,12 +551,12 @@ else:
   # Code that is always executed if no exception is raised.
   # Useful for code that should not be part of the try-block.
 finally:
-  # Cleanup code that is always executed, regardless of whether an 
+  # Cleanup code that is always executed, regardless of whether an
   # exception was encountered.
 ```
 -   As in MATLAB, it is not necessary to specify the class of error.
     E.g., the following is permissible:
-    
+
 ```
 try:
   x = y / z
@@ -583,7 +581,7 @@ except ArithmeticError:
 
 -   If you desire a stack trace and/or logging into a log file, use
     Python's logging module. E.g.,
-    
+
 ```
 import logging
 
@@ -599,7 +597,7 @@ except:
     statement](https://docs.python.org/3/reference/compound_stmts.html#with)
     will ensure that pre-defined actions occur even if not explicitly
     requested. For example:
-    
+
 ```
 with open('some_file.csv') as file:
   for line in file:
