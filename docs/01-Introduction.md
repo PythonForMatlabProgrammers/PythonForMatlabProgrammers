@@ -55,7 +55,7 @@ A fourth, and last objective of this article is to be as brief as
 possible. Python is already well documented, so this document strives to
 be a quick read.
 
-## Contributing to This Article
+## Contributing to this Article
 
 As just mentioned, we have a goal of keeping this article brief.  However,
 we've received suggestions of additional material for the article, and 
