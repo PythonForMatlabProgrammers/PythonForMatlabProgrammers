@@ -53,8 +53,20 @@ we do.
 
 A fourth, and last objective of this article is to be as brief as
 possible. Python is already well documented, so this document strives to
-be a quick read. Corrections, additions, suggestions, criticisms, etc.
-should be directed to the authors.
+be a quick read.
+
+## Contributing to This Article
+
+As just mentioned, we have a goal of keeping this article brief.  However,
+we've received suggestions of additional material for the article, and 
+we value those suggestions.  In March 2019 we published the article to a [GitHub public
+repository](https://github.com/apjanke/PythonForMatlabCoders) under a 
+[Creative Commons Attribution ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+
+Readers are encouraged to edit or add material by submitting pull requests from the GitHub repository.  If
+you are not comfortable doing so but have corrections, additions, suggestions, criticisms, etc.
+please direct them to the authors.  We will give proper acknowledgement to all who contribute to
+this article.
 
 Let's get started.
 
