@@ -235,9 +235,8 @@ provides similar facilities via add-on modules.
 
 -   Python provides several techniques for variable substitution and
     formatting in strings, but these differing methods appear to be
-    converging onto a new technique called [*literal
-    strings*](https://www.python.org/dev/peps/pep-0498/), or
-    *f-strings*. Here's an example of variable substitution using an
+    converging onto a new technique called [*formatted string literals*](https://www.python.org/dev/peps/pep-0498/),
+    or *f-strings*. Here's an example of variable substitution using an
     f-string:
     
 ```
@@ -251,11 +250,14 @@ f-strings:
     
 ```
 >>> import math
->>> t = f'Pi = {math.pi:{4.3}}' # A string of length 4 with 2 significant digits
+>>> t = f'Pi = {math.pi:4.3f}' # A float of length 4 with 2 significant digits
 >>> t
 'Pi = 3.14'
 ```
-    
+Python's f-strings are both powerful and syntactically terse.  An expression within an f-string
+(the component inside the{}) is just that, an expression.  It can be computation, a method call,
+or any combination of expressions you can dream up.
+
 Python provides substantial capabilities for creating and printing
 strings. It's a topic we'll have to leave for now, for space
 considerations.
