@@ -255,12 +255,11 @@ f-strings:
 'Pi = 3.14'
 ```
 Python's f-strings are both powerful and syntactically terse.  An expression within an f-string
-(the component inside the{}) is just that, an expression.  It can be computation, a method call,
-or any combination of expressions you can dream up.
+(the component inside the{}) is just that, an expression.  It can be a variable reference, a
+computation, a method call, a library call or any combination of expressions you can dream up.
 
-Python provides substantial capabilities for creating and printing
-strings. It's a topic we'll have to leave for now, for space
-considerations.
+Python provides substantial capabilities for creating and printing strings. It's a topic we'll
+have to leave for now, for space considerations.
 
 ## Lists
 
