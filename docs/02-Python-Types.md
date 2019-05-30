@@ -503,4 +503,6 @@ For now, we are done with data types. We'll return to the topic later
 when we discuss user-defined classes. Let's look next at Python's
 primary control structures.
 
-[<-- Previous Section](01-Introduction.md) &nbsp; &nbsp; &nbsp; &nbsp; [Next Section -->](03-Control-Structures.md)
+[![Previous Section](media/previous.png)](01-Introduction.md)
+&nbsp; &nbsp; &nbsp; &nbsp; 
+[![Next Section](media/next.png)](03-Control-Structures.md)
