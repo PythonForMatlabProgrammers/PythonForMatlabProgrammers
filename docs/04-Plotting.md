@@ -15,7 +15,7 @@ MATLAB's charting capabilities.
 
 Let's look at an example.
     
-```
+```python
 C:> pip install matplotlib # from a Windows terminal
 
 >>> import matplotlib.pyplot as plt
@@ -31,7 +31,7 @@ Matplotlilb provides 2-d charts, but
 other packages built upon Matplotlib provide 3-d charts, as per the
 following example.
     
-```
+```python
 >>> from mpl_toolkits.mplot3d import Axes3D
 >>> import matplotlib.pyplot as plt
 >>> from matplotlib import cm
