@@ -74,7 +74,7 @@ modules and packages into your Python workspace.
 
 -   Modules are imported with the *import* command.
     
-```
+```python
 >>> import statistics as stat
 ```
 
@@ -83,7 +83,7 @@ as stat. This does not actually load the statistics functions into
 the current workspace. Rather, the command registers the names of
 the functions in the module, and makes them available with, e.g.,
     
-```
+```python
     >>> avg = stat.mean(x)
 ``` 
 
@@ -93,7 +93,7 @@ functions, and all will register.
 
 Specific functions in a module can be imported with, e.g.,
     
-```
+```python
 >>> from statistics import mean
 ```
     
@@ -105,7 +105,7 @@ On startup, Python loads the modules of its standard library. The
 following list comprehension will print the set of currently
 imported modules:
 
-```
+```python
 >>> import sys
 >>> [str(m) for m in sys.modules]
 ```
@@ -113,7 +113,7 @@ imported modules:
 To determine which functions are defined in module, use the built-in
 dir() function. For example:
 
-```
+```python
 >>> import sys
 >>> dir(sys)
 ```
@@ -132,7 +132,7 @@ bar and you'll find the variable editor. See the following link for
 In a command prompt window (Windows, not Python), enter the
 following:
 
-```
+```python
 pip install matplotlib
 pip freeze
 ```
@@ -177,7 +177,7 @@ that you install with the pip utility will reside in folder
 LibSite-packages relative to the Python installation folder. To list
 your specific site folder(), perform the following command:
 
-```
+```python
 >>> import site; site.getsitepackages() # A semicolon separates commands on a single line
 ```
 
@@ -193,13 +193,13 @@ path.
 -   To view the directories currently on the path, you can use the
     following:
     
-```
+```python
 >>> import sys; print(sys.path)
 ```    
 
 -   To append the system path, use, e.g.,
 
-```    
+```python
 >>> sys.path.append('C:Temp')
 ```
 
@@ -222,7 +222,7 @@ website](http://www.numpy.org/).
 
 To begin, install NumPy.
     
-```
+```python
 C:> pip install numpy # Enter from a Windows terminal
 ```
 
@@ -231,7 +231,7 @@ which has an alias called just *array*. This data type provides
 storage for a multi-dimensional array of homogeneous elements.
 Let's first create and print a 1-d array of integers:
 
-```
+```python
 >>> import numpy as np
 >>> a = np.array([1,2,3]) # Note that we input a list.
       # Omitting the brackets generates an error.
@@ -242,7 +242,7 @@ Let's first create and print a 1-d array of integers:
 Create and print a 2-d array of integers. There are numerous ways to
 create arrays in NumPy, and we'll explore a few of those.
 
-```
+```python
 >>> a = np.array([ (0, 1, 2, 3),
 ...                (4, 5, 6, 7) ])
 >>> print(a)
@@ -271,7 +271,7 @@ Regarding operations on arrays, NumPy performs elementwise
 computations by default; linear algebra operations are obtained
 through special functions.
 
-```
+```python
 >>> a = np.array([ (1,2,3), (4,5,6) ])
 >>> a += 1 # An in-place operation, equivalent to a = a+1
 >>> print(a)
@@ -289,7 +289,7 @@ Recall from earlier that Python uses the '+' symbol to concatenate
 arrays, even numeric ones. NumPy overrides that behavior, giving you
 elementwise operations. E.g.,
 
-```
+```python
 >>> a + a
 array([[ 8, 18, 32],
 [50, 72, 98]])
@@ -299,7 +299,7 @@ Now let's look a matrix product, using the `@` operator. Rather than
 print() the result, we'll not save the result and allow Python to
 print to the screen.
 
-```
+```python
 >>> a = np.array( [[1,2]
 [3,4]])
 >>> b = np.array( [[2,3]
@@ -324,7 +324,7 @@ simple example, suppose you have a function called add.py which
 inputs two numbers, adds them and returns the result. Below is the
 function, and how you would vectorize it.
 
-```
+```python
 >>> import numpy as np
 >>> def add(a, b):
 ... return a+b
@@ -376,7 +376,7 @@ SciPY.
 
 To begin, install SciPy.
     
-```
+```python
 C:> pip install scipy # Enter from a Windows terminal
 ```
 
@@ -384,7 +384,7 @@ Let's solve linear system [A]{x} = {b}, where [A] and {b} are given as:
 
 ![](media/equation1.png)
 
-```
+```python
 >>> import numpy as np
 >>> from scipy import linalg
 
@@ -399,7 +399,7 @@ Let's solve linear system [A]{x} = {b}, where [A] and {b} are given as:
 Check that the solution is correct. Compare the multiplication of
 `[A]{x}` to `{b}`.
 
-```
+```python
 >>> Ax = np.dot(A,x)
 >>> tf = all(np.equal(Ax, b))
 >>> print('Solution matches:', tf)
@@ -460,14 +460,14 @@ it, reduce its frequency from monthly to annual, and then chart it.
 
 To begin, install pandas.
 
-```
+```python
 C:> pip install pandas # Enter from a Windows terminal
 ```
 
 Next, let's read the online data, and take a quick look at the
 contents:
 
-```
+```python
 >>> import pandas as pd
 
 >>> URL =
@@ -492,7 +492,7 @@ series_id column, so let's drop it. Also, it turns out that the
 CPI data is rather sparse before 1940, so let's keep only years
 1940 and later:
 
-```
+```python
 >>> df = df.drop('series_id', axis='columns')
 >>> df = df[df.year >= 1940]
 ```
@@ -503,7 +503,7 @@ functionality to group the CPI indices by year, taking the mean CPI
 across the months of each year. Note how we are chaining operations
 together:
 
-```
+```python
 >>> df = df.groupby(['year']).mean()
 
 Finally, let's clean up the column labels and plot the data:
