@@ -325,4 +325,6 @@ We have now covered the primary Python data types and control
 structures. In the third and last chapter of this article, we'll look
 at the expansive Python ecosystem.
 
-[<-- Previous Section](04-Plotting.md) &nbsp; &nbsp; &nbsp; &nbsp; [Next Section -->](06-Ecosystem.md)
+[![Previous Section](media/previous.png)](04-Plotting.md)
+&nbsp; &nbsp; &nbsp; &nbsp; 
+[![Next Section](media/next.png)](06-Ecosystem.md)
