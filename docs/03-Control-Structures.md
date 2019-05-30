@@ -136,7 +136,6 @@ one list from another, or from an iterable.
 >>> [row[i] for row in x for i in range(3)]
 [0, 1, 2, 3, 4, 5, 6, 7, 8]
 ```
-
 The above is equivalent to the following:
 ```python
 >>> out = []
@@ -169,7 +168,7 @@ inside a listcomp.
 ```python
 >>> x if C else y # C is a conditional expression
 ```
-    For example, suppose you have a dictionary d with a mix of integers,
+For example, suppose you have a dictionary d with a mix of integers,
     doubles and strings. If you want to convert all of the numeric types
     to type double, but leave the strings alone, the following will
     work:
@@ -388,7 +387,7 @@ The above listed order is required.  If provided, the trailing keyword arguments
 >>> list(range(0, 3))
 [0, 1, 2]
 ```
-    The above is equivalent to
+The above is equivalent to
 ```python
 >>> x = [0, 3]
 >>> list(range(*x))
@@ -449,7 +448,7 @@ Such functions are commonly referred to as *lambda functions* or
 >>> def divideby(x):
 ...   return lambda y: x/y
 ```
-    The above function returns a lambda object:
+The above function returns a lambda object:
 ```python
 >>> divide10by = divideby(x=10)
 >>> divide10by(5)
@@ -477,7 +476,7 @@ How did the above work? First, strings are a class, and that class
     each string then became the key by which to sort the list of
     strings.
 
-    The above is equivalent to:
+The above is equivalent to:
 ```python
 >>> [str[i] for I in [1, 0, 2]]
 ```
