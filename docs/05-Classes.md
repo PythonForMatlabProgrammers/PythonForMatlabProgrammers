@@ -69,7 +69,7 @@ things are objects.
 Let's look at a few simple Python examples of variables. Consider
 the following:
    
-```
+```python
 >>> x = []
 >>> x?
 Type: list
@@ -82,7 +82,7 @@ As the above shows, even the [] construct creates an object.  In
 this case, variable x is a list object. Or consider how a variable
 containing an integer has a class attribute:
 
-```
+```python
 >>> x = 5
 >>> x.__class__
 <class 'int'>
@@ -92,7 +92,7 @@ containing an integer has a class attribute:
     example code, we define a class, a docstring, an initiation method,
     and then two class methods:
 
-```
+```python
 def MyClass:
   """A sample class definition""" # Like MATLAB's H1 line
 
@@ -111,7 +111,7 @@ references and instantiation. Let's look first at attribute
 references. Consider the following class definition which defines
 one attribute and one method:
   
-```  
+```python
 class MyClass:
   """Doc String"""
   x = 3.140
@@ -122,7 +122,7 @@ class MyClass:
 
 Back in the Python console window, we can type the following:
 
-```    
+```python
 >>> import MyClass as mod
 >>> obj = mod.MyClass()
 >>> obj.x
@@ -143,7 +143,7 @@ Now let's look at an instantiation operation. Python uses a
 specifically named method for instantiation, called
 `__init__`, as per the following example:
 
-```
+```python
   def __init__(self, day, activity):
     self.weekday = day
     self.activity = activity
@@ -154,14 +154,14 @@ automatically invoked when the class is first instantiated.
 
 -   Python supports class inheritance. The syntax is simply
     
-```
+```python
 class SubClassName(BaseClassName):
 ```
     
 In the above, BaseClassName must be in scope. If it is not, one can
 instead use
 
-```
+```python
 class SubClassName(modname.BaseClassName):
 ```
 
@@ -176,7 +176,7 @@ super().invite().
     of keywords, dictates whether a variable is a class variable or
     instance variable. E.g.,
 
-```
+```python
 def MyClass:
   ClassVar = 3.14 # Class, or static variable
 
@@ -251,7 +251,7 @@ the list. This is an important concept to master as it effects all
 Python data types. On assignment, Python will *bind* two objects
 together rather than make a copy. Consider the following:
 
-```
+```python
 >>> x = [0, 1, 2, 3]
 >>> y = x
 >>> x[0] = 99
@@ -269,7 +269,7 @@ copy](https://docs.python.org/3/library/copy.html). For simple objects
 like a list that don't contain nested objects, the shallow copy is all
 you need.
 
-```
+```python
 >>> import copy
 >>> x = [0, 1, 2, 3]
 >>> y = x.copy()
@@ -287,7 +287,7 @@ An important exception to binding is in making array slices. When an
 array is sliced, the returned object is a new object, not a view into
 the original object. E.g.,
 
-```
+```python
 >>> a = list(range(5))
 >>> b = a[2] # A slice, which is not bound to variable 'a'.
 >>> b
