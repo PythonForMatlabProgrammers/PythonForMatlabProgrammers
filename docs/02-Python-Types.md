@@ -70,7 +70,7 @@ MATLAB and Python have many similarities in their Boolean types.
 >>> 5 < x < 15
 True
 ```
-    As another example, express the identity law of Boolean algebra:
+As another example, express the identity law of Boolean algebra:
 ```python
 >>> x + 0 == 0 + x == x == x*x/x
 True
@@ -111,15 +111,13 @@ and later we'll return to the topics of vectors and arrays.
 ...   print(v)    # There are no end statements in Python. Nor do lines
                   # end with semicolons.
 ```
-
-    The above lines of code will produce:
+The above lines of code will produce:
 ```
 a
 b
 c
 ```
-
-    In the above code, several coding conventions become apparent. The
+In the above code, several coding conventions become apparent. The
     `>>>` mark is the Python console prompt. The `...` marks are
     continuation marks and are not something that you type into the
     console; they instead are *placed* there by the console to denote
@@ -149,8 +147,7 @@ c
 >>> var[0]
     'a'
 ```
-
-    The above example illustrates two departures from MATLAB
+The above example illustrates two departures from MATLAB
     conventions. First, Python uses zero-based indexing on all sequence
     types; MATLAB uses one-based indexing. Secondly, Python uses square
     brackets to encapsulate its indices; MATLAB uses parentheses. MATLAB
@@ -195,7 +192,7 @@ MATLAB provides.
 >>> str
 'abcdef'
 ```    
-    You can also continue a line with a backslash. E.g.,
+You can also continue a line with a backslash. E.g.,
 ```python
 >>> str = 'abc' \
 ... 'def'
@@ -221,7 +218,7 @@ This
 >>> str[0] = 'A'
 TypeError: 'str' object does not support item assignment
 ```    
-    However, the following will work:
+However, the following will work:
 ```python
 >>> str = 'A' + str[1:3] # Note again that the upper bound is not included in the range
 >>> str
@@ -292,13 +289,13 @@ and arrays.
 >>> x = [0, 1, 2, 3] # Homogeneous list
 >>> y = ['a', 'b', 1, 2, 3]. # Heterogeneous list
 ```    
-    You will sometimes see a list defined across multiple lines, e.g.,
+You will sometimes see a list defined across multiple lines, e.g.,
 ```python    
 >>> x = [1, 2, 3,
 ...      4, 5, 6,
 ...      ]
 ```    
-    In the above, the IDE being used automatically added the `...`
+In the above, the IDE being used automatically added the `...`
     continuation marks, and also automatically indented the continuation
     lines. Note that we've included a trailing comma (after the six).
     Python allows this, as it makes it easier to add more lines of data
@@ -325,7 +322,7 @@ and arrays.
 >>> y = x + [5, 6, 7, 8, 9]
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```    
-    Note the consistency of syntax ('+' to concatenate).
+Note the consistency of syntax ('+' to concatenate).
 
 -   The previous result will be unexpected for most MATLAB programmers.
     As shown in the example, Python did not interpret the '+' symbol
