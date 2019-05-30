@@ -668,4 +668,4 @@ worthy of your attention.
 
 [![Previous Section](media/previous.png)](05-Classes.md)
 &nbsp; &nbsp; &nbsp; &nbsp; 
-[![Next Section](media/previous.png)](07-Conclusion.md)
+[![Next Section](media/next.png)](07-Conclusion.md)
