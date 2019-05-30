@@ -678,7 +678,9 @@ Built-in mutable sequence.
 Introspection works with objects, built-in functions and user-defined
 functions.
 
-[<-- Previous Section](02-Python-Types.md) &nbsp; &nbsp; &nbsp; &nbsp; [Next Section -->](04-Plotting.md)
+[![Previous Section](media/previous.png)](02-Python-Types.md)
+&nbsp; &nbsp; &nbsp; &nbsp; 
+[![Next Section](media/next.png)](04-Plotting.md)
 
 [^2]: Strictly speaking, Python always passes a function argument using
     *call by value*. However, the value passed is an object reference,
