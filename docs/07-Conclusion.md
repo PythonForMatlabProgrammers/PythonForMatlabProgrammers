@@ -44,6 +44,8 @@ incorrect statements, important omissions, or if you have suggestions
 for improving this document, we'd like to hear from you. Our
 biographies and contact information are listed below.
 
+[<-- Previous Section](06-Ecosystem.md)
+
 # Author Biographies
 
 Andrew Janke is a software developer with over a decade of experience
