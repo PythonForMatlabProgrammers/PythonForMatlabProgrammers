@@ -154,7 +154,7 @@ The above example illustrates two departures from MATLAB
     is a bit of an outlier here, as most programming languages follow
     the Python conventions.
     
-    Use of square brackets is a useful convention, as the brackets
+Use of square brackets is a useful convention, as the brackets
     distinguish indexing from function or method calls. This is just one
     of many Python conventions that improve code readability.
 
