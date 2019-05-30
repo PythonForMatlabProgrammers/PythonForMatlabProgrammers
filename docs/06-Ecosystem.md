@@ -666,6 +666,6 @@ private collaborations.
 With more than six million users, Anaconda is a popular distribution
 worthy of your attention.
 
-[![Previous Section](/media/previous.png)](05-Classes.md)
+[![Previous Section](media/previous.png)](05-Classes.md)
 &nbsp; &nbsp; &nbsp; &nbsp; 
-[![Next Section](/media/previous.png)](07-Conclusion.md)
+[![Next Section](media/previous.png)](07-Conclusion.md)
