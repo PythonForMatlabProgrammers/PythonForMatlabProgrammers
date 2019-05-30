@@ -67,5 +67,7 @@ following example.
     contributed to the library of packages. Have a look at Yan Holtz's
     [Python Graph Gallery](https://python-graph-gallery.com/) for an
     overview of the chart types available in Python.
-
-[<-- Previous Section](03-Control-Structures.md) &nbsp; &nbsp; &nbsp; &nbsp; [Next Section -->](05-Classes.md)
+    
+[![Previous Section](media/previous.png)](03-Control-Structures.md)
+&nbsp; &nbsp; &nbsp; &nbsp; 
+[![Next Section](media/next.png)](05-Classes.md)
