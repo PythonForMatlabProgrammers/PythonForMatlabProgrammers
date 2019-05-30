@@ -272,7 +272,7 @@ creating iteration-enabled objects. There are two types of generators.
 >>> list(squares) # This executes the object, saving the results as a list.
 [1, 4, 9, 16]
 ```
-    The first line of the above code looks like a listcomp, but it uses
+The first line of the above code looks like a listcomp, but it uses
     () rather than [], and that tells Python to create a generator. As
     before with iterators, we can iterate through a generator:
 ```python
@@ -359,7 +359,7 @@ given, those arguments become optional for the caller.
 ```python
 >>> whats_your_name(prompt='Tell me your name', retries=10, reminder='Try again')
 ```
-    Once a keyword argument is provided, all remaining arguments (if
+Once a keyword argument is provided, all remaining arguments (if
     provided) must also be keyword arguments.
 
 -   Function signatures are quite robust. Following positional arguments
@@ -368,7 +368,7 @@ given, those arguments become optional for the caller.
 ```python
 def fun(arg1, arg2='test', *args):
 ```
-    This is similar to MATLAB's vararg input. In the caller, following
+This is similar to MATLAB's vararg input. In the caller, following
     the positional and keyword arguments, one can pass an arbitrary set
     of comma-separated values. Inside the called function, the `*args`
     inputs will automatically be packed into a tuple named `args` (in this
@@ -379,7 +379,7 @@ def fun(arg1, arg2='test', *args):
 ```python
 def fun(arg1, arg2='test', *args, **keywords):
 ```
-  The above listed order is required.  If provided, the trailing keyword arguments will automatically be packed into a dictionary inside the function.  As an example of calling the above function, regardless of what the function might do, one could enter:
+The above listed order is required.  If provided, the trailing keyword arguments will automatically be packed into a dictionary inside the function.  As an example of calling the above function, regardless of what the function might do, one could enter:
 
 -   If a function signature requires individual arguments but the calling
     workspace has a list or tuple, the latter can be unpacked on the fly
@@ -393,7 +393,7 @@ def fun(arg1, arg2='test', *args, **keywords):
 >>> x = [0, 3]
 >>> list(range(*x))
 ```
-    Dictionaries can also be unpacked, and that syntax uses a double
+Dictionaries can also be unpacked, and that syntax uses a double
     star.
 
 -   The execution of a function introduces a new symbol table used for
@@ -410,7 +410,7 @@ def fun(arg1, arg2='test', *args, **keywords):
 >>> def f(x): # Trivial function
 ...   return x+1
 ```
-    The function f(x) is not just a function sitting in memory waiting
+The function f(x) is not just a function sitting in memory waiting
     to be invoked; it is an object in the workspace that can be passed
     around.
 ```python
@@ -420,14 +420,12 @@ Docstring: <no docstring>
 File: c:usersownerdocumentspython...
 Type: function
 ```
-    Define a second function, which accepts the first function (or any
-    function) as an argument:
+Define a second function, which accepts the first function (or any function) as an argument:
 ```python
 >>> def g(fun, x): # Pass a function into a function
 ...   return 2*fun(x)
 ```
-    It's a trivial example, but here's how the two functions work
-    together:
+It's a trivial example, but here's how the two functions work together:
 ```python
 >>> f(5)
 6
@@ -444,7 +442,7 @@ Type: function
 >>> f(1000, 10)
 100
 ```
-    Such functions are commonly referred to as *lambda functions* or
+Such functions are commonly referred to as *lambda functions* or
     *lambda expressions*. As with nested functions, lambda functions can
     reference variables of the containing scope:
 ```python
@@ -457,7 +455,7 @@ Type: function
 >>> divide10by(5)
 2
 ```
--   As mentioned earlier, functions are objects and can be passed around
+As mentioned earlier, functions are objects and can be passed around
     like data. This is powerful, and it will take some getting used to.
     Consider the following example, where we have a list of strings and
     we want to sort them, ascending order, by the number of unique
@@ -468,7 +466,7 @@ Type: function
 >>> str
 ['zoo', 'cook', 'ohnoooh']
 ```    
-    How did the above work? First, strings are a class, and that class
+How did the above work? First, strings are a class, and that class
     has a *sort()* method associated with it. The sort() method allows a
     key argument, and we passed a lambda function as the value of that
     argument. In other words, we defined, on the fly, a function and
@@ -483,7 +481,7 @@ Type: function
 ```python
 >>> [str[i] for I in [1, 0, 2]]
 ```
-    This is equivalent, but assumes that we somehow know the sort order.
+This is equivalent, but assumes that we somehow know the sort order.
     Using the sort method and a lambda function in the first example, we
     were able to determine the sort order on the fly.
 
