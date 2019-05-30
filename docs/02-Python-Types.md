@@ -201,7 +201,7 @@ MATLAB provides.
 ... 'def'
 ```
 -   Index reference a string with zero-based indexing, e.g.,
-```    
+```python 
 >>> str[0] # All sequence data types employ zero-based indexing.
 'a'
 ```
