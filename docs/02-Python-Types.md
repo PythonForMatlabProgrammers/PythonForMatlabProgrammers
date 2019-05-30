@@ -65,13 +65,13 @@ MATLAB and Python have many similarities in their Boolean types.
 
 -   Comparison operations can be chained together. E.g., you can enter
     the following into a Python console, with the final line resulting:
-```
+```python
 >>> x = 10
 >>> 5 < x < 15
 True
 ```
     As another example, express the identity law of Boolean algebra:
-```
+```python
 >>> x + 0 == 0 + x == x == x*x/x
 True
 ```
@@ -105,7 +105,7 @@ and later we'll return to the topics of vectors and arrays.
     but for now think of an iterable as an object capable of returning
     its members one at a time. As an example, a for-statement iterates
     over the items of a sequence. You can do the following:
-```
+```python
 >>> var = 'abc'   # Strings are iterable objects.
 >>> for v in var: # Blocks of code are terminated with a blank line.
 ...   print(v)    # There are no end statements in Python. Nor do lines
@@ -145,7 +145,7 @@ c
 
 -   All Python sequences employ zero-based indexing, as opposed to
     MATLAB's one-based indexing. Building on the example above:
-```
+```python
 >>> var[0]
     'a'
 ```
@@ -175,12 +175,12 @@ MATLAB provides.
 
 -   Use either single or double quotes to enclose a string. E.g.,
     
-```
+```python
 >>> str = 'abc'
 ```
 
 -   Concatenate using a '+' sign; multiply with a '*' sign. E.g.,
-```
+```python
 >>> 2 * 'ab' + 'c'
 'ababc'
 ```
@@ -189,14 +189,14 @@ MATLAB provides.
     in [PEP
     0008](https://www.python.org/dev/peps/pep-0008/#maximum-line-length),
     is simply to enclose the string in parentheses. E.g.,
-```    
+```python
 >>> str = ('abc'
 ...        'def')
 >>> str
 'abcdef'
 ```    
     You can also continue a line with a backslash. E.g.,
-```
+```python
 >>> str = 'abc' \
 ... 'def'
 ```
@@ -207,7 +207,7 @@ MATLAB provides.
 ```
 
 -   Multi-element indexing is called *slicing*, e.g., str[0:2].
-```    
+```python
 >>> str = 'ThisIsATest'
 >>> str[0:4] # The upper bound is not included in the returned substring.
 This
@@ -216,13 +216,13 @@ This
     sequence data type. Immutable types cannot alter their values once
     set. For example, the following series of commands will issue an
     error:
-```
+```python
 >>> str = 'abc'
 >>> str[0] = 'A'
 TypeError: 'str' object does not support item assignment
 ```    
     However, the following will work:
-```  
+```python
 >>> str = 'A' + str[1:3] # Note again that the upper bound is not included in the range
 >>> str
 'Abc'
@@ -239,7 +239,7 @@ provides similar facilities via add-on modules.
     or *f-strings*. Here's an example of variable substitution using an
     f-string:
     
-```
+```python
 >>> today = '01-Jan-2018' # There are date/time facilities for obtaining the current date
 >>> print(f'The current date is {today}') # Note the prefix 'f' and the variable substitution
 The current date is 01-Jan-2018
@@ -248,7 +248,7 @@ The current date is 01-Jan-2018
 And here's an example of substitution and formatting within
 f-strings:
     
-```
+```python
 >>> import math
 >>> t = f'Pi = {math.pi:4.3f}' # A float of length 4 with 2 significant digits
 >>> t
@@ -281,19 +281,19 @@ and arrays.
 
 -   Lists are enclosed in square brackets. To create an empty list, use
     either of the following:
-```
+```python
 >>> x = []
 >>> x = list()
 ```
 
 -   Assign lists with a comma-separated set of elements in square
     brackets, e.g.,
-```
+```python
 >>> x = [0, 1, 2, 3] # Homogeneous list
 >>> y = ['a', 'b', 1, 2, 3]. # Heterogeneous list
 ```    
     You will sometimes see a list defined across multiple lines, e.g.,
-```    
+```python    
 >>> x = [1, 2, 3,
 ...      4, 5, 6,
 ...      ]
@@ -305,7 +305,7 @@ and arrays.
     later on, assuming that the above code was entered into an editor.
     When Python executes the above command, the line separations and
     trailing comma are removed. E.g.,
-```
+```python
 >>> x
 [1, 2, 3, 4, 5, 6]
 ```
@@ -313,14 +313,14 @@ and arrays.
 
 -   As with strings, a *slice* of a list returns a portion of the
     original list, e.g.,
-```    
+```python   
 >>> x = [0, 1, 2, 3]
 >>> x[1:3] # The upper bound is not included in the returned slice
 [1, 2]
 ```
 
 -   Concatenate lists with the '+' symbol. E.g.,
-```
+```python
 >>> x = [0, 1, 2, 3, 4]
 >>> y = x + [5, 6, 7, 8, 9]
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -348,7 +348,7 @@ and arrays.
     having a multidimensional array, but not quite equivalent. Consider
     the following:
 
-```
+```python
 >>> x = [ [ 1,2,3],
    [4,5,6],
    [7,8,9] ]
@@ -373,7 +373,7 @@ they cannot be indexed or sliced.
 
 -   Define sets using a comma-separated list of heterogeneous items in
     braces. E.g.,
-```    
+```python    
 >>> x = {'Dave', 'Tom', 'Mary', 'Dave'}
 >>> x
 {'Dave', 'Mary', 'Tom'} # Reordered and unique
@@ -381,7 +381,7 @@ they cannot be indexed or sliced.
 -   The usual set operations are available. With sets one can test for
     membership, perform intersections, unions and differences. E.g.,
 
-```
+```python
 >>> 'Tom' in x
 True
 
@@ -400,19 +400,19 @@ pronounced to rhyme with *supple*.
 -   A tuple is a compound, immutable, sequence data type.
 
 -   A tuple can be created in numerous ways. E.g.,
-```
+```python
 >>> x = (1, 2, 3) # The parentheses are optional.
 >>> x = 1, 2, 3
 >>> x = tuple([1, 2, 3])
 ```
 
 -   Tuples can have heterogeneous elements. E.g.,
-```    
+```python 
 >>> x = ('y', 3, 4)
 ```
 -   Tuples can employ parentheses on assignment, but require the usual
     square brackets on reference:
-```    
+```python    
 >>> x[0]
 'y'
 ```
@@ -468,17 +468,17 @@ things to know about dictionaries:
 -   Lists, because they are mutable, cannot be keys.
 
 -   A few examples:
-```
+```python
 >>> phonebook = {'Joe': 1234, 'Bob': 5678} # Note the curly braces on assignment, like sets.
 ```
 -   To insert or update an item, use square brackets for indexing,
     e.g.,
-```
+```python
 >>> phonebook['Grayson'] = 2513
 ```
 -   A tuple can be used to create a composite key, if all of its
     elements are immutable. E.g.,
-```
+```python
 >>> phonebook[ ('Operator', 'Texas', 'Dallas') ] = 0
 >>> print(phonebook)
 {'Joe': 1234, 'Bob': 5678, 'Grayson': 2513, ('Operator',
@@ -488,7 +488,7 @@ things to know about dictionaries:
     dictionaries. If you forget which set of symbols produces which
     class, you can use the Python interpreter to remind you. E.g.,
 
-```
+```python
 >>> type([])
 <class 'list'>
 
