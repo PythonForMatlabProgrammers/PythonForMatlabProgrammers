@@ -300,7 +300,7 @@ additional information on a data type, function or class. Python gives
 you several sources of help. Suppose you want information about the
 int() function. From a Python console you can type:
 
-```
+```python
 int?
 help(int)
 ```
@@ -310,7 +310,7 @@ function. The second command will provide a broader discussion. If you
 are using an IDE which is IPython-based, you can also enter the
 following:
 
-```
+```python
 int?? # More details on the int() function
 
 ? # Help on IPython itself
@@ -322,8 +322,8 @@ And of course, you can find online help at
 [python.org](https://www.python.org/) or any of many Python-focused
 websites.
 
-
+[Next Section -->](02-Python-Types.md)
 
 
 [^1]: MATLAB® and Simulink are registered trademarks of The MathWorks,
-    Inc.
+    Inc. 
