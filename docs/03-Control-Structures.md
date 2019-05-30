@@ -635,7 +635,7 @@ system. Here's a sample of what you can do:
 
 You can change environment variables this way, change to a new
 directory, etc. To see a list of all of the methods in the os module,
-use dir(os).
+use `dir(os)`.
 
 ## Miscellaneous
 
