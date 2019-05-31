@@ -3,7 +3,6 @@ Python for MATLAB® Programmers
 
 Learning and Leveraging Python When You Know MATLAB
 
-
 ![](media/image1.png)
 
 by Andrew Janke and Michael Patterson 
@@ -25,5 +24,6 @@ This work was first published January 23, 2019.
 The work was subsequently published to a [GitHub public repository](https://github.com/apjanke/PythonForMatlabCoders)
 on March 31, 2019 under a Creative Commons Attribution ShareAlike 4.0 International License.  
 
-
 ******************************************************
+
+[![Next Section](media/next.png)](01-Introduction.md)
