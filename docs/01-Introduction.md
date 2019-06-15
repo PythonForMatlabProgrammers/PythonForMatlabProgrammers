@@ -1,5 +1,6 @@
 <p>
     <img src="media/logo_144.png" alt="Python For MATLAB Programmers" width="144" height="98" align="left">
+    <br>
     Andrew Janke<br>
     Michael Patterson<br>
 </p>
