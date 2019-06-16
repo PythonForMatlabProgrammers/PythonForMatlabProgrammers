@@ -1,8 +1,9 @@
 # Python Types
 
 In the following sections of this document we'll browse through the
-Python language syntax. We will include code snippets, so if you've
-installed Python on your computer you can try out the examples.
+Python language syntax. We will include code snippets. If you've
+installed Python on your computer, or if you've chosen an online
+Python engine, you can try out the examples.
 
 We'll start with data types, and later move into control structures.
 Because we'll include code snippets below, you'll have a good feel for
