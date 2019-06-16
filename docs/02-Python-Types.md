@@ -1,3 +1,13 @@
+<p>
+    <img src="media/logo_144.png" alt="Python For MATLAB Programmers" width="144" height="98" align="left">
+    <br>
+    Andrew Janke<br>
+    Michael Patterson<br>
+</p>
+<br>
+
+   ____________________________________________
+
 # Python Types
 
 In the following sections of this document we'll browse through the
@@ -154,7 +164,7 @@ The above example illustrates two departures from MATLAB
     brackets to encapsulate its indices; MATLAB uses parentheses. MATLAB
     is a bit of an outlier here, as most programming languages follow
     the Python conventions.
-    
+
 Use of square brackets is a useful convention, as the brackets
     distinguish indexing from function or method calls. This is just one
     of many Python conventions that improve code readability.
@@ -172,7 +182,7 @@ specification of and operations on Python strings differ from what
 MATLAB provides.
 
 -   Use either single or double quotes to enclose a string. E.g.,
-    
+
 ```python
 >>> str = 'abc'
 ```
@@ -199,7 +209,7 @@ You can also continue a line with a backslash. E.g.,
 ... 'def'
 ```
 -   Index reference a string with zero-based indexing, e.g.,
-```python 
+```python
 >>> str[0] # All sequence data types employ zero-based indexing.
 'a'
 ```
@@ -236,16 +246,16 @@ provides similar facilities via add-on modules.
     converging onto a new technique called [*formatted string literals*](https://www.python.org/dev/peps/pep-0498/),
     or *f-strings*. Here's an example of variable substitution using an
     f-string:
-    
+
 ```python
 >>> today = '01-Jan-2018' # There are date/time facilities for obtaining the current date
 >>> print(f'The current date is {today}') # Note the prefix 'f' and the variable substitution
 The current date is 01-Jan-2018
 ```
-    
+
 And here's an example of substitution and formatting within
 f-strings:
-    
+
 ```python
 >>> import math
 >>> t = f'Pi = {math.pi:4.3f}' # A float of length 4 with 2 significant digits
@@ -405,7 +415,7 @@ pronounced to rhyme with *supple*.
 ```
 
 -   Tuples can have heterogeneous elements. E.g.,
-```python 
+```python
 >>> x = ('y', 3, 4)
 ```
 -   Tuples can employ parentheses on assignment, but require the usual
@@ -505,5 +515,5 @@ when we discuss user-defined classes. Let's look next at Python's
 primary control structures.
 
 [![Previous Section](media/previous.png)](01-Introduction.md)
-&nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp;
 [![Next Section](media/next.png)](03-Control-Structures.md)

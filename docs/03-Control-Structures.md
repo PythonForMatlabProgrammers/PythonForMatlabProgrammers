@@ -1,3 +1,13 @@
+<p>
+    <img src="media/logo_144.png" alt="Python For MATLAB Programmers" width="144" height="98" align="left">
+    <br>
+    Andrew Janke<br>
+    Michael Patterson<br>
+</p>
+<br>
+
+   ____________________________________________
+
 # Python Control Structures
 
 Python's core library provides a limited but versatile set of control
@@ -679,7 +689,7 @@ Introspection works with objects, built-in functions and user-defined
 functions.
 
 [![Previous Section](media/previous.png)](02-Python-Types.md)
-&nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp;
 [![Next Section](media/next.png)](04-Plotting.md)
 
 [^2]: Strictly speaking, Python always passes a function argument using

@@ -7,7 +7,6 @@
 <br>
 
    ____________________________________________
-
 # Introduction
 
 If the title of this paper caught your eye, chances are you have
@@ -67,9 +66,9 @@ be a quick read.
 ## Contributing to this Article
 
 As just mentioned, we have a goal of keeping this article brief.  However,
-we've received suggestions of additional material for the article, and 
+we've received suggestions of additional material for the article, and
 we value those suggestions.  In March 2019 we published the article to a [GitHub public
-repository](https://github.com/apjanke/PythonForMatlabCoders) under a 
+repository](https://github.com/apjanke/PythonForMatlabCoders) under a
 [Creative Commons Attribution ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
 Readers are encouraged to edit or add material by submitting pull requests from the GitHub repository.  If
@@ -332,8 +331,8 @@ And of course, you can find online help at
 websites.
 
 [![Previous Section](media/previous.png)](00-Preface.md)
-&nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp;
 [![Next Section](media/next.png)](02-Python-Types.md)
 
 [^1]: MATLAB® and Simulink are registered trademarks of The MathWorks,
-    Inc. 
+    Inc.

@@ -2,6 +2,16 @@
 layout: default
 ---
 
+<p>
+    <img src="media/logo_144.png" alt="Python For MATLAB Programmers" width="144" height="98" align="left">
+    <br>
+    Andrew Janke<br>
+    Michael Patterson<br>
+</p>
+<br>
+
+   ____________________________________________
+
 # Plotting
 
 As you might expect, Python offers numerous libraries with which to
@@ -14,7 +24,7 @@ One of the most popular libraries is, naturally,
 MATLAB's charting capabilities.
 
 Let's look at an example.
-    
+
 ```python
 C:> pip install matplotlib # from a Windows terminal
 
@@ -30,7 +40,7 @@ C:> pip install matplotlib # from a Windows terminal
 Matplotlilb provides 2-d charts, but
 other packages built upon Matplotlib provide 3-d charts, as per the
 following example.
-    
+
 ```python
 >>> from mpl_toolkits.mplot3d import Axes3D
 >>> import matplotlib.pyplot as plt
@@ -67,7 +77,7 @@ following example.
     contributed to the library of packages. Have a look at Yan Holtz's
     [Python Graph Gallery](https://python-graph-gallery.com/) for an
     overview of the chart types available in Python.
-    
+
 [![Previous Section](media/previous.png)](03-Control-Structures.md)
-&nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp;
 [![Next Section](media/next.png)](05-Classes.md)

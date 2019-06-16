@@ -1,3 +1,13 @@
+<p>
+    <img src="media/logo_144.png" alt="Python For MATLAB Programmers" width="144" height="98" align="left">
+    <br>
+    Andrew Janke<br>
+    Michael Patterson<br>
+</p>
+<br>
+
+   ____________________________________________
+
 # Namespaces and Scopes
 
 At this point of the article we'll dive a bit deeper into the
@@ -68,7 +78,7 @@ things are objects.
 
 Let's look at a few simple Python examples of variables. Consider
 the following:
-   
+
 ```python
 >>> x = []
 >>> x?
@@ -77,7 +87,7 @@ String form: []
 Length: 0
 Docstring: Built-in mutable sequence.
 ```
-    
+
 As the above shows, even the [] construct creates an object.  In
 this case, variable x is a list object. Or consider how a variable
 containing an integer has a class attribute:
@@ -110,7 +120,7 @@ Class objects support only two kinds of operations: attribute
 references and instantiation. Let's look first at attribute
 references. Consider the following class definition which defines
 one attribute and one method:
-  
+
 ```python
 class MyClass:
   """Doc String"""
@@ -153,11 +163,11 @@ When a `__init__` method is placed into a class definition, it is
 automatically invoked when the class is first instantiated.
 
 -   Python supports class inheritance. The syntax is simply
-    
+
 ```python
 class SubClassName(BaseClassName):
 ```
-    
+
 In the above, BaseClassName must be in scope. If it is not, one can
 instead use
 
@@ -326,5 +336,5 @@ structures. In the third and last chapter of this article, we'll look
 at the expansive Python ecosystem.
 
 [![Previous Section](media/previous.png)](04-Plotting.md)
-&nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp;
 [![Next Section](media/next.png)](06-Ecosystem.md)
