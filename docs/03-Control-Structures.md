@@ -501,7 +501,7 @@ As with MATLAB, Python has facilities for warnings and exceptions
 
 Warnings are objects and derive from a Warning class. A list of built-in
 Warning subclasses is available in the [Python Standard Library
-documentation](mailto:https://docs.python.org/2/library/warnings.html).
+documentation](https://docs.python.org/2/library/warnings.html).
 Users can create their own warning classes, derived from the built-in
 classes. A warning filter allows a user to process a warning through a
 sequence of pre-defined categories of warnings, processing any match
@@ -539,7 +539,7 @@ Here's a quick summary:
 -   Like warnings, each Python exception is a class. E.g., NameError or
     TypeError. There are dozens of built-in exception classes; you'll
     find a complete list in the [Python Standard Library
-    documentation](mailto:https://docs.python.org/3/library/exceptions.html).
+    documentation](https://docs.python.org/3/library/exceptions.html).
 
 -   Exceptions can be user-defined and will derive from the built-in
     *Exception* class.
