@@ -269,6 +269,28 @@ computation, a method call, a library call or any combination of expressions you
 Python provides substantial capabilities for creating and printing strings. It's a topic we'll
 have to leave for now, for space considerations.
 
+To close the topic on strings, let's discuss how strings are objects in Python, and some of the implications of that fact.
+Within this text we'll repeatedly remind you that in Python, *everything* is an object.  Strings are no exception. 
+Consider the following:
+
+```python
+>>> s = 'python'
+>>> s.capitalize()
+'Python'
+```
+Here, we applied a method called 'capitalize' to the object named 's.'  Strings are of data type `str` and as such can also
+be created with the str command (an object constructor):
+
+```python
+>>> s = str(object='python')
+>>> s
+'python'
+```
+
+You'll probably never need to use the str() constructor, but it's worth knowing that many of the built-in Python classes allow you
+to connstruct objects either with a constructor, or via a shortcut (for strings, that shortcut is to just enclose 
+the string in quotes.  More on this topic later.
+
 ## Lists
 
 The sequence *list* type is of great importance to a programmer that
@@ -509,6 +531,32 @@ things to know about dictionaries:
 >>> type({1, 2, 3}) # Provide a better hint
 <class 'set'>
 ```
+
+## Python Literals
+
+Eventually you are going to come across the term *literal* in the Python literature.  It will be helpful for you to know what that term means.  Every programming language has some concept of a literal, and Python is no exception.
+
+In Python, a literal is syntax that creates a specific object.  When we introduced strings, we mentioned that strings can be created either with a shortcut or with a constructor.  For example, the following commands are equivalent:
+
+```python
+>>> string = 'abc'
+>>> string = str(object='abc')
+```
+With the shortcut, 'abc' is considered a *literal.*  The shortcut *literally* produces a string.  Many of Python's built-in classes have literal representations.  These include:
+
+- Booleans: True and False
+- Integers: -3, -2, -1, 0, 1, 2, 3
+- Complex numbers: 2+3j, 0+5j, 2j, -3-5j
+- Floats: 3.5, -2.7
+- Character strings: "", 'Hello'
+- Lists: [], [1, 2]
+- Tuples: (), (1,), (1, 2)
+- Dictionaries: {}, {'a': 2}
+- Sets: {1, 2, 3}
+
+Python defines yet more literals, but the above are the most commonly used.  So when you see the term *literal* in the Python literature, just know that a literal is a shortcut way to instantiate a built-in class.
+
+## Closing
 
 For now, we are done with data types. We'll return to the topic later
 when we discuss user-defined classes. Let's look next at Python's
