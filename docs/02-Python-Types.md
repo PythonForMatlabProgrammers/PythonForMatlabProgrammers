@@ -319,8 +319,7 @@ and arrays.
 >>> x = list()
 ```
 
--   Assign lists with a comma-separated set of elements in square
-    brackets, e.g.,
+-   Assign lists with a comma-separated set of elements in square brackets, e.g.,
 ```python
 >>> x = [0, 1, 2, 3] # Homogeneous list
 >>> y = ['a', 'b', 1, 2, 3]. # Heterogeneous list
@@ -502,10 +501,12 @@ things to know about dictionaries:
 
 -   A few examples:
 ```python
->>> phonebook = {'Joe': 1234, 'Bob': 5678} # Note the curly braces on assignment, like sets.
+>>> phonebook = {'Joe': 1234, 'Bob': 5678}
 ```
--   To insert or update an item, use square brackets for indexing,
-    e.g.,
+-   Per the above, dictionary assignments use curly braces, just like sets do.  Python can tell the two apart because
+    dictionaries have pair-wise elements with a quote in the middle of each element.
+    
+-   To insert or update an item, use square brackets for indexing, e.g.,
 ```python
 >>> phonebook['Grayson'] = 2513
 ```
@@ -547,15 +548,17 @@ In Python, a literal is syntax that creates a specific object.  When we introduc
 ```
 With the shortcut, 'abc' is considered a *literal.*  The shortcut *literally* produces a string.  Many of Python's built-in classes have literal representations.  These include:
 
-- Booleans: True and False
-- Integers: -3, -2, -1, 0, 1, 2, 3
-- Complex numbers: 2+3j, 0+5j, 2j, -3-5j
-- Floats: 3.5, -2.7
-- Character strings: "", 'Hello'
-- Lists: [], [1, 2]
-- Tuples: (), (1,), (1, 2)
-- Dictionaries: {}, {'a': 2}
-- Sets: {1, 2, 3}
+| Type       | Constructor | Literal Examples |
+| ---------- | ----------- | ---------------- |
+| Integer    | int()       | -1, 0, 1,        |
+| Complex    | complex()   | 2+3j, 0+5j, 2j   |
+| Boolean    | bool()      | True, False      |
+| Float      | float()     | 3.5, -2.7        |
+| String     | str()       | "", 'Hello'      |
+| List       | list()      | [], [1, 2]       |
+| Tuple      | tuple()     | (), (1,), (1, 2) |
+| Dictionary | dict()      | {}, {'a': 2}     |
+| Set        | set()       | {1, 2, 3}        |
 
 Python defines yet more literals, but the above are the most commonly used.  So when you see the term *literal* in the Python literature, just know that a literal is a shortcut way to instantiate a built-in class.
 
