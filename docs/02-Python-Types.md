@@ -253,14 +253,17 @@ provides similar facilities via add-on modules.
 The current date is 01-Jan-2018
 ```
 
-And here's an example of substitution and formatting within
-f-strings:
-
+The f-string facility also provides formatting options.  For example, floats can be formatted with the syntax `f'{value:{width}.{precision}}'`, where:
+* `value` is any expression that evaluates to a number
+* `width` specifies the total number of characters display, including the decimal point.  However, if `value` needs more space than the width specifies then the additional space is used.  If `width` is omitted, f-string formatting will simply use as much width as necessary.
+* `precision` indicates the number of characters used after the decimal point
+A few examplex:
 ```python
 >>> import math
->>> t = f'Pi = {math.pi:4.3f}' # A float of length 4 with 2 significant digits
->>> t
-'Pi = 3.14'
+>>> f'Pi = {math.pi:5.3f}'
+'Pi = 3.142'
+>>> f'Pi = {math.pi:6.3f}'
+'Pi =  3.142'
 ```
 Python's f-strings are both powerful and syntactically terse.  An expression within an f-string
 (the component inside the{}) is just that, an expression.  It can be a variable reference, a
