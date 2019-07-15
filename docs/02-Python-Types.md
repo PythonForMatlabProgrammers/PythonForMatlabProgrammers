@@ -513,11 +513,18 @@ things to know about dictionaries:
 -   A tuple can be used to create a composite key, if all of its
     elements are immutable. E.g.,
 ```python
->>> phonebook[ ('Operator', 'Texas', 'Dallas') ] = 0
+>>> phonebook = {('Joe', 'Home'): 1234, ('Joe', 'Work'): 5678}
 >>> print(phonebook)
-{'Joe': 1234, 'Bob': 5678, 'Grayson': 2513, ('Operator',
-'Texas', 'Dallas'): 0}
+{('Joe', 'Home'): 1234, ('Joe', 'Work'): 5678}
 ```
+This allows for greater specificity in keys.  Similiarly, the values in a dictionary's key/value pairs
+are not restricted to the scalars used above.  E.g.,
+```python
+>>> addressbook = {'Joe': ['1234 Dearborn Ave.', 'Chicago', 'IL', 60602]}
+>>> print(addressbook)
+{'Joe': ['1234 Dearborn Ave.', 'Chicago', 'IL', 60602]}
+```
+
 -   Use [] for list assignment, () for tuples, and {} for sets and
     dictionaries. If you forget which set of symbols produces which
     class, you can use the Python interpreter to remind you. E.g.,
