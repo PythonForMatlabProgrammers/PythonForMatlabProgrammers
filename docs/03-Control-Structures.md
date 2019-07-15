@@ -302,7 +302,7 @@ the language, we need to revisit earlier topics. Now that you know about
 iterables, we should revisit list construction. Lists can be constructed
 in multiple ways:
 
--   Using square brackets as discussed before. E.g., `x = [1, ,2, 3]`.
+-   Using square brackets, a literal, as discussed before. E.g., `x = [1, 2, 3]`.
 
 -   Using a list comprehension. E.g., `y = [x for x in range(4)]`.
 
