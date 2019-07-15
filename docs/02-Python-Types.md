@@ -255,7 +255,7 @@ The current date is 01-Jan-2018
 
 The f-string facility also provides formatting options.  For example, floats can be formatted with the syntax `f'{value:{width}.{precision}}'`, where:
 * `value` is any expression that evaluates to a number
-* `width` specifies the total number of characters display, including the decimal point.  However, if `value` needs more space than the width specifies then the additional space is used.  If `width` is omitted, f-string formatting will simply use as much width as necessary.
+* `width` specifies the total number of characters to display, including the decimal point.  However, if `value` needs more space than  `width` specifies, `width` will automatically increase to accommodate.  If `width` is omitted, f-string formatting will simply use as much width as necessary.
 * `precision` indicates the number of characters used after the decimal point
 A few examplex:
 ```python
@@ -291,7 +291,7 @@ be created with the str command (an object constructor):
 ```
 
 You'll probably never need to use the str() constructor, but it's worth knowing that many of the built-in Python classes allow you
-to connstruct objects either with a constructor, or via a shortcut (for strings, that shortcut is to just enclose 
+to connstruct objects either with a constructor, or via a shortcut.  For strings, that shortcut is to just enclose 
 the string in quotes.  More on this topic later.
 
 ## Lists
