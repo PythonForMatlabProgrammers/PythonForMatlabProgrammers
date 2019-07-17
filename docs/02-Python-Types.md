@@ -502,10 +502,15 @@ things to know about dictionaries:
 -   A few examples:
 ```python
 >>> phonebook = {'Joe': 1234, 'Bob': 5678}
+>>> meals = {1: 'breakfast', 2: 'lunch', 3: 'dinner'}
 ```
 -   Per the above, dictionary assignments use curly braces, just like sets do.  Python can tell the two apart because
     dictionaries have pair-wise elements with a quote in the middle of each element.
     
+-   When the keys are strings, assignments have a simpler syntax using keyword arguements with the dict constructor:
+```python
+>>> phonebook = dict(Joe=1234, Bob=5678)
+```
 -   To insert or update an item, use square brackets for indexing, e.g.,
 ```python
 >>> phonebook['Grayson'] = 2513
@@ -524,6 +529,7 @@ are not restricted to the scalars used above.  E.g.,
 >>> print(addressbook)
 {'Joe': ['1234 Dearborn Ave.', 'Chicago', 'IL', 60602]}
 ```
+Within the dictionary type, the values of the key-value pairs can be of any type including lists, user-defined objects, or even other dictionaries.
 
 -   Use [] for list assignment, () for tuples, and {} for sets and
     dictionaries. If you forget which set of symbols produces which
