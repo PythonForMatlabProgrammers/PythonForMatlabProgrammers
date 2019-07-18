@@ -103,7 +103,7 @@ containing an integer has a class attribute:
     and then two class methods:
 
 ```python
-def MyClass:
+class MyClass:
   """A sample class definition""" # Like MATLAB's H1 line
 
   def __init__(self): # A constructor
@@ -130,11 +130,12 @@ class MyClass:
     print(StringToPrint)
 ```
 
+You'll need to save the above into a .py file.  You can choose any name for the file; let's use simple.py.
 Back in the Python console window, we can type the following:
 
 ```python
->>> import MyClass as mod
->>> obj = mod.MyClass()
+>>> import simple
+>>> obj = simple.MyClass()
 >>> obj.x
 3.14
 >>> obj.f # This produces a function object
@@ -193,6 +194,8 @@ def MyClass:
   def __init__(self):
     self.InstanceVar = 3.14159 # Instance variable
 ```
+-   Static variables should be used with care.  If you create two instances of the above class and use one of them to alter
+    the value of ClassVar, that value will then appear also in the second instance.
 
 -   Python also supports static methods. This introduces the topic of
     Python's *class decorators*, which we consider to be an advanced
