@@ -290,9 +290,9 @@ be created with the str command (an object constructor):
 'python'
 ```
 
-You'll probably never need to use the str() constructor, but it's worth knowing that many of the built-in Python classes allow you
-to connstruct objects either with a constructor, or via a shortcut.  For strings, that shortcut is to just enclose 
-the string in quotes.  More on this topic later.
+You'll probably never need to use the str() constructor, but it's worth knowing that the built-in Python classes allow you
+to construct objects either with a constructor, or via a shortcut.  For strings, that shortcut is to just enclose 
+the string in quotes.  These shortcuts are called 'literals.'  More on this topic later.
 
 ## Lists
 
@@ -315,8 +315,8 @@ and arrays.
 -   Lists are enclosed in square brackets. To create an empty list, use
     either of the following:
 ```python
->>> x = []
->>> x = list()
+>>> x = []              # A literal, as discussed earlier
+>>> x = list()          # A constructor
 ```
 
 -   Assign lists with a comma-separated set of elements in square brackets, e.g.,
