@@ -505,9 +505,9 @@ things to know about dictionaries:
 >>> meals = {1: 'breakfast', 2: 'lunch', 3: 'dinner'}
 ```
 -   Per the above, dictionary assignments use curly braces, just like sets do.  Python can tell the two apart because
-    dictionaries have pair-wise elements with a quote in the middle of each element.
+    dictionaries have pair-wise elements with a colon in the middle of each element.
     
--   When the keys are strings, assignments have a simpler syntax using keyword arguements with the dict constructor:
+-   When the keys are strings, assignments have a simpler, optional syntax using keyword arguements with the dict constructor:
 ```python
 >>> phonebook = dict(Joe=1234, Bob=5678)
 ```
@@ -522,7 +522,7 @@ things to know about dictionaries:
 >>> print(phonebook)
 {('Joe', 'Home'): 1234, ('Joe', 'Work'): 5678}
 ```
-This allows for greater specificity in keys.  Similiarly, the values in a dictionary's key/value pairs
+This allows for greater specificity in keys.  Similarly, the values in a dictionary's key/value pairs
 are not restricted to the scalars used above.  E.g.,
 ```python
 >>> addressbook = {'Joe': ['1234 Dearborn Ave.', 'Chicago', 'IL', 60602]}
@@ -532,7 +532,7 @@ are not restricted to the scalars used above.  E.g.,
 Within the dictionary type, the values of the key-value pairs can be of any type including lists, user-defined objects, or even other dictionaries.
 
 -   Use [] for list assignment, () for tuples, and {} for sets and
-    dictionaries. If you forget which set of symbols produces which
+    dictionaries. If you forget which symbols produces which
     class, you can use the Python interpreter to remind you. E.g.,
 
 ```python
