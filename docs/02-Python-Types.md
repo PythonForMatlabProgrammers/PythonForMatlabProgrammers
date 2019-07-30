@@ -559,7 +559,7 @@ In Python, a literal is syntax that creates a specific object.  When we introduc
 >>> string = 'abc'
 >>> string = str(object='abc')
 ```
-With the shortcut, 'abc' is considered a *literal.*  The shortcut *literally* produces a string.  Many of Python's built-in classes have literal representations.  These include:
+In the first line above, 'abc' is considered a *literal.*  Literals produce data types; in the above, the literal is a shortcut way to produce a string.  Many of Python's built-in classes have literal representations.  These include:
 
 | Type       | Constructor | Literal Examples |
 | ---------- | ----------- | ---------------- |
@@ -573,7 +573,7 @@ With the shortcut, 'abc' is considered a *literal.*  The shortcut *literally* pr
 | Dictionary | dict()      | {}, {'a': 2}     |
 | Set        | set()       | {1, 2, 3}        |
 
-Python defines yet more literals, but the above are the most commonly used.  So when you see the term *literal* in the Python literature, just know that a literal is a shortcut way to instantiate a built-in class.
+Another characteristic of literals is that they are constants.  Notice in the above table that each literal is a constant whose value cannot be changed.  Python defines yet more literals, but the above are the most commonly used.  So when you see the term *literal* in the Python literature, just know that a literal is a shortcut way to instantiate a built-in class.
 
 ## Closing
 
