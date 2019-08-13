@@ -1,13 +1,3 @@
-<p>
-    <img src="media/logo_144.png" alt="Python For MATLAB Programmers" width="144" height="98" align="left">
-    <br>
-    Andrew Janke<br>
-    Michael Patterson<br>
-</p>
-<br>
-
-   ____________________________________________
-
 # The Python Ecosystem
 
 As a MATLAB programmer, you may be a little nervous about Python at this
@@ -675,7 +665,3 @@ private collaborations.
 
 With more than six million users, Anaconda is a popular distribution
 worthy of your attention.
-
-[![Previous Section](media/previous.png)](05-Classes.md)
-&nbsp; &nbsp; &nbsp; &nbsp;
-[![Next Section](media/next.png)](07-Conclusion.md)

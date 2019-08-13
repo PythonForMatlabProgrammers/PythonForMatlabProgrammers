@@ -1,13 +1,3 @@
-<p>
-    <img src="media/logo_144.png" alt="Python For MATLAB Programmers" width="144" height="98" align="left">
-    <br>
-    Andrew Janke<br>
-    Michael Patterson<br>
-</p>
-<br>
-
-   ____________________________________________
-
 # Python Control Structures
 
 Python's core library provides a limited but versatile set of control
@@ -20,7 +10,6 @@ Python provides the usual flow control constructs, with some minor
 syntax changes.
 
 -   Here is an if-statement:
-
 ```python  
 if x < 0:
   print('x is negative')
@@ -46,8 +35,7 @@ else:
 ...   x = x+1
 ```
 
-Here's a for-statement. Python will iterate over the items of any
-sequence, as discussed earlier.
+-   Here's a for-statement. Python will iterate over the items of any sequence, as discussed earlier.
 ```python
 >>> for x in 'abcd':
 ...   print(x)
@@ -62,14 +50,13 @@ The same construct works with lists:
 The above will print 'Dave', 'John', 'Mark' on separate
 lines.
 
-The target list ('names' in the above example) is an iterable,
+-   The target list ('names' in the above example) is an iterable,
 which serves up its elements one at a time. Note the similarities to
 MATLAB, which can iterate in a for loop over a numeric array or a
 cell array.
 
-Wondering how to use indices in a for-loop? There are several ways,
+-   Wondering how to use indices in a for-loop? There are several ways,
 and here is one example:
-
 ```python
 >>> N = len(names)
 >>> for i in range(0,N): # range(0,N) produces the sequence 0, 1, 2, ..., N-1
@@ -78,21 +65,17 @@ and here is one example:
 1 John
 2 Mark
 ```
-
-The range() function will return the sequence of values 0, 1, ...,
+   The range() function will return the sequence of values 0, 1, ...,
 N-1. We'll see later that range() is an *iterable* object.
 
-Using the enumerate() function, we can simplify the above loop and
+   Using the enumerate() function, we can simplify the above loop and
 obtain the loop counter:
-
 ```python
 >> for i, v in enumerate(names):
 ...  print(i,v)
 ```
-
-When the list to print is instead a dictionary, an items() method
+   When the list to print is instead a dictionary, an items() method
 performs much the same role as the enumerate() function:
-
 ```python
 >>> names = {1: 'Dave', 2: 'John', 3: 'Mark'}
 >>> for key, val in names.items():
@@ -125,7 +108,6 @@ one list from another, or from an iterable.
 -   Nested for- and if-clauses are allowed.
 
 -   A few simple examples:
-
 ```python
 >>> Index = [i for i in range(10)] # Produces 0, 1, 2, ..., 9
 >>> Squares = [x**2 for x in range(10)] # Produces 0, 1, 4, ..., 81
@@ -134,15 +116,16 @@ one list from another, or from an iterable.
 
 -   The expression in a listcomp can be any expression, including
     another listcomp. Consider the following examples.
-
 ```python
 >>> x = [[0, 1, 2],
 ...      [3, 4, 5],
 ...      [6, 7, 8]]
-
+```
+```python
 >>> [row for row in x]
 [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
-
+```
+```python
 >>> [row[i] for row in x for i in range(3)]
 [0, 1, 2, 3, 4, 5, 6, 7, 8]
 ```
@@ -154,18 +137,16 @@ The above is equivalent to the following:
 ...     out.append(x[row][i])
 ```
 
-The following comprehension will transpose x. Note that the order of
+-   The following comprehension will transpose x. Note that the order of
 nesting is reversed with this construct. In this example, the
 expression is another listcomp, and is referred to as a listcomp
 inside a listcomp.
-
 ```python
 >>> [[row[i] for row in x] for i in range(3)]
 [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
 ```
 
 -   Dictionaries can also be assigned with list comprehensions:
-
 ```python
 >>> {x: x**2 for x in (2,4,6)}
 {2: 4, 4: 16, 6: 36}
@@ -185,6 +166,9 @@ For example, suppose you have a dictionary d with a mix of integers,
 ```python
 >>> d = {x: (float(d[x]) if d[x]*0 == 0 else d[x]) for x in d.keys()}
 ```
+
+List comprehensions are a powerful feature of the Python language.  They are
+memory efficient, fast, and terse.  
 
 # Iterables and Iterators
 
@@ -232,14 +216,15 @@ Traceback (most recent call last):
 
 -   The function call `range(0,5)` creates an iterable object that will
     return [0, 1, 2, 3, 4] one element at a time.
-
 ```python
 >>> range(5) # This returns the object, an iterable
 range(0, 5)
-
+```
+```python
 >>> list(range(5)) # This converts the iterable into a list
 [0, 1, 2, 3, 4]
-
+```
+```python
 >>> it = iter(range(5)) # This converts the iterable into an
 iterator
 ```
@@ -253,10 +238,11 @@ iterator
 >>> list(enumerate(x))
 [(0, 'a'), (1, 'b'), (2, 'c')]
 ```
--   Iterables and iterators are pervasive in the Python language, as
-    they provide memory efficient lists. You might not use them
-    directly, deferring instead to for- and while-loops, but knowing how
-    such constructs are implemented will be valuable to you.
+
+Iterables and iterators are pervasive in the Python language, as
+they provide memory efficient lists. You might not use them
+directly, deferring instead to for- and while-loops, but knowing how
+such constructs are implemented will be valuable to you.
 
 ## Generators
 
@@ -291,6 +277,7 @@ The first line of the above code looks like a listcomp, but it uses
 >>> next(squares)
 4
 ```
+
 Generators are essentially lists that are awaiting completion. They are
 memory efficient, and they are easy to store and to pass to methods and
 functions.
@@ -310,15 +297,16 @@ in multiple ways:
     range(4))`.
 
 <!-- TODO: add example here -->
--   Using a constructor.
-
+-   Using a constructor, as in the following examples:
 ```python
 >>> list('abc') # Strings are iterables
 ['a', 'b', 'c']
-
+```
+```python
 >>> list( (1, 2, 3) ) # Tuples are iterables
 [1, 2, 3]
-
+```
+```python
 >>> list( (x*x for x in range(1,5)) ) # Generators are memory-efficient
 [1, 4, 9, 16]
 ```
@@ -352,7 +340,6 @@ def fun(arg1,arg2):
     returned by default. The value None has a type of NoneType.
 
 -   Function arguments can be given default values. E.g.,
-
 ```python
 def whats_your_name (prompt, retries=4, reminder='Please try again!'):
   """ doc string """
@@ -486,7 +473,7 @@ How did the above work? First, strings are a class, and that class
     each string then became the key by which to sort the list of
     strings.
 
-The above is equivalent to:
+    The above is equivalent to:
 ```python
 >>> [str[i] for I in [1, 0, 2]]
 ```
@@ -546,7 +533,6 @@ Here's a quick summary:
 
 -   Try-except blocks have added functionality compared to MATLAB. The
     outline of a try-except block looks like:
-
 ```python
 try:
   # code
@@ -563,18 +549,15 @@ finally:
 ```
 -   As in MATLAB, it is not necessary to specify the class of error.
     E.g., the following is permissible:
-
 ```python
 try:
   x = y / z
 except:
   raise Exception('Looks like z was equal to zero')
-```    
-
+```
 However, when you are monitoring for and handling specific types of
 errors, use of a built-in or user-defined exception class is
 recommended. E.g.,
-
 ```python
 try:
   x = y / z
@@ -588,10 +571,8 @@ except ArithmeticError:
 
 -   If you desire a stack trace and/or logging into a log file, use
     Python's logging module. E.g.,
-
 ```python
 import logging
-
 try:
   y = 5 / 0
 except:
@@ -604,7 +585,6 @@ except:
     statement](https://docs.python.org/3/reference/compound_stmts.html#with)
     will ensure that pre-defined actions occur even if not explicitly
     requested. For example:
-
 ```python
 with open('some_file.csv') as file:
   for line in file:
@@ -687,10 +667,6 @@ Built-in mutable sequence.
 
 Introspection works with objects, built-in functions and user-defined
 functions.
-
-[![Previous Section](media/previous.png)](02-Python-Types.md)
-&nbsp; &nbsp; &nbsp; &nbsp;
-[![Next Section](media/next.png)](04-Plotting.md)
 
 [^2]: Strictly speaking, Python always passes a function argument using
     *call by value*. However, the value passed is an object reference,

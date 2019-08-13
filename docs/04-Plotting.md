@@ -1,17 +1,3 @@
----
-layout: default
----
-
-<p>
-    <img src="media/logo_144.png" alt="Python For MATLAB Programmers" width="144" height="98" align="left">
-    <br>
-    Andrew Janke<br>
-    Michael Patterson<br>
-</p>
-<br>
-
-   ____________________________________________
-
 # Plotting
 
 As you might expect, Python offers numerous libraries with which to
@@ -77,7 +63,3 @@ following example.
     contributed to the library of packages. Have a look at Yan Holtz's
     [Python Graph Gallery](https://python-graph-gallery.com/) for an
     overview of the chart types available in Python.
-
-[![Previous Section](media/previous.png)](03-Control-Structures.md)
-&nbsp; &nbsp; &nbsp; &nbsp;
-[![Next Section](media/next.png)](05-Classes.md)

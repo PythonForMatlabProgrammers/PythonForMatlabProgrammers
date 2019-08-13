@@ -1,12 +1,3 @@
-<p>
-    <img src="media/logo_144.png" alt="Python For MATLAB Programmers" width="144" height="98" align="left">
-    <br>
-    Andrew Janke<br>
-    Michael Patterson<br>
-</p>
-<br>
-
-   ____________________________________________
 # Introduction
 
 If the title of this paper caught your eye, chances are you have
@@ -329,10 +320,6 @@ int?? # More details on the int() function
 And of course, you can find online help at
 [python.org](https://www.python.org/) or any of many Python-focused
 websites.
-
-[![Previous Section](media/previous.png)](00-Preface.md)
-&nbsp; &nbsp; &nbsp; &nbsp;
-[![Next Section](media/next.png)](02-Python-Types.md)
 
 [^1]: MATLAB® and Simulink are registered trademarks of The MathWorks,
     Inc.

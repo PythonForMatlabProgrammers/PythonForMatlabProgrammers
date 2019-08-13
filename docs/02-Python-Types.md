@@ -1,13 +1,3 @@
-<p>
-    <img src="media/logo_144.png" alt="Python For MATLAB Programmers" width="144" height="98" align="left">
-    <br>
-    Andrew Janke<br>
-    Michael Patterson<br>
-</p>
-<br>
-
-   ____________________________________________
-
 # Python Types
 
 In the following sections of this document we'll browse through the
@@ -156,7 +146,7 @@ In the above code, several coding conventions become apparent. The
     MATLAB's one-based indexing. Building on the example above:
 ```python
 >>> var[0]
-    'a'
+'a'
 ```
 The above example illustrates two departures from MATLAB
     conventions. First, Python uses zero-based indexing on all sequence
@@ -182,7 +172,6 @@ specification of and operations on Python strings differ from what
 MATLAB provides.
 
 -   Use either single or double quotes to enclose a string. E.g.,
-
 ```python
 >>> str = 'abc'
 ```
@@ -246,7 +235,6 @@ provides similar facilities via add-on modules.
     converging onto a new technique called [*formatted string literals*](https://www.python.org/dev/peps/pep-0498/),
     or *f-strings*. Here's an example of variable substitution using an
     f-string:
-
 ```python
 >>> today = '01-Jan-2018' # There are date/time facilities for obtaining the current date
 >>> print(f'The current date is {today}') # Note the prefix 'f' and the variable substitution
@@ -273,7 +261,7 @@ Python provides substantial capabilities for creating and printing strings. It's
 have to leave for now, for space considerations.
 
 To close the topic on strings, let's discuss how strings are objects in Python, and some of the implications of that fact.
-Within this text we'll repeatedly remind you that in Python, *everything* is an object.  Strings are no exception. 
+Within this text we'll repeatedly remind you that in Python, *everything* is an object.  Strings are no exception.
 Consider the following:
 
 ```python
@@ -291,7 +279,7 @@ be created with the str command (an object constructor):
 ```
 
 You'll probably never need to use the str() constructor, but it's worth knowing that the built-in Python classes allow you
-to construct objects either with a constructor, or via a shortcut.  For strings, that shortcut is to just enclose 
+to construct objects either with a constructor, or via a shortcut.  For strings, that shortcut is to just enclose
 the string in quotes.  These shortcuts are called 'literals.'  More on this topic later.
 
 ## Lists
@@ -379,14 +367,12 @@ Note the consistency of syntax ('+' to concatenate).
 -   One can also embed lists within other lists. This is *sort of* like
     having a multidimensional array, but not quite equivalent. Consider
     the following:
-
 ```python
 >>> x = [ [ 1,2,3],
    [4,5,6],
    [7,8,9] ]
 >>> x
 [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-
 >>> x[0][0]
 1
 ```
@@ -412,11 +398,9 @@ they cannot be indexed or sliced.
 ```
 -   The usual set operations are available. With sets one can test for
     membership, perform intersections, unions and differences. E.g.,
-
 ```python
 >>> 'Tom' in x
 True
-
 >>> x.union({'Grace'})
 {'Dave', 'Grace', 'Mary', 'Tom'}
 ```
@@ -506,7 +490,7 @@ things to know about dictionaries:
 ```
 -   Per the above, dictionary assignments use curly braces, just like sets do.  Python can tell the two apart because
     dictionaries have pair-wise elements with a colon in the middle of each element.
-    
+
 -   When the keys are strings, assignments have a simpler, optional syntax using keyword arguements with the dict constructor:
 ```python
 >>> phonebook = dict(Joe=1234, Bob=5678)
@@ -534,17 +518,13 @@ Within the dictionary type, the values of the key-value pairs can be of any type
 -   Use [] for list assignment, () for tuples, and {} for sets and
     dictionaries. If you forget which symbols produces which
     class, you can use the Python interpreter to remind you. E.g.,
-
 ```python
 >>> type([])
 <class 'list'>
-
 >>> type(())
 <class 'tuple'>
-
 >>> type({}) # Returns dict rather than set
 <class 'dict'>
-
 >>> type({1, 2, 3}) # Provide a better hint
 <class 'set'>
 ```
@@ -580,7 +560,3 @@ Another characteristic of literals is that they are constants.  Notice in the ab
 For now, we are done with data types. We'll return to the topic later
 when we discuss user-defined classes. Let's look next at Python's
 primary control structures.
-
-[![Previous Section](media/previous.png)](01-Introduction.md)
-&nbsp; &nbsp; &nbsp; &nbsp;
-[![Next Section](media/next.png)](03-Control-Structures.md)

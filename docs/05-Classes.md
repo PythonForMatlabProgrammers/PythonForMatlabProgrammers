@@ -1,13 +1,3 @@
-<p>
-    <img src="media/logo_144.png" alt="Python For MATLAB Programmers" width="144" height="98" align="left">
-    <br>
-    Andrew Janke<br>
-    Michael Patterson<br>
-</p>
-<br>
-
-   ____________________________________________
-
 # Namespaces and Scopes
 
 At this point of the article we'll dive a bit deeper into the
@@ -101,81 +91,68 @@ containing an integer has a class attribute:
 -   Classes are defined with a straightforward syntax. In the following
     example code, we define a class, a docstring, an initiation method,
     and then two class methods:
-
 ```python
 class MyClass:
-  """A sample class definition""" # Like MATLAB's H1 line
+        """A sample class definition""" # Like MATLAB's H1 line
 
-  def __init__(self): # A constructor
-    self.mydata = []
+        def __init__(self): # A constructor
+            self.mydata = []
 
-  def method1(self):
-    self.mydata = 3.14159
+        def method1(self):
+            self.mydata = 3.14159
 
-  def method2(self):
-    self.mydata = 3.14159 / 2
+        def method2(self):
+            self.mydata = 3.14159 / 2
 ```
 
-Class objects support only two kinds of operations: attribute
+-   Class objects support only two kinds of operations: attribute
 references and instantiation. Let's look first at attribute
 references. Consider the following class definition which defines
 one attribute and one method:
-
 ```python
 class MyClass:
-  """Doc String"""
-  x = 3.140
+        """Doc String"""
+        x = 3.140
 
-  def f(self,StringToPrint):
-    print(StringToPrint)
+        def f(self,StringToPrint):
+        print(StringToPrint)
 ```
-
-You'll need to save the above into a .py file.  You can choose any name for the file; let's use simple.py.
-Back in the Python console window, we can type the following:
-
+You'll need to save the above into a .py file.  You can choose any name for the file; let's use simple.py.  Back in the Python console window, we can type the following:
 ```python
->>> import simple
->>> obj = simple.MyClass()
->>> obj.x
-3.14
->>> obj.f # This produces a function object
-<bound method>
-
->>> obj.f('test')
-'test'
+  >>> import simple
+  >>> obj = simple.MyClass()
+  >>> obj.x
+  3.14
+  >>> obj.f # This produces a function object
+  <bound method>
+  >>> obj.f('test')
+  'test'
 ```
-
 Both the attribute and the method are referenced with the same
 notation. Use of the variable 'self' as the first argument to the
 above method is only a convention; this is, however, the standard
 convention.
 
-Now let's look at an instantiation operation. Python uses a
+  Now let's look at an instantiation operation. Python uses a
 specifically named method for instantiation, called
 `__init__`, as per the following example:
-
 ```python
   def __init__(self, day, activity):
     self.weekday = day
     self.activity = activity
 ```
-
 When a `__init__` method is placed into a class definition, it is
 automatically invoked when the class is first instantiated.
 
 -   Python supports class inheritance. The syntax is simply
-
 ```python
 class SubClassName(BaseClassName):
 ```
-
 In the above, BaseClassName must be in scope. If it is not, one can
 instead use
-
 ```python
 class SubClassName(modname.BaseClassName):
 ```
-
 Subclass methods may either override or extend base class methods of
 the same name. To call a super-class method from a subclass, use
 super(). For example, if a parent class has a method called
@@ -186,7 +163,6 @@ super().invite().
     location where variables are defined in a class, rather than the use
     of keywords, dictates whether a variable is a class variable or
     instance variable. E.g.,
-
 ```python
 def MyClass:
   ClassVar = 3.14 # Class, or static variable
@@ -337,7 +313,3 @@ studying these topics further.
 We have now covered the primary Python data types and control
 structures. In the third and last chapter of this article, we'll look
 at the expansive Python ecosystem.
-
-[![Previous Section](media/previous.png)](04-Plotting.md)
-&nbsp; &nbsp; &nbsp; &nbsp;
-[![Next Section](media/next.png)](06-Ecosystem.md)

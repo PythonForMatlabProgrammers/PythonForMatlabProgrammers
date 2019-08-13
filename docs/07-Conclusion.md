@@ -1,13 +1,3 @@
-<p>
-    <img src="media/logo_144.png" alt="Python For MATLAB Programmers" width="144" height="98" align="left">
-    <br>
-    Andrew Janke<br>
-    Michael Patterson<br>
-</p>
-<br>
-
-   ____________________________________________
-
 # Closing
 
 If you have read this far, you must be interested in Python. There's
@@ -53,9 +43,6 @@ worthy of that time. If you have feedback, if you have found typos,
 incorrect statements, important omissions, or if you have suggestions
 for improving this document, we'd like to hear from you. Our
 biographies and contact information are listed below.
-
-
-[![Previous Section](media/previous.png)](06-Ecosystem.md)
 
 # Author Biographies
 
