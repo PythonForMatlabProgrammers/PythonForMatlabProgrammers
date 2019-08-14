@@ -56,7 +56,7 @@ MATLAB and Python have many similarities in their Boolean types.
 -   Python provides a Boolean data type which can assume either of two values:
     True or False. Note that each value is capitalized. Booleans are a subtype of integers.
 
--   As with MATLAB, Python provides Boolean operators: and, or and not.
+-   As with MATLAB, Python provides Boolean operators: _and_, _or_ and _not_.
 
 -   Python provides eight comparison operations: <, <=, >, >=, ==, and !=, is,
     and is not.
@@ -68,7 +68,7 @@ MATLAB and Python have many similarities in their Boolean types.
 >>> 5 < x < 15
 True
 ```
--   As another example, express the identity law of Boolean algebra:
+-   As another example, you can express the identity law of Boolean algebra:
 ```python
 >>> x + 0 == 0 + x == x == x*x/x
 True
@@ -112,7 +112,7 @@ return to the topics of vectors and arrays.
     mark is the Python console prompt. The `...` marks are continuation marks
     and are not something that you type into the console; they instead are
     *placed* there by the console to denote that the logical block is
-    continuing; this is the convention of official Python documentation. A colon
+    continuing.  This is the convention of official Python documentation. A colon
     initiates a logical block of code, and that logical block of code is
     indented four spaces. Comments begin with a pound sign (#). Lastly, a blank
     line terminates a logical block. The above lines of code will produce:
@@ -127,7 +127,7 @@ c
 
 -   Python statements do not terminate with a semicolon, although they can to no
     ill effect. Unlike with MATLAB, omitting the semicolon will *not* echo the
-    statement's rsult to the screen; with Python, you have to purposely print
+    statement's result to the screen; with Python, you have to purposely print
     something to see its value.
 
 -   We mentioned earlier that Python is a terse language. Iterables reflect that
@@ -147,14 +147,14 @@ indexing. Secondly, Python uses square brackets to encapsulate its indices;
 MATLAB uses parentheses. MATLAB is a bit of an outlier here, as most programming
 languages follow the Python conventions.
 
-Use of square brackets is a useful convention, as the brackets distinguish
+Use of square brackets is a helpful convention, as the brackets distinguish
 indexing from function or method calls. This is just one of many Python
 conventions that improve code readability.
 
-Sequences are important: they provide built-in types such as strings, lists and
-tuples. And sequences are a building block to many of Python's derived data
-types such as vectors and arrays. We'll cover the built-in sequence types first,
-and later return to the derived types.
+Sequences are important to the Python language: they provide built-in types such
+as strings, lists and tuples. And sequences are a building block to many of
+Python's derived data types such as vectors and arrays. We'll cover the built-in
+sequence types first, and later return to the derived types.
 
 ### Strings
 
@@ -232,11 +232,11 @@ The current date is 01-Jan-2018
 
 The f-string facility also provides formatting options.  For example, floats can
 be formatted with the syntax `f'{value:{width}.{precision}}'`, where:
-* `value` is any expression that evaluates to a number
+* `value` is any expression that evaluates to a number.
 * `width` specifies the total number of characters to display, including the
-* decimal point.  However, if `value` needs more space than  `width` specifies,
-* `width` will automatically increase to accommodate.  If `width` is omitted,
-* f-string formatting will simply use as much width as necessary.
+decimal point.  However, if `value` needs more space than  `width` specifies,
+`width` will automatically increase to accommodate.  If `width` is omitted,
+f-string formatting will simply use as much width as necessary.
 * `precision` indicates the number of characters used after the decimal point.
 * A few examples follow.
 ```python
@@ -247,7 +247,7 @@ be formatted with the syntax `f'{value:{width}.{precision}}'`, where:
 'Pi =  3.142'
 ```
 Python's f-strings are both powerful and syntactically terse.  An expression
-within an f-string (the component inside the{}) is just that, an expression.  It
+within an f-string, the component inside the {}, is just that: an expression.  It
 can be a variable reference, a computation, a method call, a library call or any
 combination of expressions you can dream up.
 
@@ -275,7 +275,7 @@ object constructor):
 You'll probably never need to use the str() constructor, but it's worth knowing
 that the built-in Python classes allow you to construct objects either with a
 constructor, or via a shortcut.  For strings, that shortcut is to just enclose
-the string in quotes.  These shortcuts are called 'literals.'  More on this
+characters # in quotes.  These shortcuts are called 'literals.'  More on this
 topic later.
 
 ### Lists
@@ -522,8 +522,9 @@ know about dictionaries:
 ### Python Literals
 
 Eventually you are going to come across the term *literal* in the Python
-literature.  It will be helpful for you to know what that term means.  Every
-programming language has some concept of a literal, and Python is no exception.
+literature; we've used the term several times.  It will be helpful for you to
+know what, exactly, that term means.  Every programming language has some
+concept of a literal, and Python is no exception.
 
 In Python, a literal is syntax that creates a specific object.  When we
 introduced strings, we mentioned that strings can be created either with a
@@ -549,11 +550,16 @@ In the first line above, 'abc' is considered a *literal.*  Literals produce data
 | Dictionary | dict()      | {}, {'a': 2}     |
 | Set        | set()       | {1, 2, 3}        |
 
-Another characteristic of literals is that they are constants.  Notice in the
-above table that each literal is a constant whose value cannot be changed.
-Python defines yet more literals, but the above are the most commonly used.  So
-when you see the term *literal* in the Python literature, just know that a
-literal is a shortcut way to instantiate a built-in class.
+Another characteristic of literals is that they are constants.  In the following
+line of code, 'a' is a variable, and the number 5 is a literal:
+```python
+>>> a = 1
+```
+
+Notice in the above table that each literal is a constant whose value cannot be
+changed. Python defines yet more literals, but the above are the most commonly
+used.  So when you see the term *literal* in the Python literature, just know
+that a literal is a shortcut way to instantiate a built-in class.
 
 ### Closing
 

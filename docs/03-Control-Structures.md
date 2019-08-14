@@ -15,11 +15,11 @@ syntax changes.
 -   Here is an if-statement:
 ```python  
 if x < 0:
-  print('x is negative')
+      print('x is negative')
 elif x == 0:
-  print('x is zero')
+      print('x is zero')
 else:
-  print('x is positive')
+      print('x is positive')
 ```
 
 -   Note again there's no end statement. Nor are there semicolons at the end of
@@ -54,7 +54,7 @@ The above will print 'Dave', 'John', 'Mark' on separate lines.
 
 -   The target list ('names' in the above example) is an iterable, which serves
     up its elements one at a time. Note the similarities to MATLAB, which can
-    iterate in a for loop over a numeric array or a cell array.
+    iterate in a for-loop over a numeric array or a cell array.
 
 -   Wondering how to use indices in a for-loop? There are several ways, and here
     is one example:
@@ -90,6 +90,10 @@ performs much the same role as the enumerate() function:
     execute when the iterable has been exhausted, but not following a break
     statement. While-loops also support an else clause; here, the else block
     will execute when the while conditional becomes false.
+
+Those are the core, familiar control constructs.  Again,
+the Python language is intended to be lightweight.  Let's
+move on to a construct that may not be familiar to you.
 
 ### List Comprehensions
 
@@ -175,26 +179,25 @@ its data set one element at a time. Such an object is called an *iterable*.
 -   An iterable is an object which can return successive items of a
     sequence stored inside the object.
 
--   All sequence types are iterables. These include the types list,
-    range, string, and tuple.
+-   All sequence types are iterables. These include the types list, range,
+    string, and tuple.
 
 -   Sets and dictionaries are also iterables.
 
 -   User-defined classes can be made iterable.
 
--   Iterables produce *iterators*, and it's the iterators that produce
-    an object's elements.
+-   Iterables produce *iterators*, and it's the iterators that produce an
+    object's elements.
 
--   Iterators have several methods defined for them, but the one you
-    should know about is the *next()* method, which returns the next
-    item in a list. Once a list's elements are exhausted, next() will
-    issue an exception.
+-   Iterators have several methods defined for them, but the one you should know
+   about is the `next` method, which returns the next item in a list. Once a
+   list's elements are exhausted, `next` will issue an exception.
 
 -   For example, let's create an iterator from a list, and then produce
     the list's elements.
 ```python
 >>> x = [0, 1, 2] # A list, which is an iterable
->>> it = iter(x) # An iterator
+>>> it = iter(x)  # An iterator
 >>> next(it)
 0
 >>> next(it)
@@ -236,6 +239,8 @@ Iterables and iterators are pervasive in the Python language, as they provide
 memory efficient lists. You might not use them directly, deferring instead to
 for- and while-loops, but knowing how such constructs are implemented will be
 valuable to you.
+
+<br>
 
 ### Generators
 

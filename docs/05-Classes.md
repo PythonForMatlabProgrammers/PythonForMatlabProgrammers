@@ -1,13 +1,16 @@
 <br>
 <br>
 
-# Namespaces and Scopes
+# Object-Oriented Programming in Python
 
 At this point of the article we'll dive a bit deeper into the programming
 language. We'll discuss namespaces, scopes, and then classes. Each of these
-differs from the MATLAB model, and you need to be aware of the changes. Let's
-start with Namespaces and scopes, as these concepts are important prerequisites
-for understanding classes.
+differs from the MATLAB model, and you need to be aware of the changes.
+
+### Namespaces and Scopes
+
+Let's start with Namespaces and scopes, as these concepts are important
+prerequisites for understanding classes.
 
 -   A *namespace* is a mapping from names to objects, typically implemented as a
     dictionary. Examples include built-in names, exception names, global names

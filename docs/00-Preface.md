@@ -22,7 +22,7 @@ By Andrew Janke and Michael Patterson
 </p>
 
 _Python for MATLAB Programmers_ by Andrew Janke and Michael Patterson is licensed under a
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+ <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
 <br>
 <br>
