@@ -1,3 +1,6 @@
+<br>
+<br>
+
 # Introduction
 
 If the title of this paper caught your eye, chances are you have
@@ -25,7 +28,7 @@ the time you've read this article, assuming that you do, you'll agree
 that we've provided a quick way to discover Python given your
 background in MATLAB programming.
 
-## Objectives of this Article
+### Objectives of this Article
 
 Because MATLAB and Python have many similarities, and because you
 already know the former, learning about the latter should come easy. The
@@ -54,7 +57,7 @@ A fourth, and last objective of this article is to be as brief as
 possible. Python is already well documented, so this document strives to
 be a quick read.
 
-## Contributing to this Article
+### Contributing to this Article
 
 As just mentioned, we have a goal of keeping this article brief.  However,
 we've received suggestions of additional material for the article, and
@@ -69,7 +72,7 @@ this article.
 
 Let's get started.
 
-## Conventions
+### Conventions
 
 We will use only a few conventions in this document, again in the name
 of simplicity. Code that you would enter in a Python console is prefaced
@@ -81,15 +84,15 @@ only Windows even though Python also runs on Macintosh and Linux. We
 believe that the Windows-based references are clear enough that
 translating to the other operating systems will be straightforward.
 
-# MATLAB and Python, at a High Level
+### MATLAB and Python, at a High Level
 
 Like MATLAB[^1], Python is an interpreted, interactive, object-oriented
-programming language. MATLAB was first released in 1983; Python in
-1991.  Both are extensible and designed for use by a wide audience.
+programming language. MATLAB was first released in 1983; Python in 1991.  Both
+are extensible and designed for use by a wide audience.
 
 You already know MATLAB's key characteristics. Let's assess, in as
-non-subjective manner as possible, the high-level similarities of MATLAB
-and Python.
+non-subjective manner as possible, the high-level similarities of MATLAB and
+Python.
 
 -   Both languages are interpreted.
 
@@ -185,7 +188,7 @@ too, goes on.
 In the end, MATLAB and Python differ in many implementation details but
 provide many common capabilities.
 
-# Installation
+### Installation
 
 Python is available for the Windows, MacIntosh and Linux operating
 systems. The installation process is simple: just
@@ -194,7 +197,7 @@ through its prompts. Note that both x86 and x86-64 versions are
 available. Grab whatever latest version is appropriate for your
 computer.
 
-# Integrated Development Environments (IDEs)
+### Integrated Development Environments (IDEs)
 
 You may eventually want an IDE, and there are numerous to choose from.
 The [Wiki
@@ -224,7 +227,7 @@ engine, or simply postpone your decision until later. We will return to
 the IDE topic in the chapter titled, *The Python Ecosystem*. At that
 time, you'll understand why we suggest you delay this decision.
 
-# Python Modules and Packages
+### Python Modules and Packages
 
 Python uses *modules* and *packages* in the same way that MATLAB uses
 M-files and toolboxes. A module is a file of Python code with a file
@@ -281,7 +284,7 @@ modules and packages in great detail later on. For the moment, just know
 that when you see an import statement in the following examples, we're
 registering Python files in the current workspace.
 
-# The Python Style Guide
+### The Python Style Guide
 
 Python is a terse, whitespace-sensitive language. A key objective of the
 language is to be readable, and toward that goal the language adheres to
@@ -292,7 +295,7 @@ Blank lines and indentations are important, and their proper use is not
 optional. Eventually you will want to read the style guide, but early on
 you can also allow an IDE to enforce the required conventions.
 
-# Getting Help
+### Getting Help
 
 There will be times when reading this document that you'll want
 additional information on a data type, function or class. Python gives
