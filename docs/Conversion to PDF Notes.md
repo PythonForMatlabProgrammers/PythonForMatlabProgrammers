@@ -26,7 +26,7 @@ something of a mess of our .md files.
 Second, Pandoc dropped the format of our hyperlinks; the links themselves
 remained in the exported files, but the formatting was dropped.  I did not find
 a way to resolve that (but there are a thousand Pandoc options to sort through).
-And lastly, Pandoc was ignoring css that I had in the files.  Like the
+And lastly, Pandoc was ignoring CSS that I had in the files.  Like the
 hyperlinks there's probably an option to alter that behavior, but I did not find
 it.
 
