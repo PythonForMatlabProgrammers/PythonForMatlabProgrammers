@@ -9,7 +9,7 @@
 
 The _Python for MATLAB Programmers_ article was first written as an MS Word doc.
 Early in 2019, however, we decided that we'd outgrown that format and wanted
-something web-based.  Andrew recommended that we move to MarkDown on Git-Hub.
+something web-based.  Andrew recommended that we move to MarkDown on GitHub.
 It's been a good choice.
 
 The original conversion of Word to MarkDown was handled by Andrew.  Over the
