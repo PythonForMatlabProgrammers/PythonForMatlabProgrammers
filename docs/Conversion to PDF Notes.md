@@ -9,18 +9,18 @@
 
 The _Python for MATLAB Programmers_ article was first written as an MS Word doc.
 Early in 2019, however, we decided that we'd outgrown that format and wanted
-something web-based.  Andrew recommended that we move to MarkDown on GitHub.
+something web-based.  Andrew recommended that we move to Markdown on GitHub.
 It's been a good choice.
 
-The original conversion of Word to MarkDown was handled by Andrew.  Over the
-course of months, Mike then cleaned up the MarkDown (the conversion was not
+The original conversion of Word to Markdown was handled by Andrew.  Over the
+course of months, Mike then cleaned up the Markdown (the conversion was not
 perfect) and began exploring ways to convert to HTML and/or PDF.
 
 Pandoc was the obvious choice for the latter two conversions.  Mike attempted
 but failed to get this to work well.  There were a few issues.  First, our .md
 files employ a lot of unordered lists, with code blocks mixed in.  Pandoc
 struggled to get our indentation working correctly.  I found that I could alter
-the MarkDown, adding enough indentation to get the export correct, but that made
+the Markdown, adding enough indentation to get the export correct, but that made
 something of a mess of our .md files.
 
 Second, Pandoc dropped the format of our hyperlinks; the links themselves
