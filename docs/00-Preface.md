@@ -30,10 +30,12 @@ _Python for MATLAB Programmers_ by Andrew Janke and Michael Patterson is license
 
 Release notes:
 
--  This work was first published January 23, 2019.
+-  January 23, 2019: First published.
 
--  The work was subsequently published to a [GitHub public repository](https://github.com/apjanke/PythonForMatlabCoders)
-on March 31, 2019 under a Creative Commons Attribution ShareAlike 4.0 International License.
--  Latest release: August 15,2019
+-  March 31, 2019: Published to a [GitHub public
+   repository](https://github.com/apjanke/PythonForMatlabCoders) under a
+   Creative Commons Attribution ShareAlike 4.0 International License.
+
+-  August 15,2019: Latest release.
 
 <br>

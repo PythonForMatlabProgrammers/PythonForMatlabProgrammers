@@ -158,7 +158,7 @@ with the pip utility will reside in folder LibSite-packages relative to the
 Python installation folder. To list your specific site folder(), perform the
 following command:
 ```python
->>> import site; site.getsitepackages() # A semicolon separates commands on a single line
+>>> import site; site.getsitepackages()
 ```
 
 If you are using a virtual environment, the `venv` tool or your IDE will create

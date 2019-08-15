@@ -60,7 +60,7 @@ The above will print 'Dave', 'John', 'Mark' on separate lines.
     is one example:
 ```python
 >>> N = len(names)
->>> for i in range(0,N): # range(0,N) produces the sequence 0, 1, 2, ..., N-1
+>>> for i in range(0,N):
 ...   print(i, names[i])
 0 Dave
 1 John
@@ -319,7 +319,7 @@ in Python.
 -   The basic structure of a function is:
 ```python
 def fun(arg1,arg2):
-  """doc string""" # A doc string is roughly equivalent to a MATLAB H1 line.
+  """doc string""" # A doc string (like a MATLAB H1 line)
   # Blank line before code begins
   code
   # Blank line to end the function
@@ -335,7 +335,7 @@ def fun(arg1,arg2):
 
 -   Function arguments can be given default values. E.g.,
 ```python
-def whats_your_name (prompt, retries=4, reminder='Please try again!'):
+def input_name (prompt, retries=4, reminder='Please try again!'):
   """ doc string """
   # we'll skip the function's code for now
 ```
@@ -347,7 +347,7 @@ for the caller.
 -   Functions can be called with keyword arguments. E.g., to call the
     function just defined we could type:
 ```python
->>> whats_your_name(prompt='Tell me your name', retries=10, reminder='Try again')
+>>> input_name(prompt='Your name?', retries=10, reminder='Try again')
 ```
 Once a keyword argument is provided, all remaining arguments (if
     provided) must also be keyword arguments.
@@ -590,7 +590,7 @@ Here's how to get the version number from Python itself:
 ```python
 >>> import sys
 >>> sys.version
-3.7.0 (v3.7.0:1bf9cc5093, Aug 27 2018, 04:59:51) [MSC v.1914 64 bit (AMD64)]
+3.7.0 (v3.7.0:1, Aug 27 2018, 04:59:51) [MSC v.1914 64 bit]
 ```
 
 And from a shell window, simply enter `python -V`.

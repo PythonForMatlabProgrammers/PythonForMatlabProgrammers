@@ -208,7 +208,7 @@ TypeError: 'str' object does not support item assignment
 ```    
 -   To alter a string, concatenate the elements you wish to retain with any new text.  The following will work:
 ```python
->>> str = 'A' + str[1:3] # Note again that the upper bound is not included in the range
+>>> str = 'A' + str[1:3]
 >>> str
 'Abc'
 ```
