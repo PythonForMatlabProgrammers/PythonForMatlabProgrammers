@@ -5,7 +5,7 @@ description: >-
   MATLAB developers.
 baseurl: "/PythonForMatlabCoders"
 url: "" 
-#twitter_username: jekyllrb
+#twitter_username: apjanke
 github_username:  apjanke
 
 # Build settings
