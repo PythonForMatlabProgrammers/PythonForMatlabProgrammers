@@ -14,5 +14,5 @@ and [Andrew Janke](https://apjanke.net), experienced MATLAB coders who have rece
 You can view the document online [here](PythonForMatlabProgrammers.html).
 
 You can find the document here in PDF format:
-  * PDF: [Python for MATLAB Programmers.pdf](Python for MATLAB Programmers.pdf)
+  * PDF: [PythonForMatlabProgrammers.pdf](PythonForMatlabProgrammers.pdf)
 
