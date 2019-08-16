@@ -63,16 +63,20 @@ MATLAB and Python have many similarities in their Boolean types.
 
 -   Comparison operations can be chained together. E.g., you can enter the
     following into a Python console, with the final line resulting:
-```python
->>> x = 10
->>> 5 < x < 15
-True
-```
+
+    ```python
+    >>> x = 10
+    >>> 5 < x < 15
+    True
+    ```
+
 -   As another example, you can express the identity law of Boolean algebra:
-```python
->>> x + 0 == 0 + x == x == x*x/x
-True
-```
+
+    ```python
+    >>> x + 0 == 0 + x == x == x*x/x
+    True
+    ```
+
 -   Most objects (class instances) will evaluate to True. The following evaluate
 to False:
 
@@ -101,12 +105,13 @@ return to the topics of vectors and arrays.
     now think of an iterable as an object capable of returning its members one
     at a time. As an example, a for-statement iterates over the items of a
     sequence. You can do the following:
-```python
->>> var = 'abc'   # Strings are iterable objects.
->>> for v in var: # Blocks of code are terminated with a blank line.
-...   print(v)    # There are no end statements in Python. Nor do lines
-                  # end with semicolons.
-```
+
+    ```python
+    >>> var = 'abc'   # Strings are iterable objects.
+    >>> for v in var: # Blocks of code are terminated with a blank line.
+    ...   print(v)    # There are no end statements in Python. Nor do lines
+                      # end with semicolons.
+    ```
 
 -   In the above code, several coding conventions become apparent. The `>>>`
     mark is the Python console prompt. The `...` marks are continuation marks
@@ -116,11 +121,13 @@ return to the topics of vectors and arrays.
     initiates a logical block of code, and that logical block of code is
     indented four spaces. Comments begin with a pound sign (#). Lastly, a blank
     line terminates a logical block. The above lines of code will produce:
-```python
-a
-b
-c
-```
+
+    ```python
+    a
+    b
+    c
+    ```
+
 -   Indentation is required, as it is how Python detects constructs. The
     standard convention is that an indent consists of four spaces, though you
     can choose any number of spaces greater than zero.
@@ -137,15 +144,16 @@ c
 
 -   All Python sequences employ zero-based indexing, as opposed to MATLAB's
     one-based indexing. Building on the example above:
-```python
->>> var[0]
-'a'
-```
-The above example illustrates two departures from MATLAB conventions. First,
-Python uses zero-based indexing on all sequence types; MATLAB uses one-based
-indexing. Secondly, Python uses square brackets to encapsulate its indices;
-MATLAB uses parentheses. MATLAB is a bit of an outlier here, as most programming
-languages follow the Python conventions.
+
+    ```python
+    >>> var[0]
+    'a'
+    ```
+
+    The above example illustrates two departures from MATLAB conventions. First,
+    Python uses zero-based indexing on all sequence types; MATLAB uses one-based
+    indexing. Secondly, Python uses square brackets to encapsulate its indices;
+    MATLAB uses parentheses. MATLAB is a bit of an outlier here, as most programming languages follow the Python conventions.
 
 Use of square brackets is a helpful convention, as the brackets distinguish
 indexing from function or method calls. This is just one of many Python
@@ -163,55 +171,69 @@ specification of and operations on Python strings differ from what MATLAB
 provides.
 
 -   Use either single or double quotes to enclose a string. E.g.,
-```python
->>> str = 'abc'
-```
+
+    ```python
+    >>> str = 'abc'
+    ```
+
 -   Concatenate using a '+' sign; multiply with a '\*' sign. E.g.,
-```python
->>> 2 * 'ab' + 'c'
-'ababc'
-```
+
+    ```python
+    >>> 2 * 'ab' + 'c'
+    'ababc'
+    ```
+
 -   When you need to create a long string and want to break it across several
     lines, you have several options. The preferred way, defined in [PEP
     0008](https://www.python.org/dev/peps/pep-0008/#maximum-line-length), is
     simply to enclose the string in parentheses. E.g.,
-```python
->>> str = ('abc'
-...        'def')
->>> str
-'abcdef'
-```    
+
+    ```python
+    >>> str = ('abc'
+    ...        'def')
+    >>> str
+    'abcdef'
+    ```    
+
 -   You can also continue a line with a backslash. E.g.,
-```python
->>> str = 'abc' \
-... 'def'
-```
+
+    ```python
+    >>> str = 'abc' \
+    ... 'def'
+    ```
+
 -   Index reference a string with zero-based indexing, e.g.,
-```python
->>> str[0] # All sequence data types employ zero-based indexing.
-'a'
-```
+
+    ```python
+    >>> str[0] # All sequence data types employ zero-based indexing.
+    'a'
+    ```
 
 -   Multi-element indexing is called *slicing*, e.g., str[0:2].
-```python
->>> str = 'ThisIsATest'
->>> str[0:4] # The upper bound is not included in the returned substring.
-This
-```
+
+    ```python
+    >>> str = 'ThisIsATest'
+    >>> str[0:4] # The upper bound is not included in the returned substring.
+    This
+    ```
+
 -   Strings are an [immutable](https://docs.python.org/3/glossary.html) sequence
     data type. Immutable types cannot alter their values once set. For example,
     the following series of commands will issue an error:
-```python
->>> str = 'abc'
->>> str[0] = 'A'
-TypeError: 'str' object does not support item assignment
-```    
+
+    ```python
+    >>> str = 'abc'
+    >>> str[0] = 'A'
+    TypeError: 'str' object does not support item assignment
+    ```
+
 -   To alter a string, concatenate the elements you wish to retain with any new text.  The following will work:
-```python
->>> str = 'A' + str[1:3]
->>> str
-'Abc'
-```
+
+    ```python
+    >>> str = 'A' + str[1:3]
+    >>> str
+    'Abc'
+    ```
 
 The immutability property of strings may be disconcerting to a MATLAB programmer
 who is used to changing strings with several of MATLAB's built-in string
@@ -224,11 +246,12 @@ technique called [*formatted string
 literals*](https://www.python.org/dev/peps/pep-0498/), or *f-strings*.
 
 -   Here's an example of variable substitution using an f-string.  We'll create a date string and then substitute it into a print statement.  It should be noted that Python provides date/time facilities for obtaining the current date and time, so one would not normally create a date string as we do below.
-```python
->>> today = '01-Jan-2018'
->>> print(f'The current date is {today}')
-The current date is 01-Jan-2018
-```
+
+    ```python
+    >>> today = '01-Jan-2018'
+    >>> print(f'The current date is {today}')
+    The current date is 01-Jan-2018
+    ```
 
 The f-string facility also provides formatting options.  For example, floats can
 be formatted with the syntax `f'{value:{width}.{precision}}'`, where:
@@ -239,13 +262,15 @@ decimal point.  However, if `value` needs more space than  `width` specifies,
 f-string formatting will simply use as much width as necessary.
 * `precision` indicates the number of characters used after the decimal point.
 * A few examples follow.
-```python
->>> import math
->>> f'Pi = {math.pi:5.3f}'
-'Pi = 3.142'
->>> f'Pi = {math.pi:6.3f}'
-'Pi =  3.142'
-```
+
+    ```python
+    >>> import math
+    >>> f'Pi = {math.pi:5.3f}'
+    'Pi = 3.142'
+    >>> f'Pi = {math.pi:6.3f}'
+    'Pi =  3.142'
+    ```
+
 Python's f-strings are both powerful and syntactically terse.  An expression
 within an f-string, the component inside the {}, is just that: an expression.  It
 can be a variable reference, a computation, a method call, a library call or any
@@ -258,14 +283,17 @@ To close the topic on strings, let's discuss how strings are objects in Python,
 and some of the implications of that fact. Within this text we'll repeatedly
 remind you that in Python, *everything* is an object.  Strings are no exception.
 Consider the following:
+
 ```python
 >>> s = 'python'
 >>> s.capitalize()
 'Python'
 ```
+
 Here, we applied a method called 'capitalize' to the object named 's.'  Strings
 are of data type `str` and as such can also be created with the str command (an
 object constructor):
+
 ```python
 >>> s = str(object='python')
 >>> s
@@ -296,47 +324,57 @@ block to numeric vectors and higher-order matrices and arrays.
 
 -   Lists are enclosed in square brackets. To create an empty list, use either
     of the following:
-```python
->>> x = []              # A literal, as discussed earlier
->>> x = list()          # A constructor
-```
+
+    ```python
+    >>> x = []              # A literal, as discussed earlier
+    >>> x = list()          # A constructor
+    ```
+
 -   Assign lists with a comma-separated set of elements in square brackets, e.g.,
-```python
->>> x = [0, 1, 2, 3]          # Homogeneous list
->>> y = ['a', 'b', 1, 2, 3].  # Heterogeneous list
-```    
+
+    ```python
+    >>> x = [0, 1, 2, 3]          # Homogeneous list
+    >>> y = ['a', 'b', 1, 2, 3].  # Heterogeneous list
+    ```
+
 -   You will sometimes see a list defined across multiple lines, e.g.,
-```python    
->>> x = [1, 2, 3,
-...      4, 5, 6,
-...      ]
-```    
+
+    ```python    
+    >>> x = [1, 2, 3,
+    ...      4, 5, 6,
+    ...      ]
+    ```
+
 -   In the above, the IDE being used automatically added the `...` continuation
 marks, and also automatically indented the continuation lines. Note that we've
 included a trailing comma (after the six). Python allows this, as it makes it
 easier to add more lines of data later on, assuming that the above code was
 entered into an editor. When Python executes the above command, the line
 separations and trailing comma are removed. E.g.,
-```python
->>> x
-[1, 2, 3, 4, 5, 6]
-```
--   Lists, like all sequences, are zero-indexed, e.g., x[0].
+
+    ```python
+    >>> x
+    [1, 2, 3, 4, 5, 6]
+    ```
+
+-   Lists, like all sequences, are zero-indexed, e.g., `x[0]`.
 
 -   As with strings, a *slice* of a list returns a portion of the original list,
     For example,
-```python   
->>> x = [0, 1, 2, 3]
->>> x[1:3] # The upper bound is not included in the returned slice
-[1, 2]
-```
+
+    ```python   
+    >>> x = [0, 1, 2, 3]
+    >>> x[1:3] # The upper bound is not included in the returned slice
+    [1, 2]
+    ```
 
 -   Recall that strings are concatenated with the '+' symbol.  Lists are concatenated the same way.  E.g.,
-```python
->>> x = [0, 1, 2, 3, 4]
->>> y = x + [5, 6, 7, 8, 9]
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-```    
+
+    ```python
+    >>> x = [0, 1, 2, 3, 4]
+    >>> y = x + [5, 6, 7, 8, 9]
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    ```
 
 -   The previous result will be unexpected for most MATLAB programmers. As shown
     in the example, Python did not interpret the '+' symbol to mean, 'add the
@@ -356,15 +394,16 @@ separations and trailing comma are removed. E.g.,
 
 -   One can also embed lists within other lists. This is *sort of* like having a
     multidimensional array, but not quite equivalent. Consider the following:
-```python
->>> x = [ [1,2,3],
-   [4,5,6],
-   [7,8,9] ]
->>> x
-[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
->>> x[0][0]
-1
-```
+
+    ```python
+    >>> x = [ [1,2,3],
+    [4,5,6],
+    [7,8,9] ]
+    >>> x
+    [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    >>> x[0][0]
+    1
+    ```
 
 For a programmer with a MATLAB background, lists may not appear particularly
 useful. As an array, the list implementation would be difficult to work with.
@@ -380,19 +419,23 @@ cannot be indexed or sliced.
 
 -   Define sets using a comma-separated list of heterogeneous items in braces.
     E.g.,
-```python    
->>> x = {'Dave', 'Tom', 'Mary', 'Dave'}
->>> x
-{'Dave', 'Mary', 'Tom'} # Reordered and unique
-```
+
+    ```python    
+    >>> x = {'Dave', 'Tom', 'Mary', 'Dave'}
+    >>> x
+    {'Dave', 'Mary', 'Tom'} # Reordered and unique
+    ```
+
 -   The usual set operations are available. With sets one can test for
     membership, perform intersections, unions and differences. E.g.,
-```python
->>> 'Tom' in x
-True
->>> x.union({'Grace'})
-{'Dave', 'Grace', 'Mary', 'Tom'}
-```
+
+    ```python
+    >>> 'Tom' in x
+    True
+    >>> x.union({'Grace'})
+    {'Dave', 'Grace', 'Mary', 'Tom'}
+    ```
+
 -   Python also supports a *frozenset* type, which produces an immutable set.
 
 ### Tuples
@@ -404,22 +447,27 @@ with *supple*.
 -   A tuple is a compound, immutable, sequence data type.
 
 -   A tuple can be created in numerous ways. E.g.,
-```python
->>> x = (1, 2, 3) # The parentheses are optional.
->>> x = 1, 2, 3
->>> x = tuple([1, 2, 3])
-```
+
+    ```python
+    >>> x = (1, 2, 3) # The parentheses are optional.
+    >>> x = 1, 2, 3
+    >>> x = tuple([1, 2, 3])
+    ```
 
 -   Tuples can have heterogeneous elements. E.g.,
-```python
->>> x = ('y', 3, 4)
-```
+
+    ```python
+    >>> x = ('y', 3, 4)
+    ```
+
 -   Tuples can employ parentheses on assignment, but require the usual square
     brackets on reference:
-```python    
-  >>> x[0]
-  'y'
-```
+
+    ```python    
+    >>> x[0]
+    'y'
+    ```
+
 -   Although tuples are immutable, their elements can be mutable objects such as
     lists.
 
@@ -470,38 +518,48 @@ know about dictionaries:
 -   Lists, because they are mutable, cannot be keys.
 
 -   A few examples:
-```python
->>> phonebook = {'Joe': 1234, 'Bob': 5678}
->>> meals = {1: 'breakfast', 2: 'lunch', 3: 'dinner'}
-```
+
+    ```python
+    >>> phonebook = {'Joe': 1234, 'Bob': 5678}
+    >>> meals = {1: 'breakfast', 2: 'lunch', 3: 'dinner'}
+    ```
+
 -   Per the above, dictionary assignments use curly braces, just like sets do.
     Python can tell the two apart because dictionaries have pair-wise elements
     with a colon in the middle of each element.
 
 -   When the keys are strings, assignments have a simpler, optional syntax using
     keyword arguments with the dict constructor:
-```python
->>> phonebook = dict(Joe=1234, Bob=5678)
-```
+
+    ```python
+    >>> phonebook = dict(Joe=1234, Bob=5678)
+    ```
+
 -   To insert or update an item, use square brackets for indexing, e.g.,
-```python
->>> phonebook['Grayson'] = 2513
-```
+
+    ```python
+    >>> phonebook['Grayson'] = 2513
+    ```
+
 -   A tuple can be used to create a composite key, if all of its elements are
     immutable. E.g.,
-```python
->>> phonebook = {('Joe', 'Home'): 1234, ('Joe', 'Work'): 5678}
->>> print(phonebook)
-{('Joe', 'Home'): 1234, ('Joe', 'Work'): 5678}
-```
+
+    ```python
+    >>> phonebook = {('Joe', 'Home'): 1234, ('Joe', 'Work'): 5678}
+    >>> print(phonebook)
+    {('Joe', 'Home'): 1234, ('Joe', 'Work'): 5678}
+    ```
+
 -   This allows for greater specificity in keys.  Similarly, the values in a
     dictionary's key/value pairs are not restricted to the scalars used above.
     E.g.,
-```python
->>> addressbook = {'Joe': ['1234 Dearborn Ave.', 'Chicago', 'IL', 60602]}
->>> print(addressbook)
-{'Joe': ['1234 Dearborn Ave.', 'Chicago', 'IL', 60602]}
-```
+
+    ```python
+    >>> addressbook = {'Joe': ['1234 Dearborn Ave.', 'Chicago', 'IL', 60602]}
+    >>> print(addressbook)
+    {'Joe': ['1234 Dearborn Ave.', 'Chicago', 'IL', 60602]}
+    ```
+
 -   Within the dictionary type, the values of the key-value pairs can be of any
     type including lists, user-defined objects, or even other dictionaries.
 
@@ -509,16 +567,16 @@ know about dictionaries:
     If you forget which symbols produces which class, you can use the Python
     interpreter to remind you. E.g.,
 
-```python
->>> type([])
-<class 'list'>
->>> type(())
-<class 'tuple'>
->>> type({}) # Returns dict rather than set
-<class 'dict'>
->>> type({1, 2, 3}) # Provide a better hint
-<class 'set'>
-```
+    ```python
+    >>> type([])
+    <class 'list'>
+    >>> type(())
+    <class 'tuple'>
+    >>> type({}) # Returns dict rather than set
+    <class 'dict'>
+    >>> type({1, 2, 3}) # Provide a better hint
+    <class 'set'>
+    ```
 
 ### Python Literals
 
