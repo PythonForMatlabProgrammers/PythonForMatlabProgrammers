@@ -2133,41 +2133,41 @@ Let's talk now about importing modules and packages into your Python workspace.
     one another from colliding module names.
 
 -   Modules are imported with the *import* command.
-```python
->>> import statistics as stat
-```
+    ```python
+    >>> import statistics as stat
+    ```
 
     The above will import (register) the statistics module, abbreviated as stat.
-This does not actually load the statistics functions into the current workspace.
-Rather, the command registers the names of the functions in the module, and
-makes them available with, e.g.,
-```python
->>> avg = stat.mean(x)
-```
+    This does not actually load the statistics functions into the current workspace.
+    Rather, the command registers the names of the functions in the module, and
+    makes them available with, e.g.,
+    ```python
+    >>> avg = stat.mean(x)
+    ```
 
 -   When you import a module, *all* of the functions it contains will be registered.
-This means that a .py file can contain multiple functions, and all will
-register.  Specific functions in a module can be imported with, e.g.,
-```python
->>> from statistics import mean
-```
+    This means that a .py file can contain multiple functions, and all will
+    register.  Specific functions in a module can be imported with, e.g.,
+    ```python
+    >>> from statistics import mean
+    ```
 
     The above will register the mean() function but will not register the module
-name.
+    name.
 
 -   On startup, Python loads the modules of its standard library. The following list
-comprehension will print the set of currently imported modules:
-```python
->>> import sys
->>> [str(m) for m in sys.modules]
-```
+    comprehension will print the set of currently imported modules:
+    ```python
+    >>> import sys
+    >>> [str(m) for m in sys.modules]
+    ```
 
 -   To determine which functions are defined in module, use the built-in dir()
-function. For example:
-```python
->>> import sys
->>> dir(sys)
-```
+    function. For example:
+    ```python
+    >>> import sys
+    >>> dir(sys)
+    ```
    We'll skip the output here, as it is lengthy.
 
 To install packages, a utility called 'pip' is recommended. Here's how to use pip
@@ -2233,14 +2233,14 @@ Here are the basics for viewing and modifying the Python search path.
 
 -   To view the directories currently on the path, you can use the
     following:
-```python
->>> import sys; print(sys.path)
-```    
+    ```python
+    >>> import sys; print(sys.path)
+    ```    
 
 -   To append the system path, use, e.g.,
-```python
->>> sys.path.append('C:Temp')
-```
+    ```python
+    >>> sys.path.append('C:Temp')
+    ```
 
 ### NumPy
 
