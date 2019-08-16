@@ -18,7 +18,7 @@ cd docs
 make
 ```
 
-And check in the modified files to Git.
+And then check in the modified files to Git.
 
 ## Running the site locally
 
@@ -34,7 +34,7 @@ To install the stuff you need to run the site, cd into the `docs/` directory and
 
 To run the site, cd into the `docs/` directory and run `bundle exec jekyll serve`.
 
-If you‘ve made any changes to the site, make sure you rebuild the derived files
+If you‘ve made any changes to the doc, make sure you rebuild the derived files
 as described in “Building the combined doc” above.
 
 # Prose style guide
