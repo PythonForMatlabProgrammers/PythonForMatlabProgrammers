@@ -35,7 +35,7 @@ output.  It's fast, and it retains _all_ of our formatting.
 
 1. Using GitHub desktop, sync up a local repository with the online repository.
 
-1. Open Windows Powershell, cd to the repository and enter the following command
+1. Open Windows PowerShell, cd to the repository and enter the following command
 to concatenate the various article chapters into one file:
 
     Get-Content 0*.md | Set-Content ".\Python for MATLAB Programmers.md"
