@@ -2,8 +2,8 @@
 layout: default
 ---
 
-PythonForMatlabCoders
-=====================
+PythonForMatlabProgrammers
+==========================
 
 This site is the home of "Python for MATLAB Programmers". It is an introduction
 to numeric Python for programmers who already know MATLAB.
