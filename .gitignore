@@ -1,1 +1,7 @@
 ~*
+
+# Note: Do *not* put these into this .gitignore file:
+#   - docs/PythonForMatlabProgrammers.html
+#   - docs/PythonForMatlabProgrammers.pdf
+# While these are derived artifacts, they must still be present
+# in the repo for the GitHub Pages site to work properly!
