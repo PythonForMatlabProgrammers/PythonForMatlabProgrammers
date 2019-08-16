@@ -2312,7 +2312,7 @@ C:> pip install scipy # Enter from a Windows terminal
 
 Let's solve linear system [A]{x} = {b}, where [A] and {b} are given as:
 
-![](media/equation1.png)
+<img src="media/equation1.png">
 
 ```python
 >>> import numpy as np
@@ -2550,7 +2550,7 @@ the bottom-right is the Python console, along with integrated graphics. At the
 top-right is the variable explorer; superimposed upon it is the output DataFrame
 which we obtained by double-clicking on that variable in the explorer window.
 
-![image5](media/image5.png)
+<img src="media/image5.png">
 
 Spyder is written in the Python language, is open source and is free of charge.
 
