@@ -867,6 +867,7 @@ know about dictionaries:
 -   Use [] for list assignment, () for tuples, and {} for sets and dictionaries.
     If you forget which symbols produces which class, you can use the Python
     interpreter to remind you. E.g.,
+
 ```python
 >>> type([])
 <class 'list'>
@@ -1609,7 +1610,7 @@ C:> pip install matplotlib # from a Windows terminal
 
 <div style="text-align: center;">
 
-![](media/image2.png)
+<img src="media/image2.png">
 
 </div>
 
@@ -1635,7 +1636,7 @@ following example.
 ```
 <div style="text-align: center;">
 
-![](media/image3.png)
+<img src="media/image3.png">
 
 </div>
 
@@ -1823,6 +1824,7 @@ method with super().invite().
 -   Python supports both class (static) and instance variables. The location
     where variables are defined in a class, rather than the use of keywords,
     dictates whether a variable is a class variable or instance variable. E.g.,
+
 ```python
 def MyClass:
   ClassVar = 3.14 # Class, or static variable
@@ -1830,6 +1832,7 @@ def MyClass:
   def __init__(self):
     self.InstanceVar = 3.14159 # Instance variable
 ```
+
 -   Static variables should be used with care.  If you create two instances of
     the above class and use one of them to alter the value of ClassVar, that
     value will then appear also in the second instance.
@@ -2429,7 +2432,8 @@ Finally, let's clean up the column labels and plot the data:
 
 <div style="text-align: center;">
 
-![](media/image4.png)
+<img src="media/image4.png">
+
 </div>
 
 Plotting the data provides the figure above. Several comments are warranted
@@ -2546,7 +2550,7 @@ the bottom-right is the Python console, along with integrated graphics. At the
 top-right is the variable explorer; superimposed upon it is the output DataFrame
 which we obtained by double-clicking on that variable in the explorer window.
 
-![](media/image5.png)
+![image5](media/image5.png)
 
 Spyder is written in the Python language, is open source and is free of charge.
 

@@ -24,7 +24,7 @@ C:> pip install matplotlib # from a Windows terminal
 
 <div style="text-align: center;">
 
-![](media/image2.png)
+<img src="media/image2.png">
 
 </div>
 
@@ -50,7 +50,7 @@ following example.
 ```
 <div style="text-align: center;">
 
-![](media/image3.png)
+<img src="media/image3.png">
 
 </div>
 

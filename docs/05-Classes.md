@@ -164,6 +164,7 @@ method with super().invite().
 -   Python supports both class (static) and instance variables. The location
     where variables are defined in a class, rather than the use of keywords,
     dictates whether a variable is a class variable or instance variable. E.g.,
+
 ```python
 def MyClass:
   ClassVar = 3.14 # Class, or static variable
@@ -171,6 +172,7 @@ def MyClass:
   def __init__(self):
     self.InstanceVar = 3.14159 # Instance variable
 ```
+
 -   Static variables should be used with care.  If you create two instances of
     the above class and use one of them to alter the value of ClassVar, that
     value will then appear also in the second instance.

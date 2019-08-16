@@ -460,7 +460,8 @@ Finally, let's clean up the column labels and plot the data:
 
 <div style="text-align: center;">
 
-![](media/image4.png)
+<img src="media/image4.png">
+
 </div>
 
 Plotting the data provides the figure above. Several comments are warranted
@@ -577,7 +578,7 @@ the bottom-right is the Python console, along with integrated graphics. At the
 top-right is the variable explorer; superimposed upon it is the output DataFrame
 which we obtained by double-clicking on that variable in the explorer window.
 
-![](media/image5.png)
+![image5](media/image5.png)
 
 Spyder is written in the Python language, is open source and is free of charge.
 

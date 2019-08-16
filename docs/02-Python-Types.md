@@ -508,6 +508,7 @@ know about dictionaries:
 -   Use [] for list assignment, () for tuples, and {} for sets and dictionaries.
     If you forget which symbols produces which class, you can use the Python
     interpreter to remind you. E.g.,
+
 ```python
 >>> type([])
 <class 'list'>
