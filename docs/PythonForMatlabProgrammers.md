@@ -1779,6 +1779,7 @@ class MyClass:
     You'll need to save the above into a .py file.  You can choose any name for the
 file; let's use simple.py.  Back in the Python console window, we can type the
 following:
+
 ```python
   >>> import simple
   >>> obj = simple.MyClass()
@@ -1789,7 +1790,7 @@ following:
   >>> obj.f('test')
   'test'
 ```
-    Both the attribute and the method are referenced with the same
+Both the attribute and the method are referenced with the same
 notation. Use of the variable 'self' as the first argument to the
 above method is only a convention; this is, however, the standard
 convention.
