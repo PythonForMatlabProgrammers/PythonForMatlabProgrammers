@@ -999,14 +999,15 @@ Python provides the usual flow control constructs, with some minor
 syntax changes.
 
 -   Here is an if-statement:
-```python  
-if x < 0:
-      print('x is negative')
-elif x == 0:
-      print('x is zero')
-else:
-      print('x is positive')
-```
+
+    ```python  
+    if x < 0:
+          print('x is negative')
+    elif x == 0:
+          print('x is zero')
+    else:
+          print('x is positive')
+    ```
 
 -   Note again there's no end statement. Nor are there semicolons at the end of
     each line. Indentation is required, as it is how Python detects constructs.
@@ -1016,27 +1017,32 @@ else:
 
 -   Python has only two looping constructs: the *while* construct, and the *for*
     construct. Here's a while-statement:
-```python
->>> x = 0
->>> while x < 10:
-...   print(x, end=', ')
-...   x = x+1
-```
+
+    ```python
+    >>> x = 0
+    >>> while x < 10:
+    ...   print(x, end=', ')
+    ...   x = x+1
+    ```
 
 -   Here's a for-statement. Python will iterate over the items of any sequence,
     as discussed earlier.
-```python
->>> for x in 'abcd':
-...   print(x)
-```
-The above will print 'a', 'b', 'c', 'd' on separate lines. The same construct
-works with lists:
-```python
->>> names = ['Dave', 'John', 'Mark']
->>> for x in names:
-...   print(x)
-```
-The above will print 'Dave', 'John', 'Mark' on separate lines.
+
+    ```python
+    >>> for x in 'abcd':
+    ...   print(x)
+    ```
+
+    The above will print 'a', 'b', 'c', 'd' on separate lines. The same construct
+    works with lists:
+
+    ```python
+    >>> names = ['Dave', 'John', 'Mark']
+    >>> for x in names:
+    ...   print(x)
+    ```
+
+    The above will print 'Dave', 'John', 'Mark' on separate lines.
 
 -   The target list ('names' in the above example) is an iterable, which serves
     up its elements one at a time. Note the similarities to MATLAB, which can
@@ -1044,30 +1050,35 @@ The above will print 'Dave', 'John', 'Mark' on separate lines.
 
 -   Wondering how to use indices in a for-loop? There are several ways, and here
     is one example:
-```python
->>> N = len(names)
->>> for i in range(0,N):
-...   print(i, names[i])
-0 Dave
-1 John
-2 Mark
-```
+
+    ```python
+    >>> N = len(names)
+    >>> for i in range(0,N):
+    ...   print(i, names[i])
+    0 Dave
+    1 John
+    2 Mark
+    ```
+
     The range() function will return the sequence of values 0, 1, ..., N-1. We'll
 see later that range() is an *iterable* object.
 
     Using the enumerate() function, we can simplify the above loop and obtain the
 loop counter:
-```python
->> for i, v in enumerate(names):
-...  print(i,v)
-```
-   When the list to print is instead a dictionary, an items() method
-performs much the same role as the enumerate() function:
-```python
->>> names = {1: 'Dave', 2: 'John', 3: 'Mark'}
->>> for key, val in names.items():
-...   print(key,val)
-```
+
+    ```python
+    >> for i, v in enumerate(names):
+    ...  print(i,v)
+    ```
+
+    When the list to print is instead a dictionary, an items() method
+    performs much the same role as the enumerate() function:
+
+    ```python
+    >>> names = {1: 'Dave', 2: 'John', 3: 'Mark'}
+    >>> for key, val in names.items():
+    ...   print(key,val)
+    ```
 
 -   Within looping constructs, Python supports the usual *break* and
     *continue* statements.
@@ -1097,61 +1108,72 @@ iterable.
 -   Nested for- and if-clauses are allowed.
 
 -   A few simple examples:
-```python
->>> Index = [i for i in range(10)] # Produces 0, 1, 2, ..., 9
->>> Squares = [x**2 for x in range(10)] # Produces 0, 1, 4, ..., 81
->>> Squares = [x**2 for x in range(10) if x != 5] # Skips x=5
-```
+
+    ```python
+    >>> Index = [i for i in range(10)] # Produces 0, 1, 2, ..., 9
+    >>> Squares = [x**2 for x in range(10)] # Produces 0, 1, 4, ..., 81
+    >>> Squares = [x**2 for x in range(10) if x != 5] # Skips x=5
+    ```
 
 -   The expression in a listcomp can be any expression, including another
     listcomp. Consider the following examples.
-```python
->>> x = [[0, 1, 2],
-...      [3, 4, 5],
-...      [6, 7, 8]]
-```
-```python
->>> [row for row in x]
-[[0, 1, 2], [3, 4, 5], [6, 7, 8]]
-```
-```python
->>> [row[i] for row in x for i in range(3)]
-[0, 1, 2, 3, 4, 5, 6, 7, 8]
-```
-The above is equivalent to the following:
-```python
->>> out = []
->>> for row in range(3):
-...   for i in range(3):
-...     out.append(x[row][i])
-```
+
+    ```python
+    >>> x = [[0, 1, 2],
+    ...      [3, 4, 5],
+    ...      [6, 7, 8]]
+    ```
+
+    ```python
+    >>> [row for row in x]
+    [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
+    ```
+
+    ```python
+    >>> [row[i] for row in x for i in range(3)]
+    [0, 1, 2, 3, 4, 5, 6, 7, 8]
+    ```
+
+    The above is equivalent to the following:
+
+    ```python
+    >>> out = []
+    >>> for row in range(3):
+    ...   for i in range(3):
+    ...     out.append(x[row][i])
+    ```
 
 -   The following comprehension will transpose x. Note that the order of nesting
     is reversed with this construct. In this example, the expression is another
     listcomp, and is referred to as a listcomp inside a listcomp.
-```python
->>> [[row[i] for row in x] for i in range(3)]
-[[1, 4, 7], [2, 5, 8], [3, 6, 9]]
-```
+
+    ```python
+    >>> [[row[i] for row in x] for i in range(3)]
+    [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+    ```
 
 -   Dictionaries can also be assigned with list comprehensions:
-```python
->>> {x: x**2 for x in (2,4,6)}
-{2: 4, 4: 16, 6: 36}
-```
+
+    ```python
+    >>> {x: x**2 for x in (2,4,6)}
+    {2: 4, 4: 16, 6: 36}
+    ```
 
 -   Lastly, it is possible to employ an if-else in list comprehensions. This is
     achieved though Python's [ternary
     conditional](https://docs.python.org/3/reference/expressions.html#conditional-expressions), an expression which takes the form:
-```python
->>> x if C else y # C is a conditional expression
-```
+
+    ```python
+    >>> x if C else y # C is a conditional expression
+    ```
+
     For example, suppose you have a dictionary d with a mix of integers, doubles and
 strings. If you want to convert all of the numeric types to type double, but
 leave the strings alone, the following will work:
-```python
->>> d = {x: (float(d[x]) if d[x]*0 == 0 else d[x]) for x in d.keys()}
-```
+
+    ```python
+    >>> d = {x: (float(d[x]) if d[x]*0 == 0 else d[x]) for x in d.keys()}
+    ```
 
 List comprehensions are a powerful feature of the Python language.  They are
 memory efficient, fast, and terse.  
@@ -1181,45 +1203,51 @@ its data set one element at a time. Such an object is called an *iterable*.
 
 -   For example, let's create an iterator from a list, and then produce
     the list's elements.
-```python
->>> x = [0, 1, 2] # A list, which is an iterable
->>> it = iter(x)  # An iterator
->>> next(it)
-0
->>> next(it)
-1
->>> next(it)
-2
->>> next(it)
-Traceback (most recent call last):
-```
+
+    ```python
+    >>> x = [0, 1, 2] # A list, which is an iterable
+    >>> it = iter(x)  # An iterator
+    >>> next(it)
+    0
+    >>> next(it)
+    1
+    >>> next(it)
+    2
+    >>> next(it)
+    Traceback (most recent call last):
+    ```
 
 -   Some functions return an iterable. The range() function, for example,
     creates an iterable. We saw this earlier when discussing for-loops.
 
 -   The function call `range(0,5)` creates an iterable object that will
     return [0, 1, 2, 3, 4] one element at a time.
-```python
->>> range(5) # This returns the object, an iterable
-range(0, 5)
-```
-```python
->>> list(range(5)) # This converts the iterable into a list
-[0, 1, 2, 3, 4]
-```
-```python
->>> it = iter(range(5)) # This converts the iterable into an
-iterator
-```
+
+    ```python
+    >>> range(5) # This returns the object, an iterable
+    range(0, 5)
+    ```
+
+    ```python
+    >>> list(range(5)) # This converts the iterable into a list
+    [0, 1, 2, 3, 4]
+    ```
+
+    ```python
+    >>> it = iter(range(5)) # This converts the iterable into an
+    iterator
+    ```
+
 -   We also introduced the enumerate() function when discussing for-loops. The
     enumerate function returns an iterable that produces a list of tuples.
     Recall from our earlier example that the first element of each tuple will be
     a counter, and the second the value obtained from the iterable. E.g.,
-```python
->>> x = ['a', 'b', 'c']
->>> list(enumerate(x))
-[(0, 'a'), (1, 'b'), (2, 'c')]
-```
+
+    ```python
+    >>> x = ['a', 'b', 'c']
+    >>> list(enumerate(x))
+    [(0, 'a'), (1, 'b'), (2, 'c')]
+    ```
 
 Iterables and iterators are pervasive in the Python language, as they provide
 memory efficient lists. You might not use them directly, deferring instead to
@@ -1245,21 +1273,24 @@ are two types of generators.
 -   The second type of generator is the *generator expression*. These employ
     list comprehensions and iterables to create an expression which can later be
     executed.
-```python
->>> squares = (x*x for x in range(1,5)) # This produces, but does not execute, a generator object.
->>> list(squares) # This executes the object, saving the results as a list.
-[1, 4, 9, 16]
-```
+
+    ```python
+    >>> squares = (x*x for x in range(1,5)) # This produces, but does not execute, a generator object.
+    >>> list(squares) # This executes the object, saving the results as a list.
+    [1, 4, 9, 16]
+    ```
+
     The first line of the above code looks like a listcomp, but it uses () rather
-than [], and that tells Python to create a generator. As before with iterators,
-we can iterate through a generator:
-```python
->>> squares = (x*x for x in range(1,3))
->>> next(squares)
-1
->>> next(squares)
-4
-```
+    than [], and that tells Python to create a generator. As before with iterators,
+    we can iterate through a generator:
+
+    ```python
+    >>> squares = (x*x for x in range(1,3))
+    >>> next(squares)
+    1
+    >>> next(squares)
+    4
+    ```
 
 Generators are essentially lists that are awaiting completion. They are memory
 efficient, and they are easy to store and to pass to methods and functions.
@@ -1279,18 +1310,18 @@ we should revisit list construction. Lists can be constructed in multiple ways:
 
 <!-- TODO: add example here -->
 -   Using a constructor, as in the following examples:
-```python
->>> list('abc') # Strings are iterables
-['a', 'b', 'c']
-```
-```python
->>> list( (1, 2, 3) ) # Tuples are iterables
-[1, 2, 3]
-```
-```python
->>> list( (x*x for x in range(1,5)) ) # Generators are memory-efficient
-[1, 4, 9, 16]
-```
+    ```python
+    >>> list('abc') # Strings are iterables
+    ['a', 'b', 'c']
+    ```
+    ```python
+    >>> list( (1, 2, 3) ) # Tuples are iterables
+    [1, 2, 3]
+    ```
+    ```python
+    >>> list( (x*x for x in range(1,5)) ) # Generators are memory-efficient
+    [1, 4, 9, 16]
+    ```
 
 Keep in mind that user-defined objects can be made iterable. We have not covered
 such objects yet, but once we do, you'll see that their contents can be
@@ -1303,13 +1334,14 @@ more versatile. Also, there are some interesting ways to use and reuse functions
 in Python.
 
 -   The basic structure of a function is:
-```python
-def fun(arg1,arg2):
-  """doc string""" # A doc string (like a MATLAB H1 line)
-  # Blank line before code begins
-  code
-  # Blank line to end the function
-```
+    ```python
+    def fun(arg1,arg2):
+      """doc string""" # A doc string (like a MATLAB H1 line)
+      # Blank line before code begins
+      code
+      # Blank line to end the function
+    ```
+
 -   Function arguments are always *call by reference*. Python does not
     support *call by value*.[^2]
 
@@ -1320,11 +1352,11 @@ def fun(arg1,arg2):
     default. The value None has a type of NoneType.
 
 -   Function arguments can be given default values. E.g.,
-```python
-def input_name (prompt, retries=4, reminder='Please try again!'):
-  """ doc string """
-  # we'll skip the function's code for now
-```
+    ```python
+    def input_name (prompt, retries=4, reminder='Please try again!'):
+      """ doc string """
+      # we'll skip the function's code for now
+    ```
     Default values are evaluated only once, and only at the point of the function
 definition. As in the above, the arguments with default values must follow any
 positional arguments. When defaults are given, those arguments become optional
@@ -1332,18 +1364,18 @@ for the caller.
 
 -   Functions can be called with keyword arguments. E.g., to call the
     function just defined we could type:
-```python
->>> input_name(prompt='Your name?', retries=10, reminder='Try again')
-```
-Once a keyword argument is provided, all remaining arguments (if
+    ```python
+    >>> input_name(prompt='Your name?', retries=10, reminder='Try again')
+    ```
+    Once a keyword argument is provided, all remaining arguments (if
     provided) must also be keyword arguments.
 
 -   Function signatures are quite robust. Following positional arguments and
     arguments with defaults, one can pass an arbitrary number of arguments with
     the following construct:
-```python
-def fun(arg1, arg2='test', *args):
-```
+    ```python
+    def fun(arg1, arg2='test', *args):
+    ```
     This is similar to MATLAB's vararg input. In the caller, following the
 positional and keyword arguments, one can pass an arbitrary set of
 comma-separated values. Inside the called function, the `*args` inputs will
@@ -1351,9 +1383,9 @@ automatically be packed into a tuple named `args` (in this example).
 
 -   Expanding upon the above signature, one can also specify that a
     function is to receive an arbitrary number of keyword arguments:
-```python
-def fun(arg1, arg2='test', *args, **keywords):
-```
+    ```python
+    def fun(arg1, arg2='test', *args, **keywords):
+    ```
     The above listed order is required.  If provided, the trailing keyword arguments
 will automatically be packed into a dictionary inside the function.  As an
 example of calling the above function, regardless of what the function might do,
@@ -1362,16 +1394,16 @@ one could enter:
 -   If a function signature requires individual arguments but the calling
     workspace has a list or tuple, the latter can be unpacked on the fly with a
     star ('\*') syntax. For example:
-```python
->>> list(range(0, 3))
-[0, 1, 2]
-```
-The above is equivalent to
-```python
->>> x = [0, 3]
->>> list(range(*x))
-```
-Dictionaries can also be unpacked, and that syntax uses a double
+    ```python
+    >>> list(range(0, 3))
+    [0, 1, 2]
+    ```
+    The above is equivalent to
+    ```python
+    >>> x = [0, 3]
+    >>> list(range(*x))
+    ```
+    Dictionaries can also be unpacked, and that syntax uses a double
     star.
 
 -   The execution of a function introduces a new symbol table used for the local
@@ -1383,64 +1415,64 @@ Dictionaries can also be unpacked, and that syntax uses a double
 -   Like everything else with Python, a function is represented internally as an
     object. That means you can do some interesting things with functions, like
     pass them into other functions. Consider the following simple example:
-```python
->>> def f(x): # Trivial function
-...   return x+1
-```
+    ```python
+    >>> def f(x): # Trivial function
+    ...   return x+1
+    ```
     The function f(x) is not just a function sitting in memory waiting to be
-invoked; it is an object in the workspace that can be passed around.
-```python
->>> f?
-Signature: f(x)
-Docstring: <no docstring>
-File: c:usersownerdocumentspython...
-Type: function
-```
+    invoked; it is an object in the workspace that can be passed around.
+    ```python
+    >>> f?
+    Signature: f(x)
+    Docstring: <no docstring>
+    File: c:usersownerdocumentspython...
+    Type: function
+    ```
     Define a second function, which accepts the first function (or any function) as
-an argument:
-```python
->>> def g(fun, x): # Pass a function into a function
-...   return 2*fun(x)
-```
+    an argument:
+    ```python
+    >>> def g(fun, x): # Pass a function into a function
+    ...   return 2*fun(x)
+    ```
     It's a trivial example, but here's how the two functions work together:
-```python
->>> f(5)
-6
->>> g(f,5)
-12
-```
+    ```python
+    >>> f(5)
+    6
+    >>> g(f,5)
+    12
+    ```
 
 -   Anonymous (unnamed) functions are created with the *lambda* keyword. E.g.,
-```python
->>> f = lambda x,y: x/y
->>> f(x=10, y=2)
-5
->>> f(1000, 10)
-100
-```
+    ```python
+    >>> f = lambda x,y: x/y
+    >>> f(x=10, y=2)
+    5
+    >>> f(1000, 10)
+    100
+    ```
     Such functions are commonly referred to as *lambda functions* or *lambda
 expressions*. As with nested functions, lambda functions can reference variables
 of the containing scope:
-```python
->>> def divideby(x):
-...   return lambda y: x/y
-```
+    ```python
+    >>> def divideby(x):
+    ...   return lambda y: x/y
+    ```
     The above function returns a lambda object:
-```python
->>> divide10by = divideby(x=10)
->>> divide10by(5)
-2
-```
+    ```python
+    >>> divide10by = divideby(x=10)
+    >>> divide10by(5)
+    2
+    ```
     As mentioned earlier, functions are objects and can be passed around like data.
 This is powerful, and it will take some getting used to. Consider the following
 example, where we have a list of strings and we want to sort them, ascending
 order, by the number of unique characters in each string.
-```python
->>> str = ['cook', 'zoo', 'ohnoooh']
->>> str.sort(key=lambda x: len(set(x)))
->>> str
-['zoo', 'cook', 'ohnoooh']
-```    
+    ```python
+    >>> str = ['cook', 'zoo', 'ohnoooh']
+    >>> str.sort(key=lambda x: len(set(x)))
+    >>> str
+    ['zoo', 'cook', 'ohnoooh']
+    ```    
     How did the above work? First, strings are a class, and that class has a
 *sort()* method associated with it. The sort() method allows a key argument, and
 we passed a lambda function as the value of that argument. In other words, we
@@ -1451,10 +1483,10 @@ length of the remaining characters. The length of the unique characters in each
 string then became the key by which to sort the list of strings.
 
     The above is equivalent to:
-```python
->>> [str[i] for I in [1, 0, 2]]
-```
-This is equivalent, but assumes that we somehow know the sort order.
+    ```python
+    >>> [str[i] for I in [1, 0, 2]]
+    ```
+    This is equivalent, but assumes that we somehow know the sort order.
     Using the sort method and a lambda function in the first example, we
     were able to determine the sort order on the fly.
 
@@ -1508,49 +1540,49 @@ Here's a quick summary:
 
 -   Try-except blocks have added functionality compared to MATLAB. The
     outline of a try-except block looks like:
-```python
-try:
-  # code
-except NameError:
-  raise Exception('Name is not defined.')
-except ValueError:
-  raise Exception('Value is not valid.')
-else:
-  # Code that is always executed if no exception is raised.
-  # Useful for code that should not be part of the try-block.
-finally:
-  # Cleanup code that is always executed, regardless of whether an
-  # exception was encountered.
-```
+    ```python
+    try:
+      # code
+    except NameError:
+      raise Exception('Name is not defined.')
+    except ValueError:
+      raise Exception('Value is not valid.')
+    else:
+      # Code that is always executed if no exception is raised.
+      # Useful for code that should not be part of the try-block.
+    finally:
+      # Cleanup code that is always executed, regardless of whether an
+      # exception was encountered.
+    ```
 -   As in MATLAB, it is not necessary to specify the class of error.
     E.g., the following is permissible:
-```python
-try:
-  x = y / z
-except:
-  raise Exception('Looks like z was equal to zero')
-```
+    ```python
+    try:
+      x = y / z
+    except:
+      raise Exception('Looks like z was equal to zero')
+    ```
     However, when you are monitoring for and handling specific types of errors, use
-of a built-in or user-defined exception class is recommended. E.g.,
-```python
-try:
-  x = y / z
-except ArithmeticError:
-  raise Exception('Looks like z was equal to zero')
-```
+    of a built-in or user-defined exception class is recommended. E.g.,
+    ```python
+    try:
+      x = y / z
+    except ArithmeticError:
+      raise Exception('Looks like z was equal to zero')
+    ```
 
 -   As with MATLAB's throw() function, use Python's raise() function to issue an
     exception. Any associated arguments are available to the exception instance.
 
 -   If you desire a stack trace and/or logging into a log file, use Python's
     logging module. E.g.,
-```python
-import logging
-try:
-  y = 5 / 0
-except:
-  logging.exception('Division by zero')
-```
+    ```python
+    import logging
+    try:
+      y = 5 / 0
+    except:
+      logging.exception('Division by zero')
+    ```
 
 -   Some objects have pre-defined clean-up actions that can occur regardless of
     any exception thrown (or not). An example is the opening of a file. A
@@ -1558,14 +1590,14 @@ except:
     statement](https://docs.python.org/3/reference/compound_stmts.html#with)
     will ensure that pre-defined actions occur even if not explicitly requested.
     For example:
-```python
-with open('some_file.csv') as file:
-  for line in file:
-    print(line)
-```    
+    ```python
+    with open('some_file.csv') as file:
+      for line in file:
+        print(line)
+    ```    
     Following execution of this block of code, the opened file will be closed
-regardless of whether an exception was raised. The *with* statement is just
-shorthand notation for a try-except block, but useful and convenient.
+    regardless of whether an exception was raised. The *with* statement is just
+    shorthand notation for a try-except block, but useful and convenient.
 
 ### Listing the Python Version
 
