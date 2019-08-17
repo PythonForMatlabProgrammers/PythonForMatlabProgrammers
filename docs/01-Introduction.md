@@ -61,7 +61,7 @@ be a quick read.
 As just mentioned, we have a goal of keeping this article brief.  However,
 we've received suggestions of additional material for the article, and
 we value those suggestions.  In March 2019 we published the article to a
-[GitHub public repository](https://github.com/apjanke/PythonForMatlabCoders).
+[GitHub public repository](https://github.com/apjanke/PythonForMatlabProgrammers).
 
 Readers are encouraged to edit or add material by submitting pull requests from
 the GitHub repository.  If you are not comfortable doing so but have

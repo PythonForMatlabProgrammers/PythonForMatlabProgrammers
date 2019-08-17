@@ -1,5 +1,5 @@
-PythonForMatlabCoders
-=====================
+PythonForMatlabProgrammers
+==========================
 
 This site is the home of “Python for MATLAB Programmers”. It is an introduction 
 to numeric Python for programmers who already know MATLAB.
@@ -7,7 +7,7 @@ to numeric Python for programmers who already know MATLAB.
 This document was originally produced by [Mike Patterson](https://www.linkedin.com/in/mtpatt/)
 and [Andrew Janke](https://apjanke.net), experienced MATLAB coders who have recently adopted Python, too.
 
-See the live website at <https://apjanke.github.io/PythonForMatlabCoders/>.
+See the live website at <https://apjanke.github.io/PythonForMatlabProgrammers/>.
 
 For info about developing this site, see the [Developer Notes](doc-project/DeveloperNotes.md).
 

@@ -33,7 +33,7 @@ Release notes:
 -  January 23, 2019: First published.
 
 -  March 31, 2019: Published to a [GitHub public
-   repository](https://github.com/apjanke/PythonForMatlabCoders) under a
+   repository](https://github.com/apjanke/PythonForMatlabProgrammers) under a
    Creative Commons Attribution ShareAlike 4.0 International License.
 
 -  August 15,2019: Latest release.
@@ -102,7 +102,7 @@ be a quick read.
 As just mentioned, we have a goal of keeping this article brief.  However,
 we've received suggestions of additional material for the article, and
 we value those suggestions.  In March 2019 we published the article to a
-[GitHub public repository](https://github.com/apjanke/PythonForMatlabCoders).
+[GitHub public repository](https://github.com/apjanke/PythonForMatlabProgrammers).
 
 Readers are encouraged to edit or add material by submitting pull requests from
 the GitHub repository.  If you are not comfortable doing so but have

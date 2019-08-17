@@ -1,5 +1,5 @@
-PythonForMatlabCoders Developer Notes
-=====================================
+PythonForMatlabProgrammers Developer Notes
+==========================================
 
 # How it works
 
@@ -18,7 +18,7 @@ cd docs
 make
 ```
 
-And then check in the modified files to Git.
+And then commit the modified files to Git.
 
 ## Running the site locally
 
