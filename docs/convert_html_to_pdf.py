@@ -9,7 +9,7 @@ import pdfkit
 import os.path
 
 inp = os.path.join('_site', 'PythonForMatlabProgrammers.html')
-out = os.path.join('PythonForMatlabProgrammers.pdf')
+out = os.path.join('PythonForMatlabProgrammers-GENERATED.pdf')
 con = os.path.join('/', 'usr', 'local', 'bin', 'wkhtmltopdf')
 
 config = pdfkit.configuration(wkhtmltopdf=con)
