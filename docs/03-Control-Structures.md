@@ -488,7 +488,7 @@ order, by the number of unique characters in each string.
     ['zoo', 'cook', 'ohnoooh']
     ```    
     How did the above work? First, strings are a class, and that class has a
-*sort()* method associated with it. The sort() method allows a key argument, and
+`sort()` method associated with it. The sort() method allows a key argument, and
 we passed a lambda function as the value of that argument. In other words, we
 defined, on the fly, a function and then passed that function to the sort()
 method. For each element in variable str, the lamba function converted the
