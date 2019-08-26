@@ -28,9 +28,8 @@ C:> pip install matplotlib # from a Windows terminal
 
 </div>
 
-Matplotlilb provides 2-d charts, but
-other packages built upon Matplotlib provide 3-d charts, as per the
-following example.
+Matplotlilb provides 2-d charts, but other packages built upon Matplotlib
+provide 3-d charts, as per the following example.
 
 ```python
 >>> from mpl_toolkits.mplot3d import Axes3D
@@ -58,8 +57,14 @@ following example.
     capabilities. Rest assured that you can create all the charts you've grown
     accustomed to with MATLAB.
 
--   Additional packages provide the ability to make interactive charts,
-    to add filters, and to create dashboards.
+-   Additional packages provide the ability to make interactive charts, to add
+    filters, and to create dashboards.  [Plotly](https://plot.ly/python/),
+    mentioned earlier, is an open-source package that interfaces with both
+    MATLAB and Python.  In particular, have a look at plotly.js, which is the
+    plotting component of Plotly.  Plotly.js is built on top of D3.js and thus
+    provides a rich set of dynamic, interactive charts.  With Plotly.js, you get
+    all the features of D3.js, but you get to work in the MATLAB and Python
+    languages.
 
 -   For statistical charts, you'll want to check out the [seaborn
     package](https://seaborn.pydata.org/index.html), which is built on top of
