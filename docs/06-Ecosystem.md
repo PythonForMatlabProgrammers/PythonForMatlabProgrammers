@@ -124,7 +124,10 @@ pip freeze
 ```
 
 Occasionally you'll want to upgrade the installed version of pip. To do so,
-enter (in a command prompt window): `python -m pip install --upgrade pip`
+enter (in a command prompt window):
+```python
+python -m pip install --upgrade pip
+```
 
 With thousands of available packages, one might expect that updates to various
 packages happen all the time. However, only one version of a given package can
