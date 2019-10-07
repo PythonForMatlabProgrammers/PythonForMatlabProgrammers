@@ -400,11 +400,30 @@ automatically be packed into a tuple named `args` (in this example).
     ```python
     def fun(arg1, arg2='test', *args, **keywords):
     ```
-    The above listed order is required.  If provided, the trailing keyword arguments
-will automatically be packed into a dictionary inside the function.  As an
-example of calling the above function, regardless of what the function might do,
-one could enter:
+    The above listed order of arguments is required.  If provided, the trailing
+    keyword arguments will automatically be packed into a dictionary inside the
+    function.
 
+    Suppose we wish for the above function to print its arguments.  We'd have
+    the following:
+    ```python
+    def fun(arg1, arg2='test', *args, **keywords):
+        print(f'arg1: {arg1}')
+        print(f'arg2: {arg2}')
+        print(f'*args: {args}')
+
+        for kw in kwargs:
+            print(f'{kw}: {kwargs[kw]}')
+    ```
+    Now call the function, as below, with the following outputs:
+    ```python
+    >>> fun(5, 'foo', 10, 15, a=20, b=25)
+    arg1: 5
+    arg2: foo
+    *args: (10, 15)
+    a: 20
+    b: 25
+    ```
 -   If a function signature requires individual arguments but the calling
     workspace has a list or tuple, the latter can be unpacked on the fly with a
     star ('\*') syntax. For example:
