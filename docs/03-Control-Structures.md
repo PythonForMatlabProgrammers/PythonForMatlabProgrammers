@@ -606,6 +606,18 @@ Here's a quick summary:
 
 -   As with MATLAB's throw() function, use Python's raise() function to issue an
     exception. Any associated arguments are available to the exception instance.
+    
+-   While Python provides a long list of built-in exceptions you can catch, there will
+    be times when you won't be able to anticipate a specific error type.  Perhaps you are
+    interacting with the operating system, or a database, and the possible exceptions are
+    too broad in type to catch with a narrowly-focused built-in exception.  For these instances
+    you can use an exception base class.  E.g.,
+    ```python
+    try:
+      x = some_function()
+    except BaseException as e:
+      raise(e)
+    ```    
 
 -   If you desire a stack trace and/or logging into a log file, use Python's
     logging module. E.g.,
