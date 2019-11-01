@@ -398,7 +398,7 @@ automatically be packed into a tuple named `args` (in this example).
 -   Expanding upon the above signature, one can also specify that a
     function is to receive an arbitrary number of keyword arguments:
     ```python
-    def fun(arg1, arg2='test', *args, **keywords):
+    def fun(arg1, arg2='test', *args, **kwargs):
     ```
     The above listed order of arguments is required.  If provided, the trailing
     keyword arguments will automatically be packed into a dictionary inside the
@@ -407,7 +407,7 @@ automatically be packed into a tuple named `args` (in this example).
     Suppose we wish for the above function to print its arguments.  We'd have
     the following:
     ```python
-    def fun(arg1, arg2='test', *args, **keywords):
+    def fun(arg1, arg2='test', *args, **kwargs):
         print(f'arg1: {arg1}')
         print(f'arg2: {arg2}')
         print(f'*args: {args}')
