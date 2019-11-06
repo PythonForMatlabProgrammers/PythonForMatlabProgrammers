@@ -60,7 +60,7 @@ be a quick read.
 
 As just mentioned, we have a goal of keeping this article brief.  However,
 we've received suggestions of additional material for the article, and
-we value those suggestions.  In March 2019 we published the article to a
+we value those suggestions.  In March 2019 we open-sourced the article and published it to a
 [GitHub public repository](https://github.com/apjanke/PythonForMatlabProgrammers).
 
 Readers are encouraged to edit or add material by submitting pull requests from
@@ -69,12 +69,8 @@ corrections, additions, suggestions, criticisms, etc. please direct them to the
 authors.  We will give proper acknowledgement to all who contribute to this
 article.
 
-The article is freely available to download, edit, expand upon, revise, etc.
-However, the article is licensed under the [Creative Commons Attribution
-ShareAlike 4.0 International
-License](http://creativecommons.org/licenses/by-sa/4.0/).  Under the terms of
-this license, you have full access to the article but the article must retain
-the original author's names.
+This article is licensed under the [Creative Commons Attribution ShareAlike 4.0 International
+License](http://creativecommons.org/licenses/by-sa/4.0/).  The article is available to download, edit, expand upon, revise, re-publish, etc. to suit your needs.  Under the terms of the Creative Commons license, you have full access to the article but the article must retain the original author's names.
 
 ### Conventions
 
