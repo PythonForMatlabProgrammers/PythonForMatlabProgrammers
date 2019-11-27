@@ -279,10 +279,16 @@ quite a bit of coding involved with iterables, and computational overhead too.
 are two types of generators.
 
 -   First is a *generator function*, which is a user-defined function that
-    provides a sequence much like an iterable does. Generator syntax, however,
-    is much simpler than iterable syntax. We're not ready to discuss generator
-    functions in depth, but for now know that you can easily create functions
-    that produce a sequence of items one element at a time.
+    provides a sequence much like an iterable does. In deference to space contraints, we'll skip 
+    an example here, and just describe what a generator functions does.
+    
+    A typical function performs
+    computations and then returns a result.  A generator function is nearly identical in structure, but 
+    ends with a *yield* statement rather than a *return* statement.  The yield statement interrupts a loop,
+    e.g., a for-loop or a while-loop, and returns one item of a sequence.  The function state is held in
+    memory; any subsequent call to the function produces the next item of that sequence.  This process of
+    generating sequence items continues until the sequence is exhausted.  Generator functions are useful
+    because they are highly efficient both in computational performance and memory usage.
 
 -   The second type of generator is the *generator expression*. These employ
     list comprehensions and iterables to create an expression which can later be
