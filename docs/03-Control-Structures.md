@@ -58,7 +58,7 @@ syntax changes.
 
     The above will print 'Dave', 'John', 'Mark' on separate lines.
 
--   The target list ('names' in the above example) is an iterable, which serves
+-   The target list ('names' in the above example) is an *iterable* which serves
     up its elements one at a time. Note the similarities to MATLAB, which can
     iterate in a for-loop over a numeric array or a cell array.
 
@@ -199,7 +199,7 @@ classes have special capabilities, such as the ability of an object to produce
 its data set one element at a time. Such an object is called an *iterable*.
 
 -   An iterable is an object which can return successive items of a
-    sequence stored inside the object.
+    sequence created by or stored inside the object.
 
 -   All sequence types are iterables. These include the types list, range,
     string, and tuple.
@@ -208,12 +208,12 @@ its data set one element at a time. Such an object is called an *iterable*.
 
 -   User-defined classes can be made iterable.
 
--   Iterables produce *iterators*, and it's the iterators that produce an
+-   Iterables produce *iterators*, and it's an iterator that produces an
     object's elements.
 
 -   Iterators have several methods defined for them, but the one you should know
-   about is the `next` method, which returns the next item in a list. Once a
-   list's elements are exhausted, `next` will issue an exception.
+    about is the `next` method, which returns the next item in a list. Once a
+    list's elements are exhausted, `next` will issue an exception.
 
 -   For example, let's create an iterator from a list, and then produce
     the list's elements.
