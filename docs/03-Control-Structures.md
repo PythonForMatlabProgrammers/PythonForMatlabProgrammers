@@ -14,14 +14,14 @@ syntax changes.
 
 -   Here is an if-statement:
 
-    ```python  
-    if x < 0:
-          print('x is negative')
-    elif x == 0:
-          print('x is zero')
-    else:
-          print('x is positive')
-    ```
+```python  
+if x < 0:
+    print('x is negative')
+elif x == 0:
+    print('x is zero')
+else:
+    print('x is positive')
+```
 
 -   Note again there's no end statement. Nor are there semicolons at the end of
     each line. Indentation is required, as it is how Python detects constructs.
