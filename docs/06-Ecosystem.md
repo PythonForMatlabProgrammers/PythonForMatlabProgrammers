@@ -265,19 +265,19 @@ E.g.,
 ```python
 >>> a + a
 array([[ 8, 18, 32],
-[50, 72, 98]])
+       [50, 72, 98]])
 ```
 
 Now let's look a matrix product, using the `@` operator. Rather than print() the
 result, we'll not save the result and allow Python to print to the screen.
 ```python
 >>> a = np.array( [[1,2]
-[3,4]])
+                   [3,4]])
 >>> b = np.array( [[2,3]
-[4,5]])
+                   [4,5]])
 >>> a @ b
 array([10, 13],
-[22, 29])
+      [22, 29])
 ```
 
 NumPy has dozens of functions to perform the usual array operations you might
@@ -301,11 +301,24 @@ is the function, and how you would vectorize it.
 >>> add_v([1, 2, 3], [4, 5, 6]) # Add two vectors
 array([5, 7, 9])
 ```
+While it's not a core topic of this article, we should mention that NumPy offers
+a tremendous performance benefit to numeric calculations.  Calculations that you
+might compute in pure Python can run 10x to 100x faster using NumPy.  This performance
+improvement results from several key features of NumPy.  Consider the simple act of adding
+two lists.  In pure Python, each element of the list will be a pointer to an object, a float or 
+an int, for example, with all of the attendent overhead of processing those objects.
+In NumPy, those lists will be reduced to arrays of a homogenous data type, with far less
+processing overhead.  Secondly, many NumPy functions are implemented in the C language,
+compiled for speed.  And thirdly, with NumPy, high-level Python for-loops get pushed down into
+the C libraries, with the latter being far faster than the former.
 
 NumPy has much more to offer; we simply cannot cover all of its capabilities
 here. But a bit of good news for you: with a MATLAB background you'll find that
 the [NumPy documentation](http://www.numpy.org/) is familiar, and once you read
-through its documentation you'll feel much more at ease with Python.
+through its documentation you'll feel much more at ease with Python.  And if you
+don't particular like the NumPy language syntax, keep reading to the Pandas section.
+Pandas is built on top of NumPy and provides a syntax you will be much more comfortable
+with.
 
 ### SciPy
 
