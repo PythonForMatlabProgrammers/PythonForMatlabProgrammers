@@ -212,8 +212,8 @@ any of a number of websites that provide a Python engine. One such website is
 [Repl.it](https://repl.it/repls/SlategreyGloomyLava). The learning curve is
 shorter with this approach, and no installations are required.
 
-For the moment, we recommend that you either use an online Python engine, or
-simply postpone your decision until later. We will return to the IDE topic in
+For the moment, we recommend that you either use IDLE or an online Python engine.
+We will return to the IDE topic in
 the chapter titled, *The Python Ecosystem*. At that time, you'll understand why
 we suggest you delay this decision.
 
