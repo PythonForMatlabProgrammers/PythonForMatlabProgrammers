@@ -80,10 +80,10 @@ MATLAB and Python have many similarities in their Boolean types.
 -   Most objects (class instances) will evaluate to True. The following evaluate
 to False:
 
-    -   Keywords None and False
+    -   Keywords None and False.
 
     -   Any numeric with a value of zero: 0, 0.0, 0j, Decimal(0) and
-        Fraction(0,1)
+        Fraction(0,1).
 
     -   Empty sequences, including '', [], (), and {}. We'll
         cover sequences momentarily.
@@ -303,7 +303,7 @@ object constructor):
 You'll probably never need to use the str() constructor, but it's worth knowing
 that the built-in Python classes allow you to construct objects either with a
 constructor, or via a shortcut.  For strings, that shortcut is to just enclose
-characters # in quotes.  These shortcuts are called 'literals.'  More on this
+characters in quotes.  These shortcuts are called 'literals.'  More on this
 topic later.
 
 ### Lists
@@ -612,7 +612,7 @@ In the first line above, 'abc' is considered a *literal.*  Literals produce data
 Another characteristic of literals is that they are constants.  In the following
 line of code, 'a' is a variable, and the number 5 is a literal:
 ```python
->>> a = 1
+>>> a = 5
 ```
 
 Notice in the above table that each literal is a constant whose value cannot be
