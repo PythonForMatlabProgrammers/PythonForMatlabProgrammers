@@ -14,14 +14,14 @@ syntax changes.
 
 -   Here is an if-statement:
 
-```python  
-if x < 0:
-    print('x is negative')
-elif x == 0:
-    print('x is zero')
-else:
-    print('x is positive')
-```
+    ```python  
+    if x < 0:
+        print('x is negative')
+    elif x == 0:
+        print('x is zero')
+    else:
+        print('x is positive')
+    ```
 
 -   Note again there's no end statement. Nor are there semicolons at the end of
     each line. Indentation is required, as it is how Python detects constructs.
@@ -36,7 +36,7 @@ else:
     >>> x = 0
     >>> while x < 10:
     ...   print(x, end=', ')
-    ...   x = x+1
+    ...   x += 1
     ```
 
 -   Here's a for-statement. Python will iterate over the items of any sequence,
@@ -74,10 +74,10 @@ else:
     2 Mark
     ```
 
-    The range() function will return the sequence of values 0, 1, ..., N-1. We'll
-see later that range() is an *iterable* object.
+    The `range` function will return the sequence of values 0, 1, ..., N-1. We'll
+see later that `range` is an *iterable* object.
 
-    Using the enumerate() function, we can simplify the above loop and obtain the
+    Using the `enumerate` function, we can simplify the above loop and obtain the
 loop counter:
 
     ```python
@@ -85,8 +85,8 @@ loop counter:
     ...  print(i,v)
     ```
 
-    When the list to print is instead a dictionary, an items() method
-    performs much the same role as the enumerate() function:
+    When the list to print is instead a dictionary, an `items` method
+    performs much the same role as the `enumerate` function:
 
     ```python
     >>> names = {1: 'Dave', 2: 'John', 3: 'Mark'}
@@ -94,10 +94,10 @@ loop counter:
     ...   print(key,val)
     ```
 
--   Within looping constructs, Python supports the usual *break* and
-    *continue* statements.
+-   Within looping constructs, Python supports the usual `break` and
+    `continue` statements.
 
--   Within for-loops, Python also supports an *else* clause: the else block will
+-   Within for-loops, Python also supports an `else` clause: the else block will
     execute when the iterable has been exhausted, but not following a break
     statement. While-loops also support an else clause; here, the else block
     will execute when the while conditional becomes false.
@@ -523,7 +523,7 @@ string then became the key by which to sort the list of strings.
 
     The above is equivalent to:
     ```python
-    >>> [str[i] for I in [1, 0, 2]]
+    >>> [str[i] for i in [1, 0, 2]]
     ```
     This is equivalent, but assumes that we somehow know the sort order.
     Using the sort method and a lambda function in the first example, we
@@ -637,9 +637,8 @@ Here's a quick summary:
 
 -   Some objects have pre-defined clean-up actions that can occur regardless of
     any exception thrown (or not). An example is the opening of a file. A
-    [*with*
-    statement](https://docs.python.org/3/reference/compound_stmts.html#with)
-    will ensure that pre-defined actions occur even if not explicitly requested.
+    [`with`](https://docs.python.org/3/reference/compound_stmts.html#with)
+    statement will ensure that pre-defined actions occur even if not explicitly requested.
     For example:
     ```python
     with open('some_file.csv') as file:
@@ -647,7 +646,7 @@ Here's a quick summary:
         print(line)
     ```    
     Following execution of this block of code, the opened file will be closed
-    regardless of whether an exception was raised. The *with* statement is just
+    regardless of whether an exception was raised. The `with` statement is just
     shorthand notation for a try-except block, but useful and convenient.
 
 ### Listing the Python Version
@@ -683,8 +682,8 @@ To see a list of all of the methods in the os module, use `dir(os)`.
 If you have been entering the above commands into a Python console window, you
 might be wondering how to perform a few basic maintenance operations, like
 listing or clearing the workspace variables. Python itself does not provide
-these features, although you can certainly code your own version of *whos* or
-*clear*. However, if you are using IPython or an IDE built on IPython, you will
+these features, although you can certainly code your own version of `whos` or
+`clear`. However, if you are using IPython or an IDE built on IPython, you will
 have access to [magic
 commands](https://ipython.readthedocs.io/en/stable/interactive/magics.html),
 commands that will be familiar to you except that they are prefixed by a '%'.
