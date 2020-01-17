@@ -280,7 +280,7 @@ are two types of generators.
 
 -   First is a *generator function*, which is a user-defined function that
     provides a sequence much like an iterable does. In deference to space contraints, we'll skip 
-    an example here, and just describe what a generator functions does.
+    an example here, and just describe what a generator function does.
     
     A typical function performs
     computations and then returns a result.  A generator function is nearly identical in structure, but 
@@ -368,8 +368,8 @@ in Python.
 -   To return a value(s), Python does not support an `out = fun()` construct.
     Instead, Python uses `return var` at the end of the function.
 
--   If a function returns no value, the built-in value 'None' is returned by
-    default. The value None has a type of NoneType.
+-   If a function returns no value, the built-in value `None` is returned by
+    default. The value `None` has a type of `NoneType`.
 
 -   Function arguments can be given default values. E.g.,
     ```python
@@ -481,7 +481,7 @@ automatically be packed into a tuple named `args` (in this example).
     12
     ```
 
--   Anonymous (unnamed) functions are created with the *lambda* keyword. E.g.,
+-   Anonymous (unnamed) functions are created with the `lambda` keyword. E.g.,
     ```python
     >>> f = lambda x,y: x/y
     >>> f(x=10, y=2)
@@ -513,9 +513,9 @@ order, by the number of unique characters in each string.
     ['zoo', 'cook', 'ohnoooh']
     ```    
     How did the above work? First, strings are a class, and that class has a
-`sort()` method associated with it. The sort() method allows a key argument, and
-we passed a lambda function as the value of that argument. In other words, we
-defined, on the fly, a function and then passed that function to the sort()
+`sort` method associated with it. The `sort` method allows a key argument, and
+we passed a `lambda` function as the value of that argument. In other words, we
+defined, on the fly, a function and then passed that function to the `sort`
 method. For each element in variable str, the lamba function converted the
 string into a set, thereby removing duplicate letters, and then computed the
 length of the remaining characters. The length of the unique characters in each
@@ -526,7 +526,7 @@ string then became the key by which to sort the list of strings.
     >>> [str[i] for i in [1, 0, 2]]
     ```
     This is equivalent, but assumes that we somehow know the sort order.
-    Using the sort method and a lambda function in the first example, we
+    Using the `sort` method and a `lambda` function in the first example, we
     were able to determine the sort order on the fly.
 
 ### Warnings
