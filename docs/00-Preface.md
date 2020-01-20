@@ -36,6 +36,6 @@ Release notes:
    repository](https://github.com/apjanke/PythonForMatlabProgrammers) under a
    Creative Commons Attribution ShareAlike 4.0 International License.
 
--  August 15,2019: Latest release.
+-  January 30, 2020: Latest release.
 
 <br>
