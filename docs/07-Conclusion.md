@@ -29,10 +29,11 @@ Foundation](https://www.python.org/) home page. From there you can find the
 above two documents, tutorials, how-to guides, code examples, installation
 guides and much more.
 
-And if you are more of a book reader, you'll find numerous ones in bookstores
-about performing data science in Python. One that we recommend is O'Reilly's
+If you are more of a book reader, there are numerous books worthy of your time 
+and dollars.
+On the topic of Python and data science, one book that we recommend is O'Reilly's
 [Python for Data Analysis](http://shop.oreilly.com/product/0636920050896.do),
-written by Wes McKinney, creator of the Pandas library. This is an incredibly
+written by Wes McKinney, creator of the pandas library. This is an incredibly
 well-written and thorough book, an enjoyable read. You can purchase a digital
 version and then cut-and-paste examples from the book into your Python
 interpreter. Or better, you can follow along in the book with an accompanying
