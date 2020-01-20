@@ -3,7 +3,7 @@
 
 # The Python Ecosystem
 
-As a MATLAB programmer, you may be a little nervous about Python at this point.
+As a MATLAB programmer you may be a little nervous about Python at this point.
 We covered the primary data types and built-in functionality, but said nothing
 of matrices, multi-dimensional arrays, array operations or vectorization. We
 haven't even mentioned common mathematical operations such as matrix inversion,
@@ -28,7 +28,7 @@ to additional material.
 ### Integration with Source Code Control
 
 Python itself does not integrate with source control systems, but many of its
-IDEs do. PyCharm, for example, has a very intuitive interface with more than ten
+IDEs do. PyCharm, for example, has an intuitive interface to more than ten
 source control systems, including GitHub, CVS and Subversion. In PyCharm, go to
 File->Settings->Version Control and choose your SCC of preference. Once your
 settings are made, there's a VCS menu on the PyCharm toolbar. It's that easy.
@@ -62,8 +62,9 @@ Let's talk now about importing modules and packages into your Python workspace.
     symbol table and executes any executable statements at the top of
     the module.
 
--   Each module has its own symbol table. That table is the global
-    table used by each function in the module.
+-   Each module has its own symbol table. That table is called a *global
+    table* and is used by each function in the module.  The scope of a
+    global table is its module; modules cannot see one another's global table.
 
 -   Packages provide a further separation of scope. Whereas modules
     each contain their own global variable scope (thus shielding each
@@ -112,8 +113,8 @@ To install packages, a utility called 'pip' is recommended. Here's how to use pi
 to install the matplotlib package.
 
 Find pip.exe on your computer; this executable should have installed as part of
-the Python install. Add that directory to Windows' path variable. Just type in
-'Edit Environment' and in the Windows task bar and you'll find the variable
+the Python install. Add that directory to Windows' path variable. Just type
+'Edit Environment' in the Windows task bar and you'll find the variable
 editor. See the following link for
 [instructions](https://pip.pypa.io/en/stable/).
 
@@ -126,7 +127,7 @@ pip freeze
 Occasionally you'll want to upgrade the installed version of pip. To do so,
 enter (in a command prompt window):
 ```python
-python -m pip install --upgrade pip
+pip install --upgrade pip
 ```
 
 With thousands of available packages, one might expect that updates to various
@@ -150,18 +151,25 @@ debugging.
 
 ### Path Management
 
-You may have noticed that we've not mentioned path management yet. No doubt you
+You may have noticed that we've not mentioned path management. No doubt you
 are aware that path management is important to MATLAB: classes, functions and
 scripts must reside on the path, and file naming conventions must be followed.
 
 In contrast, Python path management tends to be simpler. The path will likely be
 shorter, more easily managed, and once a module is imported, *all* of its
 functions are directly accessible. By default, the packages that you install
-with the pip utility will reside in folder LibSite-packages relative to the
-Python installation folder. To list your specific site folder(), perform the
+with the pip utility will reside in a single folder under the
+Python installation folder. To list your specific site folder(s), perform the
 following command:
 ```python
 >>> import site; site.getsitepackages()
+```
+If you know the name of a specific package you've already installed, you can obtain
+information about that package, including its installation directory. Use the following
+command entered into a Windows command window to obtain information about a package named,
+e.g., package-name:
+```python
+pip show package-name
 ```
 
 If you are using a virtual environment, the `venv` tool or your IDE will create
@@ -189,7 +197,7 @@ We promised several times to show you how Python supports matrices,
 higher-dimensional arrays, and associated numeric and scientific computations.
 That time has arrived.
 
-One of the design objectives for the core Python libpycrary was, and remains,
+One of the design objectives for the core Python library was, and remains,
 simplicity. Matrices and higher-dimensional arrays are thus provided by add-on
 packages. By far the most popular package to provide an array feature is
 *NumPy*. The NumPy package bills itself as *the fundamental package for
@@ -205,7 +213,7 @@ C:> pip install numpy # Enter from a Windows terminal
 ```
 
 We'll focus on the a NumPy-specific data type called *ndarray*, which has an
-alias called just *array*. This data type provides storage for a
+alias called *array*. This data type provides storage for a
 multi-dimensional array of homogeneous elements. Let's first create and print a
 1-d array of integers:
 ```python
@@ -268,8 +276,8 @@ array([[ 8, 18, 32],
        [50, 72, 98]])
 ```
 
-Now let's look a matrix product, using the `@` operator. Rather than print() the
-result, we'll not save the result and allow Python to print to the screen.
+Now let's look at a matrix product, using the `@` operator. Rather than save and then print() the
+result, we'll skip the save and allow Python to print to the screen.
 ```python
 >>> a = np.array( [[1,2]
                    [3,4]])
@@ -280,8 +288,8 @@ array([10, 13],
       [22, 29])
 ```
 
-NumPy has dozens of functions to perform the usual array operations you might
-expect. You can query an array size, reshape an array, extract elements or
+NumPy has dozens of functions with which to perform the usual array operations you 
+would expect of an analytics library. You can query an array size, reshape an array, extract elements or
 slices, compute statistics such as cov, mean, std and var. With NumPy you can
 perform linear algebra operations such as transpose, inverse and multiplication.
 You can compute eigenvalues. You can sort and filter arrays. Logical operations
@@ -316,7 +324,7 @@ NumPy has much more to offer; we simply cannot cover all of its capabilities
 here. But a bit of good news for you: with a MATLAB background you'll find that
 the [NumPy documentation](http://www.numpy.org/) is familiar, and once you read
 through its documentation you'll feel much more at ease with Python.  And if you
-don't particular like the NumPy language syntax, keep reading to the Pandas section.
+don't particularly like the NumPy language syntax, keep reading to the Pandas section.
 Pandas is built on top of NumPy and provides a syntax you will be much more comfortable
 with.
 
@@ -403,7 +411,7 @@ but interoperates with, SciPy. It's quite possible that a lot of code you had to
 write before in MATLAB simply goes away now, as the code has been written for
 you in Python's NumPy/SciPy/pandas ecosystem.
 
-Development of Pandas began in 2008 at AQR Capital Management, and the library
+Development of pandas began in 2008 at AQR Capital Management, and the library
 was open-sourced in 2009. Pandas does many of the things that you've grown
 accustomed to in MATLAB. It is difficult to reduce the list of pandas'
 capabilities to a set that might be most important to you, but here's an
@@ -413,13 +421,13 @@ Pandas can read data from a wide variety of data sources, including CSV and
 other delimited files, Excel, databases, HDF5, HTML and JSON. Pandas has
 facilities for storing variable-frequency timeseries data, both 1-d and 2-d, and
 for managing timeseries data with operations such as filling, converting
-frequencies, and date shifting. As with NumPy, Pandas provides indexing and
+frequencies, and date shifting. As with NumPy, pandas provides indexing and
 slicing of your data, and numerous relational operations such as group by, join
 and merge. Data and axes can be labeled and indexed. Pandas provides facilities
 for data analysis and modeling, and pandas interoperates with the functions
 provided by SciPy.
 
-Let's try an example using Pandas. Suppose you notice a news article about the
+Let's try an example using pandas. Suppose you notice a news article about the
 Consumer Price Index (CPI) for U.S. Housing and want to explore some of that
 data. An online search leads you to the [Bureau of Labor
 Statistics](https://www.bls.gov/) and to a set of csv files on their website. In
@@ -467,9 +475,9 @@ CPI indices by year, taking the mean CPI across the months of each year. Note
 how we are chaining operations together:
 ```python
 >>> df = df.groupby(['year']).mean()
-
+```
 Finally, let's clean up the column labels and plot the data:
-
+```python
 >>> df = df.rename({'value':'Mean CPI'}, axis='columns')
 >>> df.plot()
 ```
@@ -492,7 +500,7 @@ While pandas' syntax differs from MATLAB's, the commands we used to analyze the
 CPI data should feel familiar. Pandas has a tremendous amount of functionality
 that we've not touched upon, but hopefully we've demonstrated that the
 combination of Python/NumPy/SciPy/pandas provides an analysis environment
-similar to what you use with MATLAB
+similar to what you use with MATLAB.
 
 ### MATLAB and Python, Together
 
@@ -511,8 +519,8 @@ the MATLAB instance, invoke functions, and return results.
 
 Why, you might ask, would you want to call MATLAB scripts from Python? We think
 there are several use cases. The first is one of deployment. Suppose you have
-analytics built in MATLAB but want to deploy those analyses on the web. Python
-has, though we've not discussed it here, state of the art GUI toolkits that can
+analytics functionality built in MATLAB but want to deploy those analyses on the web. Python
+has, though we've not discussed it here, state-of-the-art GUI toolkits that can
 easily be deployed on AWS, the Google Computing Platform or otherwise. You can
 construct your analytics front-end in Python, allowing it to communicate with
 your MATLAB-based back-end library.
@@ -554,14 +562,14 @@ The authors sometimes use the community (free) version of
 free) version. PyCharm provides code completion, code formatting, syntax
 highlighting, runtime error checking, project navigation, debugging, and a slick
 interface. PyCharm integrates with several source control libraries, unit
-testing frameworks, databases, and the [PyPy](http://packages.pypy.org/) package
+testing frameworks, databases, virtul environments and the [PyPy](http://packages.pypy.org/) package
 management library. PyCharm also integrates with the scientific libraries we've
 discussed in this article and supports the IPython magic commands. PyCharm is
 every bit as sophisticated as the MATLAB IDE, and even more so.
 
-If you happen to use Visual Studio already, you can stay with that editor as it
+If you happen to use Visual Studio, you can stay with that editor as it
 supports Python. And if you're more of a command-line person, have a look at
-[*IPython*](http://ipython.org/), which is a Python prompt with auto-completion,
+[IPython](http://ipython.org/), which is a Python prompt with auto-completion,
 history and shell capabilities.
 
 Lastly, we mentioned earlier that an IDE called *Spyder* is available, and it
@@ -585,7 +593,7 @@ assist you with function tips, automatic indentation, syntax highlighting and
 command history. You can open multiple console windows, and each will operate
 independently of the others.
 
-Spyder is similar to PyCharm but targeted toward data scientists and analysts.
+Spyder is similar to PyCharm but targeted to data scientists and analysts.
 Spyder even knows about and integrates with NumPy, SciPy, and Pandas.
 
 Pictured below is Spyder along with our earlier example of using Pandas to
