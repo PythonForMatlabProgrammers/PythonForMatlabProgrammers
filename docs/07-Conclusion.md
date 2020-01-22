@@ -62,3 +62,9 @@ technology, fundamental analysis, business intelligence and risk management.
 Michael lives in Tulsa, OK with his wife and two children. Michael can be
 reached via his [LinkedIn profile](https://www.linkedin.com/in/mtpatt/) or by
 email at <michael.patterson@woodedparkstrategies.com>.
+
+# Contributors
+
+Additional contributions to this document were supplied by:
+
+* Mike Swearingen <purplewingsuitmike@gmail.com>
