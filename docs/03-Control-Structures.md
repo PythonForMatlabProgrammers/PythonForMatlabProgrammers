@@ -163,7 +163,7 @@ iterable.
 
     ```python
     >>> [[row[i] for row in x] for i in range(3)]
-    [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+    [[0, 3, 6], [1, 4, 7], [2, 5, 8]]
     ```
 
 -   Dictionaries can also be assigned with list comprehensions:
