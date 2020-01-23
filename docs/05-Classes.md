@@ -3,7 +3,7 @@
 
 # Object-Oriented Programming in Python
 
-At this point of the article we'll dive a bit deeper into the programming
+At this point of the article we'll dive a bit deeper into the Python programming
 language. We'll discuss namespaces, scopes, and then classes. Each of these
 differs from the MATLAB model, and you need to be aware of the changes.
 
@@ -31,13 +31,13 @@ prerequisites for understanding classes.
 -   At any time during program execution, at least three scopes are in
     effect. From the innermost scope to the outermost, these are:
 
-    1.  The scope of any embedded function (a function embedded in an
+    1.  The innermost scope is that of any embedded function (a function embedded in an
         enclosing function). When Python is trying to resolve a
         reference, this innermost scope of local names is searched
         first.
 
     2.  The scopes of enclosing functions, containing non-local, but
-        also non-global names. When resolving references, this scope is
+        also non-global names is the second-most inner scope. When resolving references, this scope is
         searched second.
 
     3.  The next to last scope (the *middle,* or *global scope*)
@@ -46,13 +46,15 @@ prerequisites for understanding classes.
     4.  The outermost scope (searched last) is the namespace containing
         built-in names.
 
-
 -   Variables can be declared *global*, in which case they will reside
-    in the middle scope and will not be shared across modules.
+    in the middle scope.  These variables  will not be shared across modules.
 
--   Variables outside of the innermost scope can also be declared
-    *nonlocal*, whereby they will pass by reference into any innermost
-    scope.
+-   Within the four scopes, variables flow from the outer scopes into the inner
+    scopes.  That is, a variable declared in an outer scope can be referenced in
+    an inner scope.  The converse is not true; variables defined in an inner scope
+    cannot be referenced in an outer scope.  To alter this latter behaviour, variables
+    in an inner scope can be declared *nonlocal*, whereby they will pass by reference
+    into any outer scope.
 
 ### Classes
 
@@ -90,13 +92,13 @@ has a class attribute:
 ```
 
 -   Classes are defined with a straightforward syntax. In the following
-    example code, we define a class, a docstring, an initiation method,
+    example code, we define a class, a docstring, an instantiation method,
     and then two class methods:
     ```python
     class MyClass:
-            """A sample class definition""" # Like MATLAB's H1 line
+            """A sample class definition"""         # Like MATLAB's H1 line
 
-            def __init__(self): # A constructor
+            def __init__(self):      # A constructor
                 self.mydata = []
 
             def method1(self):
@@ -126,8 +128,6 @@ has a class attribute:
     >>> obj = simple.MyClass()
     >>> obj.x
     3.14
-    >>> obj.f # This produces a function object
-    <bound method>
     >>> obj.f('test')
     'test'
     ```
@@ -154,7 +154,7 @@ has a class attribute:
     In the above, BaseClassName must be in scope. If it is not, one can
     instead use:
     ```python
-    class SubClassName(modname.BaseClassName):
+    class SubClassName(ModuleName.BaseClassName):
     ```
     Subclass methods may either override or extend base class methods of the same
     name. To call a super-class method from a subclass, use super(). For example, if
@@ -167,10 +167,10 @@ has a class attribute:
 
     ```python
     def MyClass:
-    ClassVar = 3.14 # Class, or static variable
+        ClassVar = 3.14     # Class, or static variable
 
     def __init__(self):
-        self.InstanceVar = 3.14159 # Instance variable
+        self.InstanceVar = 3.14159     # Instance variable
     ```
 
 -   Static variables should be used with care.  If you create two instances of
@@ -236,7 +236,7 @@ variables. We think it's best to inform you of this now, so that you don't learn
 about this after tripping over it.
 
 Suppose you have a list referenced by the variable x. If you then create a new
-variable y with the operation y=x, the new variable y simply points to original
+variable y with the operation y=x, the new variable y simply points to the original
 list; the variable y does not reference a new copy of the list. This is an
 important concept to master as it effects all Python data types. On assignment,
 Python will *bind* two objects together rather than make a copy. Consider the
@@ -276,12 +276,12 @@ sliced, the returned object is a new object, not a view into the original
 object. E.g.,
 ```python
 >>> a = list(range(5))
->>> b = a[2] # A slice, which is not bound to variable 'a'.
+>>> b = a[2]     # A slice, which is not bound to variable 'a'.
 >>> b
 2
->>> b = 99 # Change the value of b.
+>>> b = 99     # Change the value of b.
 >>> a
-[0, 1, 2, 3, 4] # Variable a is unaffected.
+[0, 1, 2, 3, 4]     # Variable a is unaffected.
 ```
 
 ### Biggest Differences
@@ -292,7 +292,7 @@ the items that made our list. If you are going to program in the Python
 language, you'll want to spend some time studying these topics further.
 
 -   Python array indexing: zero-based rather than one-based, and square
-    brackets rather than parenthesis.
+    brackets rather than parentheses.
 
 -   List comprehensions: there's really no equivalent in MATLAB.
 
@@ -304,7 +304,7 @@ language, you'll want to spend some time studying these topics further.
     concept exists in MATLAB, but programmers are largely shielded from
     and thus often unaware of it.
 
--   Bindings, shallow copies and deep copies: by default, Python treats
+-   Bindings, shallow copies and deep copies: by default Python treats
     objects like MATLAB handle objects.
 
 We have now covered the primary Python data types and control structures. In the
