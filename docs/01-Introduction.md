@@ -191,6 +191,11 @@ installation process is simple: just
 its prompts. Note that both x86 and x86-64 versions are available. Grab whatever
 latest version is appropriate for your computer.
 
+The examples of this article were created using Python version 3.7.  None of the
+examples have been tested on earlier Python versions.  As of December 2019, Python version
+3.8 was released, and we expect that the examples to follow will be forward-compatible.  We
+thus suggest that you download and install Python version 3.7 or later.
+
 ### Integrated Development Environments (IDEs)
 
 You may eventually want an IDE, and there are numerous to choose from. The [Wiki
