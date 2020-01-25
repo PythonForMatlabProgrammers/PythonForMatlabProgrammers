@@ -65,6 +65,9 @@ email at <michael.patterson@woodedparkstrategies.com>.
 
 # Contributors
 
-Additional contributions to this document were supplied by:
+Numerous people have graciously offered reviews, corrections and contributions to this document.  We wish to recognize and thank them for their time and talents.  Their names, with links to their LinkedIn profiles are:
 
-* Mike Swearingen <purplewingsuitmike@gmail.com>
+* [Yan Holtz](https://www.linkedin.com/in/yan-holtz-2477534a)
+* [Scott Buechler](https://www.linkedin.com/in/rscottyblinkedin)
+* [Kevin Bowers](https://www.linkedin.com/in/kevinjbowers)
+* [Michael Swearingen](https://www.linkedin.com/in/michael-swearingen-58126010)
