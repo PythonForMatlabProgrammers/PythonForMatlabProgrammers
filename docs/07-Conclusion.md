@@ -55,13 +55,17 @@ technologies, including MATLAB, Java, and SQL. Andrew can be reached at his
 profile](https://www.linkedin.com/in/andrewjanke0/) or by email at
 <andrew@apjanke.net>.
 
-Michael Patterson is the Lead Technologist for WoodedPark Strategies, LLC, a
-front-office advisory firm specializing in commodity trading risk management.
+Michael Patterson is Director, Commodity Analytics for Demex Technologies.
+Among its products, Demex Technologies markets an online platform for 
+researching and quoting complex commodity financial derivatives.  Not
+surprisingly, the product is written in a mix of languages, including MATLAB
+and Python.
+
 Michael has worked in commodity trading for twenty years, with roles in
 technology, fundamental analysis, business intelligence and risk management.
 Michael lives in Tulsa, OK with his wife and two children. Michael can be
 reached via his [LinkedIn profile](https://www.linkedin.com/in/mtpatt/) or by
-email at <michael.patterson@woodedparkstrategies.com>.
+email at <michael.patterson@demextech.com>.
 
 # Contributors
 
