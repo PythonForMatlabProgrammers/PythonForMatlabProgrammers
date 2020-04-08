@@ -36,7 +36,7 @@ Release notes:
    repository](https://github.com/apjanke/PythonForMatlabProgrammers) under a
    Creative Commons Attribution ShareAlike 4.0 International License.
 
--  August 15,2019: Latest release.
+-  March 12, 2020: Latest release.
 
 <br>
 <br>
@@ -101,7 +101,7 @@ be a quick read.
 
 As just mentioned, we have a goal of keeping this article brief.  However,
 we've received suggestions of additional material for the article, and
-we value those suggestions.  In March 2019 we published the article to a
+we value those suggestions.  In March 2019 we open-sourced the article and published it to a
 [GitHub public repository](https://github.com/apjanke/PythonForMatlabProgrammers).
 
 Readers are encouraged to edit or add material by submitting pull requests from
@@ -110,12 +110,8 @@ corrections, additions, suggestions, criticisms, etc. please direct them to the
 authors.  We will give proper acknowledgement to all who contribute to this
 article.
 
-The article is freely available to download, edit, expand upon, revise, etc.
-However, the article is licensed under the [Creative Commons Attribution
-ShareAlike 4.0 International
-License](http://creativecommons.org/licenses/by-sa/4.0/).  Under the terms of
-this license, you have full access to the article but the article must retain
-the original author's names.
+This article is licensed under the [Creative Commons Attribution ShareAlike 4.0 International
+License](http://creativecommons.org/licenses/by-sa/4.0/).  The article is available to download, edit, expand upon, revise, re-publish, etc. to suit your needs.  Under the terms of the Creative Commons license, you have full access to the article but the article must retain the original author's names.
 
 ### Conventions
 
@@ -236,6 +232,11 @@ installation process is simple: just
 its prompts. Note that both x86 and x86-64 versions are available. Grab whatever
 latest version is appropriate for your computer.
 
+The examples of this article were created using Python version 3.7.  None of the
+examples have been tested on earlier Python versions.  As of December 2019, Python version
+3.8 was released, and we expect that the examples to follow will be forward-compatible.  We
+thus suggest that you download and install Python version 3.7 or later.
+
 ### Integrated Development Environments (IDEs)
 
 You may eventually want an IDE, and there are numerous to choose from. The [Wiki
@@ -257,8 +258,8 @@ any of a number of websites that provide a Python engine. One such website is
 [Repl.it](https://repl.it/repls/SlategreyGloomyLava). The learning curve is
 shorter with this approach, and no installations are required.
 
-For the moment, we recommend that you either use an online Python engine, or
-simply postpone your decision until later. We will return to the IDE topic in
+For the moment, we recommend that you either use IDLE or an online Python engine.
+We will return to the IDE topic in
 the chapter titled, *The Python Ecosystem*. At that time, you'll understand why
 we suggest you delay this decision.
 
@@ -439,10 +440,10 @@ MATLAB and Python have many similarities in their Boolean types.
 -   Most objects (class instances) will evaluate to True. The following evaluate
 to False:
 
-    -   Keywords None and False
+    -   Keywords None and False.
 
     -   Any numeric with a value of zero: 0, 0.0, 0j, Decimal(0) and
-        Fraction(0,1)
+        Fraction(0,1).
 
     -   Empty sequences, including '', [], (), and {}. We'll
         cover sequences momentarily.
@@ -662,7 +663,7 @@ object constructor):
 You'll probably never need to use the str() constructor, but it's worth knowing
 that the built-in Python classes allow you to construct objects either with a
 constructor, or via a shortcut.  For strings, that shortcut is to just enclose
-characters # in quotes.  These shortcuts are called 'literals.'  More on this
+characters in quotes.  These shortcuts are called 'literals.'  More on this
 topic later.
 
 ### Lists
@@ -971,7 +972,7 @@ In the first line above, 'abc' is considered a *literal.*  Literals produce data
 Another characteristic of literals is that they are constants.  In the following
 line of code, 'a' is a variable, and the number 5 is a literal:
 ```python
->>> a = 1
+>>> a = 5
 ```
 
 Notice in the above table that each literal is a constant whose value cannot be
@@ -1002,11 +1003,11 @@ syntax changes.
 
     ```python  
     if x < 0:
-          print('x is negative')
+        print('x is negative')
     elif x == 0:
-          print('x is zero')
+        print('x is zero')
     else:
-          print('x is positive')
+        print('x is positive')
     ```
 
 -   Note again there's no end statement. Nor are there semicolons at the end of
@@ -1022,7 +1023,7 @@ syntax changes.
     >>> x = 0
     >>> while x < 10:
     ...   print(x, end=', ')
-    ...   x = x+1
+    ...   x += 1
     ```
 
 -   Here's a for-statement. Python will iterate over the items of any sequence,
@@ -1044,7 +1045,7 @@ syntax changes.
 
     The above will print 'Dave', 'John', 'Mark' on separate lines.
 
--   The target list ('names' in the above example) is an iterable, which serves
+-   The target list ('names' in the above example) is an *iterable* which serves
     up its elements one at a time. Note the similarities to MATLAB, which can
     iterate in a for-loop over a numeric array or a cell array.
 
@@ -1060,10 +1061,10 @@ syntax changes.
     2 Mark
     ```
 
-    The range() function will return the sequence of values 0, 1, ..., N-1. We'll
-see later that range() is an *iterable* object.
+    The `range` function will return the sequence of values 0, 1, ..., N-1. We'll
+see later that `range` is an *iterable* object.
 
-    Using the enumerate() function, we can simplify the above loop and obtain the
+    Using the `enumerate` function, we can simplify the above loop and obtain the
 loop counter:
 
     ```python
@@ -1071,8 +1072,8 @@ loop counter:
     ...  print(i,v)
     ```
 
-    When the list to print is instead a dictionary, an items() method
-    performs much the same role as the enumerate() function:
+    When the list to print is instead a dictionary, an `items` method
+    performs much the same role as the `enumerate` function:
 
     ```python
     >>> names = {1: 'Dave', 2: 'John', 3: 'Mark'}
@@ -1080,10 +1081,10 @@ loop counter:
     ...   print(key,val)
     ```
 
--   Within looping constructs, Python supports the usual *break* and
-    *continue* statements.
+-   Within looping constructs, Python supports the usual `break` and
+    `continue` statements.
 
--   Within for-loops, Python also supports an *else* clause: the else block will
+-   Within for-loops, Python also supports an `else` clause: the else block will
     execute when the iterable has been exhausted, but not following a break
     statement. While-loops also support an else clause; here, the else block
     will execute when the while conditional becomes false.
@@ -1149,7 +1150,7 @@ iterable.
 
     ```python
     >>> [[row[i] for row in x] for i in range(3)]
-    [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+    [[0, 3, 6], [1, 4, 7], [2, 5, 8]]
     ```
 
 -   Dictionaries can also be assigned with list comprehensions:
@@ -1185,7 +1186,7 @@ classes have special capabilities, such as the ability of an object to produce
 its data set one element at a time. Such an object is called an *iterable*.
 
 -   An iterable is an object which can return successive items of a
-    sequence stored inside the object.
+    sequence created by or stored inside the object.
 
 -   All sequence types are iterables. These include the types list, range,
     string, and tuple.
@@ -1194,12 +1195,12 @@ its data set one element at a time. Such an object is called an *iterable*.
 
 -   User-defined classes can be made iterable.
 
--   Iterables produce *iterators*, and it's the iterators that produce an
+-   Iterables produce *iterators*, and it's an iterator that produces an
     object's elements.
 
 -   Iterators have several methods defined for them, but the one you should know
-   about is the `next` method, which returns the next item in a list. Once a
-   list's elements are exhausted, `next` will issue an exception.
+    about is the `next` method, which returns the next item in a list. Once a
+    list's elements are exhausted, `next` will issue an exception.
 
 -   For example, let's create an iterator from a list, and then produce
     the list's elements.
@@ -1265,10 +1266,16 @@ quite a bit of coding involved with iterables, and computational overhead too.
 are two types of generators.
 
 -   First is a *generator function*, which is a user-defined function that
-    provides a sequence much like an iterable does. Generator syntax, however,
-    is much simpler than iterable syntax. We're not ready to discuss generator
-    functions in depth, but for now know that you can easily create functions
-    that produce a sequence of items one element at a time.
+    provides a sequence much like an iterable does. In deference to space contraints, we'll skip 
+    an example here, and just describe what a generator function does.
+    
+    A typical function performs
+    computations and then returns a result.  A generator function is nearly identical in structure, but 
+    ends with a *yield* statement rather than a *return* statement.  The yield statement interrupts a loop,
+    e.g., a for-loop or a while-loop, and returns one item of a sequence.  The function state is held in
+    memory; any subsequent call to the function produces the next item of that sequence.  This process of
+    generating sequence items continues until the sequence is exhausted.  Generator functions are useful
+    because they are highly efficient both in computational performance and memory usage.
 
 -   The second type of generator is the *generator expression*. These employ
     list comprehensions and iterables to create an expression which can later be
@@ -1348,8 +1355,8 @@ in Python.
 -   To return a value(s), Python does not support an `out = fun()` construct.
     Instead, Python uses `return var` at the end of the function.
 
--   If a function returns no value, the built-in value 'None' is returned by
-    default. The value None has a type of NoneType.
+-   If a function returns no value, the built-in value `None` is returned by
+    default. The value `None` has a type of `NoneType`.
 
 -   Function arguments can be given default values. E.g.,
     ```python
@@ -1384,13 +1391,32 @@ automatically be packed into a tuple named `args` (in this example).
 -   Expanding upon the above signature, one can also specify that a
     function is to receive an arbitrary number of keyword arguments:
     ```python
-    def fun(arg1, arg2='test', *args, **keywords):
+    def fun(arg1, arg2='test', *args, **kwargs):
     ```
-    The above listed order is required.  If provided, the trailing keyword arguments
-will automatically be packed into a dictionary inside the function.  As an
-example of calling the above function, regardless of what the function might do,
-one could enter:
+    The above listed order of arguments is required.  If provided, the trailing
+    keyword arguments will automatically be packed into a dictionary inside the
+    function.
 
+    Suppose we wish for the above function to print its arguments.  We'd have
+    the following:
+    ```python
+    def fun(arg1, arg2='test', *args, **kwargs):
+        print(f'arg1: {arg1}')
+        print(f'arg2: {arg2}')
+        print(f'*args: {args}')
+
+        for kw in kwargs:
+            print(f'{kw}: {kwargs[kw]}')
+    ```
+    Now call the function, as below, with the following outputs:
+    ```python
+    >>> fun(5, 'foo', 10, 15, a=20, b=25)
+    arg1: 5
+    arg2: foo
+    *args: (10, 15)
+    a: 20
+    b: 25
+    ```
 -   If a function signature requires individual arguments but the calling
     workspace has a list or tuple, the latter can be unpacked on the fly with a
     star ('\*') syntax. For example:
@@ -1442,7 +1468,7 @@ one could enter:
     12
     ```
 
--   Anonymous (unnamed) functions are created with the *lambda* keyword. E.g.,
+-   Anonymous (unnamed) functions are created with the `lambda` keyword. E.g.,
     ```python
     >>> f = lambda x,y: x/y
     >>> f(x=10, y=2)
@@ -1474,9 +1500,9 @@ order, by the number of unique characters in each string.
     ['zoo', 'cook', 'ohnoooh']
     ```    
     How did the above work? First, strings are a class, and that class has a
-*sort()* method associated with it. The sort() method allows a key argument, and
-we passed a lambda function as the value of that argument. In other words, we
-defined, on the fly, a function and then passed that function to the sort()
+`sort` method associated with it. The `sort` method allows a key argument, and
+we passed a `lambda` function as the value of that argument. In other words, we
+defined, on the fly, a function and then passed that function to the `sort`
 method. For each element in variable str, the lamba function converted the
 string into a set, thereby removing duplicate letters, and then computed the
 length of the remaining characters. The length of the unique characters in each
@@ -1484,10 +1510,10 @@ string then became the key by which to sort the list of strings.
 
     The above is equivalent to:
     ```python
-    >>> [str[i] for I in [1, 0, 2]]
+    >>> [str[i] for i in [1, 0, 2]]
     ```
     This is equivalent, but assumes that we somehow know the sort order.
-    Using the sort method and a lambda function in the first example, we
+    Using the `sort` method and a `lambda` function in the first example, we
     were able to determine the sort order on the fly.
 
 ### Warnings
@@ -1573,6 +1599,18 @@ Here's a quick summary:
 
 -   As with MATLAB's throw() function, use Python's raise() function to issue an
     exception. Any associated arguments are available to the exception instance.
+    
+-   While Python provides a long list of built-in exceptions you can catch, there will
+    be times when you won't be able to anticipate a specific error type.  Perhaps you are
+    interacting with the operating system, or a database, and the possible exceptions are
+    too broad in type to catch with a narrowly-focused built-in exception.  For these instances
+    you can use an exception base class.  E.g.,
+    ```python
+    try:
+      x = some_function()
+    except BaseException as e:
+      raise(e)
+    ```    
 
 -   If you desire a stack trace and/or logging into a log file, use Python's
     logging module. E.g.,
@@ -1586,9 +1624,8 @@ Here's a quick summary:
 
 -   Some objects have pre-defined clean-up actions that can occur regardless of
     any exception thrown (or not). An example is the opening of a file. A
-    [*with*
-    statement](https://docs.python.org/3/reference/compound_stmts.html#with)
-    will ensure that pre-defined actions occur even if not explicitly requested.
+    [`with`](https://docs.python.org/3/reference/compound_stmts.html#with)
+    statement will ensure that pre-defined actions occur even if not explicitly requested.
     For example:
     ```python
     with open('some_file.csv') as file:
@@ -1596,7 +1633,7 @@ Here's a quick summary:
         print(line)
     ```    
     Following execution of this block of code, the opened file will be closed
-    regardless of whether an exception was raised. The *with* statement is just
+    regardless of whether an exception was raised. The `with` statement is just
     shorthand notation for a try-except block, but useful and convenient.
 
 ### Listing the Python Version
@@ -1632,8 +1669,8 @@ To see a list of all of the methods in the os module, use `dir(os)`.
 If you have been entering the above commands into a Python console window, you
 might be wondering how to perform a few basic maintenance operations, like
 listing or clearing the workspace variables. Python itself does not provide
-these features, although you can certainly code your own version of *whos* or
-*clear*. However, if you are using IPython or an IDE built on IPython, you will
+these features, although you can certainly code your own version of `whos` or
+`clear`. However, if you are using IPython or an IDE built on IPython, you will
 have access to [magic
 commands](https://ipython.readthedocs.io/en/stable/interactive/magics.html),
 commands that will be familiar to you except that they are prefixed by a '%'.
@@ -1704,9 +1741,8 @@ C:> pip install matplotlib # from a Windows terminal
 
 </div>
 
-Matplotlilb provides 2-d charts, but
-other packages built upon Matplotlib provide 3-d charts, as per the
-following example.
+Matplotlilb provides 2-d charts, but other packages built upon Matplotlib
+provide 3-d charts, as per the following example.
 
 ```python
 >>> from mpl_toolkits.mplot3d import Axes3D
@@ -1734,8 +1770,14 @@ following example.
     capabilities. Rest assured that you can create all the charts you've grown
     accustomed to with MATLAB.
 
--   Additional packages provide the ability to make interactive charts,
-    to add filters, and to create dashboards.
+-   Additional packages provide the ability to make interactive charts, to add
+    filters, and to create dashboards.  [Plotly](https://plot.ly/python/),
+    mentioned earlier, is an open-source package that interfaces with both
+    MATLAB and Python.  In particular, have a look at plotly.js, which is the
+    plotting component of Plotly.  Plotly.js is built on top of D3.js and thus
+    provides a rich set of dynamic, interactive charts.  With Plotly.js, you get
+    all the features of D3.js, but you get to work in the MATLAB and Python
+    languages.
 
 -   For statistical charts, you'll want to check out the [seaborn
     package](https://seaborn.pydata.org/index.html), which is built on top of
@@ -1753,7 +1795,7 @@ following example.
 
 # Object-Oriented Programming in Python
 
-At this point of the article we'll dive a bit deeper into the programming
+At this point of the article we'll dive a bit deeper into the Python programming
 language. We'll discuss namespaces, scopes, and then classes. Each of these
 differs from the MATLAB model, and you need to be aware of the changes.
 
@@ -1781,13 +1823,13 @@ prerequisites for understanding classes.
 -   At any time during program execution, at least three scopes are in
     effect. From the innermost scope to the outermost, these are:
 
-    1.  The scope of any embedded function (a function embedded in an
+    1.  The innermost scope is that of any embedded function (a function embedded in an
         enclosing function). When Python is trying to resolve a
         reference, this innermost scope of local names is searched
         first.
 
     2.  The scopes of enclosing functions, containing non-local, but
-        also non-global names. When resolving references, this scope is
+        also non-global names is the second-most inner scope. When resolving references, this scope is
         searched second.
 
     3.  The next to last scope (the *middle,* or *global scope*)
@@ -1796,13 +1838,15 @@ prerequisites for understanding classes.
     4.  The outermost scope (searched last) is the namespace containing
         built-in names.
 
-
 -   Variables can be declared *global*, in which case they will reside
-    in the middle scope and will not be shared across modules.
+    in the middle scope.  These variables  will not be shared across modules.
 
--   Variables outside of the innermost scope can also be declared
-    *nonlocal*, whereby they will pass by reference into any innermost
-    scope.
+-   Within the four scopes, variables flow from the outer scopes into the inner
+    scopes.  That is, a variable declared in an outer scope can be referenced in
+    an inner scope.  The converse is not true; variables defined in an inner scope
+    cannot be referenced in an outer scope.  To alter this latter behaviour, variables
+    in an inner scope can be declared *nonlocal*, whereby they will pass by reference
+    into any outer scope.
 
 ### Classes
 
@@ -1840,13 +1884,13 @@ has a class attribute:
 ```
 
 -   Classes are defined with a straightforward syntax. In the following
-    example code, we define a class, a docstring, an initiation method,
+    example code, we define a class, a docstring, an instantiation method,
     and then two class methods:
     ```python
     class MyClass:
-            """A sample class definition""" # Like MATLAB's H1 line
+            """A sample class definition"""         # Like MATLAB's H1 line
 
-            def __init__(self): # A constructor
+            def __init__(self):      # A constructor
                 self.mydata = []
 
             def method1(self):
@@ -1876,8 +1920,6 @@ has a class attribute:
     >>> obj = simple.MyClass()
     >>> obj.x
     3.14
-    >>> obj.f # This produces a function object
-    <bound method>
     >>> obj.f('test')
     'test'
     ```
@@ -1904,7 +1946,7 @@ has a class attribute:
     In the above, BaseClassName must be in scope. If it is not, one can
     instead use:
     ```python
-    class SubClassName(modname.BaseClassName):
+    class SubClassName(ModuleName.BaseClassName):
     ```
     Subclass methods may either override or extend base class methods of the same
     name. To call a super-class method from a subclass, use super(). For example, if
@@ -1917,10 +1959,10 @@ has a class attribute:
 
     ```python
     def MyClass:
-    ClassVar = 3.14 # Class, or static variable
+        ClassVar = 3.14     # Class, or static variable
 
     def __init__(self):
-        self.InstanceVar = 3.14159 # Instance variable
+        self.InstanceVar = 3.14159     # Instance variable
     ```
 
 -   Static variables should be used with care.  If you create two instances of
@@ -1986,7 +2028,7 @@ variables. We think it's best to inform you of this now, so that you don't learn
 about this after tripping over it.
 
 Suppose you have a list referenced by the variable x. If you then create a new
-variable y with the operation y=x, the new variable y simply points to original
+variable y with the operation y=x, the new variable y simply points to the original
 list; the variable y does not reference a new copy of the list. This is an
 important concept to master as it effects all Python data types. On assignment,
 Python will *bind* two objects together rather than make a copy. Consider the
@@ -2026,12 +2068,12 @@ sliced, the returned object is a new object, not a view into the original
 object. E.g.,
 ```python
 >>> a = list(range(5))
->>> b = a[2] # A slice, which is not bound to variable 'a'.
+>>> b = a[2]     # A slice, which is not bound to variable 'a'.
 >>> b
 2
->>> b = 99 # Change the value of b.
+>>> b = 99     # Change the value of b.
 >>> a
-[0, 1, 2, 3, 4] # Variable a is unaffected.
+[0, 1, 2, 3, 4]     # Variable a is unaffected.
 ```
 
 ### Biggest Differences
@@ -2042,7 +2084,7 @@ the items that made our list. If you are going to program in the Python
 language, you'll want to spend some time studying these topics further.
 
 -   Python array indexing: zero-based rather than one-based, and square
-    brackets rather than parenthesis.
+    brackets rather than parentheses.
 
 -   List comprehensions: there's really no equivalent in MATLAB.
 
@@ -2054,7 +2096,7 @@ language, you'll want to spend some time studying these topics further.
     concept exists in MATLAB, but programmers are largely shielded from
     and thus often unaware of it.
 
--   Bindings, shallow copies and deep copies: by default, Python treats
+-   Bindings, shallow copies and deep copies: by default Python treats
     objects like MATLAB handle objects.
 
 We have now covered the primary Python data types and control structures. In the
@@ -2065,7 +2107,7 @@ ecosystem.
 
 # The Python Ecosystem
 
-As a MATLAB programmer, you may be a little nervous about Python at this point.
+As a MATLAB programmer you may be a little nervous about Python at this point.
 We covered the primary data types and built-in functionality, but said nothing
 of matrices, multi-dimensional arrays, array operations or vectorization. We
 haven't even mentioned common mathematical operations such as matrix inversion,
@@ -2090,7 +2132,7 @@ to additional material.
 ### Integration with Source Code Control
 
 Python itself does not integrate with source control systems, but many of its
-IDEs do. PyCharm, for example, has a very intuitive interface with more than ten
+IDEs do. PyCharm, for example, has an intuitive interface to more than ten
 source control systems, including GitHub, CVS and Subversion. In PyCharm, go to
 File->Settings->Version Control and choose your SCC of preference. Once your
 settings are made, there's a VCS menu on the PyCharm toolbar. It's that easy.
@@ -2124,8 +2166,9 @@ Let's talk now about importing modules and packages into your Python workspace.
     symbol table and executes any executable statements at the top of
     the module.
 
--   Each module has its own symbol table. That table is the global
-    table used by each function in the module.
+-   Each module has its own symbol table. That table is called a *global
+    table* and is used by each function in the module.  The scope of a
+    global table is its module; modules cannot see one another's global table.
 
 -   Packages provide a further separation of scope. Whereas modules
     each contain their own global variable scope (thus shielding each
@@ -2174,8 +2217,8 @@ To install packages, a utility called 'pip' is recommended. Here's how to use pi
 to install the matplotlib package.
 
 Find pip.exe on your computer; this executable should have installed as part of
-the Python install. Add that directory to Windows' path variable. Just type in
-'Edit Environment' and in the Windows task bar and you'll find the variable
+the Python install. Add that directory to Windows' path variable. Just type
+'Edit Environment' in the Windows task bar and you'll find the variable
 editor. See the following link for
 [instructions](https://pip.pypa.io/en/stable/).
 
@@ -2186,7 +2229,10 @@ pip freeze
 ```
 
 Occasionally you'll want to upgrade the installed version of pip. To do so,
-enter (in a command prompt window): `python -m pip install --upgrade pip`
+enter (in a command prompt window):
+```python
+pip install --upgrade pip
+```
 
 With thousands of available packages, one might expect that updates to various
 packages happen all the time. However, only one version of a given package can
@@ -2209,18 +2255,25 @@ debugging.
 
 ### Path Management
 
-You may have noticed that we've not mentioned path management yet. No doubt you
+You may have noticed that we've not mentioned path management. No doubt you
 are aware that path management is important to MATLAB: classes, functions and
 scripts must reside on the path, and file naming conventions must be followed.
 
 In contrast, Python path management tends to be simpler. The path will likely be
 shorter, more easily managed, and once a module is imported, *all* of its
 functions are directly accessible. By default, the packages that you install
-with the pip utility will reside in folder LibSite-packages relative to the
-Python installation folder. To list your specific site folder(), perform the
+with the pip utility will reside in a single folder under the
+Python installation folder. To list your specific site folder(s), perform the
 following command:
 ```python
 >>> import site; site.getsitepackages()
+```
+If you know the name of a specific package you've already installed, you can obtain
+information about that package, including its installation directory. Use the following
+command entered into a Windows command window to obtain information about a package named,
+e.g., package-name:
+```python
+pip show package-name
 ```
 
 If you are using a virtual environment, the `venv` tool or your IDE will create
@@ -2248,7 +2301,7 @@ We promised several times to show you how Python supports matrices,
 higher-dimensional arrays, and associated numeric and scientific computations.
 That time has arrived.
 
-One of the design objectives for the core Python libpycrary was, and remains,
+One of the design objectives for the core Python library was, and remains,
 simplicity. Matrices and higher-dimensional arrays are thus provided by add-on
 packages. By far the most popular package to provide an array feature is
 *NumPy*. The NumPy package bills itself as *the fundamental package for
@@ -2264,7 +2317,7 @@ C:> pip install numpy # Enter from a Windows terminal
 ```
 
 We'll focus on the a NumPy-specific data type called *ndarray*, which has an
-alias called just *array*. This data type provides storage for a
+alias called *array*. This data type provides storage for a
 multi-dimensional array of homogeneous elements. Let's first create and print a
 1-d array of integers:
 ```python
@@ -2324,23 +2377,23 @@ E.g.,
 ```python
 >>> a + a
 array([[ 8, 18, 32],
-[50, 72, 98]])
+       [50, 72, 98]])
 ```
 
-Now let's look a matrix product, using the `@` operator. Rather than print() the
-result, we'll not save the result and allow Python to print to the screen.
+Now let's look at a matrix product, using the `@` operator. Rather than save and then print() the
+result, we'll skip the save and allow Python to print to the screen.
 ```python
 >>> a = np.array( [[1,2]
-[3,4]])
+                   [3,4]])
 >>> b = np.array( [[2,3]
-[4,5]])
+                   [4,5]])
 >>> a @ b
 array([10, 13],
-[22, 29])
+      [22, 29])
 ```
 
-NumPy has dozens of functions to perform the usual array operations you might
-expect. You can query an array size, reshape an array, extract elements or
+NumPy has dozens of functions with which to perform the usual array operations you 
+would expect of an analytics library. You can query an array size, reshape an array, extract elements or
 slices, compute statistics such as cov, mean, std and var. With NumPy you can
 perform linear algebra operations such as transpose, inverse and multiplication.
 You can compute eigenvalues. You can sort and filter arrays. Logical operations
@@ -2360,11 +2413,24 @@ is the function, and how you would vectorize it.
 >>> add_v([1, 2, 3], [4, 5, 6]) # Add two vectors
 array([5, 7, 9])
 ```
+While it's not a core topic of this article, we should mention that NumPy offers
+a tremendous performance benefit to numeric calculations.  Calculations that you
+might compute in pure Python can run 10x to 100x faster using NumPy.  This performance
+improvement results from several key features of NumPy.  Consider the simple act of adding
+two lists.  In pure Python, each element of the list will be a pointer to an object, a float or 
+an int, for example, with all of the attendent overhead of processing those objects.
+In NumPy, those lists will be reduced to arrays of a homogenous data type, with far less
+processing overhead.  Secondly, many NumPy functions are implemented in the C language,
+compiled for speed.  And thirdly, with NumPy, high-level Python for-loops get pushed down into
+the C libraries, with the latter being far faster than the former.
 
 NumPy has much more to offer; we simply cannot cover all of its capabilities
 here. But a bit of good news for you: with a MATLAB background you'll find that
 the [NumPy documentation](http://www.numpy.org/) is familiar, and once you read
-through its documentation you'll feel much more at ease with Python.
+through its documentation you'll feel much more at ease with Python.  And if you
+don't particularly like the NumPy language syntax, keep reading to the Pandas section.
+Pandas is built on top of NumPy and provides a syntax you will be much more comfortable
+with.
 
 ### SciPy
 
@@ -2449,7 +2515,7 @@ but interoperates with, SciPy. It's quite possible that a lot of code you had to
 write before in MATLAB simply goes away now, as the code has been written for
 you in Python's NumPy/SciPy/pandas ecosystem.
 
-Development of Pandas began in 2008 at AQR Capital Management, and the library
+Development of pandas began in 2008 at AQR Capital Management, and the library
 was open-sourced in 2009. Pandas does many of the things that you've grown
 accustomed to in MATLAB. It is difficult to reduce the list of pandas'
 capabilities to a set that might be most important to you, but here's an
@@ -2459,13 +2525,13 @@ Pandas can read data from a wide variety of data sources, including CSV and
 other delimited files, Excel, databases, HDF5, HTML and JSON. Pandas has
 facilities for storing variable-frequency timeseries data, both 1-d and 2-d, and
 for managing timeseries data with operations such as filling, converting
-frequencies, and date shifting. As with NumPy, Pandas provides indexing and
+frequencies, and date shifting. As with NumPy, pandas provides indexing and
 slicing of your data, and numerous relational operations such as group by, join
 and merge. Data and axes can be labeled and indexed. Pandas provides facilities
 for data analysis and modeling, and pandas interoperates with the functions
 provided by SciPy.
 
-Let's try an example using Pandas. Suppose you notice a news article about the
+Let's try an example using pandas. Suppose you notice a news article about the
 Consumer Price Index (CPI) for U.S. Housing and want to explore some of that
 data. An online search leads you to the [Bureau of Labor
 Statistics](https://www.bls.gov/) and to a set of csv files on their website. In
@@ -2513,9 +2579,9 @@ CPI indices by year, taking the mean CPI across the months of each year. Note
 how we are chaining operations together:
 ```python
 >>> df = df.groupby(['year']).mean()
-
+```
 Finally, let's clean up the column labels and plot the data:
-
+```python
 >>> df = df.rename({'value':'Mean CPI'}, axis='columns')
 >>> df.plot()
 ```
@@ -2538,7 +2604,7 @@ While pandas' syntax differs from MATLAB's, the commands we used to analyze the
 CPI data should feel familiar. Pandas has a tremendous amount of functionality
 that we've not touched upon, but hopefully we've demonstrated that the
 combination of Python/NumPy/SciPy/pandas provides an analysis environment
-similar to what you use with MATLAB
+similar to what you use with MATLAB.
 
 ### MATLAB and Python, Together
 
@@ -2557,8 +2623,8 @@ the MATLAB instance, invoke functions, and return results.
 
 Why, you might ask, would you want to call MATLAB scripts from Python? We think
 there are several use cases. The first is one of deployment. Suppose you have
-analytics built in MATLAB but want to deploy those analyses on the web. Python
-has, though we've not discussed it here, state of the art GUI toolkits that can
+analytics functionality built in MATLAB but want to deploy those analyses on the web. Python
+has, though we've not discussed it here, state-of-the-art GUI toolkits that can
 easily be deployed on AWS, the Google Computing Platform or otherwise. You can
 construct your analytics front-end in Python, allowing it to communicate with
 your MATLAB-based back-end library.
@@ -2600,14 +2666,14 @@ The authors sometimes use the community (free) version of
 free) version. PyCharm provides code completion, code formatting, syntax
 highlighting, runtime error checking, project navigation, debugging, and a slick
 interface. PyCharm integrates with several source control libraries, unit
-testing frameworks, databases, and the [PyPy](http://packages.pypy.org/) package
+testing frameworks, databases, virtul environments and the [PyPy](http://packages.pypy.org/) package
 management library. PyCharm also integrates with the scientific libraries we've
 discussed in this article and supports the IPython magic commands. PyCharm is
 every bit as sophisticated as the MATLAB IDE, and even more so.
 
-If you happen to use Visual Studio already, you can stay with that editor as it
+If you happen to use Visual Studio, you can stay with that editor as it
 supports Python. And if you're more of a command-line person, have a look at
-[*IPython*](http://ipython.org/), which is a Python prompt with auto-completion,
+[IPython](http://ipython.org/), which is a Python prompt with auto-completion,
 history and shell capabilities.
 
 Lastly, we mentioned earlier that an IDE called *Spyder* is available, and it
@@ -2631,7 +2697,7 @@ assist you with function tips, automatic indentation, syntax highlighting and
 command history. You can open multiple console windows, and each will operate
 independently of the others.
 
-Spyder is similar to PyCharm but targeted toward data scientists and analysts.
+Spyder is similar to PyCharm but targeted to data scientists and analysts.
 Spyder even knows about and integrates with NumPy, SciPy, and Pandas.
 
 Pictured below is Spyder along with our earlier example of using Pandas to
@@ -2698,10 +2764,11 @@ Foundation](https://www.python.org/) home page. From there you can find the
 above two documents, tutorials, how-to guides, code examples, installation
 guides and much more.
 
-And if you are more of a book reader, you'll find numerous ones in bookstores
-about performing data science in Python. One that we recommend is O'Reilly's
+If you are more of a book reader, there are numerous books worthy of your time 
+and dollars.
+On the topic of Python and data science, one book that we recommend is O'Reilly's
 [Python for Data Analysis](http://shop.oreilly.com/product/0636920050896.do),
-written by Wes McKinney, creator of the Pandas library. This is an incredibly
+written by Wes McKinney, creator of the pandas library. This is an incredibly
 well-written and thorough book, an enjoyable read. You can purchase a digital
 version and then cut-and-paste examples from the book into your Python
 interpreter. Or better, you can follow along in the book with an accompanying
@@ -2715,18 +2782,32 @@ below.
 
 # Author Biographies
 
+Michael Patterson has worked in commodity trading for twenty years, with roles in
+technology, fundamental analysis, business intelligence and risk management.
+Michael lives in Tulsa, OK with his wife and two children. Michael can be
+reached via his [LinkedIn profile](https://www.linkedin.com/in/mtpatt/) or by
+email at <michael.patterson@demextech.com>.
+
 Andrew Janke is a software developer with over a decade of experience building
-MATLAB-based systems for financial analysis applications. He specializes in
+MATLAB-based systems for financial analysis applications. Andrew specializes in
 building data analytics platforms that integrate multiple languages and
-technologies, including MATLAB, Java, and SQL. Andrew can be reached at his
+technologies, including MATLAB, Java, and SQL. He can be reached at his
 [website](https://apjanke.net/), [LinkedIn
 profile](https://www.linkedin.com/in/andrewjanke0/) or by email at
 <andrew@apjanke.net>.
 
-Michael Patterson is the Lead Technologist for WoodedPark Strategies, LLC, a
-front-office advisory firm specializing in commodity trading risk management.
-Michael has worked in commodity trading for twenty years, with roles in
-technology, fundamental analysis, business intelligence and risk management.
-Michael lives in Tulsa, OK with his wife and two children. Michael can be
-reached via his [LinkedIn profile](https://www.linkedin.com/in/mtpatt/) or by
-email at <michael.patterson@woodedparkstrategies.com>.
+Michael and Andrew currently work at Demex Technologies, where Michael is Director,
+Commodity Analytics and Andrew is Director, Quantitative Systems. Among its products,
+Demex Technologies markets an online platform for 
+researching and quoting complex commodity financial derivatives.  Not
+surprisingly, the product is written in a mix of languages, including MATLAB
+and Python.
+
+# Contributors
+
+Numerous people have graciously offered reviews, corrections and contributions to this document.  We wish to recognize and thank them for their time and talents.  Their names, with links to their LinkedIn profiles are:
+
+* [Yan Holtz](https://www.linkedin.com/in/yan-holtz-2477534a)
+* [Scott Buechler](https://www.linkedin.com/in/rscottyblinkedin)
+* [Kevin Bowers](https://www.linkedin.com/in/kevinjbowers)
+* [Michael Swearingen](https://www.linkedin.com/in/michael-swearingen-58126010)
