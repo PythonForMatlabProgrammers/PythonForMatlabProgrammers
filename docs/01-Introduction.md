@@ -56,27 +56,32 @@ A fourth, and last objective of this article is to be as brief as
 possible. Python is already well documented, so this document strives to
 be a quick read.
 
+### The Demex Group
+
+The authors of this article are founding members of The Demex Group, a firm which helps its clients adapt to the impacts of changing weather and climate.  A quick background on The Demex Group will help you understand why we've taken the time to write this article for you.
+
+We help our clients quantify their business exposure to weather and climate risks, and we facilitate the transfer of those risks to third parties.  We do this by providing our clients access to algorithms that help them discover and mitigate their risk exposures.  Our algorithms are
+hosted on a sophisticated, web-based platform located at demex.tech.
+
+Our computational platform comprises nearly one hundred man-years of efforts, and to no surprise, is written largely in the MATLAB and Python languages.
+
+Analytics and technology are the core of our business, and client relationships are the foundation of that business.  We share our platform and our analyses with our clients, and in so doing we empower them and help protect them from weather and climate risks.  This article is just one small component of that effort: we'd like to share with you the knowledge we've acquired in our work.
+
 ### Contributing to this Article
 
 As just mentioned, we have a goal of keeping this article brief.  However,
-we've received suggestions of additional material for the article, and
+we've received many suggestions of additional material for the article, and
 we value those suggestions.  In March 2019 we open-sourced the article and published it to a
 [GitHub public repository](https://github.com/apjanke/PythonForMatlabProgrammers).
 
-Readers are encouraged to edit or add material by submitting pull requests from
-the GitHub repository.  If you are not comfortable doing so but have
-corrections, additions, suggestions, criticisms, etc. please direct them to the
-authors.  We will give proper acknowledgement to all who contribute to this
-article.
+Readers are encouraged to edit or add material by submitting pull requests from the GitHub repository.  If you are not comfortable doing so but have corrections, additions, suggestions, criticisms, etc. please direct them to the authors.  We will give proper acknowledgement to all who contribute to this article.
 
 This article is licensed under the [Creative Commons Attribution ShareAlike 4.0 International
 License](http://creativecommons.org/licenses/by-sa/4.0/).  The article is available to download, edit, expand upon, revise, re-publish, etc. to suit your needs.  Under the terms of the Creative Commons license, you have full access to the article but the article must retain the original author's names.
 
 ### Conventions
 
-We will use only a few conventions in this document, again in the name of
-simplicity. Code that you would enter in a Python console is prefaced by the
-standard `>>>` Python prompt. Continuation lines are prefaced by the standard
+We will use only a few conventions in this document, again in the name of simplicity. Code that you would enter in a Python console is prefaced by the standard `>>>` Python prompt. Continuation lines are prefaced by the standard
 `...` continuation marks.
 
 On the rare occasion that we reference an operating system, we reference only

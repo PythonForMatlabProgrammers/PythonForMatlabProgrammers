@@ -13,6 +13,8 @@ Learning and Leveraging Python When You Know MATLAB
 <br>
 <p style="text-align: center;">
 By Andrew Janke and Michael Patterson
+<br>
+The Demex Group
 </p>
 
 <p style="text-align: center;">
@@ -36,6 +38,6 @@ Release notes:
    repository](https://github.com/apjanke/PythonForMatlabProgrammers) under a
    Creative Commons Attribution ShareAlike 4.0 International License.
 
--  March 12, 2020: Latest release.
+-  April 12, 2020: Latest release.
 
 <br>
