@@ -504,16 +504,17 @@ similar to what you use with MATLAB.
 
 ### Full-Stack Python
 
-Full-Stack Python refers to the design and deployment of web-based applications.  Using nothing *but* Python and supporting Python-base libraries, one can create complex web-apps which integrate into websites.  Python libraries are available for web frameworks, e.g., [Django](https://www.djangoproject.com/) and [Flask](https://flask.palletsprojects.com/), and front-end user interfaces, e.g., [Plotly Dash](https://plotly.com/dash/).
+Full-Stack Python refers to the design and deployment of web-based applications with significant server-side functionality.
+Using nothing *but* Python and supporting Python-based libraries, one can create complex web apps which integrate into traditional websites and back-ends.  Python libraries are available for web frameworks (e.g. [Django](https://www.djangoproject.com/) and [Flask](https://flask.palletsprojects.com/)) and front-end user interfaces (e.g. [Plotly Dash](https://plotly.com/dash/)).
 
-As just one example, the authors have written a web-app for stress-testing trading portfolios comprised of options, futures and swaps.  This app employs complex mathematical modeling, large data sets, extensive computations, a sophisticated user interface, and is written completely in Python.  A screen shot is listed below, and the app is also [available online](https://aftermathematics.appspot.com/riskmanager/).
+As just one example, the authors have written a web app for stress-testing trading portfolios comprised of options, futures, and swaps.  This app employs complex mathematical modeling, large data sets, extensive computations, and a sophisticated user interface, and is written completely in Python.  A screen shot is shown below, and the app is also [available online](https://aftermathematics.appspot.com/riskmanager/).
 
 <div style="text-align: center;">
 <img src="media/RiskManager.png">
 </div>
 <br>
 
-As shown above, Python can handle both the front-end and back-end of a web-app, and also everything in between, such as analytics and database access.  Rather than belabor this topic, we'll refer you to an excellent online resource called, appropriately, [Full Stack Python](https://www.fullstackpython.com/) written by Matt Makai.
+As shown above, Python can handle both the front-end and back-end of a web app, and also everything in between, such as analytics and database access.  Rather than belabor this topic, we'll refer you to an excellent online resource called, appropriately, [Full Stack Python](https://www.fullstackpython.com/) written by Matt Makai.
 
 ### MATLAB and Python, Together
 
