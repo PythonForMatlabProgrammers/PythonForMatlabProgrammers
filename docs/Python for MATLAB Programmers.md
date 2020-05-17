@@ -13,6 +13,8 @@ Learning and Leveraging Python When You Know MATLAB
 <br>
 <p style="text-align: center;">
 By Andrew Janke and Michael Patterson
+<br>
+The Demex Group
 </p>
 
 <p style="text-align: center;">
@@ -36,7 +38,7 @@ Release notes:
    repository](https://github.com/apjanke/PythonForMatlabProgrammers) under a
    Creative Commons Attribution ShareAlike 4.0 International License.
 
--  March 12, 2020: Latest release.
+-  April 12, 2020: Latest release.
 
 <br>
 <br>
@@ -97,27 +99,32 @@ A fourth, and last objective of this article is to be as brief as
 possible. Python is already well documented, so this document strives to
 be a quick read.
 
+### The Demex Group
+
+The authors of this article are founding members of The Demex Group, a firm which helps its clients adapt to the impacts of changing weather and climate.  A quick background on The Demex Group will help you understand why we've taken the time to write this article for you.
+
+We help our clients quantify their business exposure to weather and climate risks, and we facilitate the transfer of those risks to third parties.  We do this by providing our clients access to algorithms that help them discover and mitigate their risk exposures.  Our algorithms are
+hosted on a sophisticated, web-based platform located at demex.tech.
+
+Our computational platform comprises nearly one hundred man-years of efforts, and to no surprise, is written largely in the MATLAB and Python languages.
+
+Analytics and technology are the core of our business, and client relationships are the foundation of that business.  We share our platform and our analyses with our clients, and in so doing we empower them and help protect them from weather and climate risks.  This article is just one small component of that effort: we'd like to share with you the knowledge we've acquired in our work.
+
 ### Contributing to this Article
 
 As just mentioned, we have a goal of keeping this article brief.  However,
-we've received suggestions of additional material for the article, and
+we've received many suggestions of additional material for the article, and
 we value those suggestions.  In March 2019 we open-sourced the article and published it to a
 [GitHub public repository](https://github.com/apjanke/PythonForMatlabProgrammers).
 
-Readers are encouraged to edit or add material by submitting pull requests from
-the GitHub repository.  If you are not comfortable doing so but have
-corrections, additions, suggestions, criticisms, etc. please direct them to the
-authors.  We will give proper acknowledgement to all who contribute to this
-article.
+Readers are encouraged to edit or add material by submitting pull requests from the GitHub repository.  If you are not comfortable doing so but have corrections, additions, suggestions, criticisms, etc. please direct them to the authors.  We will give proper acknowledgement to all who contribute to this article.
 
 This article is licensed under the [Creative Commons Attribution ShareAlike 4.0 International
 License](http://creativecommons.org/licenses/by-sa/4.0/).  The article is available to download, edit, expand upon, revise, re-publish, etc. to suit your needs.  Under the terms of the Creative Commons license, you have full access to the article but the article must retain the original author's names.
 
 ### Conventions
 
-We will use only a few conventions in this document, again in the name of
-simplicity. Code that you would enter in a Python console is prefaced by the
-standard `>>>` Python prompt. Continuation lines are prefaced by the standard
+We will use only a few conventions in this document, again in the name of simplicity. Code that you would enter in a Python console is prefaced by the standard `>>>` Python prompt. Continuation lines are prefaced by the standard
 `...` continuation marks.
 
 On the rare occasion that we reference an operating system, we reference only
@@ -2392,7 +2399,7 @@ array([10, 13],
       [22, 29])
 ```
 
-NumPy has dozens of functions with which to perform the usual array operations you 
+NumPy has dozens of functions with which to perform the usual array operations you
 would expect of an analytics library. You can query an array size, reshape an array, extract elements or
 slices, compute statistics such as cov, mean, std and var. With NumPy you can
 perform linear algebra operations such as transpose, inverse and multiplication.
@@ -2417,7 +2424,7 @@ While it's not a core topic of this article, we should mention that NumPy offers
 a tremendous performance benefit to numeric calculations.  Calculations that you
 might compute in pure Python can run 10x to 100x faster using NumPy.  This performance
 improvement results from several key features of NumPy.  Consider the simple act of adding
-two lists.  In pure Python, each element of the list will be a pointer to an object, a float or 
+two lists.  In pure Python, each element of the list will be a pointer to an object, a float or
 an int, for example, with all of the attendent overhead of processing those objects.
 In NumPy, those lists will be reduced to arrays of a homogenous data type, with far less
 processing overhead.  Secondly, many NumPy functions are implemented in the C language,
@@ -2605,6 +2612,19 @@ CPI data should feel familiar. Pandas has a tremendous amount of functionality
 that we've not touched upon, but hopefully we've demonstrated that the
 combination of Python/NumPy/SciPy/pandas provides an analysis environment
 similar to what you use with MATLAB.
+
+### Full-Stack Python
+
+Full-Stack Python refers to the design and deployment of web-based applications.  Using nothing *but* Python and supporting Python-base libraries, one can create complex web-apps which integrate into websites.  Python libraries are available for web frameworks, e.g., [Django](https://www.djangoproject.com/) and [Flask](https://flask.palletsprojects.com/), and front-end user interfaces, e.g., [Plotly Dash](https://plotly.com/dash/).
+
+As just one example, the authors have written a web-app for stress-testing trading portfolios comprised of options, futures and swaps.  This app employs complex mathematical modeling, large data sets, extensive computations, a sophisticated user interface, and is written completely in Python.  A screen shot is listed below, and the app is also [available online](https://aftermathematics.appspot.com/riskmanager/).
+
+<div style="text-align: center;">
+<img src="media/RiskManager.png">
+</div>
+<br>
+
+As shown above, Python can handle both the front-end and back-end of a web-app, and also everything in between, such as analytics and database access.  Rather than belabor this topic, we'll refer you to an excellent online resource called, appropriately, [Full Stack Python](https://www.fullstackpython.com/) written by Matt Makai.
 
 ### MATLAB and Python, Together
 

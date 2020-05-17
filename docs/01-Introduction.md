@@ -56,17 +56,6 @@ A fourth, and last objective of this article is to be as brief as
 possible. Python is already well documented, so this document strives to
 be a quick read.
 
-### The Demex Group
-
-The authors of this article are founding members of The Demex Group, a firm which helps its clients adapt to the impacts of changing weather and climate.  A quick background on The Demex Group will help you understand why we've taken the time to write this article for you.
-
-We help our clients quantify their business exposure to weather and climate risks, and we facilitate the transfer of those risks to third parties.  We do this by providing our clients access to algorithms that help them discover and mitigate their risk exposures.  Our algorithms are
-hosted on a sophisticated, web-based platform located at demex.tech.
-
-Our computational platform comprises nearly one hundred man-years of efforts, and to no surprise, is written largely in the MATLAB and Python languages.
-
-Analytics and technology are the core of our business, and client relationships are the foundation of that business.  We share our platform and our analyses with our clients, and in so doing we empower them and help protect them from weather and climate risks.  This article is just one small component of that effort: we'd like to share with you the knowledge we've acquired in our work.
-
 ### Contributing to this Article
 
 As just mentioned, we have a goal of keeping this article brief.  However,
