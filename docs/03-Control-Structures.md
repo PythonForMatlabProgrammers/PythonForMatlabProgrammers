@@ -279,11 +279,11 @@ quite a bit of coding involved with iterables, and computational overhead too.
 are two types of generators.
 
 -   First is a *generator function*, which is a user-defined function that
-    provides a sequence much like an iterable does. In deference to space contraints, we'll skip 
+    provides a sequence much like an iterable does. In deference to space contraints, we'll skip
     an example here, and just describe what a generator function does.
-    
+
     A typical function performs
-    computations and then returns a result.  A generator function is nearly identical in structure, but 
+    computations and then returns a result.  A generator function is nearly identical in structure, but
     ends with a *yield* statement rather than a *return* statement.  The yield statement interrupts a loop,
     e.g., a for-loop or a while-loop, and returns one item of a sequence.  The function state is held in
     memory; any subsequent call to the function produces the next item of that sequence.  This process of
@@ -294,9 +294,12 @@ are two types of generators.
     list comprehensions and iterables to create an expression which can later be
     executed.
 
+    In the following example, the first line produces, but does not execute, a generator object.
+    The second line executes the generator object, saving the results as a list.
+
     ```python
-    >>> squares = (x*x for x in range(1,5)) # This produces, but does not execute, a generator object.
-    >>> list(squares) # This executes the object, saving the results as a list.
+    >>> squares = (x*x for x in range(1,5))
+    >>> list(squares)
     [1, 4, 9, 16]
     ```
 
@@ -612,7 +615,7 @@ Here's a quick summary:
 
 -   As with MATLAB's throw() function, use Python's raise() function to issue an
     exception. Any associated arguments are available to the exception instance.
-    
+
 -   While Python provides a long list of built-in exceptions you can catch, there will
     be times when you won't be able to anticipate a specific error type.  Perhaps you are
     interacting with the operating system, or a database, and the possible exceptions are

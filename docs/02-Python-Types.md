@@ -1,5 +1,6 @@
 <br>
 <br>
+<br>
 
 # Python Types
 
@@ -213,15 +214,14 @@ provides.
 
     ```python
     >>> str = 'ThisIsATest'
-    >>> str[0:4] # The upper bound is not included in the returned substring.
+    >>> str[0:4] # The upper bound is not included in the output.
     This
     ```
 
 -   Strings are an [immutable](https://docs.python.org/3/glossary.html) sequence
     data type. Immutable types cannot alter their values once set. For example,
     the following series of commands will issue an error:
-
-    ```python
+`python
     >>> str = 'abc'
     >>> str[0] = 'A'
     TypeError: 'str' object does not support item assignment
@@ -555,9 +555,9 @@ know about dictionaries:
     E.g.,
 
     ```python
-    >>> addressbook = {'Joe': ['1234 Dearborn Ave.', 'Chicago', 'IL', 60602]}
+    >>> addressbook = {'Joe': ['123 Dearborn', 'Chicago', 'IL', 60602]}
     >>> print(addressbook)
-    {'Joe': ['1234 Dearborn Ave.', 'Chicago', 'IL', 60602]}
+    {'Joe': ['123 Dearborn', 'Chicago', 'IL', 60602]}
     ```
 
 -   Within the dictionary type, the values of the key-value pairs can be of any

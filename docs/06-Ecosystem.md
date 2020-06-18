@@ -487,6 +487,7 @@ Finally, let's clean up the column labels and plot the data:
 <img src="media/image4.png">
 
 </div>
+<br>
 
 Plotting the data provides the figure above. Several comments are warranted
 here. First, the pandas library was able to successfully load a remotely-hosted
@@ -502,12 +503,13 @@ that we've not touched upon, but hopefully we've demonstrated that the
 combination of Python/NumPy/SciPy/pandas provides an analysis environment
 similar to what you use with MATLAB.
 
+<br>
 ### Full-Stack Python
 
 Full-Stack Python refers to the design and deployment of web-based applications with significant server-side functionality.
-Using nothing *but* Python and supporting Python-based libraries, one can create complex web apps which integrate into traditional websites and back-ends.  Python libraries are available for web frameworks (e.g. [Django](https://www.djangoproject.com/) and [Flask](https://flask.palletsprojects.com/)) and front-end user interfaces (e.g. [Plotly Dash](https://plotly.com/dash/)).
+Using nothing *but* Python and supporting Python-based libraries, one can create complex web apps which integrate into traditional websites and back-ends.  Python libraries are available for web frameworks (e.g., [Django](https://www.djangoproject.com/) and [Flask](https://flask.palletsprojects.com/)) and front-end user interfaces (e.g., [Plotly Dash](https://plotly.com/dash/)).
 
-As just one example, the authors have written a web app for stress-testing trading portfolios comprised of options, futures, and swaps.  This app employs complex mathematical modeling, large data sets, extensive computations, and a sophisticated user interface, and is written completely in Python.  A screen shot is shown below, and the app is also [available online](https://aftermathematics.appspot.com/riskmanager/).
+As an example, one of the authors of this article (Patterson) has written a web app for stress-testing trading portfolios comprised of options, futures, and swaps.  This app employs complex mathematical modeling, large data sets, extensive computations, and a sophisticated user interface.  The app is written completely in Python.  A screen shot is shown below, and the app is also [available online](https://aftermathematics.appspot.com/riskmanager/).
 
 <div style="text-align: center;">
 <img src="media/RiskManager.png">

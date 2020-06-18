@@ -13,8 +13,6 @@ Learning and Leveraging Python When You Know MATLAB
 <br>
 <p style="text-align: center;">
 By Andrew Janke and Michael Patterson
-<br>
-The Demex Group
 </p>
 
 <p style="text-align: center;">
@@ -38,7 +36,7 @@ Release notes:
    repository](https://github.com/apjanke/PythonForMatlabProgrammers) under a
    Creative Commons Attribution ShareAlike 4.0 International License.
 
--  April 12, 2020: Latest release.
+-  June 17, 2020: Latest release.
 
 <br>
 <br>
@@ -98,17 +96,6 @@ we do.
 A fourth, and last objective of this article is to be as brief as
 possible. Python is already well documented, so this document strives to
 be a quick read.
-
-### The Demex Group
-
-The authors of this article are founding members of The Demex Group, a firm which helps its clients adapt to the impacts of changing weather and climate.  A quick background on The Demex Group will help you understand why we've taken the time to write this article for you.
-
-We help our clients quantify their business exposure to weather and climate risks, and we facilitate the transfer of those risks to third parties.  We do this by providing our clients access to algorithms that help them discover and mitigate their risk exposures.  Our algorithms are
-hosted on a sophisticated, web-based platform located at demex.tech.
-
-Our computational platform comprises nearly one hundred man-years of efforts, and to no surprise, is written largely in the MATLAB and Python languages.
-
-Analytics and technology are the core of our business, and client relationships are the foundation of that business.  We share our platform and our analyses with our clients, and in so doing we empower them and help protect them from weather and climate risks.  This article is just one small component of that effort: we'd like to share with you the knowledge we've acquired in our work.
 
 ### Contributing to this Article
 
@@ -580,15 +567,14 @@ provides.
 
     ```python
     >>> str = 'ThisIsATest'
-    >>> str[0:4] # The upper bound is not included in the returned substring.
+    >>> str[0:4] # The upper bound is not included in the output.
     This
     ```
 
 -   Strings are an [immutable](https://docs.python.org/3/glossary.html) sequence
     data type. Immutable types cannot alter their values once set. For example,
     the following series of commands will issue an error:
-
-    ```python
+`python
     >>> str = 'abc'
     >>> str[0] = 'A'
     TypeError: 'str' object does not support item assignment
@@ -922,9 +908,9 @@ know about dictionaries:
     E.g.,
 
     ```python
-    >>> addressbook = {'Joe': ['1234 Dearborn Ave.', 'Chicago', 'IL', 60602]}
+    >>> addressbook = {'Joe': ['123 Dearborn', 'Chicago', 'IL', 60602]}
     >>> print(addressbook)
-    {'Joe': ['1234 Dearborn Ave.', 'Chicago', 'IL', 60602]}
+    {'Joe': ['123 Dearborn', 'Chicago', 'IL', 60602]}
     ```
 
 -   Within the dictionary type, the values of the key-value pairs can be of any
@@ -1273,11 +1259,11 @@ quite a bit of coding involved with iterables, and computational overhead too.
 are two types of generators.
 
 -   First is a *generator function*, which is a user-defined function that
-    provides a sequence much like an iterable does. In deference to space contraints, we'll skip 
+    provides a sequence much like an iterable does. In deference to space contraints, we'll skip
     an example here, and just describe what a generator function does.
-    
+
     A typical function performs
-    computations and then returns a result.  A generator function is nearly identical in structure, but 
+    computations and then returns a result.  A generator function is nearly identical in structure, but
     ends with a *yield* statement rather than a *return* statement.  The yield statement interrupts a loop,
     e.g., a for-loop or a while-loop, and returns one item of a sequence.  The function state is held in
     memory; any subsequent call to the function produces the next item of that sequence.  This process of
@@ -1288,9 +1274,12 @@ are two types of generators.
     list comprehensions and iterables to create an expression which can later be
     executed.
 
+    In the following example, the first line produces, but does not execute, a generator object.
+    The second line executes the generator object, saving the results as a list.
+
     ```python
-    >>> squares = (x*x for x in range(1,5)) # This produces, but does not execute, a generator object.
-    >>> list(squares) # This executes the object, saving the results as a list.
+    >>> squares = (x*x for x in range(1,5))
+    >>> list(squares)
     [1, 4, 9, 16]
     ```
 
@@ -1606,7 +1595,7 @@ Here's a quick summary:
 
 -   As with MATLAB's throw() function, use Python's raise() function to issue an
     exception. Any associated arguments are available to the exception instance.
-    
+
 -   While Python provides a long list of built-in exceptions you can catch, there will
     be times when you won't be able to anticipate a specific error type.  Perhaps you are
     interacting with the operating system, or a database, and the possible exceptions are
@@ -2598,6 +2587,7 @@ Finally, let's clean up the column labels and plot the data:
 <img src="media/image4.png">
 
 </div>
+<br>
 
 Plotting the data provides the figure above. Several comments are warranted
 here. First, the pandas library was able to successfully load a remotely-hosted
@@ -2613,18 +2603,20 @@ that we've not touched upon, but hopefully we've demonstrated that the
 combination of Python/NumPy/SciPy/pandas provides an analysis environment
 similar to what you use with MATLAB.
 
+<br>
 ### Full-Stack Python
 
-Full-Stack Python refers to the design and deployment of web-based applications.  Using nothing *but* Python and supporting Python-base libraries, one can create complex web-apps which integrate into websites.  Python libraries are available for web frameworks, e.g., [Django](https://www.djangoproject.com/) and [Flask](https://flask.palletsprojects.com/), and front-end user interfaces, e.g., [Plotly Dash](https://plotly.com/dash/).
+Full-Stack Python refers to the design and deployment of web-based applications with significant server-side functionality.
+Using nothing *but* Python and supporting Python-based libraries, one can create complex web apps which integrate into traditional websites and back-ends.  Python libraries are available for web frameworks (e.g., [Django](https://www.djangoproject.com/) and [Flask](https://flask.palletsprojects.com/)) and front-end user interfaces (e.g., [Plotly Dash](https://plotly.com/dash/)).
 
-As just one example, the authors have written a web-app for stress-testing trading portfolios comprised of options, futures and swaps.  This app employs complex mathematical modeling, large data sets, extensive computations, a sophisticated user interface, and is written completely in Python.  A screen shot is listed below, and the app is also [available online](https://aftermathematics.appspot.com/riskmanager/).
+As an example, one of the authors of this article (Patterson) has written a web app for stress-testing trading portfolios comprised of options, futures, and swaps.  This app employs complex mathematical modeling, large data sets, extensive computations, and a sophisticated user interface.  The app is written completely in Python.  A screen shot is shown below, and the app is also [available online](https://aftermathematics.appspot.com/riskmanager/).
 
 <div style="text-align: center;">
 <img src="media/RiskManager.png">
 </div>
 <br>
 
-As shown above, Python can handle both the front-end and back-end of a web-app, and also everything in between, such as analytics and database access.  Rather than belabor this topic, we'll refer you to an excellent online resource called, appropriately, [Full Stack Python](https://www.fullstackpython.com/) written by Matt Makai.
+As shown above, Python can handle both the front-end and back-end of a web app, and also everything in between, such as analytics and database access.  Rather than belabor this topic, we'll refer you to an excellent online resource called, appropriately, [Full Stack Python](https://www.fullstackpython.com/) written by Matt Makai.
 
 ### MATLAB and Python, Together
 
@@ -2784,7 +2776,7 @@ Foundation](https://www.python.org/) home page. From there you can find the
 above two documents, tutorials, how-to guides, code examples, installation
 guides and much more.
 
-If you are more of a book reader, there are numerous books worthy of your time 
+If you are more of a book reader, there are numerous books worthy of your time
 and dollars.
 On the topic of Python and data science, one book that we recommend is O'Reilly's
 [Python for Data Analysis](http://shop.oreilly.com/product/0636920050896.do),
@@ -2818,10 +2810,20 @@ profile](https://www.linkedin.com/in/andrewjanke0/) or by email at
 
 Michael and Andrew currently work at Demex Technologies, where Michael is Director,
 Commodity Analytics and Andrew is Director, Quantitative Systems. Among its products,
-Demex Technologies markets an online platform for 
+Demex Technologies markets an online platform for
 researching and quoting complex commodity financial derivatives.  Not
 surprisingly, the product is written in a mix of languages, including MATLAB
 and Python.
+
+### The Demex Group
+
+The authors of this article are founding members of The Demex Group, a firm which helps its clients adapt to the impacts of changing weather and climate.  A quick background on The Demex Group will help you understand why we've taken the time to write this article for you.
+
+We help our clients quantify their business exposure to weather and climate risks, and we facilitate the transfer of those risks to third parties.  We do this by providing our clients access to algorithms that help them discover and mitigate their risk exposures.  Our algorithms are hosted on a sophisticated, web-based platform located at www.demex.tech.
+
+Our computational platform comprises nearly one hundred man-years of efforts, and to no surprise, is written largely in the MATLAB and Python languages.
+
+Analytics and technology are the core of our business, and client relationships are the foundation of that business.  We share our platform and our analyses with our clients, and in so doing we empower them and help protect them from weather and climate risks.  This article is just one small component of that effort: we'd like to share with you the knowledge we've acquired in our work.
 
 # Contributors
 
