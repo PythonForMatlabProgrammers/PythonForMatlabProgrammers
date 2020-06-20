@@ -29,48 +29,55 @@ discover Python given your background in MATLAB programming.
 
 ### Objectives of this Article
 
-Because MATLAB and Python have many similarities, and because you
-already know the former, learning about the latter should come easy. The
-primary objective of this article is to provide you with a quick,
-familiar way of discovering Python. We will not try to present the
-entire Python language; we'll instead focus on those parts most
-relevant to a person coming from your background.
+Because MATLAB and Python have many similarities, and because you already know
+the former, learning about the latter should come easy. The primary objective of
+this article is to provide you with a quick, familiar way of discovering Python.
+We will not try to present the entire Python language; we'll instead focus on
+those parts most relevant to a person coming from your background.
 
-In addition to presenting the Python language we'll introduce the
-Python ecosystem, a set of libraries and tools that provides Python with
-features and capabilities you've come to enjoy with MATLAB. The Python
-ecosystem is vast, and a second objective of this article is to filter
-the ecosystem to those parts that will likely be of importance to you.
+In addition to presenting the Python language we'll introduce the Python
+ecosystem, a set of libraries and tools that provides Python with features and
+capabilities you've come to enjoy with MATLAB. The Python ecosystem is vast, and
+a second objective of this article is to filter the ecosystem to those parts
+that will likely be of importance to you.
 
-A third objective is to present you with an unbiased view of both
-languages. There are plenty of websites and articles that claim to prove
-one language is somehow *better* than the other; we find those
-discussions to be subjective, biased, and often misrepresentative of one
-or both languages. We will not suggest that you switch from one language
-to the other. We find tremendous value in MATLAB, but we also find value
-in Python. Each language has its strengths and the two products can
-interoperate. So perhaps you'll find reasons to use both languages, as
-we do.
+A third objective is to present you with an unbiased view of both languages.
+There are plenty of websites and articles that claim to prove one language is
+somehow *better* than the other; we find those discussions to be subjective,
+biased, and often misrepresentative of one or both languages. We will not
+suggest that you switch from one language to the other. We find tremendous value
+in MATLAB, but we also find value in Python. Each language has its strengths and
+the two products can interoperate. So perhaps you'll find reasons to use both
+languages, as we do.
 
-A fourth, and last objective of this article is to be as brief as
-possible. Python is already well documented, so this document strives to
-be a quick read.
+A fourth, and last objective of this article is to be as brief as possible.
+Python is already well documented, so this document strives to be a quick read.
 
 ### Contributing to this Article
 
-As just mentioned, we have a goal of keeping this article brief.  However,
-we've received many suggestions of additional material for the article, and
-we value those suggestions.  In March 2019 we open-sourced the article and published it to a
-[GitHub public repository](https://github.com/apjanke/PythonForMatlabProgrammers).
+As just mentioned, we have a goal of keeping this article brief.  However, we've
+received many suggestions of additional material for the article, and we value
+those suggestions.  In March 2019 we open-sourced the article and published it
+to a [GitHub public
+repository](https://github.com/apjanke/PythonForMatlabProgrammers).
 
-Readers are encouraged to edit or add material by submitting pull requests from the GitHub repository.  If you are not comfortable doing so but have corrections, additions, suggestions, criticisms, etc. please direct them to the authors.  We will give proper acknowledgement to all who contribute to this article.
+Readers are encouraged to edit or add material by submitting pull requests from
+the GitHub repository.  If you are not comfortable doing so but have
+corrections, additions, suggestions, criticisms, etc. please direct them to the
+authors.  We will give proper acknowledgement to all who contribute to this
+article.
 
-This article is licensed under the [Creative Commons Attribution ShareAlike 4.0 International
-License](http://creativecommons.org/licenses/by-sa/4.0/).  The article is available to download, edit, expand upon, revise, re-publish, etc. to suit your needs.  Under the terms of the Creative Commons license, you have full access to the article but the article must retain the original author's names.
+This article is licensed under the [Creative Commons Attribution ShareAlike 4.0
+International License](http://creativecommons.org/licenses/by-sa/4.0/).  The
+article is available to download, edit, expand upon, revise, re-publish, etc. to
+suit your needs.  Under the terms of the Creative Commons license, you have full
+access to the article but the article must retain the original author's names.
 
 ### Conventions
 
-We will use only a few conventions in this document, again in the name of simplicity. Code that you would enter in a Python console is prefaced by the standard `>>>` Python prompt. Continuation lines are prefaced by the standard
+We will use only a few conventions in this document, again in the name of
+simplicity. Code that you would enter in a Python console is prefaced by the
+standard `>>>` Python prompt. Continuation lines are prefaced by the standard
 `...` continuation marks.
 
 On the rare occasion that we reference an operating system, we reference only
@@ -186,9 +193,10 @@ its prompts. Note that both x86 and x86-64 versions are available. Grab whatever
 latest version is appropriate for your computer.
 
 The examples of this article were created using Python version 3.7.  None of the
-examples have been tested on earlier Python versions.  As of December 2019, Python version
-3.8 was released, and we expect that the examples to follow will be forward-compatible.  We
-thus suggest that you download and install Python version 3.7 or later.
+examples have been tested on earlier Python versions.  As of December 2019,
+Python version 3.8 was released, and we expect that the examples to follow will
+be forward-compatible.  We thus suggest that you download and install Python
+version 3.7 or later.
 
 ### Integrated Development Environments (IDEs)
 
@@ -211,10 +219,10 @@ any of a number of websites that provide a Python engine. One such website is
 [Repl.it](https://repl.it/repls/SlategreyGloomyLava). The learning curve is
 shorter with this approach, and no installations are required.
 
-For the moment, we recommend that you either use IDLE or an online Python engine.
-We will return to the IDE topic in
-the chapter titled, *The Python Ecosystem*. At that time, you'll understand why
-we suggest you delay this decision.
+For the moment, we recommend that you either use IDLE or an online Python
+engine. We will return to the IDE topic in the chapter titled, *The Python
+Ecosystem*. At that time, you'll understand why we suggest you delay this
+decision.
 
 ### Python Modules and Packages
 
@@ -285,7 +293,7 @@ required conventions.
 
 There will be times when reading this document that you'll want additional
 information on a data type, function or class. Python gives you several sources
-of help. Suppose you want information about the int() function. From a Python
+of help. Suppose you want information about the `int()` function. From a Python
 console you can type:
 
 ```python

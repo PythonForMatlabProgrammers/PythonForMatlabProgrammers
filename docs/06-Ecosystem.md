@@ -62,14 +62,14 @@ Let's talk now about importing modules and packages into your Python workspace.
     symbol table and executes any executable statements at the top of
     the module.
 
--   Each module has its own symbol table. That table is called a *global
-    table* and is used by each function in the module.  The scope of a
-    global table is its module; modules cannot see one another's global table.
+-   Each module has its own symbol table. That table is called a *global table*
+    and is used by each function in the module.  The scope of a global table is
+    its module; modules cannot see one another's global table.
 
--   Packages provide a further separation of scope. Whereas modules
-    each contain their own global variable scope (thus shielding each
-    other from variable and function name collisions), packages shield
-    one another from colliding module names.
+-   Packages provide a further separation of scope. Whereas modules each contain
+    their own global variable scope (thus shielding each other from variable and
+    function name collisions), packages shield one another from colliding module
+    names.
 
 -   Modules are imported with the *import* command.
     ```python
@@ -77,16 +77,17 @@ Let's talk now about importing modules and packages into your Python workspace.
     ```
 
     The above will import (register) the statistics module, abbreviated as stat.
-    This does not actually load the statistics functions into the current workspace.
-    Rather, the command registers the names of the functions in the module, and
-    makes them available with, e.g.,
+    This does not actually load the statistics functions into the current
+    workspace. Rather, the command registers the names of the functions in the
+    module, and makes them available with, e.g.,
     ```python
     >>> avg = stat.mean(x)
     ```
 
--   When you import a module, *all* of the functions it contains will be registered.
-    This means that a .py file can contain multiple functions, and all will
-    register.  Specific functions in a module can be imported with, e.g.,
+-   When you import a module, *all* of the functions it contains will be
+    registered. This means that a .py file can contain multiple functions, and
+    all will register.  Specific functions in a module can be imported with,
+    e.g.,    
     ```python
     >>> from statistics import mean
     ```
@@ -94,8 +95,8 @@ Let's talk now about importing modules and packages into your Python workspace.
     The above will register the mean() function but will not register the module
     name.
 
--   On startup, Python loads the modules of its standard library. The following list
-    comprehension will print the set of currently imported modules:
+-   On startup, Python loads the modules of its standard library. The following
+-   list comprehension will print the set of currently imported modules:
     ```python
     >>> import sys
     >>> [str(m) for m in sys.modules]
@@ -109,14 +110,13 @@ Let's talk now about importing modules and packages into your Python workspace.
     ```
    We'll skip the output here, as it is lengthy.
 
-To install packages, a utility called 'pip' is recommended. Here's how to use pip
-to install the matplotlib package.
+To install packages, a utility called 'pip' is recommended. Here's how to use
+pip to install the matplotlib package.
 
 Find pip.exe on your computer; this executable should have installed as part of
 the Python install. Add that directory to Windows' path variable. Just type
-'Edit Environment' in the Windows task bar and you'll find the variable
-editor. See the following link for
-[instructions](https://pip.pypa.io/en/stable/).
+'Edit Environment' in the Windows task bar and you'll find the variable editor.
+See the following link for [instructions](https://pip.pypa.io/en/stable/).
 
 In a command prompt window (Windows, not Python), enter the following:
 ```python
@@ -164,10 +164,11 @@ following command:
 ```python
 >>> import site; site.getsitepackages()
 ```
-If you know the name of a specific package you've already installed, you can obtain
-information about that package, including its installation directory. Use the following
-command entered into a Windows command window to obtain information about a package named,
-e.g., package-name:
+
+If you know the name of a specific package you've already installed, you can
+obtain information about that package, including its installation directory. Use
+the following command entered into a Windows command window to obtain
+information about a package named, e.g., package-name:
 ```python
 pip show package-name
 ```
@@ -213,9 +214,9 @@ C:> pip install numpy # Enter from a Windows terminal
 ```
 
 We'll focus on the a NumPy-specific data type called *ndarray*, which has an
-alias called *array*. This data type provides storage for a
-multi-dimensional array of homogeneous elements. Let's first create and print a
-1-d array of integers:
+alias called *array*. This data type provides storage for a multi-dimensional
+array of homogeneous elements. Let's first create and print a 1-d array of
+integers:
 ```python
 >>> import numpy as np
 >>> a = np.array([1,2,3]) # Note that we input a list.
@@ -276,8 +277,9 @@ array([[ 8, 18, 32],
        [50, 72, 98]])
 ```
 
-Now let's look at a matrix product, using the `@` operator. Rather than save and then print() the
-result, we'll skip the save and allow Python to print to the screen.
+Now let's look at a matrix product, using the `@` operator. Rather than save and
+then print() the result, we'll skip the save and allow Python to print to the
+screen.
 ```python
 >>> a = np.array( [[1,2]
                    [3,4]])
@@ -288,12 +290,13 @@ array([10, 13],
       [22, 29])
 ```
 
-NumPy has dozens of functions with which to perform the usual array operations you
-would expect of an analytics library. You can query an array size, reshape an array, extract elements or
-slices, compute statistics such as cov, mean, std and var. With NumPy you can
-perform linear algebra operations such as transpose, inverse and multiplication.
-You can compute eigenvalues. You can sort and filter arrays. Logical operations
-include the familiar any(), all() and where() operations.
+NumPy has dozens of functions with which to perform the usual array operations
+you would expect of an analytics library. You can query an array size, reshape
+an array, extract elements or slices, compute statistics such as cov, mean, std
+and var. With NumPy you can perform linear algebra operations such as transpose,
+inverse and multiplication. You can compute eigenvalues. You can sort and filter
+arrays. Logical operations include the familiar any(), all() and where()
+operations.
 
 By default, NumPy will operate on arrays element-wise. This is a departure from
 MATLAB's vectorized operations. However, NumPy provides a vectorization feature
@@ -309,24 +312,26 @@ is the function, and how you would vectorize it.
 >>> add_v([1, 2, 3], [4, 5, 6]) # Add two vectors
 array([5, 7, 9])
 ```
+
 While it's not a core topic of this article, we should mention that NumPy offers
 a tremendous performance benefit to numeric calculations.  Calculations that you
-might compute in pure Python can run 10x to 100x faster using NumPy.  This performance
-improvement results from several key features of NumPy.  Consider the simple act of adding
-two lists.  In pure Python, each element of the list will be a pointer to an object, a float or
-an int, for example, with all of the attendent overhead of processing those objects.
-In NumPy, those lists will be reduced to arrays of a homogenous data type, with far less
-processing overhead.  Secondly, many NumPy functions are implemented in the C language,
-compiled for speed.  And thirdly, with NumPy, high-level Python for-loops get pushed down into
-the C libraries, with the latter being far faster than the former.
+might compute in pure Python can run 10x to 100x faster using NumPy.  This
+performance improvement results from several key features of NumPy.  Consider
+the simple act of adding two lists.  In pure Python, each element of the list
+will be a pointer to an object, a float or an int, for example, with all of the
+attendent overhead of processing those objects. In NumPy, those lists will be
+reduced to arrays of a homogenous data type, with far less processing overhead.
+Secondly, many NumPy functions are implemented in the C language, compiled for
+speed.  And thirdly, with NumPy, high-level Python for-loops get pushed down
+into the C libraries, with the latter being far faster than the former.
 
 NumPy has much more to offer; we simply cannot cover all of its capabilities
 here. But a bit of good news for you: with a MATLAB background you'll find that
 the [NumPy documentation](http://www.numpy.org/) is familiar, and once you read
 through its documentation you'll feel much more at ease with Python.  And if you
-don't particularly like the NumPy language syntax, keep reading to the Pandas section.
-Pandas is built on top of NumPy and provides a syntax you will be much more comfortable
-with.
+don't particularly like the NumPy language syntax, keep reading to the Pandas
+section. Pandas is built on top of NumPy and provides a syntax you will be much
+more comfortable with.
 
 ### SciPy
 
@@ -506,17 +511,31 @@ similar to what you use with MATLAB.
 <br>
 ### Full-Stack Python
 
-Full-Stack Python refers to the design and deployment of web-based applications with significant server-side functionality.
-Using nothing *but* Python and supporting Python-based libraries, one can create complex web apps which integrate into traditional websites and back-ends.  Python libraries are available for web frameworks (e.g., [Django](https://www.djangoproject.com/) and [Flask](https://flask.palletsprojects.com/)) and front-end user interfaces (e.g., [Plotly Dash](https://plotly.com/dash/)).
+Full-Stack Python refers to the design and deployment of web-based applications
+with significant server-side functionality. Using nothing *but* Python and
+supporting Python-based libraries, one can create complex web apps which
+integrate into traditional websites and back-ends.  Python libraries are
+available for web frameworks (e.g., [Django](https://www.djangoproject.com/) and
+[Flask](https://flask.palletsprojects.com/)) and front-end user interfaces
+(e.g., [Plotly Dash](https://plotly.com/dash/)).
 
-As an example, one of the authors of this article (Patterson) has written a web app for stress-testing trading portfolios comprised of options, futures, and swaps.  This app employs complex mathematical modeling, large data sets, extensive computations, and a sophisticated user interface.  The app is written completely in Python.  A screen shot is shown below, and the app is also [available online](https://aftermathematics.appspot.com/riskmanager/).
+As an example, one of the authors of this article (Patterson) has written a web
+app for stress-testing trading portfolios comprised of options, futures, and
+swaps.  This app employs complex mathematical modeling, large data sets,
+extensive computations, and a sophisticated user interface.  The app is written
+completely in Python.  A screen shot is shown below, and the app is also
+[available online](https://aftermathematics.appspot.com/riskmanager/).
 
 <div style="text-align: center;">
 <img src="media/RiskManager.png">
 </div>
 <br>
 
-As shown above, Python can handle both the front-end and back-end of a web app, and also everything in between, such as analytics and database access.  Rather than belabor this topic, we'll refer you to an excellent online resource called, appropriately, [Full Stack Python](https://www.fullstackpython.com/) written by Matt Makai.
+As shown above, Python can handle both the front-end and back-end of a web app,
+and also everything in between, such as analytics and database access.  Rather
+than belabor this topic, we'll refer you to an excellent online resource called,
+appropriately, [Full Stack Python](https://www.fullstackpython.com/) written by
+Matt Makai.
 
 ### MATLAB and Python, Together
 
@@ -535,11 +554,11 @@ the MATLAB instance, invoke functions, and return results.
 
 Why, you might ask, would you want to call MATLAB scripts from Python? We think
 there are several use cases. The first is one of deployment. Suppose you have
-analytics functionality built in MATLAB but want to deploy those analyses on the web. Python
-has, though we've not discussed it here, state-of-the-art GUI toolkits that can
-easily be deployed on AWS, the Google Computing Platform or otherwise. You can
-construct your analytics front-end in Python, allowing it to communicate with
-your MATLAB-based back-end library.
+analytics functionality built in MATLAB but want to deploy those analyses on the
+web. Python has, though we've not discussed it here, state-of-the-art GUI
+toolkits that can easily be deployed on AWS, the Google Computing Platform or
+otherwise. You can construct your analytics front-end in Python, allowing it to
+communicate with your MATLAB-based back-end library.
 
 A second use case is one of developer efficiency. The knowledge you've obtained
 in MATLAB continues to be valuable: you may have an extensive library of M-code
@@ -578,10 +597,11 @@ The authors sometimes use the community (free) version of
 free) version. PyCharm provides code completion, code formatting, syntax
 highlighting, runtime error checking, project navigation, debugging, and a slick
 interface. PyCharm integrates with several source control libraries, unit
-testing frameworks, databases, virtul environments and the [PyPy](http://packages.pypy.org/) package
-management library. PyCharm also integrates with the scientific libraries we've
-discussed in this article and supports the IPython magic commands. PyCharm is
-every bit as sophisticated as the MATLAB IDE, and even more so.
+testing frameworks, databases, virtul environments and the
+[PyPy](http://packages.pypy.org/) package management library. PyCharm also
+integrates with the scientific libraries we've discussed in this article and
+supports the IPython magic commands. PyCharm is every bit as sophisticated as
+the MATLAB IDE, and even more so.
 
 If you happen to use Visual Studio, you can stay with that editor as it
 supports Python. And if you're more of a command-line person, have a look at

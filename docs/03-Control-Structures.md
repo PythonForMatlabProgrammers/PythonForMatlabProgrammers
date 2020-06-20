@@ -47,8 +47,8 @@ syntax changes.
     ...   print(x)
     ```
 
-    The above will print 'a', 'b', 'c', 'd' on separate lines. The same construct
-    works with lists:
+    The above will print 'a', 'b', 'c', 'd' on separate lines. The same
+    construct works with lists:
 
     ```python
     >>> names = ['Dave', 'John', 'Mark']
@@ -74,19 +74,19 @@ syntax changes.
     2 Mark
     ```
 
-    The `range` function will return the sequence of values 0, 1, ..., N-1. We'll
-see later that `range` is an *iterable* object.
+    The `range` function will return the sequence of values 0, 1, ..., N-1.
+    We'll see later that `range` is an *iterable* object.
 
-    Using the `enumerate` function, we can simplify the above loop and obtain the
-loop counter:
+    Using the `enumerate` function, we can simplify the above loop and obtain
+    the loop counter:
 
     ```python
     >> for i, v in enumerate(names):
     ...  print(i,v)
     ```
 
-    When the list to print is instead a dictionary, an `items` method
-    performs much the same role as the `enumerate` function:
+    When the list to print is instead a dictionary, an `items` method performs
+    much the same role as the `enumerate` function:
 
     ```python
     >>> names = {1: 'Dave', 2: 'John', 3: 'Mark'}
@@ -94,17 +94,17 @@ loop counter:
     ...   print(key,val)
     ```
 
--   Within looping constructs, Python supports the usual `break` and
-    `continue` statements.
+-   Within looping constructs, Python supports the usual `break` and `continue`
+-   statements.
 
 -   Within for-loops, Python also supports an `else` clause: the else block will
     execute when the iterable has been exhausted, but not following a break
     statement. While-loops also support an else clause; here, the else block
     will execute when the while conditional becomes false.
 
-Those are the core, familiar control constructs.  Again,
-the Python language is intended to be lightweight.  Let's
-move on to a construct that may not be familiar to you.
+Those are the core, familiar control constructs.  Again, the Python language is
+intended to be lightweight.  Let's move on to a construct that may not be
+familiar to you.
 
 ### List Comprehensions
 
@@ -175,15 +175,16 @@ iterable.
 
 -   Lastly, it is possible to employ an if-else in list comprehensions. This is
     achieved though Python's [ternary
-    conditional](https://docs.python.org/3/reference/expressions.html#conditional-expressions), an expression which takes the form:
+    conditional](https://docs.python.org/3/reference/expressions.html#conditional-expressions),
+    an expression which takes the form:
 
     ```python
     >>> x if C else y # C is a conditional expression
     ```
 
-    For example, suppose you have a dictionary d with a mix of integers, doubles and
-strings. If you want to convert all of the numeric types to type double, but
-leave the strings alone, the following will work:
+    For example, suppose you have a dictionary d with a mix of integers, doubles
+    and strings. If you want to convert all of the numeric types to type double,
+    but leave the strings alone, the following will work:
 
     ```python
     >>> d = {x: (float(d[x]) if d[x]*0 == 0 else d[x]) for x in d.keys()}
@@ -209,7 +210,7 @@ its data set one element at a time. Such an object is called an *iterable*.
 -   User-defined classes can be made iterable.
 
 -   Iterables produce *iterators*, and it's an iterator that produces an
-    object's elements.
+-   object's elements.
 
 -   Iterators have several methods defined for them, but the one you should know
     about is the `next` method, which returns the next item in a list. Once a
@@ -279,23 +280,27 @@ quite a bit of coding involved with iterables, and computational overhead too.
 are two types of generators.
 
 -   First is a *generator function*, which is a user-defined function that
-    provides a sequence much like an iterable does. In deference to space contraints, we'll skip
-    an example here, and just describe what a generator function does.
+    provides a sequence much like an iterable does. In deference to space
+    contraints, we'll skip an example here, and just describe what a generator
+    function does.
 
-    A typical function performs
-    computations and then returns a result.  A generator function is nearly identical in structure, but
-    ends with a *yield* statement rather than a *return* statement.  The yield statement interrupts a loop,
-    e.g., a for-loop or a while-loop, and returns one item of a sequence.  The function state is held in
-    memory; any subsequent call to the function produces the next item of that sequence.  This process of
-    generating sequence items continues until the sequence is exhausted.  Generator functions are useful
-    because they are highly efficient both in computational performance and memory usage.
+    A typical function performs computations and then returns a result.  A
+    generator function is nearly identical in structure, but ends with a *yield*
+    statement rather than a *return* statement.  The yield statement interrupts
+    a loop, e.g., a for-loop or a while-loop, and returns one item of a
+    sequence.  The function state is held in memory; any subsequent call to the
+    function produces the next item of that sequence.  This process of
+    generating sequence items continues until the sequence is exhausted.
+    Generator functions are useful because they are highly efficient both in
+    computational performance and memory usage.
 
 -   The second type of generator is the *generator expression*. These employ
     list comprehensions and iterables to create an expression which can later be
     executed.
 
-    In the following example, the first line produces, but does not execute, a generator object.
-    The second line executes the generator object, saving the results as a list.
+    In the following example, the first line produces, but does not execute, a
+    generator object. The second line executes the generator object, saving the
+    results as a list.
 
     ```python
     >>> squares = (x*x for x in range(1,5))
@@ -303,9 +308,9 @@ are two types of generators.
     [1, 4, 9, 16]
     ```
 
-    The first line of the above code looks like a listcomp, but it uses () rather
-    than [], and that tells Python to create a generator. As before with iterators,
-    we can iterate through a generator:
+    The first line of the above code looks like a listcomp, but it uses ()
+    rather than [], and that tells Python to create a generator. As before with
+    iterators, we can iterate through a generator:
 
     ```python
     >>> squares = (x*x for x in range(1,3))
@@ -380,18 +385,20 @@ in Python.
       """ doc string """
       # we'll skip the function's code for now
     ```
-    Default values are evaluated only once, and only at the point of the function
-definition. As in the above, the arguments with default values must follow any
-positional arguments. When defaults are given, those arguments become optional
-for the caller.
 
--   Functions can be called with keyword arguments. E.g., to call the
-    function just defined we could type:
+    Default values are evaluated only once, and only at the point of the
+    function definition. As in the above, the arguments with default values must
+    follow any positional arguments. When defaults are given, those arguments
+    become optional for the caller.
+
+-   Functions can be called with keyword arguments. E.g., to call the function
+-   just defined we could type:
     ```python
     >>> input_name(prompt='Your name?', retries=10, reminder='Try again')
     ```
-    Once a keyword argument is provided, all remaining arguments (if
-    provided) must also be keyword arguments.
+
+    Once a keyword argument is provided, all remaining arguments (if provided)
+    must also be keyword arguments.
 
 -   Function signatures are quite robust. Following positional arguments and
     arguments with defaults, one can pass an arbitrary number of arguments with
@@ -400,12 +407,12 @@ for the caller.
     def fun(arg1, arg2='test', *args):
     ```
     This is similar to MATLAB's vararg input. In the caller, following the
-positional and keyword arguments, one can pass an arbitrary set of
-comma-separated values. Inside the called function, the `*args` inputs will
-automatically be packed into a tuple named `args` (in this example).
+    positional and keyword arguments, one can pass an arbitrary set of
+    comma-separated values. Inside the called function, the `*args` inputs will
+    automatically be packed into a tuple named `args` (in this example).
 
--   Expanding upon the above signature, one can also specify that a
-    function is to receive an arbitrary number of keyword arguments:
+-   Expanding upon the above signature, one can also specify that a function is
+-   to receive an arbitrary number of keyword arguments:
     ```python
     def fun(arg1, arg2='test', *args, **kwargs):
     ```
@@ -445,8 +452,7 @@ automatically be packed into a tuple named `args` (in this example).
     >>> x = [0, 3]
     >>> list(range(*x))
     ```
-    Dictionaries can also be unpacked, and that syntax uses a double
-    star.
+    Dictionaries can also be unpacked, and that syntax uses a double star.
 
 -   The execution of a function introduces a new symbol table used for the local
     variables of the function. Variable references in a function first look in
@@ -470,8 +476,9 @@ automatically be packed into a tuple named `args` (in this example).
     File: c:usersownerdocumentspython...
     Type: function
     ```
-    Define a second function, which accepts the first function (or any function) as
-    an argument:
+
+    Define a second function, which accepts the first function (or any function)
+    as an argument:
     ```python
     >>> def g(fun, x): # Pass a function into a function
     ...   return 2*fun(x)
@@ -493,8 +500,8 @@ automatically be packed into a tuple named `args` (in this example).
     100
     ```
     Such functions are commonly referred to as *lambda functions* or *lambda
-expressions*. As with nested functions, lambda functions can reference variables
-of the containing scope:
+    expressions*. As with nested functions, lambda functions can reference
+    variables of the containing scope:
     ```python
     >>> def divideby(x):
     ...   return lambda y: x/y
@@ -505,24 +512,27 @@ of the containing scope:
     >>> divide10by(5)
     2
     ```
-    As mentioned earlier, functions are objects and can be passed around like data.
-This is powerful, and it will take some getting used to. Consider the following
-example, where we have a list of strings and we want to sort them, ascending
-order, by the number of unique characters in each string.
+
+    As mentioned earlier, functions are objects and can be passed around like
+    data. This is powerful, and it will take some getting used to. Consider the
+    following example, where we have a list of strings and we want to sort them,
+    ascending order, by the number of unique characters in each string.
     ```python
     >>> str = ['cook', 'zoo', 'ohnoooh']
     >>> str.sort(key=lambda x: len(set(x)))
     >>> str
     ['zoo', 'cook', 'ohnoooh']
     ```    
+
     How did the above work? First, strings are a class, and that class has a
-`sort` method associated with it. The `sort` method allows a key argument, and
-we passed a `lambda` function as the value of that argument. In other words, we
-defined, on the fly, a function and then passed that function to the `sort`
-method. For each element in variable str, the lamba function converted the
-string into a set, thereby removing duplicate letters, and then computed the
-length of the remaining characters. The length of the unique characters in each
-string then became the key by which to sort the list of strings.
+    `sort` method associated with it. The `sort` method allows a key argument,
+    and we passed a `lambda` function as the value of that argument. In other
+    words, we defined, on the fly, a function and then passed that function to
+    the `sort` method. For each element in variable str, the lamba function
+    converted the string into a set, thereby removing duplicate letters, and
+    then computed the length of the remaining characters. The length of the
+    unique characters in each string then became the key by which to sort the
+    list of strings.
 
     The above is equivalent to:
     ```python
@@ -569,19 +579,19 @@ if len(x) <= 10:
 
 The above block would raise (throw, in MATLAB terms) an exception.
 
-Whereas MATLAB has try-catch blocks, Python defines try-except blocks.
-Here's a quick summary:
+Whereas MATLAB has try-catch blocks, Python defines try-except blocks. Here's a
+quick summary:
 
 -   Like warnings, each Python exception is a class. E.g., NameError or
-    TypeError. There are dozens of built-in exception classes; you'll
-    find a complete list in the [Python Standard Library
+    TypeError. There are dozens of built-in exception classes; you'll find a
+    complete list in the [Python Standard Library
     documentation](https://docs.python.org/3/library/exceptions.html).
 
 -   Exceptions can be user-defined and will derive from the built-in
     *Exception* class.
 
--   Try-except blocks have added functionality compared to MATLAB. The
-    outline of a try-except block looks like:
+-   Try-except blocks have added functionality compared to MATLAB. The outline
+-   of a try-except block looks like:
     ```python
     try:
       # code
@@ -604,8 +614,8 @@ Here's a quick summary:
     except:
       raise Exception('Looks like z was equal to zero')
     ```
-    However, when you are monitoring for and handling specific types of errors, use
-    of a built-in or user-defined exception class is recommended. E.g.,
+    However, when you are monitoring for and handling specific types of errors,
+    use of a built-in or user-defined exception class is recommended. E.g.,
     ```python
     try:
       x = y / z
@@ -616,11 +626,12 @@ Here's a quick summary:
 -   As with MATLAB's throw() function, use Python's raise() function to issue an
     exception. Any associated arguments are available to the exception instance.
 
--   While Python provides a long list of built-in exceptions you can catch, there will
-    be times when you won't be able to anticipate a specific error type.  Perhaps you are
-    interacting with the operating system, or a database, and the possible exceptions are
-    too broad in type to catch with a narrowly-focused built-in exception.  For these instances
-    you can use an exception base class.  E.g.,
+-   While Python provides a long list of built-in exceptions you can catch,
+    there will be times when you won't be able to anticipate a specific error
+    type.  Perhaps you are interacting with the operating system, or a database,
+    and the possible exceptions are too broad in type to catch with a
+    narrowly-focused built-in exception.  For these instances you can use an
+    exception base class.  E.g.,
     ```python
     try:
       x = some_function()
@@ -641,8 +652,8 @@ Here's a quick summary:
 -   Some objects have pre-defined clean-up actions that can occur regardless of
     any exception thrown (or not). An example is the opening of a file. A
     [`with`](https://docs.python.org/3/reference/compound_stmts.html#with)
-    statement will ensure that pre-defined actions occur even if not explicitly requested.
-    For example:
+    statement will ensure that pre-defined actions occur even if not explicitly
+    requested. For example:
     ```python
     with open('some_file.csv') as file:
       for line in file:

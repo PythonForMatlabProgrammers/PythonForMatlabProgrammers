@@ -55,7 +55,8 @@ but add-on libraries will fill any voids you may notice.
 MATLAB and Python have many similarities in their Boolean types.
 
 -   Python provides a Boolean data type which can assume either of two values:
-    True or False. Note that each value is capitalized. Booleans are a subtype of integers.
+    True or False. Note that each value is capitalized. Booleans are a subtype
+    of integers.
 
 -   As with MATLAB, Python provides Boolean operators: _and_, _or_ and _not_.
 
@@ -154,7 +155,8 @@ return to the topics of vectors and arrays.
     The above example illustrates two departures from MATLAB conventions. First,
     Python uses zero-based indexing on all sequence types; MATLAB uses one-based
     indexing. Secondly, Python uses square brackets to encapsulate its indices;
-    MATLAB uses parentheses. MATLAB is a bit of an outlier here, as most programming languages follow the Python conventions.
+    MATLAB uses parentheses. MATLAB is a bit of an outlier here, as most
+    programming languages follow the Python conventions.
 
 Use of square brackets is a helpful convention, as the brackets distinguish
 indexing from function or method calls. This is just one of many Python
@@ -210,7 +212,7 @@ provides.
     'a'
     ```
 
--   Multi-element indexing is called *slicing*, e.g., str[0:2].
+-   Multi-element indexing is called *slicing*, e.g., `str[0:2]`.
 
     ```python
     >>> str = 'ThisIsATest'
@@ -227,7 +229,8 @@ provides.
     TypeError: 'str' object does not support item assignment
     ```
 
--   To alter a string, concatenate the elements you wish to retain with any new text.  The following will work:
+-   To alter a string, concatenate the elements you wish to retain with any new
+-   text.  The following will work:
 
     ```python
     >>> str = 'A' + str[1:3]
@@ -368,7 +371,8 @@ separations and trailing comma are removed. E.g.,
     [1, 2]
     ```
 
--   Recall that strings are concatenated with the '+' symbol.  Lists are concatenated the same way.  E.g.,
+-   Recall that strings are concatenated with the '+' symbol.  Lists are
+-   concatenated the same way.  E.g.,
 
     ```python
     >>> x = [0, 1, 2, 3, 4]
@@ -594,7 +598,10 @@ equivalent:
 >>> string = 'abc'
 >>> string = str(object='abc')
 ```
-In the first line above, 'abc' is considered a *literal.*  Literals produce data types; in the above, the literal is a shortcut way to produce a string.  Many of Python's built-in classes have literal representations.  These include:
+
+In the first line above, 'abc' is considered a *literal.*  Literals produce data
+types; in the above, the literal is a shortcut way to produce a string.  Many of
+Python's built-in classes have literal representations.  These include:
 
 
 | Type       | Constructor | Literal Examples |

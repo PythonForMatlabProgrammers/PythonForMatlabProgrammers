@@ -70,48 +70,55 @@ discover Python given your background in MATLAB programming.
 
 ### Objectives of this Article
 
-Because MATLAB and Python have many similarities, and because you
-already know the former, learning about the latter should come easy. The
-primary objective of this article is to provide you with a quick,
-familiar way of discovering Python. We will not try to present the
-entire Python language; we'll instead focus on those parts most
-relevant to a person coming from your background.
+Because MATLAB and Python have many similarities, and because you already know
+the former, learning about the latter should come easy. The primary objective of
+this article is to provide you with a quick, familiar way of discovering Python.
+We will not try to present the entire Python language; we'll instead focus on
+those parts most relevant to a person coming from your background.
 
-In addition to presenting the Python language we'll introduce the
-Python ecosystem, a set of libraries and tools that provides Python with
-features and capabilities you've come to enjoy with MATLAB. The Python
-ecosystem is vast, and a second objective of this article is to filter
-the ecosystem to those parts that will likely be of importance to you.
+In addition to presenting the Python language we'll introduce the Python
+ecosystem, a set of libraries and tools that provides Python with features and
+capabilities you've come to enjoy with MATLAB. The Python ecosystem is vast, and
+a second objective of this article is to filter the ecosystem to those parts
+that will likely be of importance to you.
 
-A third objective is to present you with an unbiased view of both
-languages. There are plenty of websites and articles that claim to prove
-one language is somehow *better* than the other; we find those
-discussions to be subjective, biased, and often misrepresentative of one
-or both languages. We will not suggest that you switch from one language
-to the other. We find tremendous value in MATLAB, but we also find value
-in Python. Each language has its strengths and the two products can
-interoperate. So perhaps you'll find reasons to use both languages, as
-we do.
+A third objective is to present you with an unbiased view of both languages.
+There are plenty of websites and articles that claim to prove one language is
+somehow *better* than the other; we find those discussions to be subjective,
+biased, and often misrepresentative of one or both languages. We will not
+suggest that you switch from one language to the other. We find tremendous value
+in MATLAB, but we also find value in Python. Each language has its strengths and
+the two products can interoperate. So perhaps you'll find reasons to use both
+languages, as we do.
 
-A fourth, and last objective of this article is to be as brief as
-possible. Python is already well documented, so this document strives to
-be a quick read.
+A fourth, and last objective of this article is to be as brief as possible.
+Python is already well documented, so this document strives to be a quick read.
 
 ### Contributing to this Article
 
-As just mentioned, we have a goal of keeping this article brief.  However,
-we've received many suggestions of additional material for the article, and
-we value those suggestions.  In March 2019 we open-sourced the article and published it to a
-[GitHub public repository](https://github.com/apjanke/PythonForMatlabProgrammers).
+As just mentioned, we have a goal of keeping this article brief.  However, we've
+received many suggestions of additional material for the article, and we value
+those suggestions.  In March 2019 we open-sourced the article and published it
+to a [GitHub public
+repository](https://github.com/apjanke/PythonForMatlabProgrammers).
 
-Readers are encouraged to edit or add material by submitting pull requests from the GitHub repository.  If you are not comfortable doing so but have corrections, additions, suggestions, criticisms, etc. please direct them to the authors.  We will give proper acknowledgement to all who contribute to this article.
+Readers are encouraged to edit or add material by submitting pull requests from
+the GitHub repository.  If you are not comfortable doing so but have
+corrections, additions, suggestions, criticisms, etc. please direct them to the
+authors.  We will give proper acknowledgement to all who contribute to this
+article.
 
-This article is licensed under the [Creative Commons Attribution ShareAlike 4.0 International
-License](http://creativecommons.org/licenses/by-sa/4.0/).  The article is available to download, edit, expand upon, revise, re-publish, etc. to suit your needs.  Under the terms of the Creative Commons license, you have full access to the article but the article must retain the original author's names.
+This article is licensed under the [Creative Commons Attribution ShareAlike 4.0
+International License](http://creativecommons.org/licenses/by-sa/4.0/).  The
+article is available to download, edit, expand upon, revise, re-publish, etc. to
+suit your needs.  Under the terms of the Creative Commons license, you have full
+access to the article but the article must retain the original author's names.
 
 ### Conventions
 
-We will use only a few conventions in this document, again in the name of simplicity. Code that you would enter in a Python console is prefaced by the standard `>>>` Python prompt. Continuation lines are prefaced by the standard
+We will use only a few conventions in this document, again in the name of
+simplicity. Code that you would enter in a Python console is prefaced by the
+standard `>>>` Python prompt. Continuation lines are prefaced by the standard
 `...` continuation marks.
 
 On the rare occasion that we reference an operating system, we reference only
@@ -227,9 +234,10 @@ its prompts. Note that both x86 and x86-64 versions are available. Grab whatever
 latest version is appropriate for your computer.
 
 The examples of this article were created using Python version 3.7.  None of the
-examples have been tested on earlier Python versions.  As of December 2019, Python version
-3.8 was released, and we expect that the examples to follow will be forward-compatible.  We
-thus suggest that you download and install Python version 3.7 or later.
+examples have been tested on earlier Python versions.  As of December 2019,
+Python version 3.8 was released, and we expect that the examples to follow will
+be forward-compatible.  We thus suggest that you download and install Python
+version 3.7 or later.
 
 ### Integrated Development Environments (IDEs)
 
@@ -252,10 +260,10 @@ any of a number of websites that provide a Python engine. One such website is
 [Repl.it](https://repl.it/repls/SlategreyGloomyLava). The learning curve is
 shorter with this approach, and no installations are required.
 
-For the moment, we recommend that you either use IDLE or an online Python engine.
-We will return to the IDE topic in
-the chapter titled, *The Python Ecosystem*. At that time, you'll understand why
-we suggest you delay this decision.
+For the moment, we recommend that you either use IDLE or an online Python
+engine. We will return to the IDE topic in the chapter titled, *The Python
+Ecosystem*. At that time, you'll understand why we suggest you delay this
+decision.
 
 ### Python Modules and Packages
 
@@ -326,7 +334,7 @@ required conventions.
 
 There will be times when reading this document that you'll want additional
 information on a data type, function or class. Python gives you several sources
-of help. Suppose you want information about the int() function. From a Python
+of help. Suppose you want information about the `int()` function. From a Python
 console you can type:
 
 ```python
@@ -352,6 +360,7 @@ websites.
 
 [^1]: MATLAB® and Simulink are registered trademarks of The MathWorks,
     Inc.
+<br>
 <br>
 <br>
 
@@ -408,7 +417,8 @@ but add-on libraries will fill any voids you may notice.
 MATLAB and Python have many similarities in their Boolean types.
 
 -   Python provides a Boolean data type which can assume either of two values:
-    True or False. Note that each value is capitalized. Booleans are a subtype of integers.
+    True or False. Note that each value is capitalized. Booleans are a subtype
+    of integers.
 
 -   As with MATLAB, Python provides Boolean operators: _and_, _or_ and _not_.
 
@@ -507,7 +517,8 @@ return to the topics of vectors and arrays.
     The above example illustrates two departures from MATLAB conventions. First,
     Python uses zero-based indexing on all sequence types; MATLAB uses one-based
     indexing. Secondly, Python uses square brackets to encapsulate its indices;
-    MATLAB uses parentheses. MATLAB is a bit of an outlier here, as most programming languages follow the Python conventions.
+    MATLAB uses parentheses. MATLAB is a bit of an outlier here, as most
+    programming languages follow the Python conventions.
 
 Use of square brackets is a helpful convention, as the brackets distinguish
 indexing from function or method calls. This is just one of many Python
@@ -563,7 +574,7 @@ provides.
     'a'
     ```
 
--   Multi-element indexing is called *slicing*, e.g., str[0:2].
+-   Multi-element indexing is called *slicing*, e.g., `str[0:2]`.
 
     ```python
     >>> str = 'ThisIsATest'
@@ -580,7 +591,8 @@ provides.
     TypeError: 'str' object does not support item assignment
     ```
 
--   To alter a string, concatenate the elements you wish to retain with any new text.  The following will work:
+-   To alter a string, concatenate the elements you wish to retain with any new
+-   text.  The following will work:
 
     ```python
     >>> str = 'A' + str[1:3]
@@ -721,7 +733,8 @@ separations and trailing comma are removed. E.g.,
     [1, 2]
     ```
 
--   Recall that strings are concatenated with the '+' symbol.  Lists are concatenated the same way.  E.g.,
+-   Recall that strings are concatenated with the '+' symbol.  Lists are
+-   concatenated the same way.  E.g.,
 
     ```python
     >>> x = [0, 1, 2, 3, 4]
@@ -947,7 +960,10 @@ equivalent:
 >>> string = 'abc'
 >>> string = str(object='abc')
 ```
-In the first line above, 'abc' is considered a *literal.*  Literals produce data types; in the above, the literal is a shortcut way to produce a string.  Many of Python's built-in classes have literal representations.  These include:
+
+In the first line above, 'abc' is considered a *literal.*  Literals produce data
+types; in the above, the literal is a shortcut way to produce a string.  Many of
+Python's built-in classes have literal representations.  These include:
 
 
 | Type       | Constructor | Literal Examples |
@@ -1027,8 +1043,8 @@ syntax changes.
     ...   print(x)
     ```
 
-    The above will print 'a', 'b', 'c', 'd' on separate lines. The same construct
-    works with lists:
+    The above will print 'a', 'b', 'c', 'd' on separate lines. The same
+    construct works with lists:
 
     ```python
     >>> names = ['Dave', 'John', 'Mark']
@@ -1054,19 +1070,19 @@ syntax changes.
     2 Mark
     ```
 
-    The `range` function will return the sequence of values 0, 1, ..., N-1. We'll
-see later that `range` is an *iterable* object.
+    The `range` function will return the sequence of values 0, 1, ..., N-1.
+    We'll see later that `range` is an *iterable* object.
 
-    Using the `enumerate` function, we can simplify the above loop and obtain the
-loop counter:
+    Using the `enumerate` function, we can simplify the above loop and obtain
+    the loop counter:
 
     ```python
     >> for i, v in enumerate(names):
     ...  print(i,v)
     ```
 
-    When the list to print is instead a dictionary, an `items` method
-    performs much the same role as the `enumerate` function:
+    When the list to print is instead a dictionary, an `items` method performs
+    much the same role as the `enumerate` function:
 
     ```python
     >>> names = {1: 'Dave', 2: 'John', 3: 'Mark'}
@@ -1074,17 +1090,17 @@ loop counter:
     ...   print(key,val)
     ```
 
--   Within looping constructs, Python supports the usual `break` and
-    `continue` statements.
+-   Within looping constructs, Python supports the usual `break` and `continue`
+-   statements.
 
 -   Within for-loops, Python also supports an `else` clause: the else block will
     execute when the iterable has been exhausted, but not following a break
     statement. While-loops also support an else clause; here, the else block
     will execute when the while conditional becomes false.
 
-Those are the core, familiar control constructs.  Again,
-the Python language is intended to be lightweight.  Let's
-move on to a construct that may not be familiar to you.
+Those are the core, familiar control constructs.  Again, the Python language is
+intended to be lightweight.  Let's move on to a construct that may not be
+familiar to you.
 
 ### List Comprehensions
 
@@ -1155,15 +1171,16 @@ iterable.
 
 -   Lastly, it is possible to employ an if-else in list comprehensions. This is
     achieved though Python's [ternary
-    conditional](https://docs.python.org/3/reference/expressions.html#conditional-expressions), an expression which takes the form:
+    conditional](https://docs.python.org/3/reference/expressions.html#conditional-expressions),
+    an expression which takes the form:
 
     ```python
     >>> x if C else y # C is a conditional expression
     ```
 
-    For example, suppose you have a dictionary d with a mix of integers, doubles and
-strings. If you want to convert all of the numeric types to type double, but
-leave the strings alone, the following will work:
+    For example, suppose you have a dictionary d with a mix of integers, doubles
+    and strings. If you want to convert all of the numeric types to type double,
+    but leave the strings alone, the following will work:
 
     ```python
     >>> d = {x: (float(d[x]) if d[x]*0 == 0 else d[x]) for x in d.keys()}
@@ -1189,7 +1206,7 @@ its data set one element at a time. Such an object is called an *iterable*.
 -   User-defined classes can be made iterable.
 
 -   Iterables produce *iterators*, and it's an iterator that produces an
-    object's elements.
+-   object's elements.
 
 -   Iterators have several methods defined for them, but the one you should know
     about is the `next` method, which returns the next item in a list. Once a
@@ -1259,23 +1276,27 @@ quite a bit of coding involved with iterables, and computational overhead too.
 are two types of generators.
 
 -   First is a *generator function*, which is a user-defined function that
-    provides a sequence much like an iterable does. In deference to space contraints, we'll skip
-    an example here, and just describe what a generator function does.
+    provides a sequence much like an iterable does. In deference to space
+    contraints, we'll skip an example here, and just describe what a generator
+    function does.
 
-    A typical function performs
-    computations and then returns a result.  A generator function is nearly identical in structure, but
-    ends with a *yield* statement rather than a *return* statement.  The yield statement interrupts a loop,
-    e.g., a for-loop or a while-loop, and returns one item of a sequence.  The function state is held in
-    memory; any subsequent call to the function produces the next item of that sequence.  This process of
-    generating sequence items continues until the sequence is exhausted.  Generator functions are useful
-    because they are highly efficient both in computational performance and memory usage.
+    A typical function performs computations and then returns a result.  A
+    generator function is nearly identical in structure, but ends with a *yield*
+    statement rather than a *return* statement.  The yield statement interrupts
+    a loop, e.g., a for-loop or a while-loop, and returns one item of a
+    sequence.  The function state is held in memory; any subsequent call to the
+    function produces the next item of that sequence.  This process of
+    generating sequence items continues until the sequence is exhausted.
+    Generator functions are useful because they are highly efficient both in
+    computational performance and memory usage.
 
 -   The second type of generator is the *generator expression*. These employ
     list comprehensions and iterables to create an expression which can later be
     executed.
 
-    In the following example, the first line produces, but does not execute, a generator object.
-    The second line executes the generator object, saving the results as a list.
+    In the following example, the first line produces, but does not execute, a
+    generator object. The second line executes the generator object, saving the
+    results as a list.
 
     ```python
     >>> squares = (x*x for x in range(1,5))
@@ -1283,9 +1304,9 @@ are two types of generators.
     [1, 4, 9, 16]
     ```
 
-    The first line of the above code looks like a listcomp, but it uses () rather
-    than [], and that tells Python to create a generator. As before with iterators,
-    we can iterate through a generator:
+    The first line of the above code looks like a listcomp, but it uses ()
+    rather than [], and that tells Python to create a generator. As before with
+    iterators, we can iterate through a generator:
 
     ```python
     >>> squares = (x*x for x in range(1,3))
@@ -1360,18 +1381,20 @@ in Python.
       """ doc string """
       # we'll skip the function's code for now
     ```
-    Default values are evaluated only once, and only at the point of the function
-definition. As in the above, the arguments with default values must follow any
-positional arguments. When defaults are given, those arguments become optional
-for the caller.
 
--   Functions can be called with keyword arguments. E.g., to call the
-    function just defined we could type:
+    Default values are evaluated only once, and only at the point of the
+    function definition. As in the above, the arguments with default values must
+    follow any positional arguments. When defaults are given, those arguments
+    become optional for the caller.
+
+-   Functions can be called with keyword arguments. E.g., to call the function
+-   just defined we could type:
     ```python
     >>> input_name(prompt='Your name?', retries=10, reminder='Try again')
     ```
-    Once a keyword argument is provided, all remaining arguments (if
-    provided) must also be keyword arguments.
+
+    Once a keyword argument is provided, all remaining arguments (if provided)
+    must also be keyword arguments.
 
 -   Function signatures are quite robust. Following positional arguments and
     arguments with defaults, one can pass an arbitrary number of arguments with
@@ -1380,12 +1403,12 @@ for the caller.
     def fun(arg1, arg2='test', *args):
     ```
     This is similar to MATLAB's vararg input. In the caller, following the
-positional and keyword arguments, one can pass an arbitrary set of
-comma-separated values. Inside the called function, the `*args` inputs will
-automatically be packed into a tuple named `args` (in this example).
+    positional and keyword arguments, one can pass an arbitrary set of
+    comma-separated values. Inside the called function, the `*args` inputs will
+    automatically be packed into a tuple named `args` (in this example).
 
--   Expanding upon the above signature, one can also specify that a
-    function is to receive an arbitrary number of keyword arguments:
+-   Expanding upon the above signature, one can also specify that a function is
+-   to receive an arbitrary number of keyword arguments:
     ```python
     def fun(arg1, arg2='test', *args, **kwargs):
     ```
@@ -1425,8 +1448,7 @@ automatically be packed into a tuple named `args` (in this example).
     >>> x = [0, 3]
     >>> list(range(*x))
     ```
-    Dictionaries can also be unpacked, and that syntax uses a double
-    star.
+    Dictionaries can also be unpacked, and that syntax uses a double star.
 
 -   The execution of a function introduces a new symbol table used for the local
     variables of the function. Variable references in a function first look in
@@ -1450,8 +1472,9 @@ automatically be packed into a tuple named `args` (in this example).
     File: c:usersownerdocumentspython...
     Type: function
     ```
-    Define a second function, which accepts the first function (or any function) as
-    an argument:
+
+    Define a second function, which accepts the first function (or any function)
+    as an argument:
     ```python
     >>> def g(fun, x): # Pass a function into a function
     ...   return 2*fun(x)
@@ -1473,8 +1496,8 @@ automatically be packed into a tuple named `args` (in this example).
     100
     ```
     Such functions are commonly referred to as *lambda functions* or *lambda
-expressions*. As with nested functions, lambda functions can reference variables
-of the containing scope:
+    expressions*. As with nested functions, lambda functions can reference
+    variables of the containing scope:
     ```python
     >>> def divideby(x):
     ...   return lambda y: x/y
@@ -1485,24 +1508,27 @@ of the containing scope:
     >>> divide10by(5)
     2
     ```
-    As mentioned earlier, functions are objects and can be passed around like data.
-This is powerful, and it will take some getting used to. Consider the following
-example, where we have a list of strings and we want to sort them, ascending
-order, by the number of unique characters in each string.
+
+    As mentioned earlier, functions are objects and can be passed around like
+    data. This is powerful, and it will take some getting used to. Consider the
+    following example, where we have a list of strings and we want to sort them,
+    ascending order, by the number of unique characters in each string.
     ```python
     >>> str = ['cook', 'zoo', 'ohnoooh']
     >>> str.sort(key=lambda x: len(set(x)))
     >>> str
     ['zoo', 'cook', 'ohnoooh']
     ```    
+
     How did the above work? First, strings are a class, and that class has a
-`sort` method associated with it. The `sort` method allows a key argument, and
-we passed a `lambda` function as the value of that argument. In other words, we
-defined, on the fly, a function and then passed that function to the `sort`
-method. For each element in variable str, the lamba function converted the
-string into a set, thereby removing duplicate letters, and then computed the
-length of the remaining characters. The length of the unique characters in each
-string then became the key by which to sort the list of strings.
+    `sort` method associated with it. The `sort` method allows a key argument,
+    and we passed a `lambda` function as the value of that argument. In other
+    words, we defined, on the fly, a function and then passed that function to
+    the `sort` method. For each element in variable str, the lamba function
+    converted the string into a set, thereby removing duplicate letters, and
+    then computed the length of the remaining characters. The length of the
+    unique characters in each string then became the key by which to sort the
+    list of strings.
 
     The above is equivalent to:
     ```python
@@ -1549,19 +1575,19 @@ if len(x) <= 10:
 
 The above block would raise (throw, in MATLAB terms) an exception.
 
-Whereas MATLAB has try-catch blocks, Python defines try-except blocks.
-Here's a quick summary:
+Whereas MATLAB has try-catch blocks, Python defines try-except blocks. Here's a
+quick summary:
 
 -   Like warnings, each Python exception is a class. E.g., NameError or
-    TypeError. There are dozens of built-in exception classes; you'll
-    find a complete list in the [Python Standard Library
+    TypeError. There are dozens of built-in exception classes; you'll find a
+    complete list in the [Python Standard Library
     documentation](https://docs.python.org/3/library/exceptions.html).
 
 -   Exceptions can be user-defined and will derive from the built-in
     *Exception* class.
 
--   Try-except blocks have added functionality compared to MATLAB. The
-    outline of a try-except block looks like:
+-   Try-except blocks have added functionality compared to MATLAB. The outline
+-   of a try-except block looks like:
     ```python
     try:
       # code
@@ -1584,8 +1610,8 @@ Here's a quick summary:
     except:
       raise Exception('Looks like z was equal to zero')
     ```
-    However, when you are monitoring for and handling specific types of errors, use
-    of a built-in or user-defined exception class is recommended. E.g.,
+    However, when you are monitoring for and handling specific types of errors,
+    use of a built-in or user-defined exception class is recommended. E.g.,
     ```python
     try:
       x = y / z
@@ -1596,11 +1622,12 @@ Here's a quick summary:
 -   As with MATLAB's throw() function, use Python's raise() function to issue an
     exception. Any associated arguments are available to the exception instance.
 
--   While Python provides a long list of built-in exceptions you can catch, there will
-    be times when you won't be able to anticipate a specific error type.  Perhaps you are
-    interacting with the operating system, or a database, and the possible exceptions are
-    too broad in type to catch with a narrowly-focused built-in exception.  For these instances
-    you can use an exception base class.  E.g.,
+-   While Python provides a long list of built-in exceptions you can catch,
+    there will be times when you won't be able to anticipate a specific error
+    type.  Perhaps you are interacting with the operating system, or a database,
+    and the possible exceptions are too broad in type to catch with a
+    narrowly-focused built-in exception.  For these instances you can use an
+    exception base class.  E.g.,
     ```python
     try:
       x = some_function()
@@ -1621,8 +1648,8 @@ Here's a quick summary:
 -   Some objects have pre-defined clean-up actions that can occur regardless of
     any exception thrown (or not). An example is the opening of a file. A
     [`with`](https://docs.python.org/3/reference/compound_stmts.html#with)
-    statement will ensure that pre-defined actions occur even if not explicitly requested.
-    For example:
+    statement will ensure that pre-defined actions occur even if not explicitly
+    requested. For example:
     ```python
     with open('some_file.csv') as file:
       for line in file:
@@ -1819,30 +1846,29 @@ prerequisites for understanding classes.
 -   At any time during program execution, at least three scopes are in
     effect. From the innermost scope to the outermost, these are:
 
-    1.  The innermost scope is that of any embedded function (a function embedded in an
-        enclosing function). When Python is trying to resolve a
-        reference, this innermost scope of local names is searched
-        first.
+    1.  The innermost scope is that of any embedded function (a function embedded in
+  an enclosing function). When Python is trying to resolve a reference, this
+  innermost scope of local names is searched first.
 
-    2.  The scopes of enclosing functions, containing non-local, but
-        also non-global names is the second-most inner scope. When resolving references, this scope is
-        searched second.
+    2.  The scopes of enclosing functions, containing non-local, but also
+    non-global names is the second-most inner scope. When resolving references,
+    this scope is searched second.
 
-    3.  The next to last scope (the *middle,* or *global scope*)
-        contains a module's global names.
+    3.  The next to last scope (the *middle,* or *global scope*) contains a
+    module's global names.
 
-    4.  The outermost scope (searched last) is the namespace containing
-        built-in names.
+    4.  The outermost scope (searched last) is the namespace containing built-in
+    names.
 
--   Variables can be declared *global*, in which case they will reside
-    in the middle scope.  These variables  will not be shared across modules.
+-   Variables can be declared *global*, in which case they will reside in the
+-   middle scope.  These variables  will not be shared across modules.
 
 -   Within the four scopes, variables flow from the outer scopes into the inner
     scopes.  That is, a variable declared in an outer scope can be referenced in
-    an inner scope.  The converse is not true; variables defined in an inner scope
-    cannot be referenced in an outer scope.  To alter this latter behaviour, variables
-    in an inner scope can be declared *nonlocal*, whereby they will pass by reference
-    into any outer scope.
+    an inner scope.  The converse is not true; variables defined in an inner
+    scope cannot be referenced in an outer scope.  To alter this latter
+    behaviour, variables in an inner scope can be declared *nonlocal*, whereby
+    they will pass by reference into any outer scope.
 
 ### Classes
 
@@ -1879,125 +1905,122 @@ has a class attribute:
 <class 'int'>
 ```
 
--   Classes are defined with a straightforward syntax. In the following
-    example code, we define a class, a docstring, an instantiation method,
-    and then two class methods:
-    ```python
-    class MyClass:
-            """A sample class definition"""         # Like MATLAB's H1 line
+Classes are defined with a straightforward syntax. In the following
+example code, we define a class, a docstring, an instantiation method,
+and then two class methods:
+```python
+class MyClass:
+        """A sample class definition"""         # Like MATLAB's H1 line
 
-            def __init__(self):      # A constructor
-                self.mydata = []
+        def __init__(self):      # A constructor
+            self.mydata = []
 
-            def method1(self):
-                self.mydata = 3.14159
+        def method1(self):
+            self.mydata = 3.14159
 
-            def method2(self):
-                self.mydata = 3.14159 / 2
-    ```
+        def method2(self):
+            self.mydata = 3.14159 / 2
+```
 
--   Class objects support only two kinds of operations: attribute references and
-    instantiation. Let's look first at attribute references. Consider the
-    following class definition which defines one attribute and one method:
-    ```python
-    class MyClass:
-            """Doc String"""
-            x = 3.140
+Class objects support only two kinds of operations: attribute references and
+instantiation. Let's look first at attribute references. Consider the
+following class definition which defines one attribute and one method:
+```python
+class MyClass:
+        """Doc String"""
+        x = 3.140
 
-            def f(self,StringToPrint):
-            print(StringToPrint)
-    ```
-    You'll need to save the above into a .py file.  You can choose any name for the
-    file; let's use simple.py.  Back in the Python console window, we can type the
-    following:
+        def f(self,StringToPrint):
+        print(StringToPrint)
+```
+You'll need to save the above into a .py file.  You can choose any name for the
+file; let's use simple.py.  Back in the Python console window, we can type the
+following:
 
-    ```python
-    >>> import simple
-    >>> obj = simple.MyClass()
-    >>> obj.x
-    3.14
-    >>> obj.f('test')
-    'test'
-    ```
-    Both the attribute and the method are referenced with the same
-    notation. Use of the variable 'self' as the first argument to the
-    above method is only a convention; this is, however, the standard
-    convention.
+```python
+>>> import simple
+>>> obj = simple.MyClass()
+>>> obj.x
+3.14
+>>> obj.f('test')
+'test'
+```
+Both the attribute and the method are referenced with the same notation. Use of
+the variable 'self' as the first argument to the above method is only a
+convention; this is, however, the standard convention.
 
--   Now let's look at an instantiation operation. Python uses a
-    specifically named method for instantiation, called
-    `__init__`, as per the following example:
-    ```python
-    def __init__(self, day, activity):
-        self.weekday = day
-        self.activity = activity
-    ```
-    When an `__init__` method is placed into a class definition, it is
-    automatically invoked when the class is first instantiated.
+Now let's look at an instantiation operation. Python uses a specifically named
+method for instantiation, called `__init__`, as per the following example:
+```python
+def __init__(self, day, activity):
+    self.weekday = day
+    self.activity = activity
+```
+When an `__init__` method is placed into a class definition, it is automatically
+invoked when the class is first instantiated.
 
--   Python supports class inheritance. The syntax is simply:
-    ```python
-    class SubClassName(BaseClassName):
-    ```
-    In the above, BaseClassName must be in scope. If it is not, one can
-    instead use:
-    ```python
-    class SubClassName(ModuleName.BaseClassName):
-    ```
-    Subclass methods may either override or extend base class methods of the same
-    name. To call a super-class method from a subclass, use super(). For example, if
-    a parent class has a method called invite(), the subclass can reference the
-    method with super().invite().
+Python supports class inheritance. The syntax is simply:
+```python
+class SubClassName(BaseClassName):
+```
+In the above, BaseClassName must be in scope. If it is not, one can
+instead use:
+```python
+class SubClassName(ModuleName.BaseClassName):
+```
+Subclass methods may either override or extend base class methods of the same
+name. To call a super-class method from a subclass, use super(). For example, if
+a parent class has a method called invite(), the subclass can reference the
+method with super().invite().
 
--   Python supports both class (static) and instance variables. The location
-    where variables are defined in a class, rather than the use of keywords,
-    dictates whether a variable is a class variable or instance variable. E.g.,
+Python supports both class (static) and instance variables. The location
+where variables are defined in a class, rather than the use of keywords,
+dictates whether a variable is a class variable or instance variable. E.g.,
 
-    ```python
-    def MyClass:
-        ClassVar = 3.14     # Class, or static variable
+```python
+def MyClass:
+    ClassVar = 3.14     # Class, or static variable
 
-    def __init__(self):
-        self.InstanceVar = 3.14159     # Instance variable
-    ```
+def __init__(self):
+    self.InstanceVar = 3.14159     # Instance variable
+```
 
--   Static variables should be used with care.  If you create two instances of
-    the above class and use one of them to alter the value of ClassVar, that
-    value will then appear also in the second instance.
+Static variables should be used with care.  If you create two instances of the
+above class and use one of them to alter the value of ClassVar, that value will
+then appear also in the second instance.
 
--   Python also supports static methods. This introduces the topic of Python's
-    *class decorators*, which we consider to be an advanced topic best saved for
-    later. But for now, know that Python supports both static and instance
-    methods.
+Python also supports static methods. This introduces the topic of Python's
+*class decorators*, which we consider to be an advanced topic best saved for
+later. But for now, know that Python supports both static and instance
+methods.
 
--   In MATLAB, a class resides in a file of the same name. In Python, multiple
-    classes can be defined in one file, and that file can take any name. More
-    generally, a class can be defined anywhere, e.g., inside of a function or an
-    if statement (not that you would do that, of course). Classes can be
-    embedded within one another, with the inner class having access to the outer
-    class namespace. The author of Python, Guido van Rossum, maintains a blog
-    where he has an [interesting
-    discussion](http://python-history.blogspot.com/2009/03/how-everything-became-executable.html)
-    of this topic.
+In MATLAB, a class resides in a file of the same name. In Python, multiple
+classes can be defined in one file, and that file can take any name. More
+generally, a class can be defined anywhere, e.g., inside of a function or an if
+statement (not that you would do that, of course). Classes can be embedded
+within one another, with the inner class having access to the outer class
+namespace. The author of Python, Guido van Rossum, maintains a blog where he has
+an [interesting
+discussion](http://python-history.blogspot.com/2009/03/how-everything-became-executable.html)
+of this topic.
 
--   There are some significant differences between the MATLAB object
-    model and Python's. Here are the biggest ones:
+There are some significant differences between the MATLAB object model and
+Python's. Here are the biggest ones:
 
-    -   MATLAB provides private attributes (for both properties and
-        methods); Python does not.
+-   MATLAB provides private attributes (for both properties and methods); Python
+-   does not.
 
-    -   Further, MATLAB provides numerous property attributes such as
-        Abstract=true. Python offers none of these.
+-   Further, MATLAB provides numerous property attributes such as Abstract=true.
+-   Python offers none of these.
 
-    -   MATLAB also offers object events, or listeners; Python does not.
+-   MATLAB also offers object events, or listeners; Python does not.
 
-    -   MATLAB requires that a file can hold only one class; Python has
-        no such restriction.
+-   MATLAB requires that a file can hold only one class; Python has no such
+-   restriction.
 
--   There are many more differences between the MATLAB and Python object
-    models. In general, the Python model chooses simplicity over
-    sophistication; vice-versa for MATLAB. Which model is the best
-    choice will depend upon your programming needs.
+There are many more differences between the MATLAB and Python object models. In
+general, the Python model chooses simplicity over sophistication; vice-versa for
+MATLAB. Which model is the best choice will depend upon your programming needs.
 
 ### Mutability
 
@@ -2024,11 +2047,11 @@ variables. We think it's best to inform you of this now, so that you don't learn
 about this after tripping over it.
 
 Suppose you have a list referenced by the variable x. If you then create a new
-variable y with the operation y=x, the new variable y simply points to the original
-list; the variable y does not reference a new copy of the list. This is an
-important concept to master as it effects all Python data types. On assignment,
-Python will *bind* two objects together rather than make a copy. Consider the
-following:
+variable y with the operation y=x, the new variable y simply points to the
+original list; the variable y does not reference a new copy of the list. This is
+an important concept to master as it effects all Python data types. On
+assignment, Python will *bind* two objects together rather than make a copy.
+Consider the following:
 ```python
 >>> x = [0, 1, 2, 3]
 >>> y = x
@@ -2162,14 +2185,14 @@ Let's talk now about importing modules and packages into your Python workspace.
     symbol table and executes any executable statements at the top of
     the module.
 
--   Each module has its own symbol table. That table is called a *global
-    table* and is used by each function in the module.  The scope of a
-    global table is its module; modules cannot see one another's global table.
+-   Each module has its own symbol table. That table is called a *global table*
+    and is used by each function in the module.  The scope of a global table is
+    its module; modules cannot see one another's global table.
 
--   Packages provide a further separation of scope. Whereas modules
-    each contain their own global variable scope (thus shielding each
-    other from variable and function name collisions), packages shield
-    one another from colliding module names.
+-   Packages provide a further separation of scope. Whereas modules each contain
+    their own global variable scope (thus shielding each other from variable and
+    function name collisions), packages shield one another from colliding module
+    names.
 
 -   Modules are imported with the *import* command.
     ```python
@@ -2177,16 +2200,17 @@ Let's talk now about importing modules and packages into your Python workspace.
     ```
 
     The above will import (register) the statistics module, abbreviated as stat.
-    This does not actually load the statistics functions into the current workspace.
-    Rather, the command registers the names of the functions in the module, and
-    makes them available with, e.g.,
+    This does not actually load the statistics functions into the current
+    workspace. Rather, the command registers the names of the functions in the
+    module, and makes them available with, e.g.,
     ```python
     >>> avg = stat.mean(x)
     ```
 
--   When you import a module, *all* of the functions it contains will be registered.
-    This means that a .py file can contain multiple functions, and all will
-    register.  Specific functions in a module can be imported with, e.g.,
+-   When you import a module, *all* of the functions it contains will be
+    registered. This means that a .py file can contain multiple functions, and
+    all will register.  Specific functions in a module can be imported with,
+    e.g.,    
     ```python
     >>> from statistics import mean
     ```
@@ -2194,8 +2218,8 @@ Let's talk now about importing modules and packages into your Python workspace.
     The above will register the mean() function but will not register the module
     name.
 
--   On startup, Python loads the modules of its standard library. The following list
-    comprehension will print the set of currently imported modules:
+-   On startup, Python loads the modules of its standard library. The following
+-   list comprehension will print the set of currently imported modules:
     ```python
     >>> import sys
     >>> [str(m) for m in sys.modules]
@@ -2209,14 +2233,13 @@ Let's talk now about importing modules and packages into your Python workspace.
     ```
    We'll skip the output here, as it is lengthy.
 
-To install packages, a utility called 'pip' is recommended. Here's how to use pip
-to install the matplotlib package.
+To install packages, a utility called 'pip' is recommended. Here's how to use
+pip to install the matplotlib package.
 
 Find pip.exe on your computer; this executable should have installed as part of
 the Python install. Add that directory to Windows' path variable. Just type
-'Edit Environment' in the Windows task bar and you'll find the variable
-editor. See the following link for
-[instructions](https://pip.pypa.io/en/stable/).
+'Edit Environment' in the Windows task bar and you'll find the variable editor.
+See the following link for [instructions](https://pip.pypa.io/en/stable/).
 
 In a command prompt window (Windows, not Python), enter the following:
 ```python
@@ -2264,10 +2287,11 @@ following command:
 ```python
 >>> import site; site.getsitepackages()
 ```
-If you know the name of a specific package you've already installed, you can obtain
-information about that package, including its installation directory. Use the following
-command entered into a Windows command window to obtain information about a package named,
-e.g., package-name:
+
+If you know the name of a specific package you've already installed, you can
+obtain information about that package, including its installation directory. Use
+the following command entered into a Windows command window to obtain
+information about a package named, e.g., package-name:
 ```python
 pip show package-name
 ```
@@ -2313,9 +2337,9 @@ C:> pip install numpy # Enter from a Windows terminal
 ```
 
 We'll focus on the a NumPy-specific data type called *ndarray*, which has an
-alias called *array*. This data type provides storage for a
-multi-dimensional array of homogeneous elements. Let's first create and print a
-1-d array of integers:
+alias called *array*. This data type provides storage for a multi-dimensional
+array of homogeneous elements. Let's first create and print a 1-d array of
+integers:
 ```python
 >>> import numpy as np
 >>> a = np.array([1,2,3]) # Note that we input a list.
@@ -2376,8 +2400,9 @@ array([[ 8, 18, 32],
        [50, 72, 98]])
 ```
 
-Now let's look at a matrix product, using the `@` operator. Rather than save and then print() the
-result, we'll skip the save and allow Python to print to the screen.
+Now let's look at a matrix product, using the `@` operator. Rather than save and
+then print() the result, we'll skip the save and allow Python to print to the
+screen.
 ```python
 >>> a = np.array( [[1,2]
                    [3,4]])
@@ -2388,12 +2413,13 @@ array([10, 13],
       [22, 29])
 ```
 
-NumPy has dozens of functions with which to perform the usual array operations you
-would expect of an analytics library. You can query an array size, reshape an array, extract elements or
-slices, compute statistics such as cov, mean, std and var. With NumPy you can
-perform linear algebra operations such as transpose, inverse and multiplication.
-You can compute eigenvalues. You can sort and filter arrays. Logical operations
-include the familiar any(), all() and where() operations.
+NumPy has dozens of functions with which to perform the usual array operations
+you would expect of an analytics library. You can query an array size, reshape
+an array, extract elements or slices, compute statistics such as cov, mean, std
+and var. With NumPy you can perform linear algebra operations such as transpose,
+inverse and multiplication. You can compute eigenvalues. You can sort and filter
+arrays. Logical operations include the familiar any(), all() and where()
+operations.
 
 By default, NumPy will operate on arrays element-wise. This is a departure from
 MATLAB's vectorized operations. However, NumPy provides a vectorization feature
@@ -2409,24 +2435,26 @@ is the function, and how you would vectorize it.
 >>> add_v([1, 2, 3], [4, 5, 6]) # Add two vectors
 array([5, 7, 9])
 ```
+
 While it's not a core topic of this article, we should mention that NumPy offers
 a tremendous performance benefit to numeric calculations.  Calculations that you
-might compute in pure Python can run 10x to 100x faster using NumPy.  This performance
-improvement results from several key features of NumPy.  Consider the simple act of adding
-two lists.  In pure Python, each element of the list will be a pointer to an object, a float or
-an int, for example, with all of the attendent overhead of processing those objects.
-In NumPy, those lists will be reduced to arrays of a homogenous data type, with far less
-processing overhead.  Secondly, many NumPy functions are implemented in the C language,
-compiled for speed.  And thirdly, with NumPy, high-level Python for-loops get pushed down into
-the C libraries, with the latter being far faster than the former.
+might compute in pure Python can run 10x to 100x faster using NumPy.  This
+performance improvement results from several key features of NumPy.  Consider
+the simple act of adding two lists.  In pure Python, each element of the list
+will be a pointer to an object, a float or an int, for example, with all of the
+attendent overhead of processing those objects. In NumPy, those lists will be
+reduced to arrays of a homogenous data type, with far less processing overhead.
+Secondly, many NumPy functions are implemented in the C language, compiled for
+speed.  And thirdly, with NumPy, high-level Python for-loops get pushed down
+into the C libraries, with the latter being far faster than the former.
 
 NumPy has much more to offer; we simply cannot cover all of its capabilities
 here. But a bit of good news for you: with a MATLAB background you'll find that
 the [NumPy documentation](http://www.numpy.org/) is familiar, and once you read
 through its documentation you'll feel much more at ease with Python.  And if you
-don't particularly like the NumPy language syntax, keep reading to the Pandas section.
-Pandas is built on top of NumPy and provides a syntax you will be much more comfortable
-with.
+don't particularly like the NumPy language syntax, keep reading to the Pandas
+section. Pandas is built on top of NumPy and provides a syntax you will be much
+more comfortable with.
 
 ### SciPy
 
@@ -2606,17 +2634,31 @@ similar to what you use with MATLAB.
 <br>
 ### Full-Stack Python
 
-Full-Stack Python refers to the design and deployment of web-based applications with significant server-side functionality.
-Using nothing *but* Python and supporting Python-based libraries, one can create complex web apps which integrate into traditional websites and back-ends.  Python libraries are available for web frameworks (e.g., [Django](https://www.djangoproject.com/) and [Flask](https://flask.palletsprojects.com/)) and front-end user interfaces (e.g., [Plotly Dash](https://plotly.com/dash/)).
+Full-Stack Python refers to the design and deployment of web-based applications
+with significant server-side functionality. Using nothing *but* Python and
+supporting Python-based libraries, one can create complex web apps which
+integrate into traditional websites and back-ends.  Python libraries are
+available for web frameworks (e.g., [Django](https://www.djangoproject.com/) and
+[Flask](https://flask.palletsprojects.com/)) and front-end user interfaces
+(e.g., [Plotly Dash](https://plotly.com/dash/)).
 
-As an example, one of the authors of this article (Patterson) has written a web app for stress-testing trading portfolios comprised of options, futures, and swaps.  This app employs complex mathematical modeling, large data sets, extensive computations, and a sophisticated user interface.  The app is written completely in Python.  A screen shot is shown below, and the app is also [available online](https://aftermathematics.appspot.com/riskmanager/).
+As an example, one of the authors of this article (Patterson) has written a web
+app for stress-testing trading portfolios comprised of options, futures, and
+swaps.  This app employs complex mathematical modeling, large data sets,
+extensive computations, and a sophisticated user interface.  The app is written
+completely in Python.  A screen shot is shown below, and the app is also
+[available online](https://aftermathematics.appspot.com/riskmanager/).
 
 <div style="text-align: center;">
 <img src="media/RiskManager.png">
 </div>
 <br>
 
-As shown above, Python can handle both the front-end and back-end of a web app, and also everything in between, such as analytics and database access.  Rather than belabor this topic, we'll refer you to an excellent online resource called, appropriately, [Full Stack Python](https://www.fullstackpython.com/) written by Matt Makai.
+As shown above, Python can handle both the front-end and back-end of a web app,
+and also everything in between, such as analytics and database access.  Rather
+than belabor this topic, we'll refer you to an excellent online resource called,
+appropriately, [Full Stack Python](https://www.fullstackpython.com/) written by
+Matt Makai.
 
 ### MATLAB and Python, Together
 
@@ -2635,11 +2677,11 @@ the MATLAB instance, invoke functions, and return results.
 
 Why, you might ask, would you want to call MATLAB scripts from Python? We think
 there are several use cases. The first is one of deployment. Suppose you have
-analytics functionality built in MATLAB but want to deploy those analyses on the web. Python
-has, though we've not discussed it here, state-of-the-art GUI toolkits that can
-easily be deployed on AWS, the Google Computing Platform or otherwise. You can
-construct your analytics front-end in Python, allowing it to communicate with
-your MATLAB-based back-end library.
+analytics functionality built in MATLAB but want to deploy those analyses on the
+web. Python has, though we've not discussed it here, state-of-the-art GUI
+toolkits that can easily be deployed on AWS, the Google Computing Platform or
+otherwise. You can construct your analytics front-end in Python, allowing it to
+communicate with your MATLAB-based back-end library.
 
 A second use case is one of developer efficiency. The knowledge you've obtained
 in MATLAB continues to be valuable: you may have an extensive library of M-code
@@ -2678,10 +2720,11 @@ The authors sometimes use the community (free) version of
 free) version. PyCharm provides code completion, code formatting, syntax
 highlighting, runtime error checking, project navigation, debugging, and a slick
 interface. PyCharm integrates with several source control libraries, unit
-testing frameworks, databases, virtul environments and the [PyPy](http://packages.pypy.org/) package
-management library. PyCharm also integrates with the scientific libraries we've
-discussed in this article and supports the IPython magic commands. PyCharm is
-every bit as sophisticated as the MATLAB IDE, and even more so.
+testing frameworks, databases, virtul environments and the
+[PyPy](http://packages.pypy.org/) package management library. PyCharm also
+integrates with the scientific libraries we've discussed in this article and
+supports the IPython magic commands. PyCharm is every bit as sophisticated as
+the MATLAB IDE, and even more so.
 
 If you happen to use Visual Studio, you can stay with that editor as it
 supports Python. And if you're more of a command-line person, have a look at
@@ -2777,14 +2820,14 @@ above two documents, tutorials, how-to guides, code examples, installation
 guides and much more.
 
 If you are more of a book reader, there are numerous books worthy of your time
-and dollars.
-On the topic of Python and data science, one book that we recommend is O'Reilly's
-[Python for Data Analysis](http://shop.oreilly.com/product/0636920050896.do),
-written by Wes McKinney, creator of the pandas library. This is an incredibly
-well-written and thorough book, an enjoyable read. You can purchase a digital
-version and then cut-and-paste examples from the book into your Python
-interpreter. Or better, you can follow along in the book with an accompanying
-Jupyter Notebook that provides interactive examples for you.
+and dollars. On the topic of Python and data science, one book that we recommend
+is O'Reilly's [Python for Data
+Analysis](http://shop.oreilly.com/product/0636920050896.do), written by Wes
+McKinney, creator of the pandas library. This is an incredibly well-written and
+thorough book, an enjoyable read. You can purchase a digital version and then
+cut-and-paste examples from the book into your Python interpreter. Or better,
+you can follow along in the book with an accompanying Jupyter Notebook that
+provides interactive examples for you.
 
 We thank you for your time, and we hope you have found this article worthy of
 that time. If you have feedback, if you have found typos, incorrect statements,
@@ -2794,8 +2837,8 @@ below.
 
 # Author Biographies
 
-Michael Patterson has worked in commodity trading for twenty years, with roles in
-technology, fundamental analysis, business intelligence and risk management.
+Michael Patterson has worked in commodity trading for twenty years, with roles
+in technology, fundamental analysis, business intelligence and risk management.
 Michael lives in Tulsa, OK with his wife and two children. Michael can be
 reached via his [LinkedIn profile](https://www.linkedin.com/in/mtpatt/) or by
 email at <michael.patterson@demextech.com>.
@@ -2808,26 +2851,40 @@ technologies, including MATLAB, Java, and SQL. He can be reached at his
 profile](https://www.linkedin.com/in/andrewjanke0/) or by email at
 <andrew@apjanke.net>.
 
-Michael and Andrew currently work at Demex Technologies, where Michael is Director,
-Commodity Analytics and Andrew is Director, Quantitative Systems. Among its products,
-Demex Technologies markets an online platform for
+Michael and Andrew currently work at Demex Technologies, where Michael is
+Director, Commodity Analytics and Andrew is Director, Quantitative Systems.
+Among its products, Demex Technologies markets an online platform for
 researching and quoting complex commodity financial derivatives.  Not
-surprisingly, the product is written in a mix of languages, including MATLAB
-and Python.
+surprisingly, the product is written in a mix of languages, including MATLAB and
+Python.
 
 ### The Demex Group
 
-The authors of this article are founding members of The Demex Group, a firm which helps its clients adapt to the impacts of changing weather and climate.  A quick background on The Demex Group will help you understand why we've taken the time to write this article for you.
+The authors of this article are founding members of The Demex Group, a firm
+which helps its clients adapt to the impacts of changing weather and climate.  A
+quick background on The Demex Group will help you understand why we've taken the
+time to write this article for you.
 
-We help our clients quantify their business exposure to weather and climate risks, and we facilitate the transfer of those risks to third parties.  We do this by providing our clients access to algorithms that help them discover and mitigate their risk exposures.  Our algorithms are hosted on a sophisticated, web-based platform located at www.demex.tech.
+We help our clients quantify their business exposure to weather and climate
+risks, and we facilitate the transfer of those risks to third parties.  We do
+this by providing our clients access to algorithms that help them discover and
+mitigate their risk exposures.  Our algorithms are hosted on a sophisticated,
+web-based platform located at www.demex.tech.
 
-Our computational platform comprises nearly one hundred man-years of efforts, and to no surprise, is written largely in the MATLAB and Python languages.
+Our computational platform comprises nearly one hundred man-years of efforts,
+and to no surprise, is written largely in the MATLAB and Python languages.
 
-Analytics and technology are the core of our business, and client relationships are the foundation of that business.  We share our platform and our analyses with our clients, and in so doing we empower them and help protect them from weather and climate risks.  This article is just one small component of that effort: we'd like to share with you the knowledge we've acquired in our work.
+Analytics and technology are the core of our business, and client relationships
+are the foundation of that business.  We share our platform and our analyses
+with our clients, and in so doing we empower them and help protect them from
+weather and climate risks.  This article is just one small component of that
+effort: we'd like to share with you the knowledge we've acquired in our work.
 
 # Contributors
 
-Numerous people have graciously offered reviews, corrections and contributions to this document.  We wish to recognize and thank them for their time and talents.  Their names, with links to their LinkedIn profiles are:
+Numerous people have graciously offered reviews, corrections and contributions
+to this document.  We wish to recognize and thank them for their time and
+talents.  Their names, with links to their LinkedIn profiles are:
 
 * [Yan Holtz](https://www.linkedin.com/in/yan-holtz-2477534a)
 * [Scott Buechler](https://www.linkedin.com/in/rscottyblinkedin)
