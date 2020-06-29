@@ -63,10 +63,10 @@ profile](https://www.linkedin.com/in/andrewjanke0/) or by email at
 
 Michael and Andrew currently work at Demex Technologies, where Michael is
 Director, Commodity Analytics and Andrew is Director, Quantitative Systems.
-Among its products, Demex Technologies markets an online platform for
-researching and quoting complex commodity financial derivatives.  Not
-surprisingly, the product is written in a mix of languages, including MATLAB and
-Python.
+Among its products, Demex Technologies provides to its clients an online
+platform for researching and quoting complex commodity and weather-based
+financial derivatives.  Not surprisingly, the product is written in a mix of
+languages, including MATLAB and Python.
 
 ### The Demex Group
 
@@ -79,10 +79,9 @@ We help our clients quantify their business exposure to weather and climate
 risks, and we facilitate the transfer of those risks to third parties.  We do
 this by providing our clients access to algorithms that help them discover and
 mitigate their risk exposures.  Our algorithms are hosted on a sophisticated,
-web-based platform located at www.demex.tech.
-
-Our computational platform comprises nearly one hundred man-years of efforts,
-and to no surprise, is written largely in the MATLAB and Python languages.
+[web-based platform](www.demex.tech) comprising nearly one hundred man-years of
+efforts.  To no surprise, this platform is written largely in the MATLAB and
+Python languages.
 
 Analytics and technology are the core of our business, and client relationships
 are the foundation of that business.  We share our platform and our analyses

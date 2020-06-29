@@ -1,6 +1,5 @@
 <br>
 <br>
-<br>
 
 # Python Types
 
@@ -94,7 +93,7 @@ to False:
 
 ### Sequences
 
-MATLAB is all about matrices; Python's closest match is a *sequence*. The
+MATLAB is all about matrices; Python's closest primary type match is a *sequence*. The
 sequence data type is a building block to what MATLAB calls vectors and arrays.
 For the moment we'll focus on Python's primary data types, and later we'll
 return to the topics of vectors and arrays.
@@ -196,7 +195,7 @@ provides.
     ...        'def')
     >>> str
     'abcdef'
-    ```    
+    ```
 
 -   You can also continue a line with a backslash. E.g.,
 
@@ -204,7 +203,12 @@ provides.
     >>> str = 'abc' \
     ... 'def'
     ```
+-   You can also enclose a multi-line string in triple quotes.  E.g.,
 
+```python
+>>> str = '''abc
+... def'''
+```
 -   Index reference a string with zero-based indexing, e.g.,
 
     ```python
@@ -223,14 +227,13 @@ provides.
 -   Strings are an [immutable](https://docs.python.org/3/glossary.html) sequence
     data type. Immutable types cannot alter their values once set. For example,
     the following series of commands will issue an error:
-`python
+    ```python
     >>> str = 'abc'
     >>> str[0] = 'A'
     TypeError: 'str' object does not support item assignment
     ```
 
--   To alter a string, concatenate the elements you wish to retain with any new
--   text.  The following will work:
+-   To alter a string, concatenate the elements you wish to retain with any new text.  The following will work:
 
     ```python
     >>> str = 'A' + str[1:3]
@@ -342,7 +345,7 @@ block to numeric vectors and higher-order matrices and arrays.
 
 -   You will sometimes see a list defined across multiple lines, e.g.,
 
-    ```python    
+    ```python
     >>> x = [1, 2, 3,
     ...      4, 5, 6,
     ...      ]
@@ -365,14 +368,14 @@ separations and trailing comma are removed. E.g.,
 -   As with strings, a *slice* of a list returns a portion of the original list,
     For example,
 
-    ```python   
+    ```python
     >>> x = [0, 1, 2, 3]
     >>> x[1:3] # The upper bound is not included in the returned slice
     [1, 2]
     ```
 
 -   Recall that strings are concatenated with the '+' symbol.  Lists are
--   concatenated the same way.  E.g.,
+    concatenated the same way.  E.g.,
 
     ```python
     >>> x = [0, 1, 2, 3, 4]
@@ -424,7 +427,7 @@ cannot be indexed or sliced.
 -   Define sets using a comma-separated list of heterogeneous items in braces.
     E.g.,
 
-    ```python    
+    ```python
     >>> x = {'Dave', 'Tom', 'Mary', 'Dave'}
     >>> x
     {'Dave', 'Mary', 'Tom'} # Reordered and unique
@@ -467,7 +470,7 @@ with *supple*.
 -   Tuples can employ parentheses on assignment, but require the usual square
     brackets on reference:
 
-    ```python    
+    ```python
     >>> x[0]
     'y'
     ```

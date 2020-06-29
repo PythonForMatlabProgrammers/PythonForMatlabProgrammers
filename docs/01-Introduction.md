@@ -50,10 +50,7 @@ in MATLAB, but we also find value in Python. Each language has its strengths and
 the two products can interoperate. So perhaps you'll find reasons to use both
 languages, as we do.
 
-A fourth, and last objective of this article is to be as brief as possible.
-Python is already well documented, so this document strives to be a quick read.
-
-### Contributing to this Article
+### Editing and Distributing this Article
 
 As just mentioned, we have a goal of keeping this article brief.  However, we've
 received many suggestions of additional material for the article, and we value
@@ -70,8 +67,10 @@ article.
 This article is licensed under the [Creative Commons Attribution ShareAlike 4.0
 International License](http://creativecommons.org/licenses/by-sa/4.0/).  The
 article is available to download, edit, expand upon, revise, re-publish, etc. to
-suit your needs.  Under the terms of the Creative Commons license, you have full
-access to the article but the article must retain the original author's names.
+suit your needs.  Want to re-publish this article as a set of web pages?  Feel
+free. Want to use this article for material in a class you teach?  Again, feel
+free. Under the terms of the Creative Commons license, you have full access to
+the article but the article must retain the original author's names.
 
 ### Conventions
 
@@ -221,8 +220,8 @@ shorter with this approach, and no installations are required.
 
 For the moment, we recommend that you either use IDLE or an online Python
 engine. We will return to the IDE topic in the chapter titled, *The Python
-Ecosystem*. At that time, you'll understand why we suggest you delay this
-decision.
+Ecosystem*. At that time, you'll understand why we suggest you delay making a
+decision on an IDE.
 
 ### Python Modules and Packages
 
@@ -277,6 +276,7 @@ each process makes additional definitions and logic available to the current
 workspace. We'll discuss the importing of modules and packages in great detail
 later on. For the moment, just know that when you see an import statement in the
 following examples, we're registering Python files in the current workspace.
+<br><br>
 
 ### The Python Style Guide
 

@@ -27,6 +27,7 @@ C:> pip install matplotlib # from a Windows terminal
 <img src="media/image2.png">
 
 </div>
+<br>
 
 Matplotlilb provides 2-d charts, but other packages built upon Matplotlib
 provide 3-d charts, as per the following example.
@@ -52,6 +53,7 @@ provide 3-d charts, as per the following example.
 <img src="media/image3.png">
 
 </div>
+<br>
 
 -   There are many examples on the web that illustrate Python's graphing
     capabilities. Rest assured that you can create all the charts you've grown

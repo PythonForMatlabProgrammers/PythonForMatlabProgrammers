@@ -87,7 +87,7 @@ Let's talk now about importing modules and packages into your Python workspace.
 -   When you import a module, *all* of the functions it contains will be
     registered. This means that a .py file can contain multiple functions, and
     all will register.  Specific functions in a module can be imported with,
-    e.g.,    
+    e.g.,
     ```python
     >>> from statistics import mean
     ```
@@ -96,7 +96,7 @@ Let's talk now about importing modules and packages into your Python workspace.
     name.
 
 -   On startup, Python loads the modules of its standard library. The following
--   list comprehension will print the set of currently imported modules:
+    list comprehension will print the set of currently imported modules:
     ```python
     >>> import sys
     >>> [str(m) for m in sys.modules]
@@ -185,7 +185,7 @@ Here are the basics for viewing and modifying the Python search path.
     following:
     ```python
     >>> import sys; print(sys.path)
-    ```    
+    ```
 
 -   To append the system path, use, e.g.,
     ```python
@@ -508,7 +508,6 @@ that we've not touched upon, but hopefully we've demonstrated that the
 combination of Python/NumPy/SciPy/pandas provides an analysis environment
 similar to what you use with MATLAB.
 
-<br>
 ### Full-Stack Python
 
 Full-Stack Python refers to the design and deployment of web-based applications
@@ -638,7 +637,10 @@ the bottom-right is the Python console, along with integrated graphics. At the
 top-right is the variable explorer; superimposed upon it is the output DataFrame
 which we obtained by double-clicking on that variable in the explorer window.
 
+<div style="text-align: center;">
 <img src="media/image5.png">
+</div>
+<br>
 
 Spyder is written in the Python language, is open source and is free of charge.
 
@@ -654,7 +656,7 @@ each category, all targeted toward data science.
 
 In addition to Python, Anaconda includes [Jupyter
 Notebook](https://jupyter.org/), which is a Python engine that allows you to
-create interactive 'notebooks' of Python code, output of that code, any
+create interactive _notebooks_ of Python code, output of that code, any
 associated charts, and inline descriptive text. These notebooks are great for
 teaching and collaboration.
 

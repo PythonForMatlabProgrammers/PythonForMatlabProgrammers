@@ -14,7 +14,7 @@ syntax changes.
 
 -   Here is an if-statement:
 
-    ```python  
+    ```python
     if x < 0:
         print('x is negative')
     elif x == 0:
@@ -95,7 +95,7 @@ syntax changes.
     ```
 
 -   Within looping constructs, Python supports the usual `break` and `continue`
--   statements.
+    statements.
 
 -   Within for-loops, Python also supports an `else` clause: the else block will
     execute when the iterable has been exhausted, but not following a break
@@ -119,9 +119,7 @@ iterable.
 -   Syntax is a bracket, followed by an expression, followed by a for-clause,
     followed by an optional if-clause and then a closing bracket.
 
--   Nested for- and if-clauses are allowed.
-
--   A few simple examples:
+-   Nested for- and if-clauses are allowed.  A few simple examples:
 
     ```python
     >>> Index = [i for i in range(10)] # Produces 0, 1, 2, ..., 9
@@ -191,7 +189,7 @@ iterable.
     ```
 
 List comprehensions are a powerful feature of the Python language.  They are
-memory efficient, fast, and terse.  
+memory efficient, fast, and terse.
 
 ### Iterables and Iterators
 
@@ -268,8 +266,6 @@ Iterables and iterators are pervasive in the Python language, as they provide
 memory efficient lists. You might not use them directly, deferring instead to
 for- and while-loops, but knowing how such constructs are implemented will be
 valuable to you.
-
-<br>
 
 ### Generators
 
@@ -412,7 +408,7 @@ in Python.
     automatically be packed into a tuple named `args` (in this example).
 
 -   Expanding upon the above signature, one can also specify that a function is
--   to receive an arbitrary number of keyword arguments:
+    to receive an arbitrary number of keyword arguments:
     ```python
     def fun(arg1, arg2='test', *args, **kwargs):
     ```
@@ -522,7 +518,7 @@ in Python.
     >>> str.sort(key=lambda x: len(set(x)))
     >>> str
     ['zoo', 'cook', 'ohnoooh']
-    ```    
+    ```
 
     How did the above work? First, strings are a class, and that class has a
     `sort` method associated with it. The `sort` method allows a key argument,
@@ -591,7 +587,7 @@ quick summary:
     *Exception* class.
 
 -   Try-except blocks have added functionality compared to MATLAB. The outline
--   of a try-except block looks like:
+    of a try-except block looks like:
     ```python
     try:
       # code
@@ -637,7 +633,7 @@ quick summary:
       x = some_function()
     except BaseException as e:
       raise(e)
-    ```    
+    ```
 
 -   If you desire a stack trace and/or logging into a log file, use Python's
     logging module. E.g.,
@@ -658,7 +654,7 @@ quick summary:
     with open('some_file.csv') as file:
       for line in file:
         print(line)
-    ```    
+    ```
     Following execution of this block of code, the opened file will be closed
     regardless of whether an exception was raised. The `with` statement is just
     shorthand notation for a try-except block, but useful and convenient.

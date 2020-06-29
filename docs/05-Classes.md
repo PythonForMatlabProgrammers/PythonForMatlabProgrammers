@@ -5,7 +5,7 @@
 
 At this point of the article we'll dive a bit deeper into the Python programming
 language. We'll discuss namespaces, scopes, and then classes. Each of these
-differs from the MATLAB model, and you need to be aware of the changes.
+differs from the MATLAB model, and you need to be aware of the differences.
 
 ### Namespaces and Scopes
 
@@ -46,7 +46,7 @@ prerequisites for understanding classes.
     names.
 
 -   Variables can be declared *global*, in which case they will reside in the
--   middle scope.  These variables  will not be shared across modules.
+    middle scope.  These variables  will not be shared across modules.
 
 -   Within the four scopes, variables flow from the outer scopes into the inner
     scopes.  That is, a variable declared in an outer scope can be referenced in
@@ -193,15 +193,15 @@ There are some significant differences between the MATLAB object model and
 Python's. Here are the biggest ones:
 
 -   MATLAB provides private attributes (for both properties and methods); Python
--   does not.
+    does not.
 
 -   Further, MATLAB provides numerous property attributes such as Abstract=true.
--   Python offers none of these.
+    Python offers none of these.
 
 -   MATLAB also offers object events, or listeners; Python does not.
 
 -   MATLAB requires that a file can hold only one class; Python has no such
--   restriction.
+    restriction.
 
 There are many more differences between the MATLAB and Python object models. In
 general, the Python model chooses simplicity over sophistication; vice-versa for
