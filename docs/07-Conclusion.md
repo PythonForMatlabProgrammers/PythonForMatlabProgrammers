@@ -59,7 +59,7 @@ building data analytics platforms that integrate multiple languages and
 technologies, including MATLAB, Java, and SQL. He can be reached at his
 [website](https://apjanke.net/), [LinkedIn
 profile](https://www.linkedin.com/in/andrewjanke0/) or by email at
-<andrew@apjanke.net>.
+<andrew.janke@demextech.com> or <andrew@apjanke.net>.
 
 Michael and Andrew currently work at Demex Technologies, where Michael is
 Director, Commodity Analytics and Andrew is Director, Quantitative Systems.

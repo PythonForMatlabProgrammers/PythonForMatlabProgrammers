@@ -36,7 +36,7 @@ Release notes:
    repository](https://github.com/apjanke/PythonForMatlabProgrammers) under a
    Creative Commons Attribution ShareAlike 4.0 International License.
 
--  June 17, 2020: Latest release.
+-  June 29, 2020: Latest release.
 
 <br>
 <br>
@@ -91,10 +91,7 @@ in MATLAB, but we also find value in Python. Each language has its strengths and
 the two products can interoperate. So perhaps you'll find reasons to use both
 languages, as we do.
 
-A fourth, and last objective of this article is to be as brief as possible.
-Python is already well documented, so this document strives to be a quick read.
-
-### Contributing to this Article
+### Editing and Distributing this Article
 
 As just mentioned, we have a goal of keeping this article brief.  However, we've
 received many suggestions of additional material for the article, and we value
@@ -111,8 +108,10 @@ article.
 This article is licensed under the [Creative Commons Attribution ShareAlike 4.0
 International License](http://creativecommons.org/licenses/by-sa/4.0/).  The
 article is available to download, edit, expand upon, revise, re-publish, etc. to
-suit your needs.  Under the terms of the Creative Commons license, you have full
-access to the article but the article must retain the original author's names.
+suit your needs.  Want to re-publish this article as a set of web pages?  Feel
+free. Want to use this article for material in a class you teach?  Again, feel
+free. Under the terms of the Creative Commons license, you have full access to
+the article but the article must retain the original author's names.
 
 ### Conventions
 
@@ -262,8 +261,8 @@ shorter with this approach, and no installations are required.
 
 For the moment, we recommend that you either use IDLE or an online Python
 engine. We will return to the IDE topic in the chapter titled, *The Python
-Ecosystem*. At that time, you'll understand why we suggest you delay this
-decision.
+Ecosystem*. At that time, you'll understand why we suggest you delay making a
+decision on an IDE.
 
 ### Python Modules and Packages
 
@@ -318,6 +317,7 @@ each process makes additional definitions and logic available to the current
 workspace. We'll discuss the importing of modules and packages in great detail
 later on. For the moment, just know that when you see an import statement in the
 following examples, we're registering Python files in the current workspace.
+<br><br>
 
 ### The Python Style Guide
 
@@ -360,7 +360,6 @@ websites.
 
 [^1]: MATLAB® and Simulink are registered trademarks of The MathWorks,
     Inc.
-<br>
 <br>
 <br>
 
@@ -456,7 +455,7 @@ to False:
 
 ### Sequences
 
-MATLAB is all about matrices; Python's closest match is a *sequence*. The
+MATLAB is all about matrices; Python's closest primary type match is a *sequence*. The
 sequence data type is a building block to what MATLAB calls vectors and arrays.
 For the moment we'll focus on Python's primary data types, and later we'll
 return to the topics of vectors and arrays.
@@ -558,7 +557,7 @@ provides.
     ...        'def')
     >>> str
     'abcdef'
-    ```    
+    ```
 
 -   You can also continue a line with a backslash. E.g.,
 
@@ -566,7 +565,12 @@ provides.
     >>> str = 'abc' \
     ... 'def'
     ```
+-   You can also enclose a multi-line string in triple quotes.  E.g.,
 
+```python
+>>> str = '''abc
+... def'''
+```
 -   Index reference a string with zero-based indexing, e.g.,
 
     ```python
@@ -585,14 +589,13 @@ provides.
 -   Strings are an [immutable](https://docs.python.org/3/glossary.html) sequence
     data type. Immutable types cannot alter their values once set. For example,
     the following series of commands will issue an error:
-`python
+    ```python
     >>> str = 'abc'
     >>> str[0] = 'A'
     TypeError: 'str' object does not support item assignment
     ```
 
--   To alter a string, concatenate the elements you wish to retain with any new
--   text.  The following will work:
+-   To alter a string, concatenate the elements you wish to retain with any new text.  The following will work:
 
     ```python
     >>> str = 'A' + str[1:3]
@@ -704,7 +707,7 @@ block to numeric vectors and higher-order matrices and arrays.
 
 -   You will sometimes see a list defined across multiple lines, e.g.,
 
-    ```python    
+    ```python
     >>> x = [1, 2, 3,
     ...      4, 5, 6,
     ...      ]
@@ -727,14 +730,14 @@ separations and trailing comma are removed. E.g.,
 -   As with strings, a *slice* of a list returns a portion of the original list,
     For example,
 
-    ```python   
+    ```python
     >>> x = [0, 1, 2, 3]
     >>> x[1:3] # The upper bound is not included in the returned slice
     [1, 2]
     ```
 
 -   Recall that strings are concatenated with the '+' symbol.  Lists are
--   concatenated the same way.  E.g.,
+    concatenated the same way.  E.g.,
 
     ```python
     >>> x = [0, 1, 2, 3, 4]
@@ -786,7 +789,7 @@ cannot be indexed or sliced.
 -   Define sets using a comma-separated list of heterogeneous items in braces.
     E.g.,
 
-    ```python    
+    ```python
     >>> x = {'Dave', 'Tom', 'Mary', 'Dave'}
     >>> x
     {'Dave', 'Mary', 'Tom'} # Reordered and unique
@@ -829,7 +832,7 @@ with *supple*.
 -   Tuples can employ parentheses on assignment, but require the usual square
     brackets on reference:
 
-    ```python    
+    ```python
     >>> x[0]
     'y'
     ```
@@ -1010,7 +1013,7 @@ syntax changes.
 
 -   Here is an if-statement:
 
-    ```python  
+    ```python
     if x < 0:
         print('x is negative')
     elif x == 0:
@@ -1091,7 +1094,7 @@ syntax changes.
     ```
 
 -   Within looping constructs, Python supports the usual `break` and `continue`
--   statements.
+    statements.
 
 -   Within for-loops, Python also supports an `else` clause: the else block will
     execute when the iterable has been exhausted, but not following a break
@@ -1115,9 +1118,7 @@ iterable.
 -   Syntax is a bracket, followed by an expression, followed by a for-clause,
     followed by an optional if-clause and then a closing bracket.
 
--   Nested for- and if-clauses are allowed.
-
--   A few simple examples:
+-   Nested for- and if-clauses are allowed.  A few simple examples:
 
     ```python
     >>> Index = [i for i in range(10)] # Produces 0, 1, 2, ..., 9
@@ -1187,7 +1188,7 @@ iterable.
     ```
 
 List comprehensions are a powerful feature of the Python language.  They are
-memory efficient, fast, and terse.  
+memory efficient, fast, and terse.
 
 ### Iterables and Iterators
 
@@ -1264,8 +1265,6 @@ Iterables and iterators are pervasive in the Python language, as they provide
 memory efficient lists. You might not use them directly, deferring instead to
 for- and while-loops, but knowing how such constructs are implemented will be
 valuable to you.
-
-<br>
 
 ### Generators
 
@@ -1408,7 +1407,7 @@ in Python.
     automatically be packed into a tuple named `args` (in this example).
 
 -   Expanding upon the above signature, one can also specify that a function is
--   to receive an arbitrary number of keyword arguments:
+    to receive an arbitrary number of keyword arguments:
     ```python
     def fun(arg1, arg2='test', *args, **kwargs):
     ```
@@ -1518,7 +1517,7 @@ in Python.
     >>> str.sort(key=lambda x: len(set(x)))
     >>> str
     ['zoo', 'cook', 'ohnoooh']
-    ```    
+    ```
 
     How did the above work? First, strings are a class, and that class has a
     `sort` method associated with it. The `sort` method allows a key argument,
@@ -1587,7 +1586,7 @@ quick summary:
     *Exception* class.
 
 -   Try-except blocks have added functionality compared to MATLAB. The outline
--   of a try-except block looks like:
+    of a try-except block looks like:
     ```python
     try:
       # code
@@ -1633,7 +1632,7 @@ quick summary:
       x = some_function()
     except BaseException as e:
       raise(e)
-    ```    
+    ```
 
 -   If you desire a stack trace and/or logging into a log file, use Python's
     logging module. E.g.,
@@ -1654,7 +1653,7 @@ quick summary:
     with open('some_file.csv') as file:
       for line in file:
         print(line)
-    ```    
+    ```
     Following execution of this block of code, the opened file will be closed
     regardless of whether an exception was raised. The `with` statement is just
     shorthand notation for a try-except block, but useful and convenient.
@@ -1763,6 +1762,7 @@ C:> pip install matplotlib # from a Windows terminal
 <img src="media/image2.png">
 
 </div>
+<br>
 
 Matplotlilb provides 2-d charts, but other packages built upon Matplotlib
 provide 3-d charts, as per the following example.
@@ -1788,6 +1788,7 @@ provide 3-d charts, as per the following example.
 <img src="media/image3.png">
 
 </div>
+<br>
 
 -   There are many examples on the web that illustrate Python's graphing
     capabilities. Rest assured that you can create all the charts you've grown
@@ -1820,14 +1821,14 @@ provide 3-d charts, as per the following example.
 
 At this point of the article we'll dive a bit deeper into the Python programming
 language. We'll discuss namespaces, scopes, and then classes. Each of these
-differs from the MATLAB model, and you need to be aware of the changes.
+differs from the MATLAB model, and you need to be aware of the differences.
 
 ### Namespaces and Scopes
 
-Let's start with Namespaces and scopes, as these concepts are important
+Let's start with namespaces and scopes, as these concepts are important
 prerequisites for understanding classes.
 
--   A *namespace* is a mapping from names to objects, typically implemented as a
+-   A *namespace* is a mapping of names to objects, typically implemented as a
     dictionary. Examples include built-in names, exception names, global names
     of a module, and local names of a function.
 
@@ -1861,7 +1862,7 @@ prerequisites for understanding classes.
     names.
 
 -   Variables can be declared *global*, in which case they will reside in the
--   middle scope.  These variables  will not be shared across modules.
+    middle scope.  These variables  will not be shared across modules.
 
 -   Within the four scopes, variables flow from the outer scopes into the inner
     scopes.  That is, a variable declared in an outer scope can be referenced in
@@ -2008,15 +2009,15 @@ There are some significant differences between the MATLAB object model and
 Python's. Here are the biggest ones:
 
 -   MATLAB provides private attributes (for both properties and methods); Python
--   does not.
+    does not.
 
 -   Further, MATLAB provides numerous property attributes such as Abstract=true.
--   Python offers none of these.
+    Python offers none of these.
 
 -   MATLAB also offers object events, or listeners; Python does not.
 
 -   MATLAB requires that a file can hold only one class; Python has no such
--   restriction.
+    restriction.
 
 There are many more differences between the MATLAB and Python object models. In
 general, the Python model chooses simplicity over sophistication; vice-versa for
@@ -2107,9 +2108,9 @@ language, you'll want to spend some time studying these topics further.
 
 -   List comprehensions: there's really no equivalent in MATLAB.
 
--   Iterables, iterators and generators: an important feature of the
-    Python language. MATLAB does not offer the feature, although you can
-    code it yourself.
+-   Iterables, iterators and generators: important features of the
+    Python language. MATLAB does not offer these features, although you can
+    code them yourself.
 
 -   Mutability: this is an important concept in Python. This same
     concept exists in MATLAB, but programmers are largely shielded from
@@ -2210,7 +2211,7 @@ Let's talk now about importing modules and packages into your Python workspace.
 -   When you import a module, *all* of the functions it contains will be
     registered. This means that a .py file can contain multiple functions, and
     all will register.  Specific functions in a module can be imported with,
-    e.g.,    
+    e.g.,
     ```python
     >>> from statistics import mean
     ```
@@ -2219,7 +2220,7 @@ Let's talk now about importing modules and packages into your Python workspace.
     name.
 
 -   On startup, Python loads the modules of its standard library. The following
--   list comprehension will print the set of currently imported modules:
+    list comprehension will print the set of currently imported modules:
     ```python
     >>> import sys
     >>> [str(m) for m in sys.modules]
@@ -2308,7 +2309,7 @@ Here are the basics for viewing and modifying the Python search path.
     following:
     ```python
     >>> import sys; print(sys.path)
-    ```    
+    ```
 
 -   To append the system path, use, e.g.,
     ```python
@@ -2631,7 +2632,6 @@ that we've not touched upon, but hopefully we've demonstrated that the
 combination of Python/NumPy/SciPy/pandas provides an analysis environment
 similar to what you use with MATLAB.
 
-<br>
 ### Full-Stack Python
 
 Full-Stack Python refers to the design and deployment of web-based applications
@@ -2761,7 +2761,10 @@ the bottom-right is the Python console, along with integrated graphics. At the
 top-right is the variable explorer; superimposed upon it is the output DataFrame
 which we obtained by double-clicking on that variable in the explorer window.
 
+<div style="text-align: center;">
 <img src="media/image5.png">
+</div>
+<br>
 
 Spyder is written in the Python language, is open source and is free of charge.
 
@@ -2777,7 +2780,7 @@ each category, all targeted toward data science.
 
 In addition to Python, Anaconda includes [Jupyter
 Notebook](https://jupyter.org/), which is a Python engine that allows you to
-create interactive 'notebooks' of Python code, output of that code, any
+create interactive _notebooks_ of Python code, output of that code, any
 associated charts, and inline descriptive text. These notebooks are great for
 teaching and collaboration.
 
@@ -2849,14 +2852,14 @@ building data analytics platforms that integrate multiple languages and
 technologies, including MATLAB, Java, and SQL. He can be reached at his
 [website](https://apjanke.net/), [LinkedIn
 profile](https://www.linkedin.com/in/andrewjanke0/) or by email at
-<andrew@apjanke.net>.
+<andrew.janke@demextech.com> or <andrew@apjanke.net>.
 
 Michael and Andrew currently work at Demex Technologies, where Michael is
 Director, Commodity Analytics and Andrew is Director, Quantitative Systems.
-Among its products, Demex Technologies markets an online platform for
-researching and quoting complex commodity financial derivatives.  Not
-surprisingly, the product is written in a mix of languages, including MATLAB and
-Python.
+Among its products, Demex Technologies provides to its clients an online
+platform for researching and quoting complex commodity and weather-based
+financial derivatives.  Not surprisingly, the product is written in a mix of
+languages, including MATLAB and Python.
 
 ### The Demex Group
 
@@ -2869,10 +2872,9 @@ We help our clients quantify their business exposure to weather and climate
 risks, and we facilitate the transfer of those risks to third parties.  We do
 this by providing our clients access to algorithms that help them discover and
 mitigate their risk exposures.  Our algorithms are hosted on a sophisticated,
-web-based platform located at www.demex.tech.
-
-Our computational platform comprises nearly one hundred man-years of efforts,
-and to no surprise, is written largely in the MATLAB and Python languages.
+[web-based platform](www.demex.tech) comprising nearly one hundred man-years of
+efforts.  To no surprise, this platform is written largely in the MATLAB and
+Python languages.
 
 Analytics and technology are the core of our business, and client relationships
 are the foundation of that business.  We share our platform and our analyses

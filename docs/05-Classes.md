@@ -9,10 +9,10 @@ differs from the MATLAB model, and you need to be aware of the differences.
 
 ### Namespaces and Scopes
 
-Let's start with Namespaces and scopes, as these concepts are important
+Let's start with namespaces and scopes, as these concepts are important
 prerequisites for understanding classes.
 
--   A *namespace* is a mapping from names to objects, typically implemented as a
+-   A *namespace* is a mapping of names to objects, typically implemented as a
     dictionary. Examples include built-in names, exception names, global names
     of a module, and local names of a function.
 
@@ -292,9 +292,9 @@ language, you'll want to spend some time studying these topics further.
 
 -   List comprehensions: there's really no equivalent in MATLAB.
 
--   Iterables, iterators and generators: an important feature of the
-    Python language. MATLAB does not offer the feature, although you can
-    code it yourself.
+-   Iterables, iterators and generators: important features of the
+    Python language. MATLAB does not offer these features, although you can
+    code them yourself.
 
 -   Mutability: this is an important concept in Python. This same
     concept exists in MATLAB, but programmers are largely shielded from
