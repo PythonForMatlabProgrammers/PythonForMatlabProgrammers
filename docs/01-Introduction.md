@@ -49,6 +49,7 @@ suggest that you switch from one language to the other. We find tremendous value
 in MATLAB, but we also find value in Python. Each language has its strengths and
 the two products can interoperate. So perhaps you'll find reasons to use both
 languages, as we do.
+<br><br><br><br>
 
 ### Editing and Distributing this Article
 
@@ -86,7 +87,7 @@ operating systems will be straightforward.
 
 ### MATLAB and Python, at a High Level
 
-Like MATLAB[^1], Python is an interpreted, interactive, object-oriented
+Like MATLAB<sup>[1]</sup>, Python is an interpreted, interactive, object-oriented
 programming language. MATLAB was first released in 1983; Python in 1991.  Both
 are extensible and designed for use by a wide audience.
 
@@ -317,5 +318,5 @@ And of course, you can find online help at
 [python.org](https://www.python.org/) or any of many Python-focused
 websites.
 
-[^1]: MATLAB® and Simulink are registered trademarks of The MathWorks,
+[1]: MATLAB® and Simulink are registered trademarks of The MathWorks,
     Inc.

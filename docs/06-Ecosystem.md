@@ -332,6 +332,7 @@ through its documentation you'll feel much more at ease with Python.  And if you
 don't particularly like the NumPy language syntax, keep reading to the Pandas
 section. Pandas is built on top of NumPy and provides a syntax you will be much
 more comfortable with.
+<br><br>
 
 ### SciPy
 

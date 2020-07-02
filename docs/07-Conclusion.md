@@ -44,6 +44,7 @@ that time. If you have feedback, if you have found typos, incorrect statements,
 important omissions, or if you have suggestions for improving this document,
 we'd like to hear from you. Our biographies and contact information are listed
 below.
+<br><br><br><br>
 
 # Author Biographies
 
@@ -65,15 +66,15 @@ Michael and Andrew currently work at Demex Technologies, where Michael is
 Director, Commodity Analytics and Andrew is Director, Quantitative Systems.
 Among its products, Demex Technologies provides to its clients an online
 platform for researching and quoting complex commodity and weather-based
-financial derivatives.  Not surprisingly, the product is written in a mix of
+financial derivatives.  Not surprisingly, the platform is written in a mix of
 languages, including MATLAB and Python.
 
 ### The Demex Group
 
-The authors of this article are founding members of The Demex Group, a firm
-which helps its clients adapt to the impacts of changing weather and climate.  A
-quick background on The Demex Group will help you understand why we've taken the
-time to write this article for you.
+The authors of this article are founding members of [The Demex
+Group](https://thedemexgroup.com), a firm which helps clients adapt to the
+impacts of changing weather and climate.  A quick background on The Demex Group
+will help you understand why we've taken the time to write this article for you.
 
 We help our clients quantify their business exposure to weather and climate
 risks, and we facilitate the transfer of those risks to third parties.  We do
@@ -88,6 +89,7 @@ are the foundation of that business.  We share our platform and our analyses
 with our clients, and in so doing we empower them and help protect them from
 weather and climate risks.  This article is just one small component of that
 effort: we'd like to share with you the knowledge we've acquired in our work.
+<br><br><br><br><br><br><br><br>
 
 # Contributors
 
@@ -99,3 +101,7 @@ talents.  Their names, with links to their LinkedIn profiles are:
 * [Scott Buechler](https://www.linkedin.com/in/rscottyblinkedin)
 * [Kevin Bowers](https://www.linkedin.com/in/kevinjbowers)
 * [Michael Swearingen](https://www.linkedin.com/in/michael-swearingen-58126010)
+
+We would like for this list to grow.  Please consider adding to the article.  A
+list of suggested new topics resides on the article's [GitHub public
+repository](https://github.com/apjanke/PythonForMatlabProgrammers).

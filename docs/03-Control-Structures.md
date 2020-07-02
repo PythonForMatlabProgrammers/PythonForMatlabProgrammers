@@ -207,8 +207,8 @@ its data set one element at a time. Such an object is called an *iterable*.
 
 -   User-defined classes can be made iterable.
 
--   Iterables produce *iterators*, and it's an iterator that produces an
--   object's elements.
+-   Iterables produce *iterators*.  The iterator is what produces an
+    object's elements.
 
 -   Iterators have several methods defined for them, but the one you should know
     about is the `next` method, which returns the next item in a list. Once a
@@ -367,7 +367,7 @@ in Python.
     ```
 
 -   Function arguments are always *call by reference*. Python does not
-    support *call by value*.[^2]
+    support *call by value*.<sup>[2]</sup>
 
 -   To return a value(s), Python does not support an `out = fun()` construct.
     Instead, Python uses `return var` at the end of the function.
@@ -388,7 +388,7 @@ in Python.
     become optional for the caller.
 
 -   Functions can be called with keyword arguments. E.g., to call the function
--   just defined we could type:
+    just defined we could type:
     ```python
     >>> input_name(prompt='Your name?', retries=10, reminder='Try again')
     ```
@@ -686,6 +686,7 @@ Here's a sample of what you can do:
 
 You can change environment variables this way, change to a new directory, etc.
 To see a list of all of the methods in the os module, use `dir(os)`.
+<br><br>
 
 ### Miscellaneous
 
@@ -730,7 +731,7 @@ Built-in mutable sequence.
 
 Introspection works with objects, built-in functions and user-defined functions.
 
-[^2]: Strictly speaking, Python always passes a function argument using
+[2]: Strictly speaking, Python always passes a function argument using
     *call by value*. However, the value passed is an object reference,
     not the object itself. Therefore, in MATLAB terminology Python
     passes function arguments using *call by reference*.

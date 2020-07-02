@@ -90,6 +90,7 @@ suggest that you switch from one language to the other. We find tremendous value
 in MATLAB, but we also find value in Python. Each language has its strengths and
 the two products can interoperate. So perhaps you'll find reasons to use both
 languages, as we do.
+<br><br><br><br>
 
 ### Editing and Distributing this Article
 
@@ -127,7 +128,7 @@ operating systems will be straightforward.
 
 ### MATLAB and Python, at a High Level
 
-Like MATLAB[^1], Python is an interpreted, interactive, object-oriented
+Like MATLAB<sup>[1]</sup>, Python is an interpreted, interactive, object-oriented
 programming language. MATLAB was first released in 1983; Python in 1991.  Both
 are extensible and designed for use by a wide audience.
 
@@ -358,7 +359,7 @@ And of course, you can find online help at
 [python.org](https://www.python.org/) or any of many Python-focused
 websites.
 
-[^1]: MATLAB® and Simulink are registered trademarks of The MathWorks,
+[1]: MATLAB® and Simulink are registered trademarks of The MathWorks,
     Inc.
 <br>
 <br>
@@ -778,6 +779,7 @@ For a programmer with a MATLAB background, lists may not appear particularly
 useful. As an array, the list implementation would be difficult to work with.
 Fear not, multidimensional arrays are available in Python, and we'll cover that
 topic later.
+<br><br>
 
 ### Sets
 
@@ -968,6 +970,7 @@ In the first line above, 'abc' is considered a *literal.*  Literals produce data
 types; in the above, the literal is a shortcut way to produce a string.  Many of
 Python's built-in classes have literal representations.  These include:
 
+<div align="center">
 
 | Type       | Constructor | Literal Examples |
 | ---------- | ----------- | ---------------- |
@@ -980,6 +983,8 @@ Python's built-in classes have literal representations.  These include:
 | Tuple      | tuple()     | (), (1,), (1, 2) |
 | Dictionary | dict()      | {}, {'a': 2}     |
 | Set        | set()       | {1, 2, 3}        |
+
+</div>
 
 Another characteristic of literals is that they are constants.  In the following
 line of code, 'a' is a variable, and the number 5 is a literal:
@@ -1206,8 +1211,8 @@ its data set one element at a time. Such an object is called an *iterable*.
 
 -   User-defined classes can be made iterable.
 
--   Iterables produce *iterators*, and it's an iterator that produces an
--   object's elements.
+-   Iterables produce *iterators*.  The iterator is what produces an
+    object's elements.
 
 -   Iterators have several methods defined for them, but the one you should know
     about is the `next` method, which returns the next item in a list. Once a
@@ -1366,7 +1371,7 @@ in Python.
     ```
 
 -   Function arguments are always *call by reference*. Python does not
-    support *call by value*.[^2]
+    support *call by value*.<sup>[2]</sup>
 
 -   To return a value(s), Python does not support an `out = fun()` construct.
     Instead, Python uses `return var` at the end of the function.
@@ -1387,7 +1392,7 @@ in Python.
     become optional for the caller.
 
 -   Functions can be called with keyword arguments. E.g., to call the function
--   just defined we could type:
+    just defined we could type:
     ```python
     >>> input_name(prompt='Your name?', retries=10, reminder='Try again')
     ```
@@ -1685,6 +1690,7 @@ Here's a sample of what you can do:
 
 You can change environment variables this way, change to a new directory, etc.
 To see a list of all of the methods in the os module, use `dir(os)`.
+<br><br>
 
 ### Miscellaneous
 
@@ -1729,7 +1735,7 @@ Built-in mutable sequence.
 
 Introspection works with objects, built-in functions and user-defined functions.
 
-[^2]: Strictly speaking, Python always passes a function argument using
+[2]: Strictly speaking, Python always passes a function argument using
     *call by value*. However, the value passed is an object reference,
     not the object itself. Therefore, in MATLAB terminology Python
     passes function arguments using *call by reference*.
@@ -2456,6 +2462,7 @@ through its documentation you'll feel much more at ease with Python.  And if you
 don't particularly like the NumPy language syntax, keep reading to the Pandas
 section. Pandas is built on top of NumPy and provides a syntax you will be much
 more comfortable with.
+<br><br>
 
 ### SciPy
 
@@ -2837,6 +2844,7 @@ that time. If you have feedback, if you have found typos, incorrect statements,
 important omissions, or if you have suggestions for improving this document,
 we'd like to hear from you. Our biographies and contact information are listed
 below.
+<br><br><br><br>
 
 # Author Biographies
 
@@ -2858,15 +2866,15 @@ Michael and Andrew currently work at Demex Technologies, where Michael is
 Director, Commodity Analytics and Andrew is Director, Quantitative Systems.
 Among its products, Demex Technologies provides to its clients an online
 platform for researching and quoting complex commodity and weather-based
-financial derivatives.  Not surprisingly, the product is written in a mix of
+financial derivatives.  Not surprisingly, the platform is written in a mix of
 languages, including MATLAB and Python.
 
 ### The Demex Group
 
-The authors of this article are founding members of The Demex Group, a firm
-which helps its clients adapt to the impacts of changing weather and climate.  A
-quick background on The Demex Group will help you understand why we've taken the
-time to write this article for you.
+The authors of this article are founding members of [The Demex
+Group](https://thedemexgroup.com), a firm which helps clients adapt to the
+impacts of changing weather and climate.  A quick background on The Demex Group
+will help you understand why we've taken the time to write this article for you.
 
 We help our clients quantify their business exposure to weather and climate
 risks, and we facilitate the transfer of those risks to third parties.  We do
@@ -2881,6 +2889,7 @@ are the foundation of that business.  We share our platform and our analyses
 with our clients, and in so doing we empower them and help protect them from
 weather and climate risks.  This article is just one small component of that
 effort: we'd like to share with you the knowledge we've acquired in our work.
+<br><br><br><br><br><br><br><br>
 
 # Contributors
 
@@ -2892,3 +2901,7 @@ talents.  Their names, with links to their LinkedIn profiles are:
 * [Scott Buechler](https://www.linkedin.com/in/rscottyblinkedin)
 * [Kevin Bowers](https://www.linkedin.com/in/kevinjbowers)
 * [Michael Swearingen](https://www.linkedin.com/in/michael-swearingen-58126010)
+
+We would like for this list to grow.  Please consider adding to the article.  A
+list of suggested new topics resides on the article's [GitHub public
+repository](https://github.com/apjanke/PythonForMatlabProgrammers).

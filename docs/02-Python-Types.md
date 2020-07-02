@@ -416,6 +416,7 @@ For a programmer with a MATLAB background, lists may not appear particularly
 useful. As an array, the list implementation would be difficult to work with.
 Fear not, multidimensional arrays are available in Python, and we'll cover that
 topic later.
+<br><br>
 
 ### Sets
 
@@ -606,6 +607,7 @@ In the first line above, 'abc' is considered a *literal.*  Literals produce data
 types; in the above, the literal is a shortcut way to produce a string.  Many of
 Python's built-in classes have literal representations.  These include:
 
+<div align="center">
 
 | Type       | Constructor | Literal Examples |
 | ---------- | ----------- | ---------------- |
@@ -618,6 +620,8 @@ Python's built-in classes have literal representations.  These include:
 | Tuple      | tuple()     | (), (1,), (1, 2) |
 | Dictionary | dict()      | {}, {'a': 2}     |
 | Set        | set()       | {1, 2, 3}        |
+
+</div>
 
 Another characteristic of literals is that they are constants.  In the following
 line of code, 'a' is a variable, and the number 5 is a literal:
