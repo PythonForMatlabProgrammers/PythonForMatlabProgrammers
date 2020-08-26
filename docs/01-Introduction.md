@@ -53,22 +53,22 @@ languages, as we do.
 
 ### Editing and Distributing this Article
 
-As just mentioned, we have a goal of keeping this article brief.  However, we've
+As just mentioned, we have a goal of keeping this article brief. However, we've
 received many suggestions of additional material for the article, and we value
-those suggestions.  In March 2019 we open-sourced the article and published it
+those suggestions. In March 2019 we open-sourced the article and published it
 to a [GitHub public
 repository](https://github.com/apjanke/PythonForMatlabProgrammers).
 
 Readers are encouraged to edit or add material by submitting pull requests from
-the GitHub repository.  If you are not comfortable doing so but have
+the GitHub repository. If you are not comfortable doing so but have
 corrections, additions, suggestions, criticisms, etc. please direct them to the
-authors.  We will give proper acknowledgement to all who contribute to this
+authors. We will give proper acknowledgement to all who contribute to this
 article.
 
 This article is licensed under the [Creative Commons Attribution ShareAlike 4.0
-International License](http://creativecommons.org/licenses/by-sa/4.0/).  The
+International License](http://creativecommons.org/licenses/by-sa/4.0/). The
 article is available to download, edit, expand upon, revise, re-publish, etc. to
-suit your needs.  Want to re-publish this article as a set of web pages?  Feel
+suit your needs. Want to re-publish this article as a set of web pages?  Feel
 free. Want to use this article for material in a class you teach?  Again, feel
 free. Under the terms of the Creative Commons license, you have full access to
 the article but the article must retain the original author's names.
@@ -151,10 +151,27 @@ The list goes on. Assuming you have access to both languages, you can use both
 to extract the best of each. Let's look at a few more differences that you'll
 eventually want to consider.
 
--   One major difference between MATLAB and Python is in their respective
-    licensing models. MATLAB is commercial software and can be obtained only by
-    paying a license fee. Python is copyrighted but is open source and free for
-    both personal and commercial use.
+-   One major difference between MATLAB and Python is their respective licensing
+    models. MATLAB is commercial software and can be obtained only by paying a
+    license fee. Python is copyrighted but is open source and free for both
+    personal and commercial use.
+
+    Be aware that commercial licensing carries costs and risks other than a
+    purchase price. Your organization will need to manage its licenses and renew
+    them each year. An expired license can bring down a production system, so
+    license management is important. Furthermore, The MathWorks, like many
+    vendors, enforces their licenses through software called a *license
+    manager* that is additional software you will need to install and maintain.
+    With this added complexity comes operational risk; any component that fails
+    can harm or take down a production system.
+
+    Lastly, hard-core developers tend to want their software on multiple
+    systems. But many vendors, The MathWorks included, restrict you to a small
+    set of installations per license. For example, a standalone MATLAB license
+    will allow you to install on four systems, nothing more.
+
+    Millions of developers, including the authors of this article, accept and
+    deal with these license limitations. But you should be aware of them.
 
 -   As already mentioned, MATLAB installs as a complete programming environment.
     But Python is a component of a larger ecosystem.  Python can be used for
@@ -192,10 +209,10 @@ installation process is simple: just
 its prompts. Note that both x86 and x86-64 versions are available. Grab whatever
 latest version is appropriate for your computer.
 
-The examples of this article were created using Python version 3.7.  None of the
-examples have been tested on earlier Python versions.  As of December 2019,
+The examples of this article were created using Python version 3.7. None of the
+examples have been tested on earlier Python versions. As of December 2019,
 Python version 3.8 was released, and we expect that the examples to follow will
-be forward-compatible.  We thus suggest that you download and install Python
+be forward-compatible. We thus suggest that you download and install Python
 version 3.7 or later.
 
 ### Integrated Development Environments (IDEs)

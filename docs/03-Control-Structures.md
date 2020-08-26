@@ -558,6 +558,8 @@ print it. For all the sophistication, warnings can also be very simple:
 __main__:1: UserWarning: Something seems wrong
 ```
 
+<br><br>
+
 ### Exceptions
 
 Python's exceptions are a lot like MATLAB's error facility, but more powerful.

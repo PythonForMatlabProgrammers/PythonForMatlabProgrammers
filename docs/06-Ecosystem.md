@@ -520,22 +520,22 @@ available for web frameworks (e.g., [Django](https://www.djangoproject.com/) and
 (e.g., [Plotly Dash](https://plotly.com/dash/)).
 
 As an example, one of the authors of this article (Patterson) has written a web
-app for stress-testing trading portfolios comprised of options, futures, and
-swaps.  This app employs complex mathematical modeling, large data sets,
+application for stress-testing trading portfolios comprised of options, futures,
+and swaps.  This app employs complex mathematical modeling, large data sets,
 extensive computations, and a sophisticated user interface.  The app is written
-completely in Python.  A screen shot is shown below, and the app is also
-[available online](https://aftermathematics.appspot.com/riskmanager/).
+completely in Python.  A screen shot of the app is shown below.  For a demo of
+the application or to inquire about licensing, please contact its author.
 
 <div style="text-align: center;">
 <img src="media/RiskManager.png">
 </div>
 <br>
 
-As shown above, Python can handle both the front-end and back-end of a web app,
-and also everything in between, such as analytics and database access.  Rather
-than belabor this topic, we'll refer you to an excellent online resource called,
-appropriately, [Full Stack Python](https://www.fullstackpython.com/) written by
-Matt Makai.
+As discussed above, Python can handle both the front-end and back-end of a web
+app, and also everything in between, such as analytics and database access.
+Rather than belabor this topic, we'll refer you to an excellent online resource
+called, appropriately, [Full Stack Python](https://www.fullstackpython.com/)
+written by Matt Makai.
 
 ### MATLAB and Python, Together
 
