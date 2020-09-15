@@ -6,7 +6,7 @@ to numeric Python for programmers who already know MATLAB.
 
 This document was produced by [Mike Patterson](https://www.linkedin.com/in/mtpatt/)
 and [Andrew Janke](https://apjanke.net), experienced MATLAB and Python coders who leverage the strengths
-of both languages, and will show you how to do the same.
+of both languages and will show you how to do the same.
 
 See the live website at <https://pythonformatlabprogrammers.github.io/PythonForMatlabProgrammers/>.
 
