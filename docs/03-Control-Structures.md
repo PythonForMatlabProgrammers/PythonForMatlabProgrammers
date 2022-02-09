@@ -3,14 +3,14 @@
 
 # Python Control Structures
 
-Python's core library provides a limited but versatile set of control
-structures. Add-on packages provide many additional constructs, but the
-following discussion will be limited to those of the core library.
+Compared with Matlab, Python's core library provides a limited but versatile
+set of control structures. Add-on packages provide many additional constructs,
+but the following discussion will be limited to those of the core library.
 
 ### Flow Control
 
-Python provides the usual flow control constructs, with some minor
-syntax changes.
+Python provides the usual flow control constructs that Matlab provides, with
+some minor syntax changes.
 
 -   Here is an if-statement:
 
